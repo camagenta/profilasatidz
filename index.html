@@ -9,8 +9,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen">
     <div class="max-w-5xl mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-2">Direktori Asatidz Sunnah</h1>
-        <p class="text-gray-500 mb-6">Sumber: kajian.net — <span id="total-records">{{len .Asatidz}}</span> asatidz</p>
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Direktori Asatidz Sunnah</h1>
 
         <!-- Search + Page Size -->
         <div class="flex flex-col sm:flex-row gap-3 mb-6">
@@ -54,8 +53,13 @@
             {{template "results" .}}
         </div>
 
-        <footer class="mt-8 text-center text-gray-400 text-sm">
-            <p>Dibuat dengan Go + HTMX — Data dari kajian.net</p>
+        <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs">
+            <p class="mb-1">Dibuat dengan Go + HTMX</p>
+            <p>
+                Sumber data: 
+                <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a>
+                <!-- Tambah sumber lain di sini -->
+            </p>
         </footer>
     </div>
 </body>
