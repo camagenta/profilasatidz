@@ -11,6 +11,5 @@ FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /app/main .
 COPY asatidz.json .
-COPY index.html .
 EXPOSE 8080
 CMD ["./main"]
