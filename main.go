@@ -20,13 +20,20 @@ type Asatidz struct {
 	Categories []string `json:"categories"`
 }
 
+type PageInfo struct {
+	Number    int
+	IsEllipsis bool
+}
+
 type PageData struct {
 	Asatidz     []Asatidz
 	Total       int
 	Page        int
 	PageSize    int
 	TotalPages  int
-	Pages       []int
+	Pages       []PageInfo
+	HasPrev     bool
+	HasNext     bool
 	Query       string
 	Sort        string
 	Category    string
@@ -107,6 +114,61 @@ func sortData(data []Asatidz, sortBy string) {
 	}
 }
 
+func generatePageRange(current, total, maxVisible int) []PageInfo {
+	if total <= maxVisible {
+		pages := make([]PageInfo, total)
+		for i := 0; i < total; i++ {
+			pages[i] = PageInfo{Number: i + 1}
+		}
+		return pages
+	}
+
+	// Google-style: show first, last, current neighborhood, with ellipsis
+	half := maxVisible / 2
+	start := current - half
+	end := current + half
+
+	// Adjust if near beginning
+	if start <= 2 {
+		start = 1
+		end = maxVisible - 1
+	}
+	// Adjust if near end
+	if end >= total-1 {
+		end = total
+		start = total - maxVisible + 2
+	}
+
+	var pages []PageInfo
+
+	// Always show page 1
+	pages = append(pages, PageInfo{Number: 1})
+
+	// Ellipsis after 1 if needed
+	if start > 2 {
+		pages = append(pages, PageInfo{IsEllipsis: true})
+	}
+
+	// Middle range
+	for i := start; i <= end; i++ {
+		if i > 1 && i < total {
+			pages = append(pages, PageInfo{Number: i})
+		}
+	}
+
+	// Ellipsis before last if needed
+	if end < total-1 {
+		pages = append(pages, PageInfo{IsEllipsis: true})
+	}
+
+	// Always show last page if > 1
+	if total > 1 {
+		pages = append(pages, PageInfo{Number: total})
+	}
+
+	return pages
+}
+
 func paginate(list []Asatidz, page, pageSize int) PageData {
 	total := len(list)
 	totalPages := int(math.Ceil(float64(total) / float64(pageSize)))
@@ -126,10 +188,7 @@ func paginate(list []Asatidz, page, pageSize int) PageData {
 		end = total
 	}
 
-	pages := make([]int, totalPages)
-	for i := 0; i < totalPages; i++ {
-		pages[i] = i + 1
-	}
+	pages := generatePageRange(page, totalPages, 10)
 
 	listSlice := []Asatidz{}
 	if start < total {
@@ -143,6 +202,8 @@ func paginate(list []Asatidz, page, pageSize int) PageData {
 		PageSize:   pageSize,
 		TotalPages: totalPages,
 		Pages:      pages,
+		HasPrev:    page > 1,
+		HasNext:    page < totalPages,
 		Categories: extractCategories(asatidzData),
 	}
 }
@@ -223,12 +284,14 @@ func main() {
 				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>`)
 			}
 			for _, p := range pageData.Pages {
-				if p == pageData.Page {
-					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p)
-				} else {
-					fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">%d</button>`, p, p)
-				}
+			if p.IsEllipsis {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
+			} else if p.Number == pageData.Page {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
+			} else {
+				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">%d</button>`, p.Number, p.Number)
 			}
+		}
 			if pageData.Page < pageData.TotalPages {
 				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">Next →</button>`, pageData.Page+1)
 			} else {
@@ -305,10 +368,12 @@ function clearFilters(){document.querySelector('select[name="sort"]').value='alp
 				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>`)
 			}
 			for _, p := range pageData.Pages {
-				if p == pageData.Page {
-					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p)
+				if p.IsEllipsis {
+					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
+				} else if p.Number == pageData.Page {
+					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
 				} else {
-					fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">%d</button>`, p, p)
+					fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">%d</button>`, p.Number, p.Number)
 				}
 			}
 			if pageData.Page < pageData.TotalPages {
