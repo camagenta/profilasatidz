@@ -21,24 +21,24 @@ type Asatidz struct {
 }
 
 type PageInfo struct {
-	Number    int
+	Number     int
 	IsEllipsis bool
 }
 
 type PageData struct {
-	Asatidz     []Asatidz
-	Total       int
-	Page        int
-	PageSize    int
-	TotalPages  int
-	Pages       []PageInfo
-	HasPrev     bool
-	HasNext     bool
-	Query       string
-	Sort        string
-	Category    string
-	MinCount    int
-	Categories  []string
+	Asatidz    []Asatidz
+	Total      int
+	Page       int
+	PageSize   int
+	TotalPages int
+	Pages      []PageInfo
+	HasPrev    bool
+	HasNext    bool
+	Query      string
+	Sort       string
+	Category   string
+	MinCount   int
+	Categories []string
 }
 
 var (
@@ -55,6 +55,12 @@ func loadData() {
 	json.Unmarshal(data, &asatidzData)
 	dataMutex.Unlock()
 	log.Printf("Loaded %d asatidz", len(asatidzData))
+}
+
+func loadDataFromSlice(data []Asatidz) {
+	dataMutex.Lock()
+	asatidzData = data
+	dataMutex.Unlock()
 }
 
 func extractCategories(data []Asatidz) []string {
@@ -115,52 +121,61 @@ func sortData(data []Asatidz, sortBy string) {
 }
 
 func generatePageRange(current, total int) []PageInfo {
-	// Google-style: always show 1, last, and current neighborhood
-	// Window = 1 before + current + 1 after = 3 visible numbers max
-	window := 1
-	start := current - window
-	end := current + window
-
-	// Near beginning: show 1 2 3 ... last
-	if start <= 2 {
-		start = 1
-		end = 3
+	// Max 4 visible: 1, (ellipsis), up to 2 near current, (ellipsis), last
+	// Near current: show current and 1 neighbor on each side (max 3 middle)
+	// But cap total non-ellipsis at 4: 1 + 2 middle + last
+	if total <= 7 {
+		// Small total: show all pages
+		var pages []PageInfo
+		for i := 1; i <= total; i++ {
+			pages = append(pages, PageInfo{Number: i})
+		}
+		return pages
 	}
-	// Near end: show 1 ... (total-2) (total-1) total
-	if end >= total-1 {
-		end = total
-		start = total - 2
-		if start < 1 {
-			start = 1
+
+	// Determine which pages to show (excluding 1 and total)
+	// Show current and up to 1 on each side = 3 middle max
+	// But we want max 4 total, so: 1 + at most 2 middle + total
+	// Strategy: show current page + 1 after (or 1 before if at end)
+	start := current
+	end := current + 1
+	if end > total-1 {
+		end = total - 1
+		start = current - 1
+		if start < 2 {
+			start = 2
 		}
 	}
 
-	var pages []PageInfo
+	// At beginning: show 1, 2, 3, ..., total
+	if current <= 3 {
+		start = 2
+		end = 3
+	}
+	// At end: show 1, ..., total-2, total-1, total
+	if current >= total-2 {
+		start = total - 2
+		end = total - 1
+	}
 
-	// Page 1
+	var pages []PageInfo
 	pages = append(pages, PageInfo{Number: 1})
 
-	// Ellipsis after 1
 	if start > 2 {
 		pages = append(pages, PageInfo{IsEllipsis: true})
 	}
 
-	// Middle range
 	for i := start; i <= end; i++ {
 		if i > 1 && i < total {
 			pages = append(pages, PageInfo{Number: i})
 		}
 	}
 
-	// Ellipsis before last
 	if end < total-1 {
 		pages = append(pages, PageInfo{IsEllipsis: true})
 	}
 
-	// Last page (if > 1)
-	if total > 1 {
-		pages = append(pages, PageInfo{Number: total})
-	}
+	pages = append(pages, PageInfo{Number: total})
 
 	return pages
 }
@@ -223,6 +238,51 @@ func parseParams(r *http.Request) (query, sort, category string, minCount, page,
 	return
 }
 
+// renderResults renders the table + pagination HTML fragment (used by both / and /api/search)
+func renderResults(w http.ResponseWriter, pageData PageData) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	fmt.Fprintf(w, `<p class="text-sm text-gray-500 mb-3">Menampilkan %d dari %d asatidz`, len(pageData.Asatidz), pageData.Total)
+	if pageData.TotalPages > 1 {
+		fmt.Fprintf(w, ` — Halaman %d dari %d`, pageData.Page, pageData.TotalPages)
+	}
+	fmt.Fprintf(w, `</p><div class="bg-white rounded-lg shadow overflow-hidden mb-4"><table class="w-full text-left text-sm"><thead class="bg-gray-50 border-b-2 border-gray-200"><tr><th class="px-4 py-3 font-semibold text-gray-600">Nama Asatidz</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-24">Kajian</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-32">Rujukan</th></tr></thead><tbody class="divide-y divide-gray-100">`)
+	for _, a := range pageData.Asatidz {
+		fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, a.Name)
+		if a.Count > 0 {
+			fmt.Fprintf(w, `<span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">%d</span>`, a.Count)
+		} else {
+			fmt.Fprintf(w, `<span class="text-gray-300">-</span>`)
+		}
+		fmt.Fprintf(w, `</td><td class="px-4 py-3 text-center"><a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 hover:underline text-xs font-medium">↗ kajian.net</a></td></tr>`, a.SourceURL)
+	}
+	fmt.Fprintf(w, `</tbody></table></div>`)
+
+	if pageData.TotalPages > 1 {
+		fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
+		if pageData.HasPrev {
+			fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">← Prev</button>`, pageData.Page-1)
+		} else {
+			fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>`)
+		}
+		for _, p := range pageData.Pages {
+			if p.IsEllipsis {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
+			} else if p.Number == pageData.Page {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
+			} else {
+				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">%d</button>`, p.Number, p.Number)
+			}
+		}
+		if pageData.HasNext {
+			fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">Next →</button>`, pageData.Page+1)
+		} else {
+			fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next →</span>`)
+		}
+		fmt.Fprintf(w, `</div>`)
+	}
+}
+
 func main() {
 	loadData()
 
@@ -256,46 +316,7 @@ func main() {
     <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
     <div id="results-container">`)
 
-		fmt.Fprintf(w, `<p class="text-sm text-gray-500 mb-3">Menampilkan %d dari %d asatidz`, len(pageData.Asatidz), pageData.Total)
-		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, ` — Halaman %d dari %d`, pageData.Page, pageData.TotalPages)
-		}
-		fmt.Fprintf(w, `</p><div class="bg-white rounded-lg shadow overflow-hidden mb-4"><table class="w-full text-left text-sm"><thead class="bg-gray-50 border-b-2 border-gray-200"><tr><th class="px-4 py-3 font-semibold text-gray-600">Nama Asatidz</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-24">Kajian</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-32">Rujukan</th></tr></thead><tbody class="divide-y divide-gray-100">`)
-		for _, a := range pageData.Asatidz {
-			fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, a.Name)
-			if a.Count > 0 {
-				fmt.Fprintf(w, `<span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">%d</span>`, a.Count)
-			} else {
-				fmt.Fprintf(w, `<span class="text-gray-300">-</span>`)
-			}
-			fmt.Fprintf(w, `</td><td class="px-4 py-3 text-center"><a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 hover:underline text-xs font-medium">↗ kajian.net</a></td></tr>`, a.SourceURL)
-		}
-		fmt.Fprintf(w, `</tbody></table></div>`)
-
-		// Pagination
-		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
-			if pageData.Page > 1 {
-				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">← Prev</button>`, pageData.Page-1)
-			} else {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>`)
-			}
-			for _, p := range pageData.Pages {
-			if p.IsEllipsis {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
-			} else if p.Number == pageData.Page {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
-			} else {
-				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">%d</button>`, p.Number, p.Number)
-			}
-		}
-			if pageData.Page < pageData.TotalPages {
-				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">Next →</button>`, pageData.Page+1)
-			} else {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next →</span>`)
-			}
-			fmt.Fprintf(w, `</div>`)
-		}
+		renderResults(w, pageData)
 
 		fmt.Fprintf(w, `</div><footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><p class="mb-1">Dibuat dengan Go + HTMX</p><p>Sumber data: <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a></p></footer></div>`)
 
@@ -339,49 +360,7 @@ function clearFilters(){document.querySelector('select[name="sort"]').value='alp
 		pageData.Category = category
 		pageData.MinCount = minCount
 
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
-		// Results fragment
-		fmt.Fprintf(w, `<p class="text-sm text-gray-500 mb-3">Menampilkan %d dari %d asatidz`, len(pageData.Asatidz), pageData.Total)
-		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, ` — Halaman %d dari %d`, pageData.Page, pageData.TotalPages)
-		}
-		fmt.Fprintf(w, `</p><div class="bg-white rounded-lg shadow overflow-hidden mb-4"><table class="w-full text-left text-sm"><thead class="bg-gray-50 border-b-2 border-gray-200"><tr><th class="px-4 py-3 font-semibold text-gray-600">Nama Asatidz</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-24">Kajian</th><th class="px-4 py-3 font-semibold text-gray-600 text-center w-32">Rujukan</th></tr></thead><tbody class="divide-y divide-gray-100">`)
-		for _, a := range pageData.Asatidz {
-			fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, a.Name)
-			if a.Count > 0 {
-				fmt.Fprintf(w, `<span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">%d</span>`, a.Count)
-			} else {
-				fmt.Fprintf(w, `<span class="text-gray-300">-</span>`)
-			}
-			fmt.Fprintf(w, `</td><td class="px-4 py-3 text-center"><a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 hover:underline text-xs font-medium">↗ kajian.net</a></td></tr>`, a.SourceURL)
-		}
-		fmt.Fprintf(w, `</tbody></table></div>`)
-
-		// Pagination
-		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
-			if pageData.Page > 1 {
-				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">← Prev</button>`, pageData.Page-1)
-			} else {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>`)
-			}
-			for _, p := range pageData.Pages {
-				if p.IsEllipsis {
-					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
-				} else if p.Number == pageData.Page {
-					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
-				} else {
-					fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">%d</button>`, p.Number, p.Number)
-				}
-			}
-			if pageData.Page < pageData.TotalPages {
-				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">Next →</button>`, pageData.Page+1)
-			} else {
-				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next →</span>`)
-			}
-			fmt.Fprintf(w, `</div>`)
-		}
+		renderResults(w, pageData)
 	})
 
 	http.HandleFunc("/api/reload", func(w http.ResponseWriter, r *http.Request) {
