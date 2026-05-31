@@ -6,35 +6,157 @@
     <title>Direktori Asatidz Sunnah</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Floating button pulse animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+        .pulse-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: #3b82f6;
+            animation: pulse-ring 2s ease-out infinite;
+            z-index: -1;
+        }
+        /* Panel transition */
+        #filter-panel { transition: opacity 0.2s, transform 0.2s; }
+        #filter-panel.hidden { opacity: 0; transform: translateY(8px) scale(0.95); pointer-events: none; }
+        #filter-panel:not(.hidden) { opacity: 1; transform: translateY(0) scale(1); }
+    </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 min-h-screen pb-24">
+
+    <!-- ===== MAIN CONTENT ===== -->
     <div class="max-w-5xl mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Direktori Asatidz Sunnah</h1>
 
-        <!-- Search + Page Size -->
-        <div class="flex flex-col sm:flex-row gap-3 mb-6">
-            <input 
-                class="flex-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" 
-                type="text" 
-                name="q"
-                id="search-input"
-                placeholder="Cari nama asatidz..." 
-                value="{{.Query}}"
-                hx-get="/api/search" 
-                hx-trigger="keyup changed delay:300ms, change" 
-                hx-target="#results-container"
-                hx-include="[name='size']"
-                hx-indicator="#spinner"
-            >
-            <div class="flex items-center gap-2">
-                <label class="text-sm text-gray-500 whitespace-nowrap">Show:</label>
+        <!-- Search bar -->
+        <input 
+            class="w-full p-3 mb-6 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" 
+            type="text" 
+            name="q"
+            id="search-input"
+            placeholder="Cari nama asatidz..." 
+            value="{{.Query}}"
+            hx-get="/api/search" 
+            hx-trigger="keyup changed delay:300ms, change" 
+            hx-target="#results-container"
+            hx-include="[name='size']"
+            hx-indicator="#spinner"
+        >
+
+        <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
+
+        <div id="results-container">
+            {{template "results" .}}
+        </div>
+
+        <!-- Active filter badges akan muncul di sini -->
+        <div id="active-filters" class="flex flex-wrap gap-2 mt-4"></div>
+
+        <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs">
+            <p class="mb-1">Dibuat dengan Go + HTMX</p>
+            <p>
+                Sumber data: 
+                <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- ===== FILTER TOGGLE BUTTON (floating) ===== -->
+    <button 
+        id="filter-toggle"
+        class="fixed bottom-6 right-6 z-50 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors pulse-ring relative"
+        onclick="toggleFilterPanel()"
+    >
+        <!-- Filter icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+        </svg>
+        <span id="filter-badge" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+    </button>
+
+    <!-- ===== FILTER PANEL (floating) ===== -->
+    <div 
+        id="filter-panel"
+        class="fixed bottom-24 right-6 z-40 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 hidden overflow-hidden"
+    >
+        <!-- Header -->
+        <div class="px-4 py-3 bg-gray-50 border-b flex items-center justify-between">
+            <span class="font-semibold text-gray-700 text-sm">Filter</span>
+            <button onclick="clearFilters()" class="text-xs text-blue-600 hover:underline">Reset</button>
+        </div>
+
+        <div class="p-4 space-y-4">
+            <!-- Sort -->
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Urutkan</label>
                 <select 
-                    name="size"
-                    class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer"
+                    name="sort"
+                    class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
                     hx-get="/api/search"
                     hx-trigger="change"
                     hx-target="#results-container"
-                    hx-include="[name='q']"
+                    hx-include="[name='q'],[name='size'],[name='cat'],[name='min_count']"
+                    hx-indicator="#spinner"
+                >
+                    <option value="alpha_asc" {{if eq .Sort "alpha_asc"}}selected{{end}}>A → Z</option>
+                    <option value="alpha_desc" {{if eq .Sort "alpha_desc"}}selected{{end}}>Z → A</option>
+                    <option value="count_desc" {{if eq .Sort "count_desc"}}selected{{end}}>Kajian terbanyak</option>
+                    <option value="count_asc" {{if eq .Sort "count_asc"}}selected{{end}}>Kajian sedikit</option>
+                </select>
+            </div>
+
+            <!-- Category -->
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Kategori</label>
+                <select 
+                    name="cat"
+                    class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                    hx-get="/api/search"
+                    hx-trigger="change"
+                    hx-target="#results-container"
+                    hx-include="[name='q'],[name='size'],[name='sort'],[name='min_count']"
+                    hx-indicator="#spinner"
+                >
+                    <option value="">Semua</option>
+                    {{range .Categories}}
+                    <option value="{{.}}" {{if eq $.Category .}}selected{{end}}>{{.}}</option>
+                    {{end}}
+                </select>
+            </div>
+
+            <!-- Min kajian -->
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Minimal kajian</label>
+                <input 
+                    type="number"
+                    name="min_count"
+                    min="0"
+                    placeholder="0"
+                    value="{{.MinCount}}"
+                    class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                    hx-get="/api/search"
+                    hx-trigger="keyup changed delay:500ms, change"
+                    hx-target="#results-container"
+                    hx-include="[name='q'],[name='size'],[name='sort'],[name='cat']"
+                    hx-indicator="#spinner"
+                >
+            </div>
+
+            <!-- Page Size (pindah ke panel) -->
+            <div>
+                <label class="block text-xs font-medium text-gray-500 mb-1">Tampilkan</label>
+                <select 
+                    name="size"
+                    class="w-full p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                    hx-get="/api/search"
+                    hx-trigger="change"
+                    hx-target="#results-container"
+                    hx-include="[name='q'],[name='sort'],[name='cat'],[name='min_count']"
                     hx-indicator="#spinner"
                 >
                     <option value="5" {{if eq .PageSize 5}}selected{{end}}>5</option>
@@ -47,21 +169,66 @@
             </div>
         </div>
 
-        <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
-
-        <div id="results-container">
-            {{template "results" .}}
+        <!-- Apply button (mobile-friendly) -->
+        <div class="px-4 py-3 bg-gray-50 border-t">
+            <button 
+                class="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                onclick="toggleFilterPanel()"
+            >
+                Terapkan
+            </button>
         </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs">
-            <p class="mb-1">Dibuat dengan Go + HTMX</p>
-            <p>
-                Sumber data: 
-                <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a>
-                <!-- Tambah sumber lain di sini -->
-            </p>
-        </footer>
     </div>
+
+    <!-- Click outside to close -->
+    <div id="filter-backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleFilterPanel()"></div>
+
+    <script>
+        function toggleFilterPanel() {
+            const panel = document.getElementById('filter-panel');
+            const backdrop = document.getElementById('filter-backdrop');
+            panel.classList.toggle('hidden');
+            backdrop.classList.toggle('hidden');
+        }
+
+        function clearFilters() {
+            document.querySelector('select[name="sort"]').value = 'alpha_asc';
+            document.querySelector('select[name="cat"]').value = '';
+            document.querySelector('input[name="min_count"]').value = '';
+            document.querySelector('select[name="size"]').value = '15';
+            // Trigger HTMX refresh
+            htmx.trigger('select[name="sort"]', 'change');
+        }
+
+        // Update filter badge count
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new MutationObserver(function() {
+                updateFilterBadge();
+            });
+            observer.observe(document.getElementById('results-container'), { childList: true });
+        });
+
+        function updateFilterBadge() {
+            let active = 0;
+            const sort = document.querySelector('select[name="sort"]')?.value;
+            const cat = document.querySelector('select[name="cat"]?.value;
+            const minCount = document.querySelector('input[name="min_count"]')?.value;
+            if (sort && sort !== 'alpha_asc') active++;
+            if (cat) active++;
+            if (minCount && minCount !== '0' && minCount !== '') active++;
+
+            const badge = document.getElementById('filter-badge');
+            if (active > 0) {
+                badge.textContent = active;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // HTMX hook: update badge after filter applied
+        document.body.addEventListener('htmx:afterSwap', updateFilterBadge);
+    </script>
 </body>
 </html>
 
@@ -114,19 +281,17 @@
 {{define "pagination"}}
 {{if gt .TotalPages 1}}
 <div class="flex items-center justify-center gap-1 flex-wrap">
-    <!-- Prev -->
     {{if gt .Page 1}}
     <button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50"
             hx-get="/api/search" 
             hx-target="#results-container"
             hx-vals='{"page": "{{sub .Page 1}}"}'
-            hx-include="[name='q'],[name='size']"
+            hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']"
     >← Prev</button>
     {{else}}
     <span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">← Prev</span>
     {{end}}
 
-    <!-- Page numbers -->
     {{range .Pages}}
         {{if eq $.Page .}}
         <span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">{{.}}</span>
@@ -135,18 +300,17 @@
                 hx-get="/api/search" 
                 hx-target="#results-container"
                 hx-vals='{"page": "{{.}}"}'
-                hx-include="[name='q'],[name='size']"
+                hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']"
         >{{.}}</button>
         {{end}}
     {{end}}
 
-    <!-- Next -->
     {{if lt .Page .TotalPages}}
     <button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50"
             hx-get="/api/search" 
             hx-target="#results-container"
             hx-vals='{"page": "{{add .Page 1}}"}'
-            hx-include="[name='q'],[name='size']"
+            hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']"
     >Next →</button>
     {{else}}
     <span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next →</span>
