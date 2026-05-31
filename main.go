@@ -114,37 +114,33 @@ func sortData(data []Asatidz, sortBy string) {
 	}
 }
 
-func generatePageRange(current, total, maxVisible int) []PageInfo {
-	if total <= maxVisible {
-		pages := make([]PageInfo, total)
-		for i := 0; i < total; i++ {
-			pages[i] = PageInfo{Number: i + 1}
-		}
-		return pages
-	}
+func generatePageRange(current, total int) []PageInfo {
+	// Google-style: always show 1, last, and current neighborhood
+	// Window = 1 before + current + 1 after = 3 visible numbers max
+	window := 1
+	start := current - window
+	end := current + window
 
-	// Google-style: show first, last, current neighborhood, with ellipsis
-	half := maxVisible / 2
-	start := current - half
-	end := current + half
-
-	// Adjust if near beginning
+	// Near beginning: show 1 2 3 4 5 ... last
 	if start <= 2 {
 		start = 1
-		end = maxVisible - 1
+		end = 4
 	}
-	// Adjust if near end
+	// Near end: show 1 ... (total-4) (total-3) (total-2) (total-1) total
 	if end >= total-1 {
 		end = total
-		start = total - maxVisible + 2
+		start = total - 3
+		if start < 1 {
+			start = 1
+		}
 	}
 
 	var pages []PageInfo
 
-	// Always show page 1
+	// Page 1
 	pages = append(pages, PageInfo{Number: 1})
 
-	// Ellipsis after 1 if needed
+	// Ellipsis after 1
 	if start > 2 {
 		pages = append(pages, PageInfo{IsEllipsis: true})
 	}
@@ -156,12 +152,12 @@ func generatePageRange(current, total, maxVisible int) []PageInfo {
 		}
 	}
 
-	// Ellipsis before last if needed
+	// Ellipsis before last
 	if end < total-1 {
 		pages = append(pages, PageInfo{IsEllipsis: true})
 	}
 
-	// Always show last page if > 1
+	// Last page (if > 1)
 	if total > 1 {
 		pages = append(pages, PageInfo{Number: total})
 	}
@@ -188,7 +184,7 @@ func paginate(list []Asatidz, page, pageSize int) PageData {
 		end = total
 	}
 
-	pages := generatePageRange(page, totalPages, 10)
+	pages := generatePageRange(page, totalPages)
 
 	listSlice := []Asatidz{}
 	if start < total {
@@ -277,7 +273,7 @@ func main() {
 
 		// Pagination
 		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 flex-wrap">`)
+			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
 			if pageData.Page > 1 {
 				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size']">← Prev</button>`, pageData.Page-1)
 			} else {
@@ -361,7 +357,7 @@ function clearFilters(){document.querySelector('select[name="sort"]').value='alp
 
 		// Pagination
 		if pageData.TotalPages > 1 {
-			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 flex-wrap">`)
+			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
 			if pageData.Page > 1 {
 				fmt.Fprintf(w, `<button class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50" hx-get="/api/search" hx-target="#results-container" hx-vals='{"page": "%d"}' hx-include="[name='q'],[name='size'],[name='sort'],[name='cat'],[name='min_count']">← Prev</button>`, pageData.Page-1)
 			} else {
