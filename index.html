@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direktori Asatidz Sunnah</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Direktori Asatidz Sunnah</h1>
+        <p class="text-gray-500 mb-6">Sumber: kajian.net</p>
+
+        <input 
+            class="w-full p-3 mb-6 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" 
+            type="text" 
+            name="q"
+            placeholder="Cari nama asatidz..." 
+            hx-get="/api/search" 
+            hx-trigger="keyup changed delay:300ms" 
+            hx-target="#results"
+            hx-indicator="#spinner"
+        >
+
+        <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
+
+        <div id="results" class="bg-white rounded-lg shadow overflow-hidden">
+            {{template "list" .}}
+        </div>
+
+        <footer class="mt-8 text-center text-gray-400 text-sm">
+            <p>Dibuat dengan Go + HTMX — Data dari kajian.net</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+{{define "list"}}
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+    <thead class="bg-gray-50 border-b-2 border-gray-200">
+        <tr>
+            <th class="px-4 py-3 font-semibold text-gray-600">Nama Asatidz</th>
+            <th class="px-4 py-3 font-semibold text-gray-600 text-center w-24">Kajian</th>
+            <th class="px-4 py-3 font-semibold text-gray-600 text-center w-32">Rujukan</th>
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+        {{range .}}
+        <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3 font-medium text-gray-800">{{.Name}}</td>
+            <td class="px-4 py-3 text-center">
+                {{if .Count}}
+                    <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">{{.Count}}</span>
+                {{else}}
+                    <span class="text-gray-300">-</span>
+                {{end}}
+            </td>
+            <td class="px-4 py-3 text-center">
+                <a href="{{.SourceURL}}" target="_blank" rel="noopener" 
+                   class="text-blue-600 hover:text-blue-800 hover:underline text-xs font-medium">
+                    ↗ kajian.net
+                </a>
+            </td>
+        </tr>
+        {{end}}
+    </tbody>
+</table>
+</div>
+{{end}}
