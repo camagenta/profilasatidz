@@ -243,9 +243,10 @@ func main() {
     <style>
         @keyframes pulse-ring { 0%% { transform: scale(0.8); opacity: 0.5; } 100%% { transform: scale(1.4); opacity: 0; } }
         .pulse-ring::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3b82f6; animation: pulse-ring 2s ease-out infinite; z-index: -1; }
-        #filter-panel { transition: opacity 0.2s, transform 0.2s; }
-        #filter-panel.hidden { opacity: 0; transform: translateY(8px) scale(0.95); pointer-events: none; }
-        #filter-panel:not(.hidden) { opacity: 1; transform: translateY(0) scale(1); }
+        #filter-panel-wrap { transition: opacity 0.2s, transform 0.2s; }
+        #filter-panel-wrap.hidden { opacity: 0; transform: translateY(8px) scale(0.95); pointer-events: none; }
+        #filter-panel-wrap:not(.hidden) { opacity: 1; transform: translateY(0) scale(1); }
+        #filter-toggle { position: fixed !important; bottom: 2.5rem !important; right: 1.5rem !important; z-index: 9999 !important; }
     </style>
 </head>
 <body class="bg-gray-100 min-h-screen pb-24">
@@ -303,7 +304,8 @@ func main() {
 <button id="filter-toggle" class="fixed bottom-6 right-6 z-50 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors pulse-ring relative" onclick="toggleFilterPanel()">
 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
 </button>
-<div id="filter-panel" class="fixed bottom-24 right-6 z-40 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 hidden overflow-hidden">
+<div id="filter-panel-wrap" class="hidden">
+<div id="filter-panel" class="w-80 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
 <div class="px-4 py-3 bg-gray-50 border-b flex items-center justify-between"><span class="font-semibold text-gray-700 text-sm">Filter</span><button onclick="clearFilters()" class="text-xs text-blue-600 hover:underline">Reset</button></div>
 <div class="p-4 space-y-4">
 <div><label class="block text-xs font-medium text-gray-500 mb-1">Urutkan</label><select name="sort" class="w-full p-2 border border-gray-300 rounded-lg text-sm" hx-get="/api/search" hx-trigger="change" hx-target="#results-container" hx-include="[name='q'],[name='size'],[name='cat'],[name='min_count']"><option value="alpha_asc">A → Z</option><option value="alpha_desc">Z → A</option><option value="count_desc">Kajian terbanyak</option><option value="count_asc">Kajian sedikit</option></select></div>
@@ -313,9 +315,10 @@ func main() {
 </div>
 <div class="px-4 py-3 bg-gray-50 border-t"><button class="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700" onclick="toggleFilterPanel()">Terapkan</button></div>
 </div>
+</div><!-- /filter-panel-wrap -->
 <div id="filter-backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleFilterPanel()"></div>
 <script>
-function toggleFilterPanel(){document.getElementById('filter-panel').classList.toggle('hidden');document.getElementById('filter-backdrop').classList.toggle('hidden');}
+function toggleFilterPanel(){document.getElementById('filter-panel-wrap').classList.toggle('hidden');document.getElementById('filter-backdrop').classList.toggle('hidden');}
 function clearFilters(){document.querySelector('select[name="sort"]').value='alpha_asc';document.querySelector('select[name="cat"]').value='';document.querySelector('input[name="min_count"]').value='';document.querySelector('select[name="size"]').value='15';htmx.trigger('select[name="sort"]','change');}
 </script>
 </body></html>`)
