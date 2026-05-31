@@ -64,14 +64,18 @@ func paginate(list []Asatidz, page, pageSize int) PageData {
 		end = total
 	}
 
-	// Generate page numbers
 	pages := make([]int, totalPages)
 	for i := 0; i < totalPages; i++ {
 		pages[i] = i + 1
 	}
 
+	listSlice := []Asatidz{}
+	if start < total {
+		listSlice = list[start:end]
+	}
+
 	return PageData{
-		Asatidz:    list[start:end],
+		Asatidz:    listSlice,
 		Total:      total,
 		Page:       page,
 		PageSize:   pageSize,
@@ -84,11 +88,11 @@ func paginate(list []Asatidz, page, pageSize int) PageData {
 func main() {
 	loadData()
 
-	// Register template funcs
 	funcMap := template.FuncMap{
 		"add": func(a, b int) int { return a + b },
 		"sub": func(a, b int) int { return a - b },
 	}
+
 	tmpl = template.Must(template.New("").Funcs(funcMap).ParseFiles("index.html"))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -102,19 +106,16 @@ func main() {
 	http.HandleFunc("/api/search", func(w http.ResponseWriter, r *http.Request) {
 		query := strings.ToLower(r.URL.Query().Get("value"))
 
-		// Parse page
 		page, _ := strconv.Atoi(r.URL.Query().Get("page"))
 		if page < 1 {
 			page = 1
 		}
 
-		// Parse page size
 		pageSize, _ := strconv.Atoi(r.URL.Query().Get("size"))
 		if pageSize < 1 {
 			pageSize = 15
 		}
 
-		// Filter
 		var filtered []Asatidz
 		dataMutex.RLock()
 		for _, a := range asatidzData {
@@ -124,7 +125,6 @@ func main() {
 		}
 		dataMutex.RUnlock()
 
-		// Paginate
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		pageData := paginate(filtered, page, pageSize)
 		pageData.Query = query
