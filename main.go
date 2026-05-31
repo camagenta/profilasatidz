@@ -303,7 +303,7 @@ func main() {
     <style>
         @keyframes pulse-ring { 0%% { transform: scale(0.8); opacity: 0.5; } 100%% { transform: scale(1.4); opacity: 0; } }
         .pulse-ring::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3b82f6; animation: pulse-ring 2s ease-out infinite; z-index: -1; }
-        #filter-panel-wrap { transition: opacity 0.2s, transform 0.2s; }
+        #filter-panel-wrap { position: fixed; bottom: 6.5rem; right: 1.5rem; z-index: 9998; transition: opacity 0.2s, transform 0.2s; }
         #filter-panel-wrap.hidden { opacity: 0; transform: translateY(8px) scale(0.95); pointer-events: none; }
         #filter-panel-wrap:not(.hidden) { opacity: 1; transform: translateY(0) scale(1); }
         #filter-toggle { position: fixed !important; bottom: 2.5rem !important; right: 1.5rem !important; z-index: 9999 !important; }
