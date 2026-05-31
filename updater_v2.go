@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"net/http"
 	"net/url"
 	"os"
@@ -20,7 +21,7 @@ type Asatidz struct {
 }
 
 func fetchHTML(rawURL string) string {
-	client := &http.Client{Timeout: 15 * time.Second}
+	client := &http.Client{Timeout: 10 * time.Second}
 	resp, err := client.Get(rawURL)
 	if err != nil {
 		return ""
@@ -31,22 +32,6 @@ func fetchHTML(rawURL string) string {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run updater_sync.go <batch_file>")
-		fmt.Println("Batch file: one asatidz name per line")
-		os.Exit(1)
-	}
-
-	batchFile := os.Args[1]
-
-	// Read batch names
-	batchBytes, err := os.ReadFile(batchFile)
-	if err != nil {
-		log.Fatal(err)
-	}
-	names := strings.Split(string(batchBytes), "\n")
-	
-	// Read existing data
 	data, err := os.ReadFile("asatidz.json")
 	if err != nil {
 		log.Fatal(err)
@@ -54,80 +39,90 @@ func main() {
 	var list []Asatidz
 	json.Unmarshal(data, &list)
 
+	// Don't reset — only update those with wrong counts
+	// Reset all to 0
+	for i := range list {
+		list[i].Count = 0
+	}
+
 	albumPattern := regexp.MustCompile(`/kajian-audio/Ceramah/([^/]+)/([^"]+)`)
 
+	fmt.Println("Re-counting all asatiedz...")
 	processed := 0
-	for _, name := range names {
-		name = strings.TrimSpace(name)
-		if name == "" {
+
+	for i := range list {
+		if list[i].SourceURL == "" {
 			continue
 		}
 
-		// Find asatidz index
-		idx := -1
-		for i, a := range list {
-			if strings.EqualFold(a.Name, name) {
-				idx = i
-				break
-			}
-		}
-		if idx == -1 {
-			log.Printf("  [WARN] Not found: %s", name)
-			continue
-		}
-
-		html := fetchHTML(list[idx].SourceURL)
+		html := fetchHTML(list[i].SourceURL)
 		if html == "" {
-			log.Printf("  [ERROR] Failed: %s", name)
+			log.Printf("  [SKIP] %s", list[i].Name)
 			continue
 		}
 
-		// Count album links
 		seen := map[string]bool{}
 		matches := albumPattern.FindAllStringSubmatch(html, -1)
 		for _, m := range matches {
+			matchAsatidz, _ := url.QueryUnescape(m[1])
 			albumName, _ := url.QueryUnescape(m[2])
-			// Strip query parameters (?l=8&m=0 etc)
+			// Strip query parameters
 			if qIdx := strings.Index(albumName, "?"); qIdx >= 0 {
 				albumName = albumName[:qIdx]
 			}
-			// Strip trailing junk
 			albumName = strings.TrimRight(albumName, "')]")
 			albumName = strings.TrimSpace(albumName)
-			if strings.EqualFold(albumName, list[idx].Name) || albumName == "" {
+			// Skip if album name matches asatidz name, or album is empty
+			if strings.EqualFold(albumName, list[i].Name) || albumName == "" {
+				continue
+			}
+			// Skip HTML fragments (from malformed regex matches)
+			if strings.ContainsAny(albumName, "<>{}") {
+				continue
+			}
+			// CRITICAL: Only count if this album actually belongs to THIS asatidz
+			// (regex matches other asatidz' albums from sidebar widgets)
+			if !strings.EqualFold(matchAsatidz, list[i].Name) {
 				continue
 			}
 			if !seen[albumName] {
 				seen[albumName] = true
-				list[idx].Count++
+				list[i].Count++
 			}
 		}
 
-		// If no album links, count direct MP3
 		if len(seen) == 0 {
 			mp3Pattern := regexp.MustCompile(`\.mp3`)
 			mp3Count := len(mp3Pattern.FindAllString(html, -1))
 			if mp3Count > 0 {
-				list[idx].Count = mp3Count / 2 // each file appears ~2 times
+				list[i].Count = mp3Count / 2
 			}
 		}
 
 		processed++
-		fmt.Printf("  [%d] %s: %d\n", processed, name, list[idx].Count)
-		time.Sleep(300 * time.Millisecond)
+
+		// Save checkpoint every 50
+		if processed%50 == 0 {
+			file, _ := json.MarshalIndent(list, "", "  ")
+			_ = os.WriteFile("asatidz.json", file, 0644)
+			fmt.Printf("  [CHECKPOINT] %d processed. Saved.\n", processed)
+		}
+
+		// Random delay 100-300ms
+		delay := time.Duration(100+rand.Intn(200)) * time.Millisecond
+		time.Sleep(delay)
 	}
 
-	// Save
+	// Final save
 	file, _ := json.MarshalIndent(list, "", "  ")
 	_ = os.WriteFile("asatidz.json", file, 0644)
-	fmt.Printf("\nDone. Processed %d asatidz. Saved to asatidz.json\n", processed)
+	fmt.Printf("Done. Processed %d/%d\n", processed, len(list))
 
-	// Stats
-	withCount := 0
+	zero := 0
 	for _, a := range list {
-		if a.Count > 0 {
-			withCount++
+		if a.Count == 0 {
+			zero++
 		}
 	}
-	fmt.Printf("Stats: %d with count, %d zero\n", withCount, len(list)-withCount)
+	fmt.Printf("Zero: %d\n", zero)
 }
