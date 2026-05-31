@@ -121,15 +121,15 @@ func generatePageRange(current, total int) []PageInfo {
 	start := current - window
 	end := current + window
 
-	// Near beginning: show 1 2 3 4 5 ... last
+	// Near beginning: show 1 2 3 ... last
 	if start <= 2 {
 		start = 1
-		end = 4
+		end = 3
 	}
-	// Near end: show 1 ... (total-4) (total-3) (total-2) (total-1) total
+	// Near end: show 1 ... (total-2) (total-1) total
 	if end >= total-1 {
 		end = total
-		start = total - 3
+		start = total - 2
 		if start < 1 {
 			start = 1
 		}
