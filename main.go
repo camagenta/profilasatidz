@@ -582,8 +582,10 @@ func main() {
 function toggleFilterPanel(){document.getElementById('filter-panel-wrap').classList.toggle('hidden');document.getElementById('filter-backdrop').classList.toggle('hidden');}
 function clearFilters(){document.querySelector('select[name="sort"]').value='alpha_asc';document.querySelector('select[name="cat"]').value='';document.querySelector('input[name="min_count"]').value='';document.querySelector('select[name="size"]').value='15';htmx.trigger('select[name="sort"]','change');}
 
-function showDetail(name){fetch('/api/detail?name='+encodeURIComponent(name)).then(r=>r.text()).then(h=>{let p=document.getElementById('detail-panel');if(!p){p=document.createElement('div');p.id='detail-panel';p.className='fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50';p.innerHTML='<div class="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white rounded-xl shadow-2xl" id="detail-content"></div>';p.onclick=function(e){if(e.target===p)closeDetailPanel()};document.body.appendChild(p)}document.getElementById('detail-content').innerHTML=h})}
-function closeDetailPanel(){let p=document.getElementById('detail-panel');if(p)p.remove()}
+function showDetail(name){fetch('/api/detail?name='+encodeURIComponent(name)).then(r=>r.text()).then(h=>{let p=document.getElementById('detail-panel');if(!p){p=document.createElement('div');p.id='detail-panel';p.className='fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50';p.innerHTML='<div class="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white rounded-xl shadow-2xl" id="detail-content"></div>';p.onclick=function(e){if(e.target===p)closeDetailPanel()};document.body.appendChild(p)}document.getElementById('detail-content').innerHTML=h;history.pushState({detail:true},'')})}
+function closeDetailPanel(){let p=document.getElementById('detail-panel');if(p)p.remove();if(history.state&&history.state.detail)history.back()}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetailPanel()});
+window.addEventListener('popstate',function(e){closeDetailPanel()});
 
 </script>
 </body></html>`)
