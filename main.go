@@ -368,30 +368,28 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	}
 	bioFN := ""
 	if a.Bio != "" && len(a.Sources) > 0 {
-		id := findSrcID(a.BioSource)
-		if id == "" {
-			id = a.Sources[0].ID
+		srcIdx := 0
+		for i, s := range a.Sources {
+			if s.URL == a.BioSource {
+				srcIdx = i
+				break
+			}
 		}
-		bioFN = fn(id)
+		bioFN = fn(a.Sources[srcIdx].ID)
 	}
 	bioSection := fmt.Sprintf(`<div><h3 class="text-sm font-semibold text-gray-600 mb-2">Biografi%s</h3>%s</div>`, bioFN, bioContent)
 
 	// Education section — footnote in header only
 	eduSection := ""
 	if len(a.Education) > 0 {
-		id := findSrcID(a.EducationSource)
-		if id == "" {
-			// fallback: use 2nd source if available, else 1st
-			if len(a.Sources) > 1 {
-				id = a.Sources[1].ID
-			} else if len(a.Sources) > 0 {
-				id = a.Sources[0].ID
+		srcIdx := 1 % len(a.Sources) // default: 2nd source (or 1st if only 1)
+		for i, s := range a.Sources {
+			if s.URL == a.EducationSource {
+				srcIdx = i
+				break
 			}
 		}
-		eduFN := ""
-		if id != "" {
-			eduFN = fn(id)
-		}
+		eduFN := fn(a.Sources[srcIdx].ID)
 		eduSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Pendidikan%s</h3><ul class="list-disc list-inside text-sm text-gray-700 space-y-1">`, eduFN)
 		for _, e := range a.Education {
 			eduSection += fmt.Sprintf(`<li>%s</li>`, e)
@@ -402,21 +400,14 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	// Expertise section — footnote in header only
 	expSection := ""
 	if len(a.Expertise) > 0 {
-		id := findSrcID(a.ExpertiseSource)
-		if id == "" {
-			// fallback: use 3rd source if available, else last, else 1st
-			if len(a.Sources) > 2 {
-				id = a.Sources[2].ID
-			} else if len(a.Sources) > 1 {
-				id = a.Sources[len(a.Sources)-1].ID
-			} else if len(a.Sources) > 0 {
-				id = a.Sources[0].ID
+		srcIdx := 2 % len(a.Sources) // default: 3rd source (wraps around)
+		for i, s := range a.Sources {
+			if s.URL == a.ExpertiseSource {
+				srcIdx = i
+				break
 			}
 		}
-		expFN := ""
-		if id != "" {
-			expFN = fn(id)
-		}
+		expFN := fn(a.Sources[srcIdx].ID)
 		expSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Topik Keahlian%s</h3><div class="flex flex-wrap gap-2">`, expFN)
 		for _, ex := range a.Expertise {
 			expSection += fmt.Sprintf(`<span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full border border-blue-200">%s</span>`, ex)
