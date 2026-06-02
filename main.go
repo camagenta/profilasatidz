@@ -473,7 +473,7 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 			if accessed == "" {
 				accessed = "2026-06-03"
 			}
-			refSection += fmt.Sprintf(`<li id="ref-%s" class="break-all"><span class="text-gray-400">[%s]</span> <a href="%s" target="_blank" rel="noopener" class="text-blue-500 hover:underline">"%s"</a> — %s (diakses %s).</li>`, s.ID, s.ID, s.URL, title, s.URL, accessed)
+			refSection += fmt.Sprintf(`<li id="ref-%s" class="break-words"><span class="text-gray-400">[%s]</span> <a href="%s" target="_blank" rel="noopener" class="text-blue-500 hover:underline">"%s"</a><br><span class="text-gray-400 ml-4">%s</span> <span class="text-gray-400">(diakses %s)</span>.</li>`, s.ID, s.ID, s.URL, title, s.URL, accessed)
 		}
 		refSection += `</ol></div>`
 	}
