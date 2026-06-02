@@ -367,14 +367,12 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 		bioContent = fmt.Sprintf(`<p class="text-sm text-gray-700 leading-relaxed">%s</p>`, a.Bio)
 	}
 	bioFN := ""
-	if a.Bio != "" {
+	if a.Bio != "" && len(a.Sources) > 0 {
 		id := findSrcID(a.BioSource)
-		if id == "" && len(a.Sources) > 0 {
+		if id == "" {
 			id = a.Sources[0].ID
 		}
-		if id != "" {
-			bioFN = fn(id)
-		}
+		bioFN = fn(id)
 	}
 	bioSection := fmt.Sprintf(`<div><h3 class="text-sm font-semibold text-gray-600 mb-2">Biografi%s</h3>%s</div>`, bioFN, bioContent)
 
@@ -382,8 +380,13 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	eduSection := ""
 	if len(a.Education) > 0 {
 		id := findSrcID(a.EducationSource)
-		if id == "" && len(a.Sources) > 0 {
-			id = a.Sources[0].ID
+		if id == "" {
+			// fallback: use 2nd source if available, else 1st
+			if len(a.Sources) > 1 {
+				id = a.Sources[1].ID
+			} else if len(a.Sources) > 0 {
+				id = a.Sources[0].ID
+			}
 		}
 		eduFN := ""
 		if id != "" {
@@ -400,8 +403,15 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	expSection := ""
 	if len(a.Expertise) > 0 {
 		id := findSrcID(a.ExpertiseSource)
-		if id == "" && len(a.Sources) > 0 {
-			id = a.Sources[0].ID
+		if id == "" {
+			// fallback: use 3rd source if available, else last, else 1st
+			if len(a.Sources) > 2 {
+				id = a.Sources[2].ID
+			} else if len(a.Sources) > 1 {
+				id = a.Sources[len(a.Sources)-1].ID
+			} else if len(a.Sources) > 0 {
+				id = a.Sources[0].ID
+			}
 		}
 		expFN := ""
 		if id != "" {
@@ -459,15 +469,11 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	}
 
 	// References section — Wikipedia-style "Daftar Pustaka"
-	// Format: [1] sitename. "title" (diakses YYYY-MM-DD). URL
+	// Format: [1] "judul artikel" — URL (diakses YYYY-MM-DD).
 	refSection := ""
 	if len(a.Sources) > 0 {
 		refSection = `<div class="mt-6 pt-4 border-t border-gray-200"><h3 class="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">Referensi</h3><ol class="list-decimal list-inside text-xs text-gray-500 space-y-1.5">`
 		for _, s := range a.Sources {
-			sitename := s.Sitename
-			if sitename == "" {
-				sitename = s.Title
-			}
 			title := s.Title
 			if title == "" {
 				title = s.URL
@@ -476,7 +482,7 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 			if accessed == "" {
 				accessed = "2026-06-03"
 			}
-			refSection += fmt.Sprintf(`<li id="ref-%s" class="break-all"><span class="text-gray-400">[%s]</span> %s. <a href="%s" target="_blank" rel="noopener" class="text-blue-500 hover:underline">"%s"</a> (diakses %s).</li>`, s.ID, s.ID, sitename, s.URL, title, accessed)
+			refSection += fmt.Sprintf(`<li id="ref-%s" class="break-all"><span class="text-gray-400">[%s]</span> <a href="%s" target="_blank" rel="noopener" class="text-blue-500 hover:underline">"%s"</a> — %s (diakses %s).</li>`, s.ID, s.ID, s.URL, title, s.URL, accessed)
 		}
 		refSection += `</ol></div>`
 	}
