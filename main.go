@@ -193,13 +193,18 @@ func loadDetail(id string) (Asatidz, error) {
 	}
 	dataMutex.RUnlock()
 
-	// Load from file: try id-based path first, then fallback to slug-based
+	// Load from file: try id-based path first, then fallbacks
 	path := detailDir + "/" + id + ".json"
 	data, err := os.ReadFile(path)
 	if err != nil {
-		// Fallback: try without kajian- prefix for backward compat
+		// Fallback 1: try without kajian- prefix for backward compat
 		if strings.HasPrefix(id, "kajian-") {
 			fallbackPath := detailDir + "/" + strings.TrimPrefix(id, "kajian-") + ".json"
+			data, err = os.ReadFile(fallbackPath)
+		}
+		// Fallback 2: try WITH kajian- prefix (slug from name doesn't have it)
+		if err != nil && !strings.HasPrefix(id, "kajian-") {
+			fallbackPath := detailDir + "/kajian-" + id + ".json"
 			data, err = os.ReadFile(fallbackPath)
 		}
 		if err != nil {
@@ -443,7 +448,12 @@ func renderResults(w http.ResponseWriter, pageData PageData) {
 			btnTitle = "Profil tersedia"
 			btnText = "profil"
 		}
-		fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 text-center"><button class="%s" onclick="showDetail('%s')" title="%s">%s</button></td><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, btnClass, a.Name, btnTitle, btnText, a.Name)
+		// Use Id for detail lookup (matches detail/*.json filenames); fall back to Name
+		detailKey := a.Id
+		if detailKey == "" {
+			detailKey = a.Name
+		}
+		fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 text-center"><button class="%s" onclick="showDetail('%s')" title="%s">%s</button></td><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, btnClass, detailKey, btnTitle, btnText, a.Name)
 		if a.Count > 0 {
 			fmt.Fprintf(w, `<span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">%d</span>`, a.Count)
 		} else {
@@ -750,7 +760,7 @@ func main() {
 function toggleFilterPanel(){document.getElementById('filter-panel-wrap').classList.toggle('hidden');document.getElementById('filter-backdrop').classList.toggle('hidden');}
 function clearFilters(){document.querySelector('select[name="sort"]').value='alpha_asc';document.querySelector('select[name="cat"]').value='';document.querySelector('input[name="min_count"]').value='';document.querySelector('select[name="size"]').value='15';htmx.trigger('select[name="sort"]','change');}
 
-function showDetail(name){fetch('/api/detail?name='+encodeURIComponent(name)).then(r=>r.text()).then(h=>{let p=document.getElementById('detail-panel');if(!p){p=document.createElement('div');p.id='detail-panel';p.className='fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50';p.innerHTML='<div class="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white rounded-xl shadow-2xl" id="detail-content"></div>';p.onclick=function(e){if(e.target===p)closeDetailPanel()};document.body.appendChild(p)}document.getElementById('detail-content').innerHTML=h;history.pushState({detail:true},'')})}
+function showDetail(idOrName){fetch('/api/detail?id='+encodeURIComponent(idOrName)).then(r=>r.text()).then(h=>{let p=document.getElementById('detail-panel');if(!p){p=document.createElement('div');p.id='detail-panel';p.className='fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50';p.innerHTML='<div class="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white rounded-xl shadow-2xl" id="detail-content"></div>';p.onclick=function(e){if(e.target===p)closeDetailPanel()};document.body.appendChild(p)}document.getElementById('detail-content').innerHTML=h;history.pushState({detail:true},'')})}
 function closeDetailPanel(){let p=document.getElementById('detail-panel');if(p)p.remove();if(history.state&&history.state.detail)history.back()}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetailPanel()});
 window.addEventListener('popstate',function(e){closeDetailPanel()});
@@ -789,28 +799,40 @@ window.addEventListener('popstate',function(e){closeDetailPanel()});
 				renderDetailProfile(w, detail)
 				return
 			}
+			// Fallback: search asatidzData by Id, then load detail using that entry's Id
+			dataMutex.RLock()
+			for i := range asatidzData {
+				if asatidzData[i].Id == profileId || asatidzData[i].Name == profileId {
+					dataMutex.RUnlock()
+					renderDetailProfile(w, asatidzData[i])
+					return
+				}
+			}
+			dataMutex.RUnlock()
 		}
 		
-		if name == "" {
+		if name == "" && profileId == "" {
 			http.Error(w, "Name or id required", 400)
 			return
 		}
 		
-		// Try loading from detail file by name (backward compat)
-		slug := slugify(name)
-		detail, err := loadDetail(slug)
-		if err == nil {
-			renderDetailProfile(w, detail)
-			return
-		}
-		
-		// Fallback: search in asatidzData
-		dataMutex.RLock()
-		defer dataMutex.RUnlock()
-		for i := range asatidzData {
-			if asatidzData[i].Name == name {
-				renderDetailProfile(w, asatidzData[i])
+		if name != "" {
+			// Try loading from detail file by name (backward compat)
+			slug := slugify(name)
+			detail, err := loadDetail(slug)
+			if err == nil {
+				renderDetailProfile(w, detail)
 				return
+			}
+			
+			// Fallback: search in asatidzData by name
+			dataMutex.RLock()
+			defer dataMutex.RUnlock()
+			for i := range asatidzData {
+				if asatidzData[i].Name == name {
+					renderDetailProfile(w, asatidzData[i])
+					return
+				}
 			}
 		}
 		http.Error(w, "Not found", 404)
