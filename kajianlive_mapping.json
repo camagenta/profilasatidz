@@ -1,0 +1,3076 @@
+{
+  "stats": {
+    "total_kajian_net": 283,
+    "total_kajianlive": 1676,
+    "mapped": 195,
+    "unmapped": 88,
+    "match_rate": "68.9%"
+  },
+  "mapping": [
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-abduh-tuasikal",
+        "name": "Muhammad Abduh Tuasikal",
+        "count": 165
+      },
+      "kajianlive": {
+        "id": 92,
+        "name": "Ustadz KH. Dr. Muhammad Abduh Tuasikal, M.Sc.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=92"
+      },
+      "match_score": 1.139
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdullah-zaen",
+        "name": "Abdullah Zaen",
+        "count": 285
+      },
+      "kajianlive": {
+        "id": 4,
+        "name": "Ustadz Abdullah Zaen, Lc., M.A",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=4"
+      },
+      "match_score": 1.129
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mujahid-aslam",
+        "name": "Mujahid Aslam",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 890,
+        "name": "Ustadz Mujahid Aslam, S.Pd.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=890"
+      },
+      "match_score": 1.129
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdullah-roy",
+        "name": "Abdullah Roy",
+        "count": 12
+      },
+      "kajianlive": {
+        "id": 16,
+        "name": "Ustadz Dr. Abdullah Roy, Lc. M.A",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=16"
+      },
+      "match_score": 1.123
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-agus-hasan-bashori",
+        "name": "Agus Hasan Bashori",
+        "count": 17
+      },
+      "kajianlive": {
+        "id": 236,
+        "name": "Ustadz Dr.KH. Agus Hasan Bashori, Lc, M.Ag",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=236"
+      },
+      "match_score": 1.123
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-syakir",
+        "name": "Ahmad Syakir",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 1145,
+        "name": "Ustadz Ahmad Syakir, Lc., M.A",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1145"
+      },
+      "match_score": 1.123
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-nizar-hidayatur-rahman",
+        "name": "Nizar Hidayatur Rahman",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 317,
+        "name": "Bang Nizar Hidayatur Rahman, S.S",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=317"
+      },
+      "match_score": 1.117
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salman-musthofa-al-buthoni",
+        "name": "Abu Salman Musthofa Al-Buthoni",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 1107,
+        "name": "Ustadz Musthofa Al Buthoni",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1107"
+      },
+      "match_score": 1.044
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-yazid-jawas",
+        "name": "Yazid Jawas",
+        "count": 120
+      },
+      "kajianlive": {
+        "id": 1247,
+        "name": "Ustadz Yazid Abu Ja",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1247"
+      },
+      "match_score": 1.042
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-aspri-rahmat",
+        "name": "Aspri Rahmat",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 78,
+        "name": "Ustadz Dr. Aspri Rahmat Azai, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=78"
+      },
+      "match_score": 1.028
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-aris-munandar",
+        "name": "Aris Munandar",
+        "count": 72
+      },
+      "kajianlive": {
+        "id": 105,
+        "name": "Ustadz Dr. Aris Munandar, S.S., M.P.I.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=105"
+      },
+      "match_score": 1.012
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdullah-amin",
+        "name": "Abdullah Amin",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 678,
+        "name": "Ustadz Abdullah Amin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=678"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdullah-taslim",
+        "name": "Abdullah Taslim",
+        "count": 223
+      },
+      "kajianlive": {
+        "id": 114,
+        "name": "Ustadz Abdullah Taslim, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=114"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdussalam",
+        "name": "Abdussalam",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 1163,
+        "name": "Ustadz Abdussalam, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1163"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdussalam-busyro",
+        "name": "Abdussalam Busyro",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 736,
+        "name": "Ustadz Abdussalam Busyro, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=736"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-haidar",
+        "name": "Abu Haidar",
+        "count": 95
+      },
+      "kajianlive": {
+        "id": 1017,
+        "name": "Ustadz Haidar, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1017"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-hammam",
+        "name": "Abu Hammam",
+        "count": 14
+      },
+      "kajianlive": {
+        "id": 690,
+        "name": "Ustadz Abu Hammam",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=690"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-ihsan-al-atsary",
+        "name": "Abu Ihsan Al-Atsary",
+        "count": 138
+      },
+      "kajianlive": {
+        "id": 138,
+        "name": "Ustadz Abu Ihsan Al Atsary, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=138"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salma-muhammad",
+        "name": "Abu Salma Muhammad",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 77,
+        "name": "Ustadz Abu Salma Muhammad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=77"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salma-muhammad-2",
+        "name": "Abu Salma muhammad",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 77,
+        "name": "Ustadz Abu Salma Muhammad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=77"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-umair",
+        "name": "Abu Umair",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 428,
+        "name": "Ustadz Abu Umair, BA, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=428"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-afifi-abdul-wadud",
+        "name": "Afifi Abdul Wadud",
+        "count": 28
+      },
+      "kajianlive": {
+        "id": 34,
+        "name": "Ustadz Afifi Abdul Wadud, BA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=34"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-firdaus",
+        "name": "Ahmad Firdaus",
+        "count": 21
+      },
+      "kajianlive": {
+        "id": 1213,
+        "name": "Ustadz Ahmad Firdaus, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1213"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-sabiq",
+        "name": "Ahmad Sabiq",
+        "count": 14
+      },
+      "kajianlive": {
+        "id": 350,
+        "name": "Ustadz Ahmad Sabiq, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=350"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmas-faiz-asifuddin",
+        "name": "Ahmas Faiz Asifuddin",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 598,
+        "name": "Ustadz Ahmas Faiz Asifuddin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=598"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-ahmad",
+        "name": "Ali Ahmad",
+        "count": 13
+      },
+      "kajianlive": {
+        "id": 559,
+        "name": "Ustadz Ali Ahmad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=559"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ammi-nur-baits",
+        "name": "Ammi Nur Baits",
+        "count": 73
+      },
+      "kajianlive": {
+        "id": 3,
+        "name": "Ustadz Ammi Nur Baits, ST., BA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=3"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-amrullah-akadhinta",
+        "name": "Amrullah Akadhinta",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 133,
+        "name": "Ustadz Amrullah Akadhinta",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=133"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-anas-burhanuddin",
+        "name": "Anas Burhanuddin",
+        "count": 11
+      },
+      "kajianlive": {
+        "id": 262,
+        "name": "Ustadz Dr. Anas Burhanuddin, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=262"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-andy-octavian-latief",
+        "name": "Andy Octavian Latief",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 56,
+        "name": "Ustadz Dr. Andy Octavian Latief, M.Sc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=56"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arief-budiman",
+        "name": "Arief Budiman",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 574,
+        "name": "Ustadz Arief Budiman, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=574"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arifin-ridin",
+        "name": "Arifin Ridin",
+        "count": 10
+      },
+      "kajianlive": {
+        "id": 568,
+        "name": "Ustadz Arifin Ridin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=568"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arif-syarifuddin",
+        "name": "Arif Syarifuddin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 397,
+        "name": "Ustadz Arif Syarifuddin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=397"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-aris-sugiyantoro",
+        "name": "Aris Sugiyantoro",
+        "count": 11
+      },
+      "kajianlive": {
+        "id": 657,
+        "name": "Ustadz Aris Sugiyantoro",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=657"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-askar-wardhana",
+        "name": "Askar Wardhana",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 541,
+        "name": "Ustadz Askar Wardhana, Lc, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=541"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-aslam-muhsin",
+        "name": "Aslam Muhsin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1047,
+        "name": "Ustadz Aslam Muhsin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1047"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ayub-abu-ayub",
+        "name": "Ayub Abu Ayub",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 725,
+        "name": "Ustadz Ayub Abu Ayub",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=725"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-beni-sarbeni",
+        "name": "Beni Sarbeni",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 406,
+        "name": "Ustadz Beni Sarbeni, Lc, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=406"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-erwandi-tarmizi",
+        "name": "Erwandi Tarmizi",
+        "count": 32
+      },
+      "kajianlive": {
+        "id": 131,
+        "name": "Ustadz Dr. Erwandi Tarmizi, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=131"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fachry-permana",
+        "name": "Fachry Permana",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 269,
+        "name": "Ustadz Fachry Permana",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=269"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fadlan-fahamsyah",
+        "name": "Fadlan Fahamsyah",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 55,
+        "name": "Ustadz Dr. Fadlan Fahamsyah, Lc, M.H.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=55"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fariq-gasim-anuz",
+        "name": "Fariq Gasim Anuz",
+        "count": 15
+      },
+      "kajianlive": {
+        "id": 332,
+        "name": "Ustadz Fariq Gasim Anuz",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=332"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hadid-saiful-islam",
+        "name": "Hadid Saiful Islam",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 704,
+        "name": "Ustadz Hadid Saiful Islam",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=704"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-heri-purnama",
+        "name": "Heri Purnama",
+        "count": 18
+      },
+      "kajianlive": {
+        "id": 181,
+        "name": "Ustadz Heri Purnama, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=181"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-iqbal-gunawan",
+        "name": "Iqbal Gunawan",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 162,
+        "name": "Ustadz Dr. Iqbal Gunawan, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=162"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-iskandar-dinata",
+        "name": "Iskandar Dinata",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 356,
+        "name": "Ustadz Iskandar Dinata, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=356"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-jauhari",
+        "name": "Jauhari",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 871,
+        "name": "Ustadz Jauhari, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=871"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-johan-saputra-halim",
+        "name": "Johan Saputra Halim",
+        "count": 19
+      },
+      "kajianlive": {
+        "id": 453,
+        "name": "Ustadz Johan Saputra Halim, M.H.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=453"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-khalid-basalamah",
+        "name": "Khalid Basalamah",
+        "count": 20
+      },
+      "kajianlive": {
+        "id": 1,
+        "name": "Ustadz DR. Khalid Basalamah MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-kholid-syamhudi",
+        "name": "Kholid Syamhudi",
+        "count": 41
+      },
+      "kajianlive": {
+        "id": 442,
+        "name": "Ustadz Kholid Syamhudi, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=442"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-lalu-ahmad-yani",
+        "name": "Lalu Ahmad Yani",
+        "count": 50
+      },
+      "kajianlive": {
+        "id": 1253,
+        "name": "Ustadz Lalu Ahmad Yani, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1253"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mahfudz-umri",
+        "name": "Mahfudz Umri",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 84,
+        "name": "Ustadz Mahfudz Umri, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=84"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mahful-safaruddin",
+        "name": "Mahful Safaruddin",
+        "count": 21
+      },
+      "kajianlive": {
+        "id": 1389,
+        "name": "Ustadz Mahful Safaruddin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1389"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-maududi-abdullah",
+        "name": "Maududi Abdullah",
+        "count": 139
+      },
+      "kajianlive": {
+        "id": 28,
+        "name": "Ustadz Maududi Abdullah, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=28"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mubarak-bamualim",
+        "name": "Mubarak Bamualim",
+        "count": 72
+      },
+      "kajianlive": {
+        "id": 239,
+        "name": "Ustadz Mubarak Bamualim, Lc, M.H.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=239"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mudrika-ilyas",
+        "name": "Mudrika Ilyas",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 666,
+        "name": "Ustadz Syaikh Mudrika Ilyas, Lc, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=666"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muflih-safitra",
+        "name": "Muflih Safitra",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 26,
+        "name": "Ustadz Muflih Safitra, M.Sc.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=26"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mufy-hanif-thalib",
+        "name": "Mufy Hanif Thalib",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 244,
+        "name": "Ustadz Mufy Hanif Thalib, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=244"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-elvi-syam",
+        "name": "Muhammad Elvi Syam",
+        "count": 12
+      },
+      "kajianlive": {
+        "id": 326,
+        "name": "Ustadz Muhammad Elvi Syam, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=326"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-iqbal",
+        "name": "Muhammad Iqbal",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 385,
+        "name": "Ustadz Muhammad Iqbal",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=385"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-nur-ihsan",
+        "name": "Muhammad Nur Ihsan",
+        "count": 57
+      },
+      "kajianlive": {
+        "id": 261,
+        "name": "Ustadz Dr. Muhammad Nur Ihsan, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=261"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-nuzul",
+        "name": "Muhammad Nuzul",
+        "count": 170
+      },
+      "kajianlive": {
+        "id": 32,
+        "name": "Ustadz Muhammad Nuzul Dzikri",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=32"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-qosim-muhajir",
+        "name": "Muhammad Qosim Muhajir",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 516,
+        "name": "Ustadz Muhammad Qosim Muhajir, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=516"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-romelan",
+        "name": "Muhammad Romelan",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 81,
+        "name": "Ustadz Muhammad Romelan, Lc, M.Ag.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=81"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-wasitho",
+        "name": "Muhammad Wasitho",
+        "count": 7
+      },
+      "kajianlive": {
+        "id": 300,
+        "name": "Ustadz Muhammad Wasitho, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=300"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-wujud",
+        "name": "Muhammad Wujud",
+        "count": 10
+      },
+      "kajianlive": {
+        "id": 70,
+        "name": "Ustadz Muhammad Wujud",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=70"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-yahya",
+        "name": "Muhammad Yahya",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 74,
+        "name": "Ustadz Muhammad Yahya, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=74"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-yassir",
+        "name": "Muhammad Yassir",
+        "count": 8
+      },
+      "kajianlive": {
+        "id": 1220,
+        "name": "Ustadz Muhammad Yassir, Lc, M.H.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1220"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muharrar-bin-mikail",
+        "name": "Muharrar bin Mikail",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 1196,
+        "name": "Ustadz Muharrar bin Mikail, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1196"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mumuh-mukhtaruddin",
+        "name": "Mumuh Mukhtaruddin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 548,
+        "name": "Ustadz Mumuh Mukhtaruddin, BA, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=548"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-nurfitri-hadi",
+        "name": "Nurfitri Hadi",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1092,
+        "name": "Ustadz Nurfitri Hadi, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1092"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-rizal-yuliar-putrananda",
+        "name": "Rizal Yuliar Putrananda",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 195,
+        "name": "Ustadz Rizal Yuliar Putrananda, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=195"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-said-abu-ukasyah",
+        "name": "Said Abu Ukasyah",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 1224,
+        "name": "Ustadz Said Abu Ukasyah",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1224"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sofyan-chalid-ruray",
+        "name": "Sofyan Chalid Ruray",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 37,
+        "name": "Ustadz Sofyan Chalid Ruray",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=37"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-subhan-bawazier",
+        "name": "Subhan Bawazier",
+        "count": 96
+      },
+      "kajianlive": {
+        "id": 36,
+        "name": "Ustadz Subhan Bawazier",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=36"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-subhan-khadafi",
+        "name": "Subhan Khadafi",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 730,
+        "name": "Ustadz Subhan Khadafi, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=730"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sufyan-bafin-zen",
+        "name": "Sufyan Bafin Zen",
+        "count": 31
+      },
+      "kajianlive": {
+        "id": 805,
+        "name": "Ustadz Sufyan Bafin Zen",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=805"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sulam-mustareja",
+        "name": "Sulam Mustareja",
+        "count": 8
+      },
+      "kajianlive": {
+        "id": 148,
+        "name": "Ustadz Sulam Mustareja",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=148"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sulhan-jauhari",
+        "name": "Sulhan Jauhari",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1240,
+        "name": "Ustadz M Sulhan Jauhari, Lc, M.H.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1240"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syahrul-fatwa",
+        "name": "Syahrul Fatwa",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 219,
+        "name": "Ustadz Syahrul Fatwa, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=219"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-yusuf-utsman-baisa",
+        "name": "Yusuf Utsman Baisa",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 207,
+        "name": "Ustadz Yusuf Utsman Baisa, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=207"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-zaid-susanto",
+        "name": "Zaid Susanto",
+        "count": 31
+      },
+      "kajianlive": {
+        "id": 151,
+        "name": "Ustadz Zaid Susanto",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=151"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-faisal-abdurrahim",
+        "name": "Faisal Abdurrahim",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 841,
+        "name": "Ustadz Faisal Abdurrahim, M.Pd.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=841"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-deni-irawan",
+        "name": "Deni Irawan",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 1441,
+        "name": "Deni Irawan",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1441"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hendri-waluyo-lensa",
+        "name": "Hendri Waluyo Lensa",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 1444,
+        "name": "Hendri Waluyo Lensa, Lc., M.Hum.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1444"
+      },
+      "match_score": 1.0
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrahman-ayyub",
+        "name": "Abdurrahman Ayyub",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 906,
+        "name": "Ustadz Abdurrahman, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=906"
+      },
+      "match_score": 0.986
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-subhi-abdurrahman",
+        "name": "Subhi Abdurrahman",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 906,
+        "name": "Ustadz Abdurrahman, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=906"
+      },
+      "match_score": 0.986
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-abdul-malik-ramadhani-al-jazairy",
+        "name": "Syaikh Abdul Malik Ramadhani Al-Jazairy",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 1237,
+        "name": "Syaikh Abdul Malik Ramadhan al Jazairy",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1237"
+      },
+      "match_score": 0.984
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-iqbal-ghozali",
+        "name": "Muhammad Iqbal Ghozali",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 385,
+        "name": "Ustadz Muhammad Iqbal",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=385"
+      },
+      "match_score": 0.978
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syadam-husein-al-katiri",
+        "name": "Syadam Husein Al-Katiri",
+        "count": 10
+      },
+      "kajianlive": {
+        "id": 251,
+        "name": "Ustadz Dr. Syadam Husein Alkatiri, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=251"
+      },
+      "match_score": 0.978
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-mz",
+        "name": "Ahmad MZ",
+        "count": 15
+      },
+      "kajianlive": {
+        "id": 1306,
+        "name": "Ustadz Ahmad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1306"
+      },
+      "match_score": 0.969
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-subana",
+        "name": "Ali Subana",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 879,
+        "name": "Ustadz Abu Unais Ali Subana",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=879"
+      },
+      "match_score": 0.969
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-prof-dr-ahmad-abdussalam",
+        "name": "Syaikh Prof Dr Ahmad Abdussalam",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1163,
+        "name": "Ustadz Abdussalam, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1163"
+      },
+      "match_score": 0.969
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-thoharo",
+        "name": "Muhammad Thoharo",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 375,
+        "name": "Ustadz Muhammad Toharo, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=375"
+      },
+      "match_score": 0.968
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-harits-budiatna",
+        "name": "Harits Budiatna",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 315,
+        "name": "Ustadz Haris Budiatna",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=315"
+      },
+      "match_score": 0.966
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mizan-qudsyiah",
+        "name": "Mizan Qudsyiah",
+        "count": 267
+      },
+      "kajianlive": {
+        "id": 323,
+        "name": "Ustadz Mizan Qudsiah, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=323"
+      },
+      "match_score": 0.963
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-naim",
+        "name": "Muhammad Na'im",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 792,
+        "name": "Ustadz Muhammad Naim, Lc, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=792"
+      },
+      "match_score": 0.963
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-umar-alfanani",
+        "name": "Umar Alfanani",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 1025,
+        "name": "Ustadz Umar Al Fanani, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1025"
+      },
+      "match_score": 0.963
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-haikal-basyarahil",
+        "name": "Muhammad Haikal Basyarahil",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 112,
+        "name": "Ustadz Dr. Muhammad Haekal Basyarahil, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=112"
+      },
+      "match_score": 0.962
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-umar-basyier",
+        "name": "Abu Umar Basyier",
+        "count": 13
+      },
+      "kajianlive": {
+        "id": 316,
+        "name": "Ustadz Abu Umar Basyir",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=316"
+      },
+      "match_score": 0.957
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-firdaus-sanusi",
+        "name": "Firdaus Sanusi",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 1461,
+        "name": "Ustadz Muawiyah Firdaus Sanusi",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1461"
+      },
+      "match_score": 0.957
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-sulhan-jauhari",
+        "name": "Muhammad Sulhan Jauhari",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1240,
+        "name": "Ustadz M Sulhan Jauhari, Lc, M.H.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1240"
+      },
+      "match_score": 0.957
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-zezen-zainal-mursalin",
+        "name": "Zezen Zainal Mursalin",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 679,
+        "name": "Ustadz Zezen Zaenal Mursalin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=679"
+      },
+      "match_score": 0.952
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-saman",
+        "name": "Ali Saman",
+        "count": 8
+      },
+      "kajianlive": {
+        "id": 1693,
+        "name": "Ustadz Ali Saman Hasan, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1693"
+      },
+      "match_score": 0.95
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-khoilid-abdus-shomad",
+        "name": "Khoilid Abdus Shomad",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 161,
+        "name": "Ustadz Khailid Abdus Shomad, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=161"
+      },
+      "match_score": 0.95
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrahman-thayyib",
+        "name": "Abdurrahman Thayyib",
+        "count": 104
+      },
+      "kajianlive": {
+        "id": 45,
+        "name": "Ustadz Abdurrahman Thoyyib, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=45"
+      },
+      "match_score": 0.947
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abul-abbas-tobroni",
+        "name": "Abul Abbas Tobroni",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 617,
+        "name": "Ustadz Abbul Abbas Thobroni",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=617"
+      },
+      "match_score": 0.947
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-hamid-alwy",
+        "name": "Muhammad Hamid Alwy",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 994,
+        "name": "Ustadz Muhammad Hamid Alwi, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=994"
+      },
+      "match_score": 0.947
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrahim",
+        "name": "Abdurrahim",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 841,
+        "name": "Ustadz Faisal Abdurrahim, M.Pd.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=841"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-zubeir-al-hawaary",
+        "name": "Abu Zubeir al-Hawaary",
+        "count": 124
+      },
+      "kajianlive": {
+        "id": 318,
+        "name": "Ustadz Abu Zubair al Hawaary, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=318"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-basuki",
+        "name": "Ali Basuki",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 547,
+        "name": "Ustadz Abu Utsman Ali Basuki, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=547"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fakhruddin-numan",
+        "name": "Fakhruddin Nu'man",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 470,
+        "name": "Ustadz Fakhruddin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=470"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hasanuddin",
+        "name": "Hasanuddin",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 259,
+        "name": "Ustadz Sultan Hasanuddin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=259"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-suroso-abdussalam",
+        "name": "Suroso Abdussalam",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1163,
+        "name": "Ustadz Abdussalam, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1163"
+      },
+      "match_score": 0.941
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-farid-al-bathoti",
+        "name": "Farid Al-Bathoti",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 357,
+        "name": "Ustadz Dr. Farid Al Bathoty, Lc,  M.Pd.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=357"
+      },
+      "match_score": 0.938
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-tata-abdul-ghoni",
+        "name": "Tata Abdul Ghoni",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 336,
+        "name": "Ustadz Tata Abdul Ghani",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=336"
+      },
+      "match_score": 0.938
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ibrahim-said",
+        "name": "Ibrahim Said",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 322,
+        "name": "Ustadz Abu Ibrahim, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=322"
+      },
+      "match_score": 0.937
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-amir-as-soronjy",
+        "name": "Amir As Soronjy",
+        "count": 13
+      },
+      "kajianlive": {
+        "id": 171,
+        "name": "Ustadz Amir As-Soronji, Lc, M.Pd.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=171"
+      },
+      "match_score": 0.933
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-khaleed-resa-gunarsa",
+        "name": "Abu Khaleed Resa Gunarsa",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 370,
+        "name": "Ustadz Abu Khalid Resa Gunarsa, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=370"
+      },
+      "match_score": 0.923
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-musyaffa-ad-dariny",
+        "name": "Musyaffa' Ad-Dariny",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 17,
+        "name": "Ustadz Dr. Musyaffa’ Addariny, Lc. M.A",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=17"
+      },
+      "match_score": 0.919
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdul-hakim-amir-abdat",
+        "name": "Abdul Hakim Amir Abdat",
+        "count": 74
+      },
+      "kajianlive": {
+        "id": 295,
+        "name": "Ustadz Abdul Hakim bin Amir Abdat",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=295"
+      },
+      "match_score": 0.917
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-rijal-arifin",
+        "name": "Rijal Arifin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 460,
+        "name": "Ustadz Rizal Arifin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=460"
+      },
+      "match_score": 0.917
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrahman-attamimi",
+        "name": "Abdurrahman Attamimi",
+        "count": 8
+      },
+      "kajianlive": {
+        "id": 906,
+        "name": "Ustadz Abdurrahman, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=906"
+      },
+      "match_score": 0.91
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-nur",
+        "name": "Ali Nur",
+        "count": 19
+      },
+      "kajianlive": {
+        "id": 91,
+        "name": "Ustadz Ali Nur Medan",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=91"
+      },
+      "match_score": 0.9
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-anwar-zein",
+        "name": "Anwar Zein",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 717,
+        "name": "Ustadz Anwar Zain",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=717"
+      },
+      "match_score": 0.9
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-abdil-muhsin-firanda-andirja",
+        "name": "Abu Abdil Muhsin Firanda Andirja",
+        "count": 820
+      },
+      "kajianlive": {
+        "id": 29,
+        "name": "Ustadz Dr. Firanda Andirja, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=29"
+      },
+      "match_score": 0.898
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fauzan-abdullah",
+        "name": "Fauzan Abdullah",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1520,
+        "name": "Ustadz Abdullah",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1520"
+      },
+      "match_score": 0.896
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdul-barr",
+        "name": "Abdul Barr",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 108,
+        "name": "Ustadz Abdul Barr Kaisinda, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=108"
+      },
+      "match_score": 0.89
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-umar-bin-abdul-aziz",
+        "name": "Syaikh Umar bin Abdul Aziz",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 935,
+        "name": "Ustadz Abdul Aziz",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=935"
+      },
+      "match_score": 0.89
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-hazim-muhsin",
+        "name": "Abu Hazim Muhsin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1006,
+        "name": "Ustadz Muhsin, Lc, M.H",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1006"
+      },
+      "match_score": 0.867
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-kisah-muslim",
+        "name": "Kisah Muslim",
+        "count": 787
+      },
+      "kajianlive": {
+        "id": 484,
+        "name": "Kak Muslim",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=484"
+      },
+      "match_score": 0.867
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-abu-usamah-az-zahabi",
+        "name": "Syaikh Abu Usamah Az-Zahabi",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 733,
+        "name": "Ustadz Usamah Az Zaid",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=733"
+      },
+      "match_score": 0.867
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syafiq-basalamah",
+        "name": "Syafiq Basalamah",
+        "count": 832
+      },
+      "kajianlive": {
+        "id": 2,
+        "name": "Ustadz DR. Syafiq Riza Basalamah, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=2"
+      },
+      "match_score": 0.865
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-zaki",
+        "name": "Muhammad Zaki",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 226,
+        "name": "Ustadz Muhammad Azhari, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=226"
+      },
+      "match_score": 0.857
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-ali-hizam",
+        "name": "Muhammad Ali Hizam",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 117,
+        "name": "Ustadz Muhammad Ali Abu Ibrahim",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=117"
+      },
+      "match_score": 0.842
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fathi-yazid-jawas",
+        "name": "Fathi Yazid Jawas",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1247,
+        "name": "Ustadz Yazid Abu Ja",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1247"
+      },
+      "match_score": 0.84
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-riza-firmansyah",
+        "name": "Riza Firmansyah",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1338,
+        "name": "Ustadz Arief Firmansyah",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1338"
+      },
+      "match_score": 0.839
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arman-bin-amri",
+        "name": "Arman Bin Amri",
+        "count": 11
+      },
+      "kajianlive": {
+        "id": 125,
+        "name": "Ustadz Arman Amri, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=125"
+      },
+      "match_score": 0.833
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-usamah",
+        "name": "Abu Usamah",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 1193,
+        "name": "Ustadz Usamah Syarif, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1193"
+      },
+      "match_score": 0.832
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-yasir",
+        "name": "Abu Yasir",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 319,
+        "name": "Ustadz Hanan Yasir, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=319"
+      },
+      "match_score": 0.825
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-ahmad-pekan-baru",
+        "name": "Ali Ahmad (Pekan Baru)",
+        "count": 15
+      },
+      "kajianlive": {
+        "id": 559,
+        "name": "Ustadz Ali Ahmad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=559"
+      },
+      "match_score": 0.821
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-abu-abdullah-al-juhani",
+        "name": "Syaikh DR Abu Abdullah Al Juhani",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1520,
+        "name": "Ustadz Abdullah",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1520"
+      },
+      "match_score": 0.815
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-aunur-rafiq-ghufran",
+        "name": "Aunur Rafiq Ghufran",
+        "count": 29
+      },
+      "kajianlive": {
+        "id": 1004,
+        "name": "Ustadz Aunur Rofiq bin Ghufron, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1004"
+      },
+      "match_score": 0.81
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdul-haq",
+        "name": "Abdul Haq",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 997,
+        "name": "Ustadz Abdul Hamid, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=997"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-ahmad-imam-ali",
+        "name": "Abu Ahmad Imam Ali",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 701,
+        "name": "Ustadz Ahmad Jamil Alim",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=701"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-adil-harahap",
+        "name": "Adil Harahap",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 1236,
+        "name": "Ustadz Malim Harahap, M.Pd",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1236"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-luqman-baabduh",
+        "name": "Luqman Baabduh",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 446,
+        "name": "Kak Abu Luqman",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=446"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sufyan-baswedan",
+        "name": "Sufyan Baswedan",
+        "count": 11
+      },
+      "kajianlive": {
+        "id": 270,
+        "name": "Ustadz Syarif Baswedan, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=270"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-ridwan-jazairi",
+        "name": "Syaikh Ridwan Jazairi",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1059,
+        "name": "Ustadz Ridwan, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1059"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-usamah-mahri",
+        "name": "Usamah Mahri",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1193,
+        "name": "Ustadz Usamah Syarif, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1193"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-zakaria-ahmad",
+        "name": "Zakaria Ahmad",
+        "count": 25
+      },
+      "kajianlive": {
+        "id": 409,
+        "name": "Ustadz Anwari Ahmad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=409"
+      },
+      "match_score": 0.8
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdullah-al-bughury",
+        "name": "Abdullah Al Bughury",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1520,
+        "name": "Ustadz Abdullah",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1520"
+      },
+      "match_score": 0.793
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-abdillah-abdurrahim",
+        "name": "Abu Abdillah Abdurrahim",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1315,
+        "name": "Ustadz Abu Abdillah, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1315"
+      },
+      "match_score": 0.793
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-thonarih",
+        "name": "Ahmad Thonarih",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 1418,
+        "name": "Ustadz Ahmad Sulthoni",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1418"
+      },
+      "match_score": 0.786
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-zainuddin",
+        "name": "Ahmad Zainuddin",
+        "count": 842
+      },
+      "kajianlive": {
+        "id": 113,
+        "name": "Ustadz Ahmad Jahidin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=113"
+      },
+      "match_score": 0.786
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arie-wibowo",
+        "name": "Arie Wibowo",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1340,
+        "name": "Ustadz Endri Wibowo",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1340"
+      },
+      "match_score": 0.783
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-musri",
+        "name": "Ali Musri",
+        "count": 71
+      },
+      "kajianlive": {
+        "id": 5,
+        "name": "Ustadz Assoc. Prof. Dr. Ali Musri Semjan Putra, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=5"
+      },
+      "match_score": 0.781
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-taufiq-badri",
+        "name": "Muhammad Taufiq Badri",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 1113,
+        "name": "Ustadz Muhammad Taufik, BA. MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1113"
+      },
+      "match_score": 0.778
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-suaib-al-faiz",
+        "name": "Muhammad Suaib Al-Faiz",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1077,
+        "name": "Ustadz Muhammad Jauhari, B.A, M.A",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1077"
+      },
+      "match_score": 0.773
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-afifuddin-as-sidawi",
+        "name": "Muhammad Afifuddin As-Sidawi",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 1330,
+        "name": "Ustadz dr. Muhammad Arifuddin, Sp.OT",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1330"
+      },
+      "match_score": 0.769
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-zainuddin",
+        "name": "Zainuddin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1440,
+        "name": "Ustadz Luqman Syahid Zainuddin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1440"
+      },
+      "match_score": 0.762
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arif-fathul-ulum",
+        "name": "Arif Fathul Ulum",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 1549,
+        "name": "Ustadz Miftahul Ulum, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1549"
+      },
+      "match_score": 0.759
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-muhammad-musa-alu-nasr",
+        "name": "الشيخ محمد موسى آل نصرSyaikh Muhammad Musa Alu Nasr",
+        "count": 178
+      },
+      "kajianlive": {
+        "id": 843,
+        "name": "Ustadz Muhammad Nur Al Banjary",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=843"
+      },
+      "match_score": 0.756
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-abdurrahman-abdul-aziz-as-salafy",
+        "name": "Abu Abdurrahman Abdul Aziz as-Salafy",
+        "count": 5
+      },
+      "kajianlive": {
+        "id": 939,
+        "name": "Syaikh Prof. Dr. Abdul Rahman bin Abdul Aziz al-Sudais",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=939"
+      },
+      "match_score": 0.754
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-said-yai",
+        "name": "Said Yai",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 107,
+        "name": "Ustadz Said Yai Ardiansyah, M.A.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=107"
+      },
+      "match_score": 0.752
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-ismail-muslim-al-atsari",
+        "name": "Abu Isma'il Muslim Al Atsari",
+        "count": 8
+      },
+      "kajianlive": {
+        "id": 1212,
+        "name": "Ustadz Muslim al Atsary",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1212"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-sulaiman-aris-sugiantoro",
+        "name": "Abu Sulaiman Aris Sugiantoro",
+        "count": 0
+      },
+      "kajianlive": {
+        "id": 657,
+        "name": "Ustadz Aris Sugiyantoro",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=657"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-arifin-badri",
+        "name": "Arifin Badri",
+        "count": 139
+      },
+      "kajianlive": {
+        "id": 568,
+        "name": "Ustadz Arifin Ridin, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=568"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-said-syamsul-huda",
+        "name": "Sa'id Syamsul Huda",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1122,
+        "name": "Ustadz Syamsul Huda, S.H.",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1122"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-sulaiman-ar-ruhaili",
+        "name": "Syaikh Dr Sulaiman Ar-Ruhaili",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 676,
+        "name": "Ustadz Sulaiman Abu Hani",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=676"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syikh-abdul-karim-al-jazairi",
+        "name": "Syikh Abdul Karim Al-Jazairi",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 777,
+        "name": "Syaikh Dr. Abdul Karim Silmi Al Jazairy, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=777"
+      },
+      "match_score": 0.75
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-thohir",
+        "name": "Abu Thohir",
+        "count": 7
+      },
+      "kajianlive": {
+        "id": 1070,
+        "name": "Ustadz Abu Hudzaifah Thohir",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1070"
+      },
+      "match_score": 0.745
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-jamaludin",
+        "name": "Jamaludin",
+        "count": 4
+      },
+      "kajianlive": {
+        "id": 321,
+        "name": "Ustadz Ahmad Jamaludin Ardani, B.Sh",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=321"
+      },
+      "match_score": 0.745
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-haikal-basyarahil",
+        "name": "Haikal Basyarahil",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 112,
+        "name": "Ustadz Dr. Muhammad Haekal Basyarahil, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=112"
+      },
+      "match_score": 0.744
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-saad-iskandar",
+        "name": "Abu Saad Iskandar",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 287,
+        "name": "Kak Erlan Iskandar,  ST, M.Psi",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=287"
+      },
+      "match_score": 0.741
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ali-salman",
+        "name": "Ali Salman",
+        "count": 3
+      },
+      "kajianlive": {
+        "id": 559,
+        "name": "Ustadz Ali Ahmad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=559"
+      },
+      "match_score": 0.737
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sanusin-muhammad-yusuf",
+        "name": "Sanusin Muhammad Yusuf",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1611,
+        "name": "Ustadz Muhammad Yusuf, S.Ag",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1611"
+      },
+      "match_score": 0.737
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-muhammad-bin-muhammad-thaib",
+        "name": "Muhammad Bin Muhammad Thaib",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 431,
+        "name": "Ustadz Muhammad Hafidz Thalib, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=431"
+      },
+      "match_score": 0.735
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-nuruddin-muhammad-fattah",
+        "name": "Nuruddin Muhammad Fattah",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 659,
+        "name": "Ustadz Zainuddin Muhammad Damyat, M.Pd.I",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=659"
+      },
+      "match_score": 0.735
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-muhammad-bin-musa-alu-nasr",
+        "name": "Syaikh Dr Muhammad bin Musa alu Nasr",
+        "count": 14
+      },
+      "kajianlive": {
+        "id": 843,
+        "name": "Ustadz Muhammad Nur Al Banjary",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=843"
+      },
+      "match_score": 0.735
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-agus-suaidi",
+        "name": "Agus Suaidi",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 1419,
+        "name": "Ustadz Agus Abu Husain",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1419"
+      },
+      "match_score": 0.727
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-habib-salim-muhdor",
+        "name": "Habib Salim Muhdor",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 444,
+        "name": "Ustadz Salim Al Muhdor, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=444"
+      },
+      "match_score": 0.727
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salma",
+        "name": "Abu Salma",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 77,
+        "name": "Ustadz Abu Salma Muhammad",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=77"
+      },
+      "match_score": 0.726
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hazim",
+        "name": "Hazim",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 626,
+        "name": "Ustadz Muhammad Hazim",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=626"
+      },
+      "match_score": 0.726
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-khidir-bin-muhammad-sunusi",
+        "name": "Khidir bin Muhammad Sunusi",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 436,
+        "name": "Syekh Prof. Dr. Adil Bin Muhammad As Subai",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=436"
+      },
+      "match_score": 0.724
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ahmad-zaenuddin",
+        "name": "Ahmad Zaenuddin",
+        "count": 6
+      },
+      "kajianlive": {
+        "id": 1403,
+        "name": "Ustadz Ahmad Hasanuddin Umar",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1403"
+      },
+      "match_score": 0.722
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-muhammad-umar-bazmul",
+        "name": "Syaikh Dr Muhammad Umar Bazmul",
+        "count": 2
+      },
+      "kajianlive": {
+        "id": 354,
+        "name": "Ustadz Muhammad Afrizal, Lc, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=354"
+      },
+      "match_score": 0.722
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdul-muthi-al-maidani",
+        "name": "Abdul Mu'thi Al Maidani",
+        "count": 7
+      },
+      "kajianlive": {
+        "id": 606,
+        "name": "Ustadz Abdul Mu",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=606"
+      },
+      "match_score": 0.716
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-moh-yusuf-harun",
+        "name": "Moh Yusuf Harun",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1354,
+        "name": "Ustadz Abu Yusuf Suharno",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1354"
+      },
+      "match_score": 0.714
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-ali-bin-salim-bukayyir-al-yamani",
+        "name": "Syaikh Ali bin Salim Bukayyir Al-Yamani",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 718,
+        "name": "Syaikh Faisal bin Ali Al Yamani",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=718"
+      },
+      "match_score": 0.714
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-muhammad-bin-shaleh-al-utsaimin",
+        "name": "Syaikh Muhammad Bin Shaleh Al Utsaimin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 333,
+        "name": "Syaikh Muhammad bin Abdullah Bamusa",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=333"
+      },
+      "match_score": 0.712
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-ali-hasan-al-halaby",
+        "name": "Syaikh 'Ali Hasan Al-Halaby",
+        "count": 12
+      },
+      "kajianlive": {
+        "id": 138,
+        "name": "Ustadz Abu Ihsan Al Atsary, MA",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=138"
+      },
+      "match_score": 0.706
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-utsman-al-khamiis",
+        "name": "Syaikh Utsman Al Khamiis",
+        "count": 7
+      },
+      "kajianlive": {
+        "id": 547,
+        "name": "Ustadz Abu Utsman Ali Basuki, Lc",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=547"
+      },
+      "match_score": 0.706
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-nafi-zainuddin",
+        "name": "Nafi Zainuddin",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 1440,
+        "name": "Ustadz Luqman Syahid Zainuddin",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=1440"
+      },
+      "match_score": 0.703
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-abu-usamah-az-zahabi",
+        "name": "Syeikh Abu Usamah Az-Zahabi",
+        "count": 1
+      },
+      "kajianlive": {
+        "id": 733,
+        "name": "Ustadz Usamah Az Zaid",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=733"
+      },
+      "match_score": 0.703
+    }
+  ],
+  "unmapped_kajian_net": [
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrahman-bin-muhammad-musa-alu-nashr",
+        "name": "Abdurrahman bin Muhammad Musa Alu Nashr"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abdurrauf",
+        "name": "Abdurrauf"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-aliyah",
+        "name": "Abu Aliyah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-awwanah",
+        "name": "Abu Awwanah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-fairus",
+        "name": "Abu Fairus"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-isa",
+        "name": "Abu Isa"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-izzi",
+        "name": "Abu Izzi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-karimah-askariy",
+        "name": "Abu Karimah 'Askariy"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-kholil-mujahid",
+        "name": "Abu Kholil Mujahid"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abul-afnan-ayman-kamel-darojat",
+        "name": "Abul Afnan Ayman Kamel Darojat"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abul-hammad-muhsan",
+        "name": "Abul Hammad Muhsan"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-mushlih-ari-wahyudi",
+        "name": "Abu Mushlih Ari Wahyudi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-qatadah",
+        "name": "Abu Qatadah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-rifqi-asrofi",
+        "name": "Abu Rifqi Asrofi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-saad",
+        "name": "Abu Saad"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salman-al-kwasayni",
+        "name": "Abu Salman Al-Kwasayni"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-salma-rifaindry",
+        "name": "Abu Salma Rifaindry"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-ubaidah-yusuf-as-sidawi",
+        "name": "Abu Ubaidah Yusuf As-Sidawi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-yala-kurnaedi",
+        "name": "Abu Ya'la Kurnaedi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-abu-yaman-yudiansyah",
+        "name": "Abu Yaman Yudiansyah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-agung-panji-widiyanto",
+        "name": "Agung Panji Widiyanto"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-agus-susehno",
+        "name": "Agus Susehno"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ajat-sudrajat",
+        "name": "Ajat Sudrajat"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-amr-bin-syuroif-al-banteni",
+        "name": "Amr bin Syuroif Al-Banteni"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-armen-halim-naro",
+        "name": "Armen Halim Naro"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-asmuji-muhayyat",
+        "name": "Asmuji Muhayyat"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-badrusalam",
+        "name": "Badrusalam"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-bahtiar-abu-zakiyan",
+        "name": "Bahtiar Abu Zakiyan"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-bakhtiar",
+        "name": "Bakhtiar"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-cholid-abri",
+        "name": "Cholid Abri"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-dauroh-kasyfu-syubuhat",
+        "name": "Dauroh Kasyfu Syubuhat"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-departemen-dakwah-saudi-arabia",
+        "name": "Departemen Dakwah Saudi Arabia"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-dzul-akmal",
+        "name": "Dzul Akmal"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-dzulkarnaen",
+        "name": "Dzulkarnaen"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fachruddin",
+        "name": "Fachruddin"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fahruddin",
+        "name": "Fahruddin"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-fuad-hamzah-baraba",
+        "name": "Fuad Hamzah Baraba'"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hammad-abu-muawiyah",
+        "name": "Hammad Abu Mu'awiyah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-hari-badar",
+        "name": "Hari Badar"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-jauhar",
+        "name": "Jauhar"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-jazuli",
+        "name": "Jazuli"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-kak-wawan",
+        "name": "Kak Wawan"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-khairullah-anwar-luthfi",
+        "name": "Khairullah Anwar Luthfi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-konsultasisyariah",
+        "name": "Konsultasisyariah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-konsultasi-syariah",
+        "name": "Konsultasi Syariah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-maruf-nursalam",
+        "name": "Ma'ruf Nursalam"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mahsun-al-mundiri",
+        "name": "Mahsun Al-Mundiri"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-markaz-albani",
+        "name": "Markaz Albani"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-moh-suaib-al-faiz",
+        "name": "Moh Suaib Al-Faiz"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mujahid-abu-kholil",
+        "name": "Mujahid Abu Kholil"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mukti-ali",
+        "name": "Mukti Ali"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-mushab",
+        "name": "Mushab"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-nasiruddin",
+        "name": "Nasiruddin"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-qurtifa-wijaya",
+        "name": "Qurtifa Wijaya"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-rasul-bin-dahri",
+        "name": "Rasul bin Dahri"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-rayyan-maretan",
+        "name": "Rayyan Maretan"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-robby-arianto",
+        "name": "Robby Arianto"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-romlan",
+        "name": "Romlan"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-sabil",
+        "name": "Sabil"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-soal-jawab-asatidzah",
+        "name": "Soal-Jawab Asatidzah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-abdul-hakim-sholeh-alid",
+        "name": "Syaikh Abdul Hakim Sholeh Al'id"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-abu-bakar-baidhony",
+        "name": "Syaikh Abu Bakar Baidhony"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-ali-bin-salim-bukayyir",
+        "name": "Syaikh Ali bin Salim Bukayyir"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-bin-baz",
+        "name": "Syaikh Bin Baz"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dari-suriah",
+        "name": "Syaikh dari Suriah"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-ahmad-bin-hamd-al-jailani",
+        "name": "Syaikh Dr. Ahmad bin Hamd Al-Jailani"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-musid-bin-musaad-al-husain",
+        "name": "Syaikh DR. Mus'id Bin Musa'ad Al-Husain"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-abdul-adzhim-badawi",
+        "name": "Syaikh Dr Abdul Adzhim Badawi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-abdus-salam-bin-salim-a-suhaimi",
+        "name": "Syaikh Dr Abdus Salam bin Salim A Suhaimi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-sholeh-as-suhaimi",
+        "name": "Syaikh Dr Sholeh As Suhaimi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-dr-thalaah-ibn-musthaf",
+        "name": "Syaikh Dr Thala'ah ibn Musthaf"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-fahd-bin-abdurrahman-asy-syuwayyib",
+        "name": "Syaikh Fahd Bin Abdurrahman Asy-Syuwayyib"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-muhammad-bin-mubarak-asy-syarafi",
+        "name": "Syaikh Muhammad bin Mubarak Asy-Syarafi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-muhammad-bin-said-ad-dausari-an-najdi",
+        "name": "Syaikh Muhammad bin Sa'id Ad Dausari An Najdi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-prof-dr-anis-ahmad-thahir-jamal-al-indunisi",
+        "name": "Syaikh Prof. Dr. Anis Ahmad Thahir Jamal Al-Indunisi"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-prof-dr-abdur-rozzaq-al-badr",
+        "name": "Syaikh Prof DR Abdur Rozzaq Al Badr"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-prof-dr-muhammad-bin-abdurahman-al-khumais",
+        "name": "Syaikh Prof Dr Muhammad Bin Abdurahman Al Khumais"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-saad-bin-nashir-asy-syatsri",
+        "name": "Syaikh Sa'ad Bin Nashir Asy Syatsri"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-tholal-al-quraisy",
+        "name": "Syaikh Tholal Al Quraisy"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syaikh-ubaid-sulaiman-as-sindy",
+        "name": "Syaikh Ubaid Sulaiman As-Sindy"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-dr-syadi-muhammad-numan",
+        "name": "Syeikh DR. Syadi Muhammad Nu'man"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-ibrahim-ar-ruhaily",
+        "name": "Syeikh Ibrahim Ar Ruhaily"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-khalid-bin-dhahwi-azh-zhafiri",
+        "name": "Syeikh Khalid bin Dhahwi Azh-Zhafiri"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-masyhur-hasan-salman",
+        "name": "Syeikh Masyhur Hasan Salman"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-syeikh-utsman-bin-muhammad-al-khomiis",
+        "name": "Syeikh Utsman Bin Muhammad Al Khomiis"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-ulin-nuha-al-hafidz",
+        "name": "Ulin Nuha Al-Hafidz"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-yasir-abu-yasir",
+        "name": "Yasir Abu Yasir"
+      }
+    },
+    {
+      "kajian_net": {
+        "id": "kajian-zainal-abidin-syamsudin",
+        "name": "Zainal Abidin Syamsudin"
+      }
+    }
+  ]
+}

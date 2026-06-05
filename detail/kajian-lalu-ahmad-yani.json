@@ -1,30 +1,19 @@
 {
   "name": "Lalu Ahmad Yani",
-  "slug": "lalu-ahmad-yani",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Lalu%20Ahmad%20Yani",
-  "count": 50,
   "bio": "– Ceramah Agama\n\n- Aqidah Islam\n\n Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nFriday, April 10, 2026\n\nHome Nasihat Orang yang Menghambakan Diri untuk Dunia – Ustadz Lalu Ahmad Yani, Lc. TV\n- Tentang Kami\n- Home\n\nHome Nasihat Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc.",
-  "bio_source": "https://yufid.tv/67588-kewajiban-mendakwahkan-tauhid-ustadz-lalu-ahmad-yani-lc-ceramah-agama.html",
-  "bio_quote": "Kewajiban Mendakwahkan Tauhid – Ustadz Lalu Ahmad Yani, Lc. – Ceramah Agama | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\n- Subscribe Youtube\n- Donasi untuk Yufid.TV\n- Ustadz\n- Video Terba",
   "education": [
     "Kewajiban Mendakwahkan Tauhid – Ustadz Lalu Ahmad Yani, Lc. – Ceramah Agama  Yufid TV  Download Video Gratis - Ceramah Agama Islam",
     "Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc. – 5 Menit yang Menginspirasi  Yufid TV  Download Video Gratis - Ceramah Agama Islam",
     "Home Nasihat Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc. – 5.. Orang yang Menghambakan Diri untuk Dunia – Ustadz Lalu Ahmad Yani, Lc.  Yufid TV  Download Video Gratis - Ceram",
     "Tweet on Jangan Sampai Lalai! Setiap Detiknya Berharga!- Ustadz Lalu Ahmad Yani – Khutbah Jumat  Yufid TV  Download Video Gratis - Ceramah Agama Islam"
   ],
-  "education_source": "https://yufid.tv/45351-berlemah-lembutlah-terhadap-ahlussunnah-ustadz-lalu-ahmad-yani-lc-5-menit-yang-menginspirasi.html",
-  "education_quote": "Kewajiban Mendakwahkan Tauhid – Ustadz Lalu Ahmad Yani, Lc. – Ceramah Agama  Yufid TV  Download Video Gratis - Ceramah Agama Islam Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc.",
   "expertise": [
     "aqidah",
     "tauhid",
     "dakwah",
     "sholat"
   ],
-  "expertise_source": "https://yufid.tv/77517-orang-yang-menghambakan-diri-untuk-dunia-ustadz-lalu-ahmad-yani-lc.html",
-  "expertise_quote": "aqidah, tauhid, dakwah, sholat",
   "kary": [],
-  "kary_source": "",
-  "kary_quote": "",
   "social_media": {},
   "sources": [
     {
@@ -44,9 +33,20 @@
       "url": "https://yufid.tv/77517-orang-yang-menghambakan-diri-untuk-dunia-ustadz-lalu-ahmad-yani-lc.html",
       "title": "Orang yang Menghambakan Diri untuk Dunia – Ustadz Lalu Ahmad Yani, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
       "snippet": "Orang yang Menghambakan Diri untuk Dunia – Ustadz Lalu Ahmad Yani, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nFriday, April"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=1253",
+      "title": "Biografi Lalu Ahmad Yani",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1253_ustadz_lalu_ahmad_yani__lc.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-lalu-ahmad-yani"
+  "enriched_at": "2026-06-05T20:06:26.561456+07:00",
+  "method": "kajianlive",
+  "id": "kajian-lalu-ahmad-yani",
+  "count": 50,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Lalu%20Ahmad%20Yani"
 }

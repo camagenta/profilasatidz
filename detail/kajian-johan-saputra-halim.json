@@ -1,28 +1,17 @@
 {
   "name": "Johan Saputra Halim",
-  "slug": "johan-saputra-halim",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Johan%20Saputra%20Halim",
-  "count": 19,
   "bio": "– Ustadz Johan Saputra Halim, M. – Ustadz Johan Saputra. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 7, 2026\n\nHome Aqidah Islam Memperbaharui Iman yang Usang – Ustadz Johan Saputra Halim, M.",
-  "bio_source": "https://yufid.tv/81177-memperbaharui-iman-yang-usang-ustadz-johan-saputra-halim-m-h-i.html",
-  "bio_quote": "Memperbaharui Iman yang Usang – Ustadz Johan Saputra Halim, M.H.I. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 7, 2026\n\nHome Aqidah Islam Memperbaharui Iman yang Us",
   "education": [
     "Memperbaharui Iman yang Usang – Ustadz Johan Saputra Halim, M.H.I.  Yufid TV  Download Video Gratis - Ceramah Agama Islam",
     "description: Kegiatan dalam berdakwah tentu sangat diperlukan ilmu retorika di dalamnya. Adapun retorika merupakan suatu seni berbicara. Penyampaian d Mau Harta, Umur dan Keluarga yang Berkah? Ada di"
   ],
-  "education_source": "https://yufid.tv/81381-inilah-hal-yang-tidak-diketahui-diyakini-orang-yang-bun-dir-ustadz-johan-saputra-halim-m-h-i.html",
-  "education_quote": "Memperbaharui Iman yang Usang – Ustadz Johan Saputra Halim, M.H.I.  Yufid TV  Download Video Gratis - Ceramah Agama Islam ### Ucapan Sederhana tapi Ngerusak Kesempurnaan T Inilah Hal yang Tidak Diketa",
   "expertise": [
     "aqidah",
     "dakwah",
     "sholat",
     "keluarga"
   ],
-  "expertise_source": "https://digilib.uin-suka.ac.id/36800/",
-  "expertise_quote": "aqidah, dakwah, sholat, keluarga",
   "kary": [],
-  "kary_source": "",
-  "kary_quote": "",
   "social_media": {},
   "sources": [
     {
@@ -42,9 +31,20 @@
       "url": "https://digilib.uin-suka.ac.id/36800/",
       "title": "RETORIKA DAKWAH USTADZ JOHAN SAPUTRA HALIM ...",
       "snippet": "relation: https://digilib.uin-suka.ac.id/id/eprint/36800/\ntitle: RETORIKA DAKWAH USTADZ JOHAN SAPUTRA HALIM, M.H.I. DALAM PROGRAM CERAMAH SINGKAT DI C"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=453",
+      "title": "Biografi Johan Saputra Halim",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=453_ustadz_johan_saputra_halim__m_h_i.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-johan-saputra-halim"
+  "enriched_at": "2026-06-05T20:06:08.494034+07:00",
+  "method": "kajianlive",
+  "id": "kajian-johan-saputra-halim",
+  "count": 19,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Johan%20Saputra%20Halim"
 }

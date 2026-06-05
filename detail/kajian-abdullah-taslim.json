@@ -1,27 +1,16 @@
 {
   "name": "Abdullah Taslim",
-  "slug": "abdullah-taslim",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim",
-  "count": 223,
   "bio": "Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di Indonesia yang berafiliasi pada gerakan Salafiyah. Kantor dan studionya berada di kompleks Masjid Jami' Al-Barkah di Cileungsi, Kabupaten Bogor, Jawa Barat. Stasiun ini menyajikan acara-acara pengajian mengenai ibadah sehari-hari serta pembahasan mengenai Al-Qur'an dan hadis, serta diselingi dengan pembacaan ayat-ayat Al-Qur'an. Hingga akhir 2024, Rodja TV bersiaran secara terestrial di wilayah Jabodetabek dan Bandung",
-  "bio_source": "https://id.wikipedia.org/wiki/Rodja_TV",
-  "bio_quote": "Biografi Ustadz Abdullah Taslim, MA\n\nBiografi Ustadz Abdullah Taslim, MA Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abdullah Taslim, MA\n\nBeliau merupakan alumni S-2",
   "education": [
     "Biografi Ustadz Abdullah Taslim, MA Jadwal Kajian Hari Ini dan Selanjutnya:",
     "Beliau merupakan alumni S-2, Jurusan Hadis, Universitas Islam Madinah. Beliau dikenal sebagai ustadz manajemen qalbu dan keindahan iman. Banyak kajian dan karya ilmiah beliau yang bertajuk “obat hati”",
     "Berbicara tentang hidayah berarti membahas perkara yan Kajian Audio  Ceramah Islam MP3  Download Ceramah Agama  Pengajian  Kajian.net",
     "Ceramah agama Islam oleh: Ustadz Abdullah Taslim, M.A."
   ],
-  "education_source": "https://muslim.or.id/author/abdullahtaslim",
-  "education_quote": "Biografi Ustadz Abdullah Taslim, MA Jadwal Kajian Hari Ini dan Selanjutnya: Beliau merupakan alumni S-2, Jurusan Hadis, Universitas Islam Madinah. Beliau dikenal sebagai ustadz manajemen qalbu dan kei",
   "expertise": [
     "tauhid"
   ],
-  "expertise_source": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim",
-  "expertise_quote": "tauhid",
   "kary": [],
-  "kary_source": "",
-  "kary_quote": "",
   "social_media": {
     "facebook": "https://m.facebook.com/taslim.abdullah.505",
     "youtube": "https://www.youtube.com/playlist",
@@ -45,9 +34,20 @@
       "url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim",
       "title": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net",
       "snippet": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net\n\n### Kumpulan Ceramah Agama Islam MP3 Terlengkap, Pengajian MP3, Au"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=114",
+      "title": "Biografi Abdullah Taslim",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=114_ustadz_abdullah_taslim__ma.jpg",
   "jabatan": "Da'i dan Penceramah, Alumni Universitas Islam Madinah",
-  "id": "kajian-abdullah-taslim"
+  "enriched_at": "2026-06-05T20:02:56.794243+07:00",
+  "method": "kajianlive",
+  "id": "kajian-abdullah-taslim",
+  "count": 223,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim"
 }

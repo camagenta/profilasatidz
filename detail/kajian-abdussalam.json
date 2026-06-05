@@ -1,6 +1,5 @@
 {
   "name": "Abdussalam",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdussalam",
   "bio": "Abdullah bin Qadhi Abdussalam dikenal juga Tuan Guru, Sultan Abdullah (Lahir 1712 di Tidore, Maluku; Meninggal 1807 di Bo-Kaap, Cape Town, Afrika Selatan) adalah sultan Tidore yang diasingkan oleh Belanda ke Afrika Selatan. Ia dianggap sebagai Imam pertama di Afrika Selatan dan memainkan peran penting dalam komunitas muslim di Melayu Tanjung. Ia menyebarkan Al-Qur'an ke Koloni Tanjung yang sebelumnya banyak beragama Kristen dan ia menuliskan Al-Quran tersebut di luar kepala, sehingga ia dianggap",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Tuan Guru Abdullah bin Qadhi Abdussalam",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=1163",
+      "title": "Biografi Abdussalam",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1163_ustadz_abdussalam__lc.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T23:12:08.961000+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abdussalam"
+  "enriched_at": "2026-06-05T20:03:02.173356+07:00",
+  "method": "kajianlive",
+  "id": "kajian-abdussalam",
+  "count": 2,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdussalam"
 }

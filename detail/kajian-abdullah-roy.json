@@ -1,7 +1,6 @@
 {
   "name": "Abdullah Roy",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Roy",
-  "bio": "Roy Grafika Penataran atau sering dipanggil Abdullah Roy (lahir 1 Mei 1980) adalah dai dan akademisi asal Bantul, Yogyakarta. Ia pernah menjadi pengajar tetap kajian berbahasa Indonesia di Pintu 19 Masjid Nabawi pada periode 1434–1438 Hijriah/2013–2017 Masehi. Ia menyelesaikan pendidikan S1, S2, dan S3 di Universitas Islam Madinah, khususnya dalam bidang akidah.",
+  "bio": "Al-Mabaahits al-‘Aqadiyyah al-Muta’alliqah bil Adzaan (Pembahasan-Pembahasan Aqidah Yang Berhubungan Dengan Adzan) (Bahasa Arab)\n\nFirqah Islam Jamaa’ah –‘Ardhun wa Naqdun (Aliran Islam Jama’ah-Pemaparan dan Bantahan) (Bahasa Arab)\n\nJalan Yang Selamat\n\nSilsilah Aqidah Bagian Pertama (Belajar Tauhid, Mengenal Allah, Mengenal Rasulullah, Mengenal Agama Islam)\n\nGambar bawah",
   "education": [
     "S1, S2, dan S3 di Universitas Islam Madinah, khususnya dalam bidang akidah",
     "akademisi asal Bantul, Yogyakarta",
@@ -19,12 +18,20 @@
       "title": "Abdullah Roy",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=16",
+      "title": "Biografi Abdullah Roy",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=16_ustadz_dr__abdullah_roy__lc__m_a.jpg",
   "jabatan": "Pengasuh HSI (Halaqah Silsilah Ilmiyyah)",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T06:21:50.123923+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abdullah-roy"
+  "enriched_at": "2026-06-05T20:02:15.503053+07:00",
+  "method": "kajianlive",
+  "id": "kajian-abdullah-roy",
+  "count": 12,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Roy"
 }

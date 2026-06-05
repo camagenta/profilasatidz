@@ -1,29 +1,23 @@
 {
   "name": "Mubarak Bamualim",
-  "slug": "mubarak-bamualim",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Mubarak%20Bamualim",
-  "count": 72,
   "bio": "Ustadz Mubarak Bamualim, Lc, MHI (الأستاذ مبارك بمعلم) adalah salah seorang. Beliau termasuk salah seorang pengajar di Pesantren Islam Al-Irsyad Tengaran pada masa awal pesantren berdiri dahulu, bersama dengan Ustadz Yaz ketikateksbicara: Ustadz Mubarak Bamualim, Seorang Alim Nan Halim\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Mubarak Bamualim, Lc, M.",
-  "bio_source": "https://kajianlive.my.id/bio_ustadz.php?id=239",
-  "bio_quote": "Biografi Ustadz Mubarak Bamualim, Lc, M.H.I\n\nBiografi Ustadz Mubarak Bamualim, Lc, M.H.I Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Mubarak Bamualim, Lc, M.H.I\n\nNam",
   "education": [
+    "SD Islam Sumba Barat – Sumba, Nusa Tenggara Timur, Tamat Th. 1997.",
+    "SMP Sumba Barat – Sumba, Nusa Tenggara Timur, Tamat Th. 1981.",
+    "KMI Gontor – Ponorogo, Jawa Timur, Tamat Th. 1987.",
+    "Universitas Islam Madinah (S1) – Surabaya, Jawa Timur, Th. 1996.",
+    "UINSA (S2) – Surabaya, Jawa Timur, Th. 2009.",
     "- UINSA (S2) – Surabaya, Jawa Timur, Th. 2009.",
     "- Universitas Islam Madinah (S1) – Surabaya, Jawa Timur, Garuda - Garba Rujukan Digital",
     "All Journal Jurnal Al-Fawa'id : Jurnal Agama dan Bahasa MASALIQ: Jurnal Pendidikan dan Sains Thalaqah : Journal of Arabic Education and Literature",
     "Religion Education Languange, Linguistic, Commun Nasehat Ustadz Mubarak Bamualim untuk Santri-santri PIA – Pesantren Islam Al-Irsyad Tengaran"
   ],
-  "education_source": "https://garuda.kemdiktisaintek.go.id/author/view/2210111",
-  "education_quote": "### Riwayat Pendidikan - UINSA (S2) – Surabaya, Jawa Timur, Th. 2009. - Universitas Islam Madinah (S1) – Surabaya, Jawa Timur, Garuda - Garba Rujukan Digital All Journal Jurnal Al-Fawa'id : Jurnal Aga",
   "expertise": [
     "tahfidz",
     "sholat",
     "bahasa arab"
   ],
-  "expertise_source": "https://pesantrenalirsyad.org/nasehat-ustadz-mubarak-bamualim-untuk-santri-santri-pia/",
-  "expertise_quote": "tahfidz, sholat, bahasa arab",
   "kary": [],
-  "kary_source": "",
-  "kary_quote": "",
   "social_media": {},
   "sources": [
     {
@@ -45,7 +39,11 @@
       "snippet": "Nasehat Ustadz Mubarak Bamualim untuk Santri-santri PIA – Pesantren Islam Al-Irsyad Tengaran\n\n# Nasehat Ustadz Mubarak Bamualim untuk Santri-santri PI"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=239_ustadz_mubarak_bamualim__lc__m_h_i.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-mubarak-bamualim"
+  "enriched_at": "2026-06-05T20:06:55.392898+07:00",
+  "method": "kajianlive",
+  "id": "kajian-mubarak-bamualim",
+  "count": 72,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Mubarak%20Bamualim"
 }

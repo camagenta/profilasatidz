@@ -1,24 +1,13 @@
 {
   "name": "Ahmad Firdaus",
-  "slug": "ahmad-firdaus",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Firdaus",
-  "count": 21,
   "bio": "| Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Aqidah Islam Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 28, 2026\n\nHome Aqidah Islam Niatnya Mencintai dan Menghormati, Tapi Bisa Jatuh Jadi Kufur – Ustadz Ahmad. Ustadz Ahmad Firdaus\n\nRasulullah ﷺ bersabda, “Ba...",
-  "bio_source": "https://www.alquran-sunnah.com/iftitah/referensi/tags/ustadz-ahmad-firdaus.html",
-  "bio_quote": "Ustadz Ahmad Firdaus\n\n### Niatilah untuk Menuntut Ilmu Syar'i\n\nRasulullah ﷺ bersabda, “Barangsiapa yang dikehendaki kebaikan oleh Allah, maka Allah akan memahamkan dia dalam urusan agamanya.”\n\n(HR. Bu",
   "education": [],
-  "education_source": "https://www.ivoox.com/en/1612-cara-mencapai-keikhlasan-dalam-beribadah-audios-mp3_rf_172550200_1.html",
-  "education_quote": "# 1612 - Cara Mencapai Keikhlasan dalam Beribadah - Ust. Ahmad Firdau Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc.  Yufid TV  Download Video Gratis - Ceramah Agama Islam ### Kajian Asmaul Hu",
   "expertise": [
     "aqidah",
     "dakwah",
     "sholat"
   ],
-  "expertise_source": "https://yufid.tv/81058-fakta-di-balik-dunia-sihir-ustadz-ahmad-firdaus-lc.html",
-  "expertise_quote": "aqidah, dakwah, sholat",
   "kary": [],
-  "kary_source": "",
-  "kary_quote": "",
   "social_media": {
     "twitter": "https://www.ivoox.com/en/1612-cara-mencapai-keikhlasan-dalam-beribadah-audios-mp3_rf_172550200_1.html"
   },
@@ -40,9 +29,20 @@
       "url": "https://yufid.tv/81058-fakta-di-balik-dunia-sihir-ustadz-ahmad-firdaus-lc.html",
       "title": "Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
       "snippet": "Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nWednesday, April 29, 2026\n\nHo"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=1213",
+      "title": "Biografi Ahmad Firdaus",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1213_ustadz_ahmad_firdaus__lc.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-ahmad-firdaus"
+  "enriched_at": "2026-06-05T20:03:50.501969+07:00",
+  "method": "kajianlive",
+  "id": "kajian-ahmad-firdaus",
+  "count": 21,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Firdaus"
 }

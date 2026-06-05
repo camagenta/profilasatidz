@@ -1,32 +1,21 @@
 {
   "name": "Ammi Nur Baits",
-  "slug": "ammi-nur-baits",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ammi%20Nur%20Baits",
-  "count": 73,
   "bio": "Ammi Nur Baits adalah seorang ustaz, penulis, dan mubalig Indonesia, Lahir tahun 1983, ia dikenal luas karena ceramah-ceramah keagamaan yang tersebar di berbagai platform digital. Ammi aktif menulis artikel dan buku-buku Islam yang sering digunakan sebagai bahan kajian di berbagai komunitas Muslim.",
-  "bio_source": "https://id.wikipedia.org/wiki/Ammi_Nur_Baits",
-  "bio_quote": "Ammi Nur Baits adalah seorang ustaz, penulis, dan mubalig Indonesia yang dikenal luas karena ceramah-ceramah keagamaan yang tersebar di berbagai platform digital. Ammi aktif menulis artikel dan buku-b",
   "education": [
     "Ammi Nur Baits adalah seorang ustaz, penulis, dan mubalig Indonesia yang dikenal luas karena ceramah-ceramah keagamaan yang tersebar di berbagai platform digital. Ammi aktif menulis artikel dan buku-b",
     "Ammi Nur Baits lahir dan besar di Indonesia, dan menunjukkan minat yang kuat dalam mempelajari il Ustadz Ammi Nur Baits, S.T., B.A - Uloom.id",
     "[* Biografi Ustadz Ammi Nur Baits, S.T., B.A Hafidzahullah - Yayasan Mutiara Sunnah Pangandaran",
     "Ustadz Ammi Nur Baits adalah seorang ulama yang dikenal luas di Indonesia. Beliau menyelesaikan pendidikan S-1 di Jurusan Teknik Nuklir, Universitas Gadjah Mada (UGM). Selama masa kuliahnya, beliau ak"
   ],
-  "education_source": "https://uloom.id/speaker/ammi-nur-baits/",
-  "education_quote": "Ammi Nur Baits adalah seorang ustaz, penulis, dan mubalig Indonesia yang dikenal luas karena ceramah-ceramah keagamaan yang tersebar di berbagai platform digital. Ammi aktif menulis artikel dan buku-b",
   "expertise": [
     "tahfidz",
     "dakwah",
     "zakat",
     "akhlaq"
   ],
-  "expertise_source": "https://mutiarasunnah.or.id/biografi-ustadz-ammi-nur-baits/",
-  "expertise_quote": "tahfidz, dakwah, zakat, akhlaq",
   "kary": [
     "Buku - anb store"
   ],
-  "kary_source": "https://anbstore.id/product-category/buku/",
-  "kary_quote": "Buku - anb store",
   "social_media": {},
   "sources": [
     {
@@ -46,9 +35,20 @@
       "url": "https://mutiarasunnah.or.id/biografi-ustadz-ammi-nur-baits/",
       "title": "Biografi Ustadz Ammi Nur Baits, S.T., B.A Hafidzahullah",
       "snippet": "Biografi Ustadz Ammi Nur Baits, S.T., B.A Hafidzahullah - Yayasan Mutiara Sunnah Pangandaran\n\nUstadz Ammi Nur Baits adalah seorang ulama yang dikenal "
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=3",
+      "title": "Biografi Ammi Nur Baits",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "https://raw.githubusercontent.com/camagenta/profilasatidz-assets/main/img/Ammi_Nur_Baits.png",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=3_ustadz_ammi_nur_baits__st___ba.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-ammi-nur-baits"
+  "enriched_at": "2026-06-05T20:04:23.480965+07:00",
+  "method": "kajianlive",
+  "id": "kajian-ammi-nur-baits",
+  "count": 73,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ammi%20Nur%20Baits"
 }

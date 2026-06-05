@@ -1,6 +1,5 @@
 {
   "name": "Ahmad Sabiq",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Sabiq",
   "bio": "Firanda Andirja (lahir 28 Oktober 1979) adalah seorang ulama yang aktif mengisi berbagai kajian Islam di Indonesia. Ia juga merupakan salah satu narasumber Radio Rodja dan pernah menjadi penceramah Indonesia di Masjid Nabawi, Madinah.",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Firanda Andirja",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=350",
+      "title": "Biografi Ahmad Sabiq",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=350_ustadz_ahmad_sabiq__lc.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T12:57:12.266589+07:00",
-  "method": "wikipedia",
-  "id": "kajian-ahmad-sabiq"
+  "enriched_at": "2026-06-05T20:03:58.854088+07:00",
+  "method": "kajianlive",
+  "id": "kajian-ahmad-sabiq",
+  "count": 14,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Sabiq"
 }

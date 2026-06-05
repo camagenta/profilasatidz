@@ -1,6 +1,5 @@
 {
   "name": "Muhammad Wujud",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Wujud",
   "bio": "Muhammad (bahasa Arab: مُحَمَّدcode: ar is deprecated ; ca 570 – 8 Juni 632 M) adalah seorang pemimpin agama, sosial, dan politik beretnis Arab sekaligus pendiri agama Islam menurut perspektif sejarah modern. Menurut keyakinan umat Islam, ia adalah Nabi dan Rasul yang diberikan wahyu ilahi untuk memberitakan dan meneguhkan prinsip monoteistis dalam ajaran Adam, Ibrahim (Abraham), Musa, Isa (Yesus), dan nabi lainnya. Ia diyakini sebagai Penutup Para Nabi dalam Islam. Muhammad menyatukan Jazirah A",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Muhammad",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=70",
+      "title": "Biografi Muhammad Wujud",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=70_ustadz_muhammad_wujud.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:04:08.111857+07:00",
-  "method": "wikipedia",
-  "id": "kajian-muhammad-wujud"
+  "enriched_at": "2026-06-05T20:07:58.093476+07:00",
+  "method": "kajianlive",
+  "id": "kajian-muhammad-wujud",
+  "count": 10,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Wujud"
 }

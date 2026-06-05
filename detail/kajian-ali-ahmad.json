@@ -1,6 +1,5 @@
 {
   "name": "Ali Ahmad",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ali%20Ahmad",
   "bio": "Ahmad Ali (lahir 16 Mei 1969) adalah seorang pengusaha dan politikus Indonesia. Dia pernah menjabat sebagai Anggota DPR-RI sejak 2014 hingga 2024. Ia mewakili daerah pemilihan Sulawesi Tengah.\nAwalnya Ali merupakan kader Partai NasDem dan duduk di Komisi III, merangkap sebagai Ketua Fraksi Partai NasDem saat menjabat anggota DPR. Sebelum menjabat sebagai Anggota DPR RI, Ia pernah menjabat sebagai bendahara umum Partai Golkar Sulawesi Tengah dan Anggota DPRD Morowali. Pada tahun 2025 Ali memilih ",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Ahmad Ali",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=559",
+      "title": "Biografi Ali Ahmad",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=559_ustadz_ali_ahmad.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:18:51.636847+07:00",
-  "method": "wikipedia",
-  "id": "kajian-ali-ahmad"
+  "enriched_at": "2026-06-05T20:04:15.206554+07:00",
+  "method": "kajianlive",
+  "id": "kajian-ali-ahmad",
+  "count": 13,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ali%20Ahmad"
 }

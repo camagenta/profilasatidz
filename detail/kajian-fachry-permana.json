@@ -1,6 +1,5 @@
 {
   "name": "Fachry Permana",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Fachry%20Permana",
   "bio": "Fachri Albar (lahir 15 November 1981) adalah pemeran dan musikus Indonesia. Fachri merupakan suami dari Renata Kusmanto sekaligus putra dari Achmad Albar dan Rini S. Bono. Fachri sempat terjun ke dunia musik dengan membentuk grup musik yang diberi nama Jibril. Ia diketahui memegang posisi sebagai drumer.",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Fachri Albar",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=269",
+      "title": "Biografi Fachry Permana",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=269_ustadz_fachry_permana.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T07:14:14.869345+07:00",
-  "method": "wikipedia",
-  "id": "kajian-fachry-permana"
+  "enriched_at": "2026-06-05T20:05:21.237764+07:00",
+  "method": "kajianlive",
+  "id": "kajian-fachry-permana",
+  "count": 3,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Fachry%20Permana"
 }

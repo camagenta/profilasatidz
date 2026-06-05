@@ -50,10 +50,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Amin",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abdullah-amin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abdullah-amin",
+    "completeness": 100
   },
   {
     "name": "Abdullah Roy",
@@ -62,9 +63,9 @@
     "count": 12,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-abdullah-roy"
   },
   {
@@ -74,9 +75,10 @@
     "count": 223,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abdullah-taslim"
+    "id": "kajian-abdullah-taslim",
+    "completeness": 100
   },
   {
     "name": "Abdullah Zaen",
@@ -85,9 +87,10 @@
     "count": 285,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abdullah-zaen"
+    "id": "kajian-abdullah-zaen",
+    "completeness": 100
   },
   {
     "name": "Abdul Mu'thi Al Maidani",
@@ -175,9 +178,9 @@
     "count": 2,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-abdussalam"
   },
   {
@@ -186,10 +189,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdussalam%20Busyro",
     "count": 6,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abdussalam-busyro"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abdussalam-busyro",
+    "completeness": 100
   },
   {
     "name": "Abu Abdillah Abdurrahim",
@@ -279,9 +283,10 @@
     "count": 95,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abu-haidar"
+    "id": "kajian-abu-haidar",
+    "completeness": 100
   },
   {
     "name": "Abu Hammam",
@@ -289,10 +294,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Hammam",
     "count": 14,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abu-hammam"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abu-hammam",
+    "completeness": 100
   },
   {
     "name": "Abu Hazim Muhsin",
@@ -312,9 +318,10 @@
     "count": 138,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abu-ihsan-al-atsary"
+    "id": "kajian-abu-ihsan-al-atsary",
+    "completeness": 100
   },
   {
     "name": "Abu Isa",
@@ -488,10 +495,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Salma%20Muhammad",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abu-salma-muhammad"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abu-salma-muhammad",
+    "completeness": 100
   },
   {
     "name": "Abu Salma muhammad",
@@ -499,10 +507,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Salma%20muhammad",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abu-salma-muhammad-2"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abu-salma-muhammad-2",
+    "completeness": 100
   },
   {
     "name": "Abu Salman Al-Kwasayni",
@@ -521,10 +530,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Salman%20Musthofa%20Al-Buthoni",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abu-salman-musthofa-al-buthoni"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-abu-salman-musthofa-al-buthoni",
+    "completeness": 100
   },
   {
     "name": "Abu Salma Rifaindry",
@@ -578,10 +588,10 @@
     "count": 2,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
     "id": "kajian-abu-umair",
-    "completeness": 75
+    "completeness": 100
   },
   {
     "name": "Abu Umar Basyier",
@@ -668,9 +678,10 @@
     "count": 28,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-afifi-abdul-wadud"
+    "id": "kajian-afifi-abdul-wadud",
+    "completeness": 100
   },
   {
     "name": "Agung Panji Widiyanto",
@@ -689,10 +700,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Agus%20Hasan%20Bashori",
     "count": 17,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-agus-hasan-bashori"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-agus-hasan-bashori",
+    "completeness": 100
   },
   {
     "name": "Agus Suaidi",
@@ -723,9 +735,10 @@
     "count": 21,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-ahmad-firdaus"
+    "id": "kajian-ahmad-firdaus",
+    "completeness": 100
   },
   {
     "name": "Ahmad MZ",
@@ -745,10 +758,10 @@
     "count": 14,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
     "id": "kajian-ahmad-sabiq",
-    "completeness": 75
+    "completeness": 100
   },
   {
     "name": "Ahmad Thonarih",
@@ -789,10 +802,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmas%20Faiz%20Asifuddin",
     "count": 6,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-ahmas-faiz-asifuddin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-ahmas-faiz-asifuddin",
+    "completeness": 100
   },
   {
     "name": "Ajat Sudrajat",
@@ -812,9 +826,9 @@
     "count": 13,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-ali-ahmad"
   },
   {
@@ -915,7 +929,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-ammi-nur-baits"
+    "id": "kajian-ammi-nur-baits",
+    "completeness": 100
   },
   {
     "name": "Amr bin Syuroif Al-Banteni",
@@ -934,10 +949,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Amrullah%20Akadhinta",
     "count": 4,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-amrullah-akadhinta"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-amrullah-akadhinta",
+    "completeness": 100
   },
   {
     "name": "Anas Burhanuddin",
@@ -945,10 +961,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Anas%20Burhanuddin",
     "count": 11,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-anas-burhanuddin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-anas-burhanuddin",
+    "completeness": 100
   },
   {
     "name": "Andy Octavian Latief",
@@ -956,10 +973,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Andy%20Octavian%20Latief",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-andy-octavian-latief"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-andy-octavian-latief",
+    "completeness": 100
   },
   {
     "name": "Anwar Zein",
@@ -978,10 +996,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Arief%20Budiman",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-arief-budiman"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-arief-budiman",
+    "completeness": 100
   },
   {
     "name": "Arie Wibowo",
@@ -1023,9 +1042,9 @@
     "count": 10,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-arifin-ridin"
   },
   {
@@ -1034,10 +1053,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Arif%20Syarifuddin",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-arif-syarifuddin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-arif-syarifuddin",
+    "completeness": 100
   },
   {
     "name": "Aris Munandar",
@@ -1046,9 +1066,10 @@
     "count": 72,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-aris-munandar"
+    "id": "kajian-aris-munandar",
+    "completeness": 100
   },
   {
     "name": "Aris Sugiyantoro",
@@ -1056,10 +1077,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Aris%20Sugiyantoro",
     "count": 11,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-aris-sugiyantoro"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-aris-sugiyantoro",
+    "completeness": 100
   },
   {
     "name": "Arman Bin Amri",
@@ -1089,10 +1111,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Askar%20Wardhana",
     "count": 5,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-askar-wardhana"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-askar-wardhana",
+    "completeness": 100
   },
   {
     "name": "Aslam Muhsin",
@@ -1100,10 +1123,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Aslam%20Muhsin",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-aslam-muhsin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-aslam-muhsin",
+    "completeness": 100
   },
   {
     "name": "Asmuji Muhayyat",
@@ -1123,9 +1147,10 @@
     "count": 3,
     "categories": [],
     "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-aspri-rahmat"
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-aspri-rahmat",
+    "completeness": 65
   },
   {
     "name": "Aunur Rafiq Ghufran",
@@ -1144,10 +1169,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Ayub%20Abu%20Ayub",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-ayub-abu-ayub"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-ayub-abu-ayub",
+    "completeness": 100
   },
   {
     "name": "Badrusalam",
@@ -1188,10 +1214,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Beni%20Sarbeni",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-beni-sarbeni"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-beni-sarbeni",
+    "completeness": 100
   },
   {
     "name": "Cholid Abri",
@@ -1256,9 +1283,10 @@
     "count": 32,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-erwandi-tarmizi"
+    "id": "kajian-erwandi-tarmizi",
+    "completeness": 100
   },
   {
     "name": "Fachruddin",
@@ -1278,9 +1306,9 @@
     "count": 3,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-fachry-permana"
   },
   {
@@ -1289,10 +1317,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Fadlan%20Fahamsyah",
     "count": 5,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-fadlan-fahamsyah"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-fadlan-fahamsyah",
+    "completeness": 100
   },
   {
     "name": "Fahruddin",
@@ -1333,10 +1362,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Fariq%20Gasim%20Anuz",
     "count": 15,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-fariq-gasim-anuz"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-fariq-gasim-anuz",
+    "completeness": 100
   },
   {
     "name": "Fathi Yazid Jawas",
@@ -1400,10 +1430,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Hadid%20Saiful%20Islam",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-hadid-saiful-islam"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-hadid-saiful-islam",
+    "completeness": 100
   },
   {
     "name": "Haikal Basyarahil",
@@ -1477,10 +1508,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Heri%20Purnama",
     "count": 18,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-heri-purnama"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-heri-purnama",
+    "completeness": 100
   },
   {
     "name": "Ibrahim Said",
@@ -1500,10 +1532,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Iqbal%20Gunawan",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-iqbal-gunawan"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-iqbal-gunawan",
+    "completeness": 100
   },
   {
     "name": "Iskandar Dinata",
@@ -1511,10 +1544,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Iskandar%20Dinata",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-iskandar-dinata"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-iskandar-dinata",
+    "completeness": 100
   },
   {
     "name": "Jamaludin",
@@ -1545,10 +1579,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Jauhari",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-jauhari"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-jauhari",
+    "completeness": 100
   },
   {
     "name": "Jazuli",
@@ -1568,9 +1603,10 @@
     "count": 19,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-johan-saputra-halim"
+    "id": "kajian-johan-saputra-halim",
+    "completeness": 100
   },
   {
     "name": "Kak Wawan",
@@ -1601,9 +1637,10 @@
     "count": 20,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-khalid-basalamah"
+    "id": "kajian-khalid-basalamah",
+    "completeness": 100
   },
   {
     "name": "Khidir bin Muhammad Sunusi",
@@ -1634,9 +1671,10 @@
     "count": 41,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-kholid-syamhudi"
+    "id": "kajian-kholid-syamhudi",
+    "completeness": 100
   },
   {
     "name": "Kisah Muslim",
@@ -1679,9 +1717,10 @@
     "count": 50,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-lalu-ahmad-yani"
+    "id": "kajian-lalu-ahmad-yani",
+    "completeness": 100
   },
   {
     "name": "Luqman Baabduh",
@@ -1711,10 +1750,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Mahfudz%20Umri",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-mahfudz-umri"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-mahfudz-umri",
+    "completeness": 100
   },
   {
     "name": "Mahful Safaruddin",
@@ -1723,9 +1763,10 @@
     "count": 21,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-mahful-safaruddin"
+    "id": "kajian-mahful-safaruddin",
+    "completeness": 100
   },
   {
     "name": "Mahsun Al-Mundiri",
@@ -1756,9 +1797,10 @@
     "count": 139,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-maududi-abdullah"
+    "id": "kajian-maududi-abdullah",
+    "completeness": 100
   },
   {
     "name": "Mizan Qudsyiah",
@@ -1800,9 +1842,10 @@
     "count": 72,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-mubarak-bamualim"
+    "id": "kajian-mubarak-bamualim",
+    "completeness": 100
   },
   {
     "name": "Mudrika Ilyas",
@@ -1810,10 +1853,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Mudrika%20Ilyas",
     "count": 4,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-mudrika-ilyas"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-mudrika-ilyas",
+    "completeness": 100
   },
   {
     "name": "Muflih Safitra",
@@ -1821,10 +1865,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muflih%20Safitra",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muflih-safitra"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muflih-safitra",
+    "completeness": 100
   },
   {
     "name": "Mufy Hanif Thalib",
@@ -1832,10 +1877,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Mufy%20Hanif%20Thalib",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-mufy-hanif-thalib"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-mufy-hanif-thalib",
+    "completeness": 100
   },
   {
     "name": "Muhammad Abduh Tuasikal",
@@ -1844,9 +1890,10 @@
     "count": 165,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-muhammad-abduh-tuasikal"
+    "id": "kajian-muhammad-abduh-tuasikal",
+    "completeness": 100
   },
   {
     "name": "Muhammad Afifuddin As-Sidawi",
@@ -1888,10 +1935,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Elvi%20Syam",
     "count": 12,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-elvi-syam"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-elvi-syam",
+    "completeness": 100
   },
   {
     "name": "Muhammad Haikal Basyarahil",
@@ -1921,10 +1969,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Iqbal",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-iqbal"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-iqbal",
+    "completeness": 100
   },
   {
     "name": "Muhammad Iqbal Ghozali",
@@ -1956,9 +2005,10 @@
     "count": 57,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-muhammad-nur-ihsan"
+    "id": "kajian-muhammad-nur-ihsan",
+    "completeness": 100
   },
   {
     "name": "Muhammad Nuzul",
@@ -1967,9 +2017,10 @@
     "count": 170,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-muhammad-nuzul"
+    "id": "kajian-muhammad-nuzul",
+    "completeness": 100
   },
   {
     "name": "Muhammad Qosim Muhajir",
@@ -1977,10 +2028,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Qosim%20Muhajir",
     "count": 4,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-qosim-muhajir"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-qosim-muhajir",
+    "completeness": 100
   },
   {
     "name": "Muhammad Romelan",
@@ -1989,9 +2041,10 @@
     "count": 1,
     "categories": [],
     "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-romelan"
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-romelan",
+    "completeness": 65
   },
   {
     "name": "Muhammad Suaib Al-Faiz",
@@ -2044,10 +2097,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Wasitho",
     "count": 7,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-wasitho"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-wasitho",
+    "completeness": 100
   },
   {
     "name": "Muhammad Wujud",
@@ -2056,9 +2110,9 @@
     "count": 10,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "completeness": 75,
+    "completeness": 100,
     "id": "kajian-muhammad-wujud"
   },
   {
@@ -2067,10 +2121,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Yahya",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-yahya"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-yahya",
+    "completeness": 100
   },
   {
     "name": "Muhammad Yassir",
@@ -2078,10 +2133,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Yassir",
     "count": 8,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-yassir"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muhammad-yassir",
+    "completeness": 100
   },
   {
     "name": "Muhammad Zaki",
@@ -2100,10 +2156,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muharrar%20bin%20Mikail",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muharrar-bin-mikail"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-muharrar-bin-mikail",
+    "completeness": 100
   },
   {
     "name": "Mujahid Abu Kholil",
@@ -2122,10 +2179,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Mujahid%20Aslam",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-mujahid-aslam"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-mujahid-aslam",
+    "completeness": 100
   },
   {
     "name": "Mukti Ali",
@@ -2145,10 +2203,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Mumuh%20Mukhtaruddin",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-mumuh-mukhtaruddin"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-mumuh-mukhtaruddin",
+    "completeness": 100
   },
   {
     "name": "Mushab",
@@ -2200,10 +2259,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Nurfitri%20Hadi",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-nurfitri-hadi"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-nurfitri-hadi",
+    "completeness": 100
   },
   {
     "name": "Nuruddin Muhammad Fattah",
@@ -2279,10 +2339,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Rizal%20Yuliar%20Putrananda",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-rizal-yuliar-putrananda"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-rizal-yuliar-putrananda",
+    "completeness": 100
   },
   {
     "name": "Robby Arianto",
@@ -2334,10 +2395,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Said%20Abu%20Ukasyah",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-said-abu-ukasyah"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-said-abu-ukasyah",
+    "completeness": 100
   },
   {
     "name": "Said Yai",
@@ -2378,10 +2440,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Sofyan%20Chalid%20Ruray",
     "count": 6,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-sofyan-chalid-ruray"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-sofyan-chalid-ruray",
+    "completeness": 100
   },
   {
     "name": "Subhan Bawazier",
@@ -2392,7 +2455,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-subhan-bawazier"
+    "id": "kajian-subhan-bawazier",
+    "completeness": 100
   },
   {
     "name": "Subhan Khadafi",
@@ -2400,10 +2464,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Subhan%20Khadafi",
     "count": 2,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-subhan-khadafi"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-subhan-khadafi",
+    "completeness": 100
   },
   {
     "name": "Subhi Abdurrahman",
@@ -2423,9 +2488,10 @@
     "count": 31,
     "categories": [],
     "has_bio": true,
-    "has_foto": false,
+    "has_foto": true,
     "has_detail": true,
-    "id": "kajian-sufyan-bafin-zen"
+    "id": "kajian-sufyan-bafin-zen",
+    "completeness": 100
   },
   {
     "name": "Sufyan Baswedan",
@@ -2445,9 +2511,10 @@
     "count": 8,
     "categories": [],
     "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-sulam-mustareja"
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-sulam-mustareja",
+    "completeness": 65
   },
   {
     "name": "Sulhan Jauhari",
@@ -2455,10 +2522,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Sulhan%20Jauhari",
     "count": 1,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-sulhan-jauhari"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-sulhan-jauhari",
+    "completeness": 100
   },
   {
     "name": "Suroso Abdussalam",
@@ -2499,10 +2567,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Syahrul%20Fatwa",
     "count": 4,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-syahrul-fatwa"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-syahrul-fatwa",
+    "completeness": 100
   },
   {
     "name": "Syaikh 'Ali Hasan Al-Halaby",
@@ -3013,7 +3082,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-yazid-jawas"
+    "id": "kajian-yazid-jawas",
+    "completeness": 100
   },
   {
     "name": "Yusuf Utsman Baisa",
@@ -3021,10 +3091,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Yusuf%20Utsman%20Baisa",
     "count": 3,
     "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-yusuf-utsman-baisa"
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-yusuf-utsman-baisa",
+    "completeness": 100
   },
   {
     "name": "Zaid Susanto",
@@ -3035,7 +3106,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-zaid-susanto"
+    "id": "kajian-zaid-susanto",
+    "completeness": 100
   },
   {
     "name": "Zainal Abidin Syamsudin",

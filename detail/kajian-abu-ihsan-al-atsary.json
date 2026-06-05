@@ -1,32 +1,21 @@
 {
   "name": "Abu Ihsan Al-Atsary",
-  "slug": "abu-ihsan-al-atsary",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Ihsan%20Al-Atsary",
-  "count": 138,
   "bio": "Abu Ihsan Al-Atsary\n\nAudio kajian bersama ustad Abu Ihsan Al-Atsary dari medan Sumatra Utara pada kajian intensif dua hari di masjid An-Nuur Karangpandan Karanganyar solo bersama Asatidzah Ahlussunnah Waljamaah\n\ndownload:\n\n Agama Adalah Nasihat - Ustadz Abu Ihsan Al-Atsary, M. 00 pm\n\nMahad Tahfidz Al-Qur'an\n\nRadio Tarbiyah Sunnah\n\nTSMart\n\nEng\n\nEs\n\nIt\n\nSp\n\nDONASI\n\n- Tentang Kami\n- Home\n\nHome Mutiar...",
-  "bio_source": "https://nurussunnah.com/2012/07/01/download-kajian-nama-ahlus-sunnah-dan-ahlul-bidah-ust-abu-ihsan-al-atsary/",
-  "bio_quote": "Download kajian nama Ahlus Sunnah dan Ahlul Bid'ah - ust. Abu Ihsan Al-Atsary - Yayasan Islam Nurus Sunnah Semarang\n\n# Download kajian nama Ahlus Sunnah dan Ahlul Bid’ah – ust. Abu Ihsan Al-Atsary\n\nAu",
   "education": [
     "Download kajian nama Ahlus Sunnah dan Ahlul Bid'ah - ust. Abu Ihsan Al-Atsary - Yayasan Islam Nurus Sunnah Semarang",
     "Audio kajian bersama ustad Abu Ihsan Al-Atsary dari medan Sumatra Utara pada kajian intensif dua hari di masjid An-Nuur Karangpandan Karanganyar solo bersama Asatidzah Ahlussunnah Waljamaah",
     "Agama Adalah Nasihat - Ustadz Abu Ihsan Al-Atsary, M.A - Yayasan Tarbiyah Sunnah",
     "Mahad Tahfidz Al-Qur'an"
   ],
-  "education_source": "https://tarbiyahsunnah.com/event/agama-adalah-nasihat-ustadz-abu-ihsan-al-atsary-m-a/",
-  "education_quote": "Download kajian nama Ahlus Sunnah dan Ahlul Bid'ah - ust. Abu Ihsan Al-Atsary - Yayasan Islam Nurus Sunnah Semarang # Download kajian nama Ahlus Sunnah dan Ahlul Bid’ah – ust. Abu Ihsan Al-Atsary Audi",
   "expertise": [
     "aqidah",
     "tauhid",
     "tahfidz",
     "akhlaq"
   ],
-  "expertise_source": "https://radiotarbiyahsunnah.com/category/ustadz-abu-ihsan-al-atsary-m-a/",
-  "expertise_quote": "aqidah, tauhid, tahfidz, akhlaq",
   "kary": [
     "Buku Renungi Perjalanan Hidupmu! - Ummu Ihsan Choiriyah & Abu ..."
   ],
-  "kary_source": "https://shopee.co.id/Buku-Renungi-Perjalanan-Hidupmu!-Ummu-Ihsan-Choiriyah-Abu-Ihsan-Al-Atsary-Pustaka-Al-Khoir-i.14839945.15048948575",
-  "kary_quote": "Buku Renungi Perjalanan Hidupmu! - Ummu Ihsan Choiriyah & Abu ...",
   "social_media": {
     "instagram": "https://www.instagram.com/reel/DYvTG3ayIAN"
   },
@@ -48,9 +37,20 @@
       "url": "https://radiotarbiyahsunnah.com/category/ustadz-abu-ihsan-al-atsary-m-a/",
       "title": "Ustadz Abu Ihsan Al-Atsary, M.A. Archives - Radio Tarbiyah Sunnah 1476 AM",
       "snippet": "Ustadz Abu Ihsan Al-Atsary, M.A. Archives - Radio Tarbiyah Sunnah 1476 AM\n\nFacebook Soundcloud Twitter Youtube\n\nAkidah\n\n- Tauhid\n\nSearch\n\nSaturday, Fe"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=138",
+      "title": "Biografi Abu Ihsan Al-Atsary",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=138_ustadz_abu_ihsan_al_atsary__ma.jpg",
   "jabatan": "Da'i dan Pengarang",
-  "id": "kajian-abu-ihsan-al-atsary"
+  "enriched_at": "2026-06-05T20:03:21.633929+07:00",
+  "method": "kajianlive",
+  "id": "kajian-abu-ihsan-al-atsary",
+  "count": 138,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Ihsan%20Al-Atsary"
 }

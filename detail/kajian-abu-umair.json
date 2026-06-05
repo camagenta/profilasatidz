@@ -1,6 +1,5 @@
 {
   "name": "Abu Umair",
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Umair",
   "bio": "Mush'ab bin Umair bin Hasyim bin Abdu Manaf al-Qurasyi (bahasa Arab: مصعب بن عمير بن هاشم بن عبد مناف القرشيcode: ar is deprecated ), juga dikenal sebagai Mush'ab al-Khair (\"Mush'ab yang baik\") adalah seorang sahabat Nabi Muhammad. Ia berasal dari kabilah Bani Abdu Dar dari suku Quraisy. Ia memeluk Islam pada 614 dan merupakan duta pertama Islam di Madinah hingga mengislamkan banyak penduduknya. Mush'ab terbunuh dalam Pertempuran Uhud pada tahun 625.",
   "education": [],
   "expertise": [],
@@ -13,12 +12,20 @@
       "title": "Mush'ab bin Umair",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=428",
+      "title": "Biografi Abu Umair",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
     }
   ],
-  "foto": "",
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=428_ustadz_abu_umair__ba__m_pd.jpg",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T08:15:29.960105+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abu-umair"
+  "enriched_at": "2026-06-05T20:03:34.828345+07:00",
+  "method": "kajianlive",
+  "id": "kajian-abu-umair",
+  "count": 2,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Umair"
 }

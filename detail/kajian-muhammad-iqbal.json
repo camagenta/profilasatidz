@@ -1,0 +1,24 @@
+{
+  "name": "Muhammad Iqbal",
+  "bio": "Gambar bawah",
+  "education": [],
+  "expertise": [],
+  "kary": [],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=385",
+      "title": "Biografi Muhammad Iqbal",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=385_ustadz_muhammad_iqbal.jpg",
+  "jabatan": "",
+  "enriched_at": "2026-06-05T20:07:24.965348+07:00",
+  "method": "kajianlive",
+  "id": "kajian-muhammad-iqbal",
+  "count": 2,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Iqbal"
+}
