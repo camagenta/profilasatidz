@@ -24,6 +24,8 @@ type Source struct {
 
 type Asatidz struct {
 	Name              string            `json:"name"`
+	Slug              string            `json:"slug"`
+	Id                string            `json:"id"`
 	SourceURL         string            `json:"source_url"`
 	Count             int               `json:"count"`
 	Categories        []string          `json:"categories"`
@@ -36,11 +38,28 @@ type Asatidz struct {
 	Expertise         []string          `json:"expertise"`
 	ExpertiseSource   string            `json:"expertise_source"`
 	ExpertiseQuote    string            `json:"expertise_quote"`
-	Publications      []string          `json:"publications"`
-	PublicationsSource string           `json:"publications_source"`
-	PublicationsQuote string            `json:"publications_quote"`
+	Karya             []string          `json:"kary"`
+	KaryaSource       string            `json:"kary_source"`
+	KaryaQuote        string            `json:"kary_quote"`
 	SocialMedia       map[string]string `json:"social_media"`
 	Sources           []Source          `json:"sources"`
+	Foto              string            `json:"foto"`
+	Jabatan           string            `json:"jabatan"`
+	Completeness      int               `json:"completeness"`
+}
+
+// MasterEntry is the lightweight index entry for list/table rendering.
+type MasterEntry struct {
+	Id           string   `json:"id"`
+	Name         string   `json:"name"`
+	Slug         string   `json:"slug"`
+	SourceURL    string   `json:"source_url"`
+	Count        int      `json:"count"`
+	Categories   []string `json:"categories"`
+	HasBio       bool     `json:"has_bio"`
+	HasFoto      bool     `json:"has_foto"`
+	HasDetail    bool     `json:"has_detail"`
+	Completeness int      `json:"completeness"`
 }
 
 type PageInfo struct {
@@ -65,12 +84,69 @@ type PageData struct {
 }
 
 var (
-	asatidzData []Asatidz
+	asatidzData []Asatidz           // full data for list/table (loaded from master or enriched)
+	detailData  map[string]Asatidz  // cache: slug → detail (loaded on-demand from detail/)
 	dataMutex   sync.RWMutex
+	detailDir   = "detail"
 )
 
-func loadData() {
-	// Try enriched data first
+func loadMaster() {
+	// Try loading from detail directory first
+	if _, err := os.Stat("asatidz_master.json"); err == nil {
+		data, err := os.ReadFile("asatidz_master.json")
+		if err != nil {
+			log.Fatal("Gagal baca asatidz_master.json:", err)
+		}
+		var master []map[string]interface{}
+		json.Unmarshal(data, &master)
+		
+		// Convert to Asatidz (with completeness score derived from master flags)
+		asatidzData = make([]Asatidz, len(master))
+		for i, m := range master {
+			a := Asatidz{
+				Name:      m["name"].(string),
+				SourceURL: m["source_url"].(string),
+				Count:     int(m["count"].(float64)),
+			}
+			// Read id if present
+			if idVal, ok := m["id"].(string); ok {
+				a.Id = idVal
+				a.Slug = idVal // also set slug for backward compat
+			}
+			// Compute completeness from master flags
+			if hasBio, ok := m["has_bio"].(bool); ok && hasBio {
+				a.Completeness += 35
+			}
+			if hasFoto, ok := m["has_foto"].(bool); ok && hasFoto {
+				a.Completeness += 25
+			}
+			// has_detail can be bool true or non-empty array
+			if hd, ok := m["has_detail"]; ok {
+				switch v := hd.(type) {
+				case bool:
+					if v {
+						a.Completeness += 25
+					}
+				case []interface{}:
+					if len(v) > 0 {
+						a.Completeness += 25
+					}
+				}
+			}
+			if a.Count > 0 {
+				a.Completeness += 15
+			}
+			asatidzData[i] = a
+		}
+		detailData = make(map[string]Asatidz)
+		log.Printf("Loaded %d master entries", len(asatidzData))
+	} else {
+		// Fallback: load enriched data
+		loadEnriched()
+	}
+}
+
+func loadEnriched() {
 	data, err := os.ReadFile("asatidz_enriched.json")
 	if err != nil {
 		// Fallback to original
@@ -82,7 +158,66 @@ func loadData() {
 	dataMutex.Lock()
 	json.Unmarshal(data, &asatidzData)
 	dataMutex.Unlock()
-	log.Printf("Loaded %d asatidz (enriched: %d)", len(asatidzData), countEnriched())
+	detailData = make(map[string]Asatidz)
+	log.Printf("Loaded %d asatidz", len(asatidzData))
+}
+
+// Backward compat: loadData tries master first
+func loadData() {
+	loadMaster()
+}
+
+// slugify converts a name to a URL-safe slug.
+func slugify(name string) string {
+	s := strings.ToLower(name)
+	var result strings.Builder
+	for _, c := range s {
+		if (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '-' || c == ' ' {
+			result.WriteRune(c)
+		}
+	}
+	s = result.String()
+	s = strings.Join(strings.Fields(s), "-")
+	return strings.Trim(s, "-")
+}
+
+// loadDetail loads a single asatidz detail from detail/{id}.json.
+// The id parameter is the profile's unique id (e.g. "kajian-abdullah-roy").
+// Returns cached version if available.
+func loadDetail(id string) (Asatidz, error) {
+	// Check cache first
+	dataMutex.RLock()
+	if d, ok := detailData[id]; ok {
+		dataMutex.RUnlock()
+		return d, nil
+	}
+	dataMutex.RUnlock()
+
+	// Load from file: try id-based path first, then fallback to slug-based
+	path := detailDir + "/" + id + ".json"
+	data, err := os.ReadFile(path)
+	if err != nil {
+		// Fallback: try without kajian- prefix for backward compat
+		if strings.HasPrefix(id, "kajian-") {
+			fallbackPath := detailDir + "/" + strings.TrimPrefix(id, "kajian-") + ".json"
+			data, err = os.ReadFile(fallbackPath)
+		}
+		if err != nil {
+			return Asatidz{}, err
+		}
+	}
+
+	var detail Asatidz
+	if err := json.Unmarshal(data, &detail); err != nil {
+		return Asatidz{}, err
+	}
+
+	// Cache it
+	dataMutex.Lock()
+	detailData[id] = detail
+	dataMutex.Unlock()
+
+	return detail, nil
 }
 
 func countEnriched() int {
@@ -288,13 +423,24 @@ func renderResults(w http.ResponseWriter, pageData PageData) {
 		nextSortAlpha(pageData.Sort), sortIndicatorAlpha(pageData.Sort),
 		nextSortCount(pageData.Sort), sortIndicatorCount(pageData.Sort))
 	for _, a := range pageData.Asatidz {
-		// Different button style based on whether bio exists
-		btnClass := "text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded cursor-default"
+		// Heatmap button: greener/bluer = more complete, gray = minimal
+		btnClass := "text-xs px-2 py-1 rounded cursor-default bg-gray-100 text-gray-400"
 		btnTitle := "Belum ada profil"
 		btnText := "profil"
-		if a.Bio != "" {
-			btnClass = "text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded hover:bg-blue-100 font-medium cursor-pointer"
-			btnTitle = "Lihat profil lengkap"
+		if a.Completeness >= 70 {
+			// Penuh: bio + foto + detail → green
+			btnClass = "text-xs px-2 py-1 rounded font-semibold cursor-pointer bg-green-500 text-white hover:bg-green-600 shadow-sm"
+			btnTitle = "Profil lengkap"
+			btnText = "profil"
+		} else if a.Completeness >= 40 {
+			// Parsial: bio ada tapi belum lengkap → blue
+			btnClass = "text-xs px-2 py-1 rounded font-medium cursor-pointer bg-blue-400 text-white hover:bg-blue-500"
+			btnTitle = "Lihat profil"
+			btnText = "profil"
+		} else if a.Bio != "" {
+			// Minimal: bio only → yellow/warm
+			btnClass = "text-xs px-2 py-1 rounded cursor-pointer bg-yellow-300 text-yellow-900 hover:bg-yellow-400"
+			btnTitle = "Profil tersedia"
 			btnText = "profil"
 		}
 		fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3 text-center"><button class="%s" onclick="showDetail('%s')" title="%s">%s</button></td><td class="px-4 py-3 font-medium text-gray-800">%s</td><td class="px-4 py-3 text-center">`, btnClass, a.Name, btnTitle, btnText, a.Name)
@@ -336,27 +482,11 @@ func renderResults(w http.ResponseWriter, pageData PageData) {
 func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	countBadge := ""
-	if a.Count > 0 {
-		countBadge = fmt.Sprintf(`<span class="inline-block bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full ml-2">%d kajian</span>`, a.Count)
-	}
+	_ = a.Count // used in kajianSection below
 
 	// Helper: footnote marker (superscript number)
 	fn := func(id string) string {
 		return fmt.Sprintf(` <sup class="text-xs text-gray-400"><a href="#ref-%s" class="hover:text-blue-600">[%s]</a></sup>`, id, id)
-	}
-
-	// Helper: find source ID by URL
-	findSrcID := func(url string) string {
-		if url == "" {
-			return ""
-		}
-		for _, s := range a.Sources {
-			if s.URL == url {
-				return s.ID
-			}
-		}
-		return ""
 	}
 
 	// Bio section — footnote only, no blockquote
@@ -444,19 +574,29 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 		socSection += `</div></div>`
 	}
 
-	// Publications section
-	pubSection := ""
-	if len(a.Publications) > 0 {
-		id := findSrcID(a.PublicationsSource)
-		pubFN := ""
-		if id != "" {
-			pubFN = fn(id)
+	// Karya section
+	karyaSection := ""
+	if len(a.Karya) > 0 {
+		karyaFN := ""
+		if a.KaryaSource != "" {
+			for i, s := range a.Sources {
+				if s.URL == a.KaryaSource {
+					karyaFN = fn(a.Sources[i].ID)
+					break
+				}
+			}
 		}
-		pubSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Karya / Publikasi%s</h3><ul class="list-disc list-inside text-sm text-gray-700 space-y-1">`, pubFN)
-		for _, p := range a.Publications {
-			pubSection += fmt.Sprintf(`<li>%s</li>`, p)
+		karyaSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Karya <span class="text-xs font-normal text-gray-400">(Buku, Penelitian, Aplikasi, Program)</span>%s</h3><ul class="list-disc list-inside text-sm text-gray-700 space-y-1">`, karyaFN)
+		for _, k := range a.Karya {
+			karyaSection += fmt.Sprintf(`<li>%s</li>`, k)
 		}
-		pubSection += `</ul></div>`
+		karyaSection += `</ul></div>`
+	}
+
+	// Kajian count section
+	kajianSection := ""
+	if a.Count > 0 {
+		kajianSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Kajian</h3><p class="text-sm text-gray-700"><span class="font-bold text-blue-600">%d</span> kajian di <a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:underline">kajian.net</a></p></div>`, a.Count, a.SourceURL)
 	}
 
 	// References section — Wikipedia-style "Daftar Pustaka"
@@ -478,8 +618,32 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 		refSection += `</ol></div>`
 	}
 
-	fmt.Fprintf(w, `<div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"><div class="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white flex items-center justify-between"><div class="flex items-center gap-3"><button onclick="closeDetailPanel()" class="p-1 hover:bg-white/20 rounded-full transition-colors text-lg">&times;</button><h2 class="text-lg font-bold">%s</h2>%s</div></div><div class="p-6"><div class="mb-4"><a href="%s" target="_blank" rel="noopener" class="text-sm text-blue-600 hover:underline">Lihat di kajian.net</a></div>%s%s%s%s%s%s</div></div>`,
-		a.Name, countBadge, a.SourceURL, bioSection, eduSection, expSection, socSection, pubSection, refSection)
+	// Header with foto + jabatan
+	fotoHTML := ""
+	// Build initials
+	initials := ""
+	parts := strings.Fields(a.Name)
+	for i, p := range parts {
+		if i >= 2 {
+			break
+		}
+		initials += strings.ToUpper(string([]rune(p)[0]))
+	}
+	placeholder := fmt.Sprintf(`<div class="w-16 h-16 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center text-white text-lg font-bold shrink-0">%s</div>`, initials)
+	if a.Foto != "" {
+		imgTag := fmt.Sprintf(`<img src="%s" alt="%s" class="w-16 h-16 rounded-full object-cover border-2 border-white/30 shrink-0" onerror="this.style.display='none'">`, a.Foto, a.Name)
+		fotoHTML = `<div class="relative w-16 h-16 shrink-0">` + imgTag + placeholder + `</div>`
+	} else {
+		fotoHTML = placeholder
+	}
+
+	jabatanHTML := ""
+	if a.Jabatan != "" {
+		jabatanHTML = fmt.Sprintf(`<span class="text-xs text-white/70 mt-0.5">%s</span>`, a.Jabatan)
+	}
+
+	fmt.Fprintf(w, `<div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden relative"><button onclick="closeDetailPanel()" class="absolute top-3 right-3 p-1.5 hover:bg-white/20 rounded-full transition-colors text-white text-xl leading-none z-10">&times;</button><div class="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white"><div class="flex items-center gap-3">%s<div class="min-w-0"><h2 class="text-lg font-bold truncate pr-8">%s</h2>%s</div></div></div><div class="p-6">%s%s%s%s%s%s%s</div></div>`,
+		fotoHTML, a.Name, jabatanHTML, bioSection, eduSection, expSection, karyaSection, kajianSection, socSection, refSection)
 }
 
 func min(a, b int) int {
@@ -537,7 +701,7 @@ func main() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Direktori Asatidz Sunnah</title>
+    <title>Profil Asatidz Sunnah</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -551,7 +715,11 @@ func main() {
 </head>
 <body class="bg-gray-100 min-h-screen pb-8">
 <div class="max-w-5xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Direktori Asatidz Sunnah</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Profil Asatidz Sunnah</h1>
+    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6 text-sm text-yellow-800 leading-relaxed">
+        <p class="mb-2"><strong>⚠️ Disclaimer:</strong> Ini adalah <em>prototype</em> profil asatidz yang dikumpulkan menggunakan metode <strong>OSINT</strong> (<em>Open-Source Intelligence</em> — pengumpulan informasi dari sumber terbuka seperti Wikipedia, situs publik, dan media sosial). Data mungkin tidak lengkap atau kurang akurat.</p>
+        <p>Saran dan kritik: <a href="mailto:itdakwah@gmail.com" class="text-yellow-600 underline hover:text-yellow-800">itdakwah@gmail.com</a></p>
+    </div>
     <input class="w-full p-3 mb-6 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" type="text" name="q" id="search-input" placeholder="Cari nama asatidz..." value="" hx-get="/api/search" hx-trigger="keyup changed delay:300ms, change" hx-target="#results-container" hx-include="[name='size']" hx-indicator="#spinner">
     <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
     <div id="results-container">`)
@@ -612,10 +780,31 @@ window.addEventListener('popstate',function(e){closeDetailPanel()});
 
 	http.HandleFunc("/api/detail", func(w http.ResponseWriter, r *http.Request) {
 		name := r.URL.Query().Get("name")
+		profileId := r.URL.Query().Get("id")
+		
+		// If id provided, look up by id directly
+		if profileId != "" {
+			detail, err := loadDetail(profileId)
+			if err == nil {
+				renderDetailProfile(w, detail)
+				return
+			}
+		}
+		
 		if name == "" {
-			http.Error(w, "Name required", 400)
+			http.Error(w, "Name or id required", 400)
 			return
 		}
+		
+		// Try loading from detail file by name (backward compat)
+		slug := slugify(name)
+		detail, err := loadDetail(slug)
+		if err == nil {
+			renderDetailProfile(w, detail)
+			return
+		}
+		
+		// Fallback: search in asatidzData
 		dataMutex.RLock()
 		defer dataMutex.RUnlock()
 		for i := range asatidzData {
