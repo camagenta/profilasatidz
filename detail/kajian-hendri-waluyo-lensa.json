@@ -1,0 +1,22 @@
+{
+  "name": "Hendri Waluyo Lensa",
+  "bio": "Nama: Hendri Waluyo Lensa RIWAYAT PENDIDIKAN S-1 Fakultas Hadits Universitas Islam Madinah S-2 Studi Al Quran dan Hadits UIN Sunan Kalijaga KARYA-KARYA ILMIAH PEMAKNAAN KEMBALI HADIS-HADIS KEUTAMAAN ORANG MISKIN DAN ORANG KAYA KRITIK FUAT SEZGIN TERHADAP IGNAZ GOZIER TENTANG LITERATUR HADITS KONTRIBUSI 'ABDUSH SHAMAD FALIMBANI DALAM PENYEBARAN HADIS DI INDONESIA MELALUI KITAB NASHIHAH AL-MUSLIMIN\n\nfunction toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
+  "education": [],
+  "expertise": [],
+  "kary": [],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=1444",
+      "title": "Biografi Hendri Waluyo Lensa",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1444_hendri_waluyo_lensa__lc___m_hum_.jpg",
+  "jabatan": "",
+  "completeness": 0,
+  "enriched_at": "2026-06-05T13:19:21.107718+07:00",
+  "method": "kajianlive"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Nizar Hidayatur Rahman",
+  "bio": "function toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
+  "education": [],
+  "expertise": [],
+  "kary": [],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=317",
+      "title": "Biografi Nizar Hidayatur Rahman",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=317_bang_nizar_hidayatur_rahman__s_s.jpg",
+  "jabatan": "",
+  "completeness": 0,
+  "enriched_at": "2026-06-05T13:19:14.361961+07:00",
+  "method": "kajianlive"
+}

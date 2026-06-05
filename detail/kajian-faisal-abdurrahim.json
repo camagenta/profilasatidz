@@ -1,0 +1,22 @@
+{
+  "name": "Faisal Abdurrahim",
+  "bio": "function toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
+  "education": [],
+  "expertise": [],
+  "kary": [],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=841",
+      "title": "Biografi Faisal Abdurrahim",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=841__ustadz_faisal_abdurrahim__m_pd_.jpg",
+  "jabatan": "",
+  "completeness": 0,
+  "enriched_at": "2026-06-05T13:19:10.106025+07:00",
+  "method": "kajianlive"
+}

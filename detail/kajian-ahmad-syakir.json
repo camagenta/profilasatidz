@@ -1,0 +1,22 @@
+{
+  "name": "Ahmad Syakir",
+  "bio": "Senin ke-3 18.55 WIB Sirah Nabawiyah Senin ke-4 18.50 WIB Sirah Nabawiyah Selasa 18.50 WIB Khudz Aqidataka Rabu ke-1 18.50 WIB Siroh Sahabat Rabu ke-2 18.50 WIB Siroh Sahabat Rabu ke-4 18.50 WIB Siroh Sahabat\n\nfunction toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
+  "education": [],
+  "expertise": [],
+  "kary": [],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "kajianlive",
+      "url": "https://kajianlive.my.id/bio_ustadz.php?id=1145",
+      "title": "Biografi Ahmad Syakir",
+      "sitename": "KajianLive",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1145__ustadz_ahmad_syakir__lc___m_a.jpg",
+  "jabatan": "",
+  "completeness": 0,
+  "enriched_at": "2026-06-05T13:19:06.980633+07:00",
+  "method": "kajianlive"
+}

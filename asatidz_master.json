@@ -3091,5 +3091,65 @@
     "has_foto": false,
     "has_detail": true,
     "id": "kajian-syaikh-muhammad-musa-alu-nasr"
+  },
+  {
+    "name": "Ahmad Syakir",
+    "slug": "ahmad-syakir",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Syakir",
+    "count": 0,
+    "categories": [],
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-ahmad-syakir",
+    "completeness": 60
+  },
+  {
+    "name": "Faisal Abdurrahim",
+    "slug": "faisal-abdurrahim",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Faisal%20Abdurrahim",
+    "count": 0,
+    "categories": [],
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-faisal-abdurrahim",
+    "completeness": 60
+  },
+  {
+    "name": "Nizar Hidayatur Rahman",
+    "slug": "nizar-hidayatur-rahman",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Nizar%20Hidayatur%20Rahman",
+    "count": 0,
+    "categories": [],
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-nizar-hidayatur-rahman",
+    "completeness": 60
+  },
+  {
+    "name": "Deni Irawan",
+    "slug": "deni-irawan",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Deni%20Irawan",
+    "count": 0,
+    "categories": [],
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-deni-irawan",
+    "completeness": 60
+  },
+  {
+    "name": "Hendri Waluyo Lensa",
+    "slug": "hendri-waluyo-lensa",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Hendri%20Waluyo%20Lensa",
+    "count": 0,
+    "categories": [],
+    "has_bio": true,
+    "has_foto": true,
+    "has_detail": true,
+    "id": "kajian-hendri-waluyo-lensa",
+    "completeness": 60
   }
 ]
