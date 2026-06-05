@@ -1,0 +1,30 @@
+{
+  "name": "Abdullah Roy",
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Roy",
+  "bio": "Roy Grafika Penataran atau sering dipanggil Abdullah Roy (lahir 1 Mei 1980) adalah dai dan akademisi asal Bantul, Yogyakarta. Ia pernah menjadi pengajar tetap kajian berbahasa Indonesia di Pintu 19 Masjid Nabawi pada periode 1434–1438 Hijriah/2013–2017 Masehi. Ia menyelesaikan pendidikan S1, S2, dan S3 di Universitas Islam Madinah, khususnya dalam bidang akidah.",
+  "education": [
+    "S1, S2, dan S3 di Universitas Islam Madinah, khususnya dalam bidang akidah",
+    "akademisi asal Bantul, Yogyakarta",
+    "Universitas Islam Madinah, khususnya dalam bidang akidah"
+  ],
+  "expertise": [],
+  "kary": [
+    "Pengasuh HSI (Halaqah Silsilah Ilmiyyah)"
+  ],
+  "social_media": {},
+  "sources": [
+    {
+      "id": "wiki_id",
+      "url": "https://id.wikipedia.org/wiki/Abdullah_Roy",
+      "title": "Abdullah Roy",
+      "sitename": "Wikipedia Bahasa Indonesia",
+      "accessed": "2026-06-05"
+    }
+  ],
+  "foto": "",
+  "jabatan": "Pengasuh HSI (Halaqah Silsilah Ilmiyyah)",
+  "completeness": 0,
+  "enriched_at": "2026-06-05T06:21:50.123923+07:00",
+  "method": "wikipedia",
+  "id": "kajian-abdullah-roy"
+}
