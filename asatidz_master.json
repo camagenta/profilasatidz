@@ -1146,11 +1146,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Aspri%20Rahmat",
     "count": 3,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-aspri-rahmat",
-    "completeness": 65
+    "completeness": 100
   },
   {
     "name": "Aunur Rafiq Ghufran",
@@ -2040,11 +2040,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Romelan",
     "count": 1,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-muhammad-romelan",
-    "completeness": 65
+    "completeness": 100
   },
   {
     "name": "Muhammad Suaib Al-Faiz",
@@ -2510,11 +2510,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Sulam%20Mustareja",
     "count": 8,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-sulam-mustareja",
-    "completeness": 65
+    "completeness": 100
   },
   {
     "name": "Sulhan Jauhari",

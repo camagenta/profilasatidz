@@ -69,8 +69,15 @@ def clean_bio_if_schedule(bio_text):
     text_lower = bio_text.lower()
     days = ["jumat", "sabtu", "ahad", "senin", "selasa", "rabu", "kamis"]
     day_count = sum(1 for day in days if day in text_lower)
-    if day_count >= 2 or "jadwal" in text_lower or "wib" in text_lower or "ceramah" in text_lower or "kajian rutin" in text_lower:
+    has_time = bool(re.search(r'\b\d{1,2}[.:]\d{2}\s*(?:wib|wita|wit)\b', text_lower))
+    
+    if len(bio_text) < 150:
+        if 'jadwal' in text_lower or 'rutin' in text_lower or day_count >= 2:
+            return ""
+            
+    if day_count >= 3 and has_time:
         return ""
+        
     return bio_text
 
 def enrich_from_kajianlive(ustadz_id, ustadz_name):
@@ -98,8 +105,16 @@ def enrich_from_kajianlive(ustadz_id, ustadz_name):
     karya = []
     
     if card_text:
-        current_section = "bio"
+        # First, find text nodes that are direct children of card_text
         for child in card_text.children:
+            if child.name is None:
+                text = clean_html(str(child))
+                if len(text) > 15 and not text.startswith('Nama:'):
+                    bio_parts.append(text)
+                    
+        # Now walk all tags inside card_text
+        current_section = 'bio'
+        for child in card_text.find_all(recursive=False):
             if child.name == 'h3':
                 header_text = child.get_text().strip().upper()
                 if 'PENDIDIKAN' in header_text:
@@ -117,20 +132,53 @@ def enrich_from_kajianlive(ustadz_id, ustadz_name):
                 elif current_section == 'karya':
                     karya.extend(items)
             elif child.name == 'p':
-                text = clean_html(child.get_text())
-                if not text or text.startswith('Nama:'):
-                    continue
-                if current_section == 'education':
-                    education.append(text)
-                elif current_section == 'karya':
-                    karya.append(text)
-                elif current_section in ['bio', 'profil']:
-                    bio_parts.append(text)
-            elif child.name is None:
-                text = clean_html(str(child))
-                if len(text) > 10 and not text.startswith('Nama:') and current_section in ['bio', 'profil']:
-                    bio_parts.append(text)
-                    
+                # Handle potential nested tags inside p (due to buggy HTML markup)
+                nested_h3s = child.find_all('h3')
+                nested_ps = child.find_all('p')
+                nested_uls = child.find_all(['ul', 'ol'])
+                
+                if nested_h3s or nested_ps or nested_uls:
+                    for p_child in child.children:
+                        if p_child.name == 'h3':
+                            header_text = p_child.get_text().strip().upper()
+                            if 'PENDIDIKAN' in header_text:
+                                current_section = 'education'
+                            elif 'KARYA' in header_text:
+                                current_section = 'karya'
+                            elif 'PROFIL' in header_text:
+                                current_section = 'profil'
+                            else:
+                                current_section = 'other'
+                        elif p_child.name in ['ul', 'ol']:
+                            items = [clean_html(li.get_text()) for li in p_child.find_all('li') if li.get_text().strip()]
+                            if current_section == 'education':
+                                education.extend(items)
+                            elif current_section == 'karya':
+                                karya.extend(items)
+                        elif p_child.name == 'p':
+                            text = clean_html(p_child.get_text())
+                            if text and not text.startswith('Nama:'):
+                                if current_section in ['bio', 'profil']:
+                                    bio_parts.append(text)
+                                elif current_section == 'education':
+                                    education.append(text)
+                                elif current_section == 'karya':
+                                    karya.append(text)
+                        elif p_child.name is None:
+                            text = clean_html(str(p_child))
+                            if len(text) > 15 and not text.startswith('Nama:'):
+                                if current_section in ['bio', 'profil']:
+                                    bio_parts.append(text)
+                else:
+                    text = clean_html(child.get_text())
+                    if text and not text.startswith('Nama:'):
+                        if current_section in ['bio', 'profil']:
+                            bio_parts.append(text)
+                        elif current_section == 'education':
+                            education.append(text)
+                        elif current_section == 'karya':
+                            karya.append(text)
+                            
     bio = "\n\n".join(bio_parts).strip()
     if len(bio) > 1000:
         bio = bio[:1000] + "..."
