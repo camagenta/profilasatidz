@@ -51,17 +51,106 @@ def enrich_from_url(profile_id, url):
     """Enrich a profile from a user-provided URL."""
     log(f"  Enriching {profile_id} from URL: {url}")
     
+    # Add paths so we can import nyicil_enrich
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        import nyicil_enrich as ne
+    except ImportError:
+        sys.path.append('/home/ubuntu/profilasatidz')
+        import nyicil_enrich as ne
+    
     # Determine enrichment strategy based on URL
     if "wikipedia.org" in url:
         # Extract wiki title from URL
         match = re.search(r'/wiki/([^/]+)', url)
         if match:
-            title = match.group(1).replace("_", " ")
-            log(f"  Wiki title: {title}")
-            # Re-run enrichment with this specific wiki page
-            # For now, log it - full implementation would need Wiki API call
-            log(f"  ✓ Wiki enrichment from URL: {url}")
-            return True
+            import urllib.parse
+            title = urllib.parse.unquote(match.group(1)).replace("_", " ")
+            log(f"  Wiki title extracted: {title}")
+            
+            # Fetch Wikipedia extract
+            lang = "en" if ".en.wikipedia.org" in url or "/en." in url else "id"
+            wiki_text = ne.wiki_extract(title, lang)
+            
+            if wiki_text:
+                bio = ne.extract_bio_from_wiki(wiki_text)
+                educations = ne.extract_pendidikan(wiki_text)
+                expertise = ne.extract_keahlian(wiki_text)
+                
+                # Fetch name from master to verify
+                master_json, rc = ne.docker_exec(f"cat {ne.MASTER_FILE}")
+                if rc != 0:
+                    log("  ✗ Failed to read master file from container")
+                    return False
+                master = json.loads(master_json)
+                
+                profile_name = "Unknown"
+                target_entry = None
+                for entry in master:
+                    if entry.get("id") == profile_id:
+                        profile_name = entry.get("name")
+                        target_entry = entry
+                        break
+                
+                # Build result
+                result = {
+                    "name": profile_name,
+                    "source_url": target_entry.get("source_url", "") if target_entry else "",
+                    "bio": bio,
+                    "education": educations,
+                    "expertise": expertise,
+                    "kary": [],
+                    "social_media": {},
+                    "sources": [{
+                        "id": "wiki_id",
+                        "url": url,
+                        "title": title,
+                        "sitename": f"Wikipedia Bahasa {'Inggris' if lang == 'en' else 'Indonesia'}",
+                        "accessed": datetime.now(JAKARTA_TZ).strftime("%Y-%m-%d")
+                    }],
+                    "foto": "",
+                    "jabatan": "",
+                    "completeness": 0,
+                    "enriched_at": datetime.now(JAKARTA_TZ).isoformat(),
+                    "method": "wikipedia"
+                }
+                
+                # Save detail JSON in container
+                detail_path = f"{ne.DETAIL_DIR}/{profile_id}.json"
+                result = ne.merge_existing_detail(detail_path, result)
+                result["id"] = profile_id
+                detail_json = json.dumps(result, ensure_ascii=False, indent=2)
+                
+                import base64
+                b64 = base64.b64encode(detail_json.encode()).decode()
+                cmd = f"echo '{b64}' | base64 -d > '{detail_path}'"
+                out, rc = ne.docker_exec(cmd)
+                
+                if rc == 0:
+                    log(f"  ✓ Detail saved: {detail_path}")
+                    # Update master entry
+                    for m in master:
+                        if m.get("id") == profile_id:
+                            m["has_bio"] = bool(result.get("bio"))
+                            m["has_foto"] = bool(result.get("foto"))
+                            m["has_detail"] = True
+                            m["completeness"] = (
+                                (35 if result.get("bio") else 0) +
+                                (25 if result.get("foto") else 0) +
+                                25 +
+                                (15 if m.get("count", 0) > 0 else 0)
+                            )
+                            break
+                    # Write master back using robust base64 docker_exec
+                    master_json_str = json.dumps(master, ensure_ascii=False, indent=2)
+                    b64_master = base64.b64encode(master_json_str.encode()).decode()
+                    master_cmd = f"echo '{b64_master}' | base64 -d > '{ne.MASTER_FILE}'"
+                    ne.docker_exec(master_cmd)
+                    log(f"  ✓ Master file updated in container")
+                    return True
+                else:
+                    log(f"  ✗ Failed to write detail file: {out}")
+                    return False
     else:
         # Generic URL - log for manual review
         log(f"  Non-Wikipedia URL, marking for review: {url}")
@@ -117,6 +206,12 @@ def main():
                     f"repos/{owner}/{repo}/issues/{issue_num}/comments",
                     method="POST",
                     data={"body": f"✅ Koreksi diterapkan dari {url}\n\n*Applied by bot at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
+                )
+                # Close the issue
+                gh_api(
+                    f"repos/{owner}/{repo}/issues/{issue_num}",
+                    method="PATCH",
+                    data={"state": "closed"}
                 )
             else:
                 corrections_pending += 1

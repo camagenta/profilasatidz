@@ -744,10 +744,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Sabiq",
     "count": 14,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-ahmad-sabiq"
+    "has_detail": true,
+    "id": "kajian-ahmad-sabiq",
+    "completeness": 75
   },
   {
     "name": "Ahmad Thonarih",
