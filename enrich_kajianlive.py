@@ -11,6 +11,7 @@ import sys
 import time
 from datetime import datetime, timezone, timedelta
 from urllib.parse import quote, unquote
+from bs4 import BeautifulSoup
 
 CONTAINER = "profilasatidz"
 MASTER_FILE = "/root/asatidz_master.json"
@@ -107,76 +108,71 @@ def enrich_from_kajianlive(ustadz_id, ustadz_name):
     if not ok:
         log(f"  ✗ Failed to fetch profile page")
         return None
+        
+    soup = BeautifulSoup(html, 'html.parser')
     
     # 1. Extract photo
     foto = ""
-    foto_match = re.search(r'get_foto_ust\.php\?file=([^"\'>\s]+)', html)
-    if foto_match:
-        foto = f"https://kajianlive.my.id/get_foto_ust.php?file={foto_match.group(1)}"
+    img_tag = soup.find('img', src=re.compile(r'get_foto_ust\.php'))
+    if img_tag:
+        foto = f"https://kajianlive.my.id/{img_tag['src'].lstrip('/')}"
         log(f"  ✓ Photo URL: {foto}")
-    
-    # 2. Extract Biography & Education
-    bio = ""
+        
+    # 2. Extract Biography, Education, and Karya using structured BeautifulSoup traversal
+    card_text = soup.find(class_='card-text')
+    bio_parts = []
     education = []
-    
-    # Find biography text blocks
-    # Typically inside <p> or plain text sections
-    # In KajianLive, it is often raw text after "Jadwal Kajian Rutin:"
-    bio_section_match = re.search(r'Jadwal Kajian Rutin:.*?</main>|Jadwal Kajian Rutin:(.*?)Copyright', html, re.DOTALL | re.IGNORECASE)
-    if bio_section_match:
-        bio_text = bio_section_match.group(1) if len(bio_section_match.groups()) > 0 else bio_section_match.group(0)
-        
-        # Extract individual paragraphs or clean block
-        paragraphs = re.split(r'<br\s*/?>|\n\n', bio_text)
-        cleaned_paragraphs = []
-        for p in paragraphs:
-            cleaned = clean_html(p)
-            # Skip advertisement/schedule text
-            if not cleaned or "Jadwal" in cleaned or "Copyright" in cleaned or "@kajianlive" in cleaned:
-                continue
-            if len(cleaned) > 50:
-                cleaned_paragraphs.append(cleaned)
-        
-        if cleaned_paragraphs:
-            bio = "\n\n".join(cleaned_paragraphs)
-            # Shorten if too long
-            if len(bio) > 800:
-                bio = bio[:800] + "..."
-            log(f"  ✓ Bio: {len(bio)} chars extracted")
-            
-            # Extract education
-            education = parse_education_from_text(bio)
-            if education:
-                log(f"  ✓ Education: {len(education)} items")
-
-    # 3. Extract Karya Tulis (Publications)
     karya = []
-    karya_section_match = re.search(r'Karya tulis(.*?)Copyright', html, re.DOTALL | re.IGNORECASE)
-    if karya_section_match:
-        karya_text = karya_section_match.group(1)
-        items = re.findall(r'<li>(.*?)</li>|\d+\.\s*(.*?)(?=<br|<p|<li>|\d+\.|$)', karya_text, re.DOTALL)
-        for item in items:
-            val = item[0] or item[1]
-            clean = clean_html(val)
-            if clean and 5 < len(clean) < 150:
-                karya.append(clean)
-        if karya:
-            log(f"  ✓ Karya Tulis: {len(karya)} publications")
-            
-    # If no bio found in text blocks, fallback to searching for clean text paragraphs in entire HTML
-    if not bio:
-        text_only = clean_html(html)
-        # Find index of "Jadwal Kajian Rutin:"
-        idx = text_only.find("Jadwal Kajian Rutin:")
-        if idx != -1:
-            snippet = text_only[idx+20:idx+800]
-            bio = snippet.strip()
-            log(f"  ✓ Fallback Bio: {len(bio)} chars extracted")
-            education = parse_education_from_text(bio)
-
+    
+    if card_text:
+        current_section = "bio"
+        for child in card_text.children:
+            if child.name == 'h3':
+                header_text = child.get_text().strip().upper()
+                if 'PENDIDIKAN' in header_text:
+                    current_section = 'education'
+                elif 'KARYA' in header_text:
+                    current_section = 'karya'
+                elif 'PROFIL' in header_text:
+                    current_section = 'profil'
+                else:
+                    current_section = 'other'
+            elif child.name in ['ul', 'ol']:
+                items = [clean_html(li.get_text()) for li in child.find_all('li') if li.get_text().strip()]
+                if current_section == 'education':
+                    education.extend(items)
+                elif current_section == 'karya':
+                    karya.extend(items)
+            elif child.name == 'p':
+                text = clean_html(child.get_text())
+                if not text or text.startswith('Nama:'):
+                    continue
+                if current_section == 'education':
+                    education.append(text)
+                elif current_section == 'karya':
+                    karya.append(text)
+                elif current_section in ['bio', 'profil']:
+                    bio_parts.append(text)
+            elif child.name is None: # Plain text child
+                text = clean_html(str(child))
+                if len(text) > 10 and not text.startswith('Nama:') and current_section in ['bio', 'profil']:
+                    bio_parts.append(text)
+                    
+    # Join and clean bio parts
+    bio = "\n\n".join(bio_parts).strip()
+    if len(bio) > 1000:
+        bio = bio[:1000] + "..."
+        
+    if bio:
+        log(f"  ✓ Bio: {len(bio)} chars extracted")
+    if education:
+        log(f"  ✓ Education: {len(education)} items")
+    if karya:
+        log(f"  ✓ Karya Tulis: {len(karya)} publications")
+        
     # Clean bio if it is just a schedule
     bio = clean_bio_if_schedule(bio)
-
+    
     result = {
         "name": ustadz_name,
         "bio": bio,

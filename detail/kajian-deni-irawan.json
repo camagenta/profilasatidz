@@ -1,9 +1,17 @@
 {
   "name": "Deni Irawan",
-  "bio": "Profil Nama: Deni Irawan RIWAYAT PENDIDIKAN Madrasah Aliyah Daarul Falahiyyah S-1 Fakultas Syariah, Universitas Islam Madinah, S-2 Jurusan Dakwah dan Kebudayaan Islam, Fakultas Dakwah dan Ushuluddin, Universitas Islam Madinah, KARYA ILMIAH Ad-Daur Ad-Da'wi Li Al-Idza'at Al-Islamiyyah Fi Indonesia (Peran\n\nRadio-Radio Islam di Indonesia dalam Menyampaikan Pesan Dakwah) Hujjiatu Al-Istihsan 'Inda Al-Madzahib Al-Arba'ah (Kehujjahan\n\nIstihsan Menurut Empat Madzhab) Konsep Pemahaman Agama Islam Terhadap Kecerdasan Emosional Anak\n\nfunction toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
-  "education": [],
+  "bio": "",
+  "education": [
+    "Madrasah Aliyah Daarul Falahiyyah",
+    "S-1 Fakultas Syariah, Universitas Islam Madinah,",
+    "S-2 Jurusan Dakwah dan Kebudayaan Islam, Fakultas Dakwah dan Ushuluddin, Universitas Islam Madinah,"
+  ],
   "expertise": [],
-  "kary": [],
+  "kary": [
+    "Ad-Daur Ad-Da’wi Li Al-Idza’at Al-Islamiyyah Fi Indonesia (PeranRadio-Radio Islam di Indonesia dalam Menyampaikan Pesan Dakwah)",
+    "Hujjiatu Al-Istihsan ‘Inda Al-Madzahib Al-Arba’ah (KehujjahanIstihsan Menurut Empat Madzhab)",
+    "Konsep Pemahaman Agama Islam Terhadap Kecerdasan Emosional Anak"
+  ],
   "social_media": {},
   "sources": [
     {
@@ -17,7 +25,7 @@
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1441_deni_irawan.jpg",
   "jabatan": "",
   "completeness": 0,
-  "enriched_at": "2026-06-05T13:28:15.243445+07:00",
+  "enriched_at": "2026-06-05T13:44:59.662803+07:00",
   "method": "kajianlive",
   "count": 0,
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Deni%20Irawan"

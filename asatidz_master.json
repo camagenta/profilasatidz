@@ -3098,11 +3098,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Syakir",
     "count": 0,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-ahmad-syakir",
-    "completeness": 50
+    "completeness": 85
   },
   {
     "name": "Faisal Abdurrahim",
@@ -3134,11 +3134,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Deni%20Irawan",
     "count": 0,
     "categories": [],
-    "has_bio": true,
+    "has_bio": false,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-deni-irawan",
-    "completeness": 85
+    "completeness": 50
   },
   {
     "name": "Hendri Waluyo Lensa",

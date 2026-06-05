@@ -1,9 +1,16 @@
 {
   "name": "Hendri Waluyo Lensa",
-  "bio": "Nama: Hendri Waluyo Lensa RIWAYAT PENDIDIKAN S-1 Fakultas Hadits Universitas Islam Madinah S-2 Studi Al Quran dan Hadits UIN Sunan Kalijaga KARYA-KARYA ILMIAH PEMAKNAAN KEMBALI HADIS-HADIS KEUTAMAAN ORANG MISKIN DAN ORANG KAYA KRITIK FUAT SEZGIN TERHADAP IGNAZ GOZIER TENTANG LITERATUR HADITS KONTRIBUSI 'ABDUSH SHAMAD FALIMBANI DALAM PENYEBARAN HADIS DI INDONESIA MELALUI KITAB NASHIHAH AL-MUSLIMIN\n\nfunction toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
-  "education": [],
+  "bio": "Beliau adalah pengajar di STDI Imam Syafii Jember.",
+  "education": [
+    "S-1 Fakultas Hadits Universitas Islam Madinah",
+    "S-2 Studi Al Quran dan Hadits UIN Sunan Kalijaga"
+  ],
   "expertise": [],
-  "kary": [],
+  "kary": [
+    "PEMAKNAAN KEMBALI HADIS-HADIS KEUTAMAAN ORANG MISKIN DAN ORANG KAYA",
+    "KRITIK FUAT SEZGIN TERHADAP IGNAZ GOZIER TENTANG LITERATUR HADITS",
+    "KONTRIBUSI ‘ABDUSH SHAMAD FALIMBANI DALAM PENYEBARAN HADIS DI INDONESIA MELALUI KITAB NASHIHAH AL-MUSLIMIN"
+  ],
   "social_media": {},
   "sources": [
     {
@@ -17,7 +24,7 @@
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1444_hendri_waluyo_lensa__lc___m_hum_.jpg",
   "jabatan": "",
   "completeness": 0,
-  "enriched_at": "2026-06-05T13:28:20.425312+07:00",
+  "enriched_at": "2026-06-05T13:45:10.030208+07:00",
   "method": "kajianlive",
   "count": 0,
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Hendri%20Waluyo%20Lensa"
