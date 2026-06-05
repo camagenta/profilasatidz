@@ -2,9 +2,12 @@ version: "3.8"
 services:
   profilasatidz:
     build: .
+    container_name: profilasatidz
     ports:
       - "8080:8080"
     volumes:
       - ./asatidz.json:/root/asatidz.json
       - ./asatidz_enriched.json:/root/asatidz_enriched.json
+      - ./asatidz_master.json:/root/asatidz_master.json
+      - ./detail:/root/detail
     restart: unless-stopped

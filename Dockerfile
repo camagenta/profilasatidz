@@ -10,6 +10,7 @@ RUN go build -o main main.go
 FROM alpine:latest
 WORKDIR /root/
 COPY --from=builder /app/main .
-COPY asatidz.json .
+COPY asatidz.json asatidz_enriched.json asatidz_master.json ./
+COPY detail/ ./detail/
 EXPOSE 8080
 CMD ["./main"]
