@@ -1,0 +1,18 @@
+# Compiled Go binaries (rebuilt via go build or docker)
+/main
+/profilasatidz
+/updater
+/updater_v2
+
+# Logs
+*.log
+nyicil*.log
+
+# OS / Editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local runtime
+/tmp/
