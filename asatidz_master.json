@@ -3098,11 +3098,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Syakir",
     "count": 0,
     "categories": [],
-    "has_bio": true,
+    "has_bio": false,
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-ahmad-syakir",
-    "completeness": 60
+    "completeness": 50
   },
   {
     "name": "Faisal Abdurrahim",
@@ -3114,7 +3114,7 @@
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-faisal-abdurrahim",
-    "completeness": 60
+    "completeness": 85
   },
   {
     "name": "Nizar Hidayatur Rahman",
@@ -3126,7 +3126,7 @@
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-nizar-hidayatur-rahman",
-    "completeness": 60
+    "completeness": 85
   },
   {
     "name": "Deni Irawan",
@@ -3138,7 +3138,7 @@
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-deni-irawan",
-    "completeness": 60
+    "completeness": 85
   },
   {
     "name": "Hendri Waluyo Lensa",
@@ -3150,6 +3150,6 @@
     "has_foto": true,
     "has_detail": true,
     "id": "kajian-hendri-waluyo-lensa",
-    "completeness": 60
+    "completeness": 85
   }
 ]

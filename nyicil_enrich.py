@@ -489,8 +489,10 @@ def main():
                 profile_id = entry.get("id") or f"kajian-{entry.get('slug') or slugify(name)}"
                 detail_path = f"{DETAIL_DIR}/{profile_id}.json"
                 result = merge_existing_detail(detail_path, result)
-                # Ensure id is set in result
+                # Ensure id, count, and source_url are set in result
                 result["id"] = profile_id
+                result["count"] = entry.get("count", 0)
+                result["source_url"] = entry.get("source_url", "")
                 detail_json = json.dumps(result, ensure_ascii=False, indent=2)
                 
                 # Write via base64 to avoid shell escaping issues

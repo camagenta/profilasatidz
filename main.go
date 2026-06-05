@@ -605,8 +605,12 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 
 	// Kajian count section
 	kajianSection := ""
-	if a.Count > 0 {
-		kajianSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Kajian</h3><p class="text-sm text-gray-700"><span class="font-bold text-blue-600">%d</span> kajian di <a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:underline">kajian.net</a></p></div>`, a.Count, a.SourceURL)
+	if a.SourceURL != "" {
+		if a.Count > 0 {
+			kajianSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Kajian</h3><p class="text-sm text-gray-700"><span class="font-bold text-blue-600">%d</span> kajian di <a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:underline">kajian.net</a></p></div>`, a.Count, a.SourceURL)
+		} else {
+			kajianSection = fmt.Sprintf(`<div class="mt-4"><h3 class="text-sm font-semibold text-gray-600 mb-2">Kajian</h3><p class="text-sm text-gray-700">Lihat daftar kajian di <a href="%s" target="_blank" rel="noopener" class="text-blue-600 hover:underline">kajian.net</a></p></div>`, a.SourceURL)
+		}
 	}
 
 	// References section — Wikipedia-style "Daftar Pustaka"

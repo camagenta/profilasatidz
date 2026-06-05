@@ -1,6 +1,6 @@
 {
   "name": "Ahmad Syakir",
-  "bio": "Senin ke-3 18.55 WIB Sirah Nabawiyah Senin ke-4 18.50 WIB Sirah Nabawiyah Selasa 18.50 WIB Khudz Aqidataka Rabu ke-1 18.50 WIB Siroh Sahabat Rabu ke-2 18.50 WIB Siroh Sahabat Rabu ke-4 18.50 WIB Siroh Sahabat\n\nfunction toggleMenu() { document.getElementById(\"navMenu\").classList.toggle(\"active\"); }",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -17,6 +17,8 @@
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1145__ustadz_ahmad_syakir__lc___m_a.jpg",
   "jabatan": "",
   "completeness": 0,
-  "enriched_at": "2026-06-05T13:19:06.980633+07:00",
-  "method": "kajianlive"
+  "enriched_at": "2026-06-05T13:28:00.699935+07:00",
+  "method": "kajianlive",
+  "count": 0,
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Syakir"
 }

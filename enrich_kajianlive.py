@@ -88,6 +88,16 @@ def parse_education_from_text(text):
                 items.append(clean)
     return items[:5]
 
+def clean_bio_if_schedule(bio_text):
+    if not bio_text:
+        return ""
+    text_lower = bio_text.lower()
+    days = ["jumat", "sabtu", "ahad", "senin", "selasa", "rabu", "kamis"]
+    day_count = sum(1 for day in days if day in text_lower)
+    if day_count >= 2 or "jadwal" in text_lower or "wib" in text_lower or "ceramah" in text_lower or "kajian rutin" in text_lower:
+        return ""
+    return bio_text
+
 def enrich_from_kajianlive(ustadz_id, ustadz_name):
     """Scrape and parse KajianLive bio page"""
     url = f"https://kajianlive.my.id/bio_ustadz.php?id={ustadz_id}"
@@ -163,6 +173,9 @@ def enrich_from_kajianlive(ustadz_id, ustadz_name):
             bio = snippet.strip()
             log(f"  ✓ Fallback Bio: {len(bio)} chars extracted")
             education = parse_education_from_text(bio)
+
+    # Clean bio if it is just a schedule
+    bio = clean_bio_if_schedule(bio)
 
     result = {
         "name": ustadz_name,
@@ -289,16 +302,21 @@ def main():
         # Scrape KajianLive profile
         result = enrich_from_kajianlive(k_id, name)
         
-        if result and result.get("bio"):
-            # Update master array
-            # Check if ustadz already exists in master, else add him
+        # We allow saving even if bio is empty, as long as we have a photo or sources
+        if result and (result.get("bio") or result.get("foto") or result.get("kary")):
+            # Find or create master entry first so we can copy its count & source_url
+            entry = None
             found = False
             for m in master:
                 if m.get("slug") == slug or m.get("id") == profile_id:
-                    m["has_bio"] = True
+                    m["has_bio"] = bool(result.get("bio"))
+                    m["has_foto"] = bool(result.get("foto"))
                     m["has_detail"] = True
                     m["completeness"] = (
-                        35 + 25 + 15  # bio, detail, count (if count > 0)
+                        (35 if result.get("bio") else 0) +
+                        (25 if result.get("foto") else 0) +
+                        25 +
+                        (15 if m.get("count", 0) > 0 else 0)
                     )
                     entry = m
                     found = True
@@ -311,14 +329,22 @@ def main():
                     "source_url": f"https://kajian.net/kajian-audio/Ceramah/{quote(name)}",
                     "count": 0,
                     "categories": [],
-                    "has_bio": True,
+                    "has_bio": bool(result.get("bio")),
                     "has_foto": bool(result.get("foto")),
                     "has_detail": True,
                     "id": profile_id,
-                    "completeness": 60
+                    "completeness": (
+                        (35 if result.get("bio") else 0) +
+                        (25 if result.get("foto") else 0) +
+                        25
+                    )
                 }
                 master.append(entry)
                 log(f"  ✓ Added {name} to master index")
+            
+            # Copy count and source_url from master entry into the detail result
+            result["count"] = entry.get("count", 0)
+            result["source_url"] = entry.get("source_url", "")
             
             # Save detail JSON in container
             detail_path = f"{DETAIL_DIR}/{profile_id}.json"
@@ -332,11 +358,11 @@ def main():
             if rc == 0:
                 log(f"  ✓ Detail saved: {detail_path}")
                 # Create/update GitHub Issue
-                update_github_issue(profile_id, name, True, entry)
+                update_github_issue(profile_id, name, bool(result.get("bio")), entry)
             else:
                 log(f"  ✗ Failed to save detail: {out}")
         else:
-            log(f"  ✗ Skipping {name} (no bio found)")
+            log(f"  ✗ Skipping {name} (no profile or photo found)")
             
     # Write master file back to container
     log("Updating master file in container...")
