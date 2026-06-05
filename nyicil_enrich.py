@@ -98,6 +98,45 @@ def strip_html(html):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+def is_relevant_profile(text, title=""):
+    """
+    Validate if the Wikipedia page text is related to Islamic religious figures/scholars.
+    """
+    if not text:
+        return False
+    
+    text_lower = text.lower()
+    title_lower = title.lower() if title else ""
+    
+    # Islamic/religious companion keywords
+    islamic_keywords = [
+        "ustadz", "ustad", "ustadzah", "ulama", "pendakwah", "da'i", "dai",
+        "penceramah", "mubaligh", "mubalig", "tokoh agama", "ahli ilmu",
+        "pemuka agama", "sunnah", "salaf", "salafy", "salafiyah", "pesantren",
+        "ma'had", "madrasah", "kajian", "dakwah", "hadits", "fiqih", "tafsir",
+        "aqidah", "tauhid", "fiqh", "hadis", "syaikh", "sheikh", "khotib", "khatib",
+        "studi islam", "pemikiran islam", "islamic"
+    ]
+    
+    # Check if at least one companion keyword is present in text or title
+    has_keyword = any(kw in text_lower for kw in islamic_keywords) or any(kw in title_lower for kw in islamic_keywords)
+    
+    # Check if the page is generally related to Islam/Muslims
+    has_islam_context = any(w in text_lower for w in ["islam", "muslim", "hijriah", "masehi", "al-qur'an", "quran", "sunnah"])
+    
+    # Exclude obvious non-religious professions if they don't have strong religious context
+    non_religious_jobs = ["politikus", "bupati", "gubernur", "presiden", " dpr ", " dpd ", "menteri", "atlet", "pemain sepak", "penyanyi", "aktor", "aktris", "sutradara", "pembalap", "pengusaha"]
+    has_non_religious_job = any(job in text_lower for job in non_religious_jobs)
+    
+    # Strong positive matches override non-religious jobs (e.g., an Ustadz who is also active in other fields)
+    strong_keywords = ["ustadz", "ustad", "ulama", "pendakwah", "syaikh", "pesantren", "ma'had", "kajian", "dakwah", "salafy", "sunnah"]
+    has_strong_keyword = any(skw in text_lower for skw in strong_keywords) or any(skw in title_lower for skw in strong_keywords)
+    
+    if has_non_religious_job and not has_strong_keyword:
+        return False
+        
+    return has_keyword and has_islam_context
+
 def wiki_search(name, lang="id"):
     """Search Wikipedia for a person"""
     from urllib.parse import quote
@@ -201,39 +240,48 @@ def enrich_profile(name, source_url):
     wiki_title = ""
     
     if wiki_results:
-        # Take first relevant result
-        best = wiki_results[0]
-        wiki_title = best.get("title", "")
-        log(f"  Wiki match: {wiki_title} (score: {best.get('wordcount', 0)} words)")
-        
-        # Extract full article
-        wiki_text = wiki_extract(wiki_title, "id")
-        time.sleep(WIKIPEDIA_DELAY)
-        
-        if wiki_text:
-            bio = extract_bio_from_wiki(wiki_text)
-            educations = extract_pendidikan(wiki_text)
-            expertise = extract_keahlian(wiki_text)
+        # Loop through top 5 results to find the first relevant religious profile
+        for result_item in wiki_results[:5]:
+            candidate_title = result_item.get("title", "")
+            candidate_text = wiki_extract(candidate_title, "id")
+            time.sleep(WIKIPEDIA_DELAY)
             
-            if bio:
-                log(f"  ✓ Bio: {len(bio)} chars")
-            if educations:
-                log(f"  ✓ Education: {len(educations)} entries")
-            if expertise:
-                log(f"  ✓ Expertise: {len(expertise)} topics")
+            if candidate_text and is_relevant_profile(candidate_text, candidate_title):
+                wiki_title = candidate_title
+                log(f"  ✓ Relevant Wiki ID match: {wiki_title} (score: {result_item.get('wordcount', 0)} words)")
+                bio = extract_bio_from_wiki(candidate_text)
+                educations = extract_pendidikan(candidate_text)
+                expertise = extract_keahlian(candidate_text)
+                
+                if bio:
+                    log(f"    ✓ Bio: {len(bio)} chars")
+                if educations:
+                    log(f"    ✓ Education: {len(educations)} entries")
+                if expertise:
+                    log(f"    ✓ Expertise: {len(expertise)} topics")
+                break
+            else:
+                log(f"    Skipping irrelevant Wiki ID candidate: {candidate_title}")
     
     # Fallback: Wikipedia EN if ID failed
     if not bio:
         wiki_en = wiki_search(name, "en")
         time.sleep(WIKIPEDIA_DELAY)
         if wiki_en:
-            en_title = wiki_en[0].get("title", "")
-            en_text = wiki_extract(en_title, "en")
-            time.sleep(WIKIPEDIA_DELAY)
-            if en_text:
-                # For EN wiki, just store title reference
-                log(f"  EN wiki found: {en_title} (will translate later)")
-                wiki_title = en_title
+            for result_item in wiki_en[:5]:
+                candidate_title = result_item.get("title", "")
+                candidate_text = wiki_extract(candidate_title, "en")
+                time.sleep(WIKIPEDIA_DELAY)
+                
+                if candidate_text and is_relevant_profile(candidate_text, candidate_title):
+                    log(f"  ✓ Relevant Wiki EN match: {candidate_title}")
+                    wiki_title = candidate_title
+                    bio = extract_bio_from_wiki(candidate_text)
+                    educations = extract_pendidikan(candidate_text)
+                    expertise = extract_keahlian(candidate_text)
+                    break
+                else:
+                    log(f"    Skipping irrelevant Wiki EN candidate: {candidate_title}")
     
     # Build result
     result = {
