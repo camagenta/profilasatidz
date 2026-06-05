@@ -226,6 +226,28 @@ def extract_keahlian(text):
             results.append(topic)
     return results[:8]
 
+def check_title_match(target_name, wiki_title):
+    """
+    Ensure the Wikipedia article title shares at least one significant word with the target name,
+    preventing citation matches (like name mentioned in bibliography of an unrelated article) from hijacking.
+    """
+    import re
+    # Normalize and clean name
+    clean_target = re.sub(r'[^\w\s]', ' ', target_name).lower()
+    
+    # Remove common honorifics and titles
+    honorifics = {"ustadz", "ustad", "ustadzah", "haji", "h", "hj", "syaikh", "sheikh", "kiai", "kyai", "dr", "prof", "lc", "ma"}
+    target_words = [w for w in clean_target.split() if w not in honorifics and len(w) > 2]
+    
+    clean_title = re.sub(r'[^\w\s]', ' ', wiki_title).lower()
+    title_words = clean_title.split()
+    
+    # Check if at least one significant word matches
+    for word in target_words:
+        if word in title_words or any(word in tw for tw in title_words):
+            return True
+    return False
+
 def enrich_profile(name, source_url):
     """Enrich a single profile. Returns dict or None."""
     log(f"  Enriching: {name}")
@@ -243,6 +265,12 @@ def enrich_profile(name, source_url):
         # Loop through top 5 results to find the first relevant religious profile
         for result_item in wiki_results[:5]:
             candidate_title = result_item.get("title", "")
+            
+            # First, check if title is a semantic match to the name
+            if not check_title_match(name, candidate_title):
+                log(f"    Skipping Wiki ID candidate (Title mismatch): {candidate_title}")
+                continue
+                
             candidate_text = wiki_extract(candidate_title, "id")
             time.sleep(WIKIPEDIA_DELAY)
             
@@ -270,6 +298,12 @@ def enrich_profile(name, source_url):
         if wiki_en:
             for result_item in wiki_en[:5]:
                 candidate_title = result_item.get("title", "")
+                
+                # Check title match for EN wiki too
+                if not check_title_match(name, candidate_title):
+                    log(f"    Skipping Wiki EN candidate (Title mismatch): {candidate_title}")
+                    continue
+                    
                 candidate_text = wiki_extract(candidate_title, "en")
                 time.sleep(WIKIPEDIA_DELAY)
                 
@@ -504,16 +538,16 @@ def main():
     log("Updating master file...")
     master_json = json.dumps(master, ensure_ascii=False, indent=2)
     
-    # Write to temp file then copy to container
-    tmp_file = "/tmp/asatidz_master_update.json"
-    with open(tmp_file, "w") as f:
-        f.write(master_json)
+    # Write via base64 to avoid shell escaping and device-busy issues
+    import base64
+    b64_master = base64.b64encode(master_json.encode()).decode()
+    cmd = f"echo '{b64_master}' | base64 -d > '{MASTER_FILE}'"
+    out, rc = docker_exec(cmd)
     
-    if docker_cp_to(tmp_file, MASTER_FILE):
+    if rc == 0:
         log("✓ Master updated in container")
-        os.remove(tmp_file)
     else:
-        log("✗ Failed to update master in container")
+        log(f"✗ Failed to update master in container: {out}")
     
     # Summary
     still_unenriched = len([e for e in master if not e.get("has_bio", False) and not e.get("has_detail", False)])
