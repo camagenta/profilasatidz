@@ -736,7 +736,7 @@ func main() {
 
 		renderResults(w, pageData)
 
-		fmt.Fprintf(w, `</div><footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><p class="mb-1">Dibuat dengan Go + HTMX</p><p>Sumber data: <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a></p></footer></div>`)
+		fmt.Fprintf(w, `</div><footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><p class="mb-1">Dibuat dengan Go + HTMX — <a href="/about" class="text-blue-400 hover:underline">Tentang Proyek</a></p><p>Sumber data: <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a></p></footer></div>`)
 
 		// Filter floating button + panel
 		fmt.Fprintf(w, `
@@ -841,6 +841,86 @@ window.addEventListener('popstate',function(e){closeDetailPanel()});
 	http.HandleFunc("/api/reload", func(w http.ResponseWriter, r *http.Request) {
 		loadData()
 		w.Write([]byte("OK"))
+	})
+
+	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(w, `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Proyek - Profil Asatidz Sunnah</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen pb-8">
+<div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="mb-6">
+        <a href="/" class="text-sm text-blue-500 hover:underline inline-flex items-center gap-1">
+            ← Kembali ke Beranda
+        </a>
+    </div>
+
+    <main class="bg-white rounded-lg shadow-sm p-6 md:p-8 space-y-8">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Tentang Proyek</h1>
+            <p class="text-gray-600 leading-relaxed">
+                Proyek <strong>Profil Asatidz Sunnah</strong> adalah sebuah direktori/katalog independen untuk mendata para asatidz (ustadz/ulama) Ahlus Sunnah wal Jama'ah (Salafy) di Indonesia. Proyek ini bertujuan mempermudah masyarakat dalam mengenal profil singkat, riwayat pendidikan, keahlian/topik dakwah, karya publikasi, serta mengakses rekaman kajian audio langsung dari platform <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-500 hover:underline">kajian.net</a>.
+            </p>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div>
+            <h2 class="text-xl font-bold text-gray-800 mb-3">Bagaimana Data Dikumpulkan? (Metodologi OSINT)</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Sebagian besar data detail profil seperti biografi, pendidikan, karya tulis, dan tautan sosial media dikumpulkan secara otomatis melalui metode <strong>OSINT (Open-Source Intelligence)</strong> dari sumber publik yang terbuka, dengan langkah-langkah berikut:
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2 leading-relaxed">
+                <li><strong>Wikipedia API:</strong> Digunakan untuk menarik ringkasan biografi, riwayat pendidikan resmi, dan tautan referensi publik. Skrip berjalan secara otomatis dengan delay aman untuk mematuhi batas request.</li>
+                <li><strong>Penyaringan Relevansi (Title Matching):</strong> Untuk mencegah kesalahan pencocokan (misalnya mencocokkan ustadz dengan nama artikel sepakbola, malaikat, atau tokoh politik yang kebetulan mirip), sistem melakukan validasi kecocokan judul dan memverifikasi kata kunci keagamaan (seperti <em>ustadz, ulama, sunnah, salafy, kajian, pesantren</em>) sebelum data disimpan.</li>
+                <li><strong>Kajian.net Scraper:</strong> Data statistik jumlah kajian dan tautan rekaman disinkronkan langsung dari indeks API kajian.net.</li>
+            </ul>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div>
+            <h2 class="text-xl font-bold text-gray-800 mb-3">Kolaborasi &amp; Koreksi Komunitas</h2>
+            <p class="text-gray-600 leading-relaxed mb-3">
+                Kami sangat menyadari bahwa data hasil ekstraksi otomatis OSINT ini bisa saja tidak lengkap atau kurang akurat. Oleh karena itu, kami mengintegrasikan alur koreksi berbasis komunitas melalui <strong>GitHub Issues</strong>:
+            </p>
+            <div class="bg-blue-50 rounded-lg p-4 text-sm text-blue-800 leading-relaxed space-y-2">
+                <p><strong>Cara Berkontribusi/Koreksi:</strong></p>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li>Setiap profil yang dinilai kurang lengkap atau salah data akan memiliki Issue laporan otomatis di GitHub.</li>
+                    <li>Pengguna atau kontributor dapat memberikan komentar di Issue tersebut dengan melampirkan tautan referensi Wikipedia/situs resmi yang benar.</li>
+                    <li>Sistem (skrip peninjau otomatis) secara periodik akan mendeteksi komentar tersebut, memverifikasi isinya, melakukan pembaruan data secara instan ke dalam sistem, lalu menutup Issue secara otomatis.</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <div>
+            <h2 class="text-xl font-bold text-gray-800 mb-3">Spesifikasi Teknologi (Tech Stack)</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-3 bg-gray-50 rounded-lg"><span class="block font-bold text-gray-800 text-lg">Go 1.24</span><span class="text-xs text-gray-500">Backend Server</span></div>
+                <div class="p-3 bg-gray-50 rounded-lg"><span class="block font-bold text-gray-800 text-lg">HTMX 1.9</span><span class="text-xs text-gray-500">Live &amp; Ajax UI</span></div>
+                <div class="p-3 bg-gray-50 rounded-lg"><span class="block font-bold text-gray-800 text-lg">Tailwind CSS</span><span class="text-xs text-gray-500">Responsive Layout</span></div>
+                <div class="p-3 bg-gray-50 rounded-lg"><span class="block font-bold text-gray-800 text-lg">Docker &amp; Python</span><span class="text-xs text-gray-500">Container &amp; OSINT Scheduler</span></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs">
+        <p class="mb-1">Dibuat dengan Go + HTMX — <a href="/" class="text-blue-400 hover:underline">Beranda</a></p>
+        <p>Sumber data: <a href="https://kajian.net" target="_blank" rel="noopener" class="text-blue-400 hover:underline">kajian.net</a></p>
+    </footer>
+</div>
+</body>
+</html>`)
 	})
 
 	log.Println("Server running at http://localhost:8080")
