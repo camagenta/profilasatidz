@@ -568,8 +568,8 @@ def main():
     except Exception:
         pass
     
-    # GitHub Issues: create/update issue per enriched profile (skip manual mode)
-    if not args.manual:
+    # GitHub Issues: create/update issue per enriched profile (runs in both manual and auto modes)
+    if True:
         for i, entry in enumerate(batch):
             profile_id = entry.get("id") or f"kajian-{entry.get('slug') or slugify(entry.get('name',''))}"
             profile_name = entry.get("name", "Unknown")
