@@ -1924,10 +1924,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Bin%20Muhammad%20Thaib",
     "count": 1,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-muhammad-bin-muhammad-thaib"
+    "has_detail": true,
+    "id": "kajian-muhammad-bin-muhammad-thaib",
+    "completeness": 75
   },
   {
     "name": "Muhammad Elvi Syam",
@@ -2656,10 +2657,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Syaikh%20Bin%20Baz",
     "count": 1,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-syaikh-bin-baz"
+    "has_detail": true,
+    "id": "kajian-syaikh-bin-baz",
+    "completeness": 75
   },
   {
     "name": "Syaikh dari Suriah",
@@ -3068,10 +3070,11 @@
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Yasir%20Abu%20Yasir",
     "count": 1,
     "categories": [],
-    "has_bio": false,
+    "has_bio": true,
     "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-yasir-abu-yasir"
+    "has_detail": true,
+    "id": "kajian-yasir-abu-yasir",
+    "completeness": 75
   },
   {
     "name": "Yazid Jawas",
