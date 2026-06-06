@@ -1,16 +1,21 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"html"
+	"io"
 	"log"
 	"math"
 	"net/http"
+	"net/url"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 )
 
 type Source struct {
@@ -89,6 +94,100 @@ var (
 	dataMutex   sync.RWMutex
 	detailDir   = "detail"
 )
+
+// --- Kontribusi feature ---
+
+var (
+	ghToken         = os.Getenv("GITHUB_TOKEN")
+	ghRepo          = "camagenta/profilasatidz"
+	rateLimiter     = make(map[string]time.Time)
+	rateLimiterMu   sync.Mutex
+	rateLimitWindow = 60 * time.Second
+)
+
+type ContributeRequest struct {
+	ProfileName     string `json:"profile_name"`
+	ProfileID       string `json:"profile_id"`
+	Field           string `json:"field"`
+	Content         string `json:"content"`
+	SourceURL       string `json:"source_url"`
+	ContributorName string `json:"contributor_name"`
+}
+
+var fieldLabels = map[string]string{
+	"bio":          "Biografi",
+	"education":    "Pendidikan",
+	"karya":        "Karya Tulis / Ilmiah",
+	"expertise":    "Topik Keahlian",
+	"social_media": "Media Sosial",
+	"foto":         "Foto",
+	"jabatan":      "Jabatan",
+	"other":        "Lainnya",
+}
+
+func findGitHubIssue(profileName string) (int, error) {
+	searchQuery := fmt.Sprintf(`repo:%s "[Profil Asatidz] %s" in:title label:profil-asatidz`, ghRepo, profileName)
+	apiURL := fmt.Sprintf("https://api.github.com/search/issues?q=%s&per_page=1", url.QueryEscape(searchQuery))
+
+	req, err := http.NewRequest("GET", apiURL, nil)
+	if err != nil {
+		return 0, err
+	}
+	req.Header.Set("Authorization", "Bearer "+ghToken)
+	req.Header.Set("Accept", "application/vnd.github+json")
+
+	client := &http.Client{Timeout: 15 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return 0, fmt.Errorf("gagal menghubungi GitHub: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		body, _ := io.ReadAll(resp.Body)
+		return 0, fmt.Errorf("GitHub search error %d: %s", resp.StatusCode, string(body))
+	}
+
+	var result struct {
+		Items []struct {
+			Number int `json:"number"`
+		} `json:"items"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return 0, fmt.Errorf("gagal parse response GitHub: %w", err)
+	}
+
+	if len(result.Items) == 0 {
+		return 0, fmt.Errorf("issue tidak ditemukan")
+	}
+	return result.Items[0].Number, nil
+}
+
+func postGitHubComment(issueNumber int, body string) error {
+	payload, _ := json.Marshal(map[string]string{"body": body})
+	apiURL := fmt.Sprintf("https://api.github.com/repos/%s/issues/%d/comments", ghRepo, issueNumber)
+
+	req, err := http.NewRequest("POST", apiURL, bytes.NewBuffer(payload))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Authorization", "Bearer "+ghToken)
+	req.Header.Set("Accept", "application/vnd.github+json")
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{Timeout: 15 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return fmt.Errorf("gagal menghubungi GitHub: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 201 {
+		respBody, _ := io.ReadAll(resp.Body)
+		return fmt.Errorf("GitHub API error %d: %s", resp.StatusCode, string(respBody))
+	}
+	return nil
+}
 
 func loadMaster() {
 	// Try loading from detail directory first
@@ -628,6 +727,58 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 		refSection += `</ol></div>`
 	}
 
+	// Contribution Section
+	escapedName := html.EscapeString(a.Name)
+	escapedID := html.EscapeString(a.Id)
+	if escapedID == "" {
+		escapedID = html.EscapeString(a.Name)
+	}
+
+	contribSection := fmt.Sprintf(`
+<div class="mt-6 pt-4 border-t border-gray-200">
+	<button onclick="toggleContribForm()" class="flex items-center gap-1.5 text-xs font-semibold text-blue-600 hover:text-blue-800 transition-colors uppercase tracking-wider">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+		Bantu Lengkapi / Koreksi Profil
+	</button>
+	<div id="contrib-form-container" class="hidden mt-4 bg-gray-50 border border-gray-200 rounded-lg p-4">
+		<form id="contrib-form" onsubmit="submitContribution(event)" class="space-y-3">
+			<input type="hidden" name="profile_name" value="%s">
+			<input type="hidden" name="profile_id" value="%s">
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Bagian yang ingin dilengkapi/dikoreksi</label>
+				<select name="field" class="w-full p-2 border border-gray-300 rounded text-sm bg-white focus:ring-1 focus:ring-blue-500 outline-none">
+					<option value="bio">Biografi</option>
+					<option value="education">Pendidikan</option>
+					<option value="karya">Karya Tulis / Ilmiah</option>
+					<option value="expertise">Topik Keahlian</option>
+					<option value="social_media">Media Sosial</option>
+					<option value="foto">Foto</option>
+					<option value="jabatan">Jabatan</option>
+					<option value="other">Lainnya</option>
+				</select>
+			</div>
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Isi Kontribusi (Tulis detail koreksi atau data baru)</label>
+				<textarea name="content" rows="4" required placeholder="Contoh: Beliau menyelesaikan S1 di Universitas Islam Madinah pada tahun 2010..." class="w-full p-2 border border-gray-300 rounded text-sm focus:ring-1 focus:ring-blue-500 outline-none"></textarea>
+			</div>
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Tautan Sumber/Referensi (Opsional tapi sangat membantu)</label>
+				<input type="url" name="source_url" placeholder="https://id.wikipedia.org/wiki/..." class="w-full p-2 border border-gray-300 rounded text-sm focus:ring-1 focus:ring-blue-500 outline-none">
+			</div>
+			<div>
+				<label class="block text-xs font-medium text-gray-700 mb-1">Nama Anda (Opsional)</label>
+				<input type="text" name="contributor_name" placeholder="Hamba Allah" class="w-full p-2 border border-gray-300 rounded text-sm focus:ring-1 focus:ring-blue-500 outline-none">
+			</div>
+			<div id="contrib-message" class="text-xs hidden p-2.5 rounded"></div>
+			<div class="flex justify-end gap-2 pt-1">
+				<button type="button" onclick="toggleContribForm()" class="px-3 py-1.5 border border-gray-300 rounded text-xs font-medium text-gray-700 hover:bg-gray-100 transition-colors">Batal</button>
+				<button type="submit" id="contrib-submit-btn" class="px-3 py-1.5 bg-blue-600 text-white rounded text-xs font-medium hover:bg-blue-700 transition-colors flex items-center gap-1">Kirim Kontribusi</button>
+			</div>
+		</form>
+	</div>
+</div>
+`, escapedName, escapedID)
+
 	// Header with foto + jabatan
 	fotoHTML := ""
 	// Build initials
@@ -652,8 +803,8 @@ func renderDetailProfile(w http.ResponseWriter, a Asatidz) {
 		jabatanHTML = fmt.Sprintf(`<span class="text-xs text-white/70 mt-0.5">%s</span>`, a.Jabatan)
 	}
 
-	fmt.Fprintf(w, `<div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden relative"><button onclick="closeDetailPanel()" class="absolute top-3 right-3 p-1.5 hover:bg-white/20 rounded-full transition-colors text-white text-xl leading-none z-10">&times;</button><div class="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white"><div class="flex items-center gap-3">%s<div class="min-w-0"><h2 class="text-lg font-bold truncate pr-8">%s</h2>%s</div></div></div><div class="p-6">%s%s%s%s%s%s%s</div></div>`,
-		fotoHTML, a.Name, jabatanHTML, bioSection, eduSection, expSection, karyaSection, kajianSection, socSection, refSection)
+	fmt.Fprintf(w, `<div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden relative"><button onclick="closeDetailPanel()" class="absolute top-3 right-3 p-1.5 hover:bg-white/20 rounded-full transition-colors text-white text-xl leading-none z-10">&times;</button><div class="px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white"><div class="flex items-center gap-3">%s<div class="min-w-0"><h2 class="text-lg font-bold truncate pr-8">%s</h2>%s</div></div></div><div class="p-6">%s%s%s%s%s%s%s%s</div></div>`,
+		fotoHTML, a.Name, jabatanHTML, bioSection, eduSection, expSection, karyaSection, kajianSection, socSection, refSection, contribSection)
 }
 
 func min(a, b int) int {
@@ -695,6 +846,116 @@ func sortIndicatorCount(current string) string {
 		return "↑"
 	}
 	return ""
+}
+
+func handleContribute(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+
+	if r.Method != "POST" {
+		w.WriteHeader(405)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Method not allowed"})
+		return
+	}
+
+	// Check GITHUB_TOKEN
+	if ghToken == "" {
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Fitur kontribusi belum dikonfigurasi (token)"})
+		return
+	}
+
+	var req ContributeRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Format request tidak valid"})
+		return
+	}
+
+	// Validate required fields
+	if req.ProfileName == "" || req.Field == "" || req.Content == "" {
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Nama profil, bagian, dan isi kontribusi wajib diisi"})
+		return
+	}
+	if len(req.Content) < 10 {
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Isi kontribusi terlalu pendek (minimal 10 karakter)"})
+		return
+	}
+	if len(req.Content) > 5000 {
+		w.WriteHeader(400)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Isi kontribusi terlalu panjang (maksimal 5000 karakter)"})
+		return
+	}
+
+	// Simple rate limit per profile (1 submission per profile per 60s)
+	rateLimiterMu.Lock()
+	rateKey := req.ProfileID
+	if rateKey == "" {
+		rateKey = req.ProfileName
+	}
+	if lastTime, ok := rateLimiter[rateKey]; ok && time.Since(lastTime) < rateLimitWindow {
+		rateLimiterMu.Unlock()
+		w.WriteHeader(429)
+		remaining := int(rateLimitWindow.Seconds() - time.Since(lastTime).Seconds())
+		json.NewEncoder(w).Encode(map[string]string{"error": fmt.Sprintf("Terlalu cepat. Coba lagi dalam %d detik.", remaining)})
+		return
+	}
+	rateLimiter[rateKey] = time.Now()
+	rateLimiterMu.Unlock()
+
+	// Find the GitHub Issue for this profile
+	issueNumber, err := findGitHubIssue(req.ProfileName)
+	if err != nil {
+		log.Printf("[contribute] Issue not found for %q: %v", req.ProfileName, err)
+		w.WriteHeader(404)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Issue untuk profil ini belum tersedia di GitHub"})
+		return
+	}
+
+	// Build the comment body
+	fieldLabel := fieldLabels[req.Field]
+	if fieldLabel == "" {
+		fieldLabel = req.Field
+	}
+
+	contributor := req.ContributorName
+	if contributor == "" {
+		contributor = "Anonim"
+	}
+
+	commentBody := fmt.Sprintf("## Kontribusi Komunitas\n\n"+
+		"**Bagian:** %s\n"+
+		"**Kontributor:** %s\n"+
+		"**Waktu:** %s WIB\n\n"+
+		"### Isi Kontribusi\n\n%s\n",
+		fieldLabel,
+		html.EscapeString(contributor),
+		time.Now().UTC().Add(7*time.Hour).Format("2006-01-02 15:04"),
+		html.EscapeString(req.Content))
+
+	if req.SourceURL != "" {
+		commentBody += fmt.Sprintf("\n### Sumber Referensi\n%s\n", html.EscapeString(req.SourceURL))
+	}
+
+	commentBody += "\n---\n_Dikirim melalui fitur Kontribusi di website Profil Asatidz Sunnah_"
+
+	// Post the comment
+	if err := postGitHubComment(issueNumber, commentBody); err != nil {
+		log.Printf("[contribute] Failed to post comment on #%d: %v", issueNumber, err)
+		w.WriteHeader(500)
+		json.NewEncoder(w).Encode(map[string]string{"error": "Gagal mengirim kontribusi ke GitHub. Coba lagi nanti."})
+		return
+	}
+
+	log.Printf("[contribute] Comment posted on #%d for %q by %q (field: %s)", issueNumber, req.ProfileName, contributor, req.Field)
+
+	issueURL := fmt.Sprintf("https://github.com/%s/issues/%d", ghRepo, issueNumber)
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(map[string]string{
+		"message":   "Kontribusi berhasil dikirim! Terima kasih.",
+		"issue_url": issueURL,
+	})
 }
 
 func main() {
@@ -764,6 +1025,59 @@ function showDetail(idOrName){fetch('/api/detail?id='+encodeURIComponent(idOrNam
 function closeDetailPanel(){let p=document.getElementById('detail-panel');if(p)p.remove();if(history.state&&history.state.detail)history.back()}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetailPanel()});
 window.addEventListener('popstate',function(e){closeDetailPanel()});
+
+function toggleContribForm() {
+	const c = document.getElementById('contrib-form-container');
+	if (c) c.classList.toggle('hidden');
+}
+
+function submitContribution(e) {
+	e.preventDefault();
+	const form = e.target;
+	const btn = document.getElementById('contrib-submit-btn');
+	const msg = document.getElementById('contrib-message');
+
+	const data = {
+		profile_name: form.profile_name.value,
+		profile_id: form.profile_id.value,
+		field: form.field.value,
+		content: form.content.value,
+		source_url: form.source_url.value,
+		contributor_name: form.contributor_name.value
+	};
+
+	btn.disabled = true;
+	btn.innerText = 'Mengirim...';
+	msg.className = 'text-xs p-2.5 rounded bg-blue-50 text-blue-700';
+	msg.innerText = 'Sedang mengirim kontribusi...';
+	msg.classList.remove('hidden');
+
+	fetch('/api/contribute', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(data)
+	})
+	.then(async r => {
+		const res = await r.json();
+		if (!r.ok) throw new Error(res.error || 'Terjadi kesalahan');
+		return res;
+	})
+	.then(res => {
+		msg.className = 'text-xs p-2.5 rounded bg-green-50 text-green-700';
+		msg.innerHTML = res.message + ' <a href="' + res.issue_url + '" target="_blank" class="underline font-semibold hover:text-green-900 ml-1">Lihat di GitHub &rarr;</a>';
+		form.content.value = '';
+		form.source_url.value = '';
+		form.contributor_name.value = '';
+		btn.disabled = false;
+		btn.innerText = 'Kirim Kontribusi';
+	})
+	.catch(err => {
+		msg.className = 'text-xs p-2.5 rounded bg-red-50 text-red-700';
+		msg.innerText = err.message;
+		btn.disabled = false;
+		btn.innerText = 'Kirim Kontribusi';
+	});
+}
 
 </script>
 </body></html>`)
@@ -837,6 +1151,8 @@ window.addEventListener('popstate',function(e){closeDetailPanel()});
 		}
 		http.Error(w, "Not found", 404)
 	})
+
+	http.HandleFunc("/api/contribute", handleContribute)
 
 	http.HandleFunc("/api/reload", func(w http.ResponseWriter, r *http.Request) {
 		loadData()

@@ -4,6 +4,10 @@
 /updater
 /updater_v2
 
+# Environment files
+.env
+.env.local
+
 # Logs
 *.log
 nyicil*.log

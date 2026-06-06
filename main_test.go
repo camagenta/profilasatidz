@@ -434,6 +434,7 @@ func setupTestServer() *httptest.Server {
 		pd.MinCount = minCount
 		renderResults(w, pd)
 	})
+	mux.HandleFunc("/api/contribute", handleContribute)
 	return httptest.NewServer(mux)
 }
 
@@ -559,5 +560,31 @@ func TestIntegration_MinCountFilter(t *testing.T) {
 	// So: 382, 484, 133, 113 = 4
 	if !strings.Contains(body, "Menampilkan 4 dari 4") {
 		t.Errorf("expected 'Menampilkan 4 dari 4' for min_count=100, got: %s", body)
+	}
+}
+
+func TestIntegration_ContributeValidation(t *testing.T) {
+	ts := setupTestServer()
+	defer ts.Close()
+
+	// 1. Test GET (Method not allowed)
+	resp, err := http.Get(ts.URL + "/api/contribute")
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != 405 {
+		t.Errorf("expected status 405 for GET, got: %d", resp.StatusCode)
+	}
+
+	// 2. Test POST empty body
+	respPost, err := http.Post(ts.URL + "/api/contribute", "application/json", strings.NewReader(`{}`))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer respPost.Body.Close()
+	// Since GITHUB_TOKEN is either empty (fitur belum dikonfigurasi -> 500) or presents (validation error -> 400)
+	if respPost.StatusCode != 400 && respPost.StatusCode != 500 {
+		t.Errorf("expected status 400 or 500, got: %d", respPost.StatusCode)
 	}
 }
