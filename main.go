@@ -1333,8 +1333,8 @@ function submitContribution(e) {
 	}
 
 	// GET /admin/ — Dashboard
-	http.HandleFunc("/admin/", adminMW(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/admin/" {
+	http.HandleFunc("/dapur/", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/dapur/" {
 			http.NotFound(w, r)
 			return
 		}
@@ -1391,7 +1391,7 @@ function submitContribution(e) {
         <div class="bg-white rounded-lg shadow p-4"><div class="text-2xl font-bold text-yellow-600">%d</div><div class="text-sm text-gray-500">With Foto</div></div>
     </div>
     <div class="flex gap-3">
-        <a href="/admin/profiles" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">Manage Profiles</a>
+        <a href="/dapur/profiles" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">Manage Profiles</a>
     </div>
     <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><a href="/" class="text-blue-400 hover:underline">&larr; Back to Main Site</a></footer>
 </div>
@@ -1400,7 +1400,7 @@ function submitContribution(e) {
 	}))
 
 	// GET /admin/profiles — Profile List
-	http.HandleFunc("/admin/profiles", adminMW(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/dapur/profiles", adminMW(func(w http.ResponseWriter, r *http.Request) {
 		page, _ := strconv.Atoi(r.URL.Query().Get("page"))
 		if page < 1 {
 			page = 1
@@ -1443,7 +1443,7 @@ function submitContribution(e) {
 <div class="max-w-6xl mx-auto px-4 py-8">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Profiles</h1>
-        <a href="/admin/" class="text-sm text-blue-500 hover:underline">&larr; Dashboard</a>
+        <a href="/dapur/" class="text-sm text-blue-500 hover:underline">&larr; Dashboard</a>
     </div>
     <p class="text-sm text-gray-500 mb-3">Menampilkan %d dari %d profile</p>
     <div class="bg-white rounded-lg shadow overflow-hidden mb-4">
@@ -1495,9 +1495,9 @@ function submitContribution(e) {
 				detailIcon = `<span class="text-green-500">&#10003;</span>`
 			}
 
-			editURL := "/admin/profiles/edit?id=" + url.QueryEscape(id)
-			detailURL := "/admin/profiles/detail?id=" + url.QueryEscape(id)
-			deleteURL := "/admin/profiles/delete?id=" + url.QueryEscape(id)
+			editURL := "/dapur/profiles/edit?id=" + url.QueryEscape(id)
+			detailURL := "/dapur/profiles/detail?id=" + url.QueryEscape(id)
+			deleteURL := "/dapur/profiles/delete?id=" + url.QueryEscape(id)
 
 			fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors">
     <td class="px-4 py-3 font-medium text-gray-800">%s</td>
@@ -1520,7 +1520,7 @@ function submitContribution(e) {
 		if totalPages > 1 {
 			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
 			if page > 1 {
-				fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">&larr; Prev</a>`, page-1)
+				fmt.Fprintf(w, `<a href="/dapur/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">&larr; Prev</a>`, page-1)
 			} else {
 				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">&larr; Prev</span>`)
 			}
@@ -1531,22 +1531,22 @@ function submitContribution(e) {
 				} else if p.Number == page {
 					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
 				} else {
-					fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">%d</a>`, p.Number, p.Number)
+					fmt.Fprintf(w, `<a href="/dapur/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">%d</a>`, p.Number, p.Number)
 				}
 			}
 			if page < totalPages {
-				fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">Next &rarr;</a>`, page+1)
+				fmt.Fprintf(w, `<a href="/dapur/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">Next &rarr;</a>`, page+1)
 			} else {
 				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next &rarr;</span>`)
 			}
 			fmt.Fprintf(w, `</div>`)
 		}
 
-		fmt.Fprintf(w, `<footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><a href="/admin/" class="text-blue-400 hover:underline">&larr; Dashboard</a></footer></div></body></html>`)
+		fmt.Fprintf(w, `<footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><a href="/dapur/" class="text-blue-400 hover:underline">&larr; Dashboard</a></footer></div></body></html>`)
 	}))
 
 	// GET/POST /admin/profiles/edit — Edit Master Entry
-	http.HandleFunc("/admin/profiles/edit", adminMW(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/dapur/profiles/edit", adminMW(func(w http.ResponseWriter, r *http.Request) {
 		profileID := r.URL.Query().Get("id")
 		if profileID == "" {
 			profileID = r.FormValue("id")
@@ -1624,7 +1624,7 @@ function submitContribution(e) {
 				}
 			}("Edit Master", profileID, adminUser)
 
-			http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+			http.Redirect(w, r, "/dapur/profiles", http.StatusSeeOther)
 			return
 		}
 
@@ -1697,7 +1697,7 @@ function submitContribution(e) {
 <div class="max-w-3xl mx-auto px-4 py-8">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Edit Master Entry</h1>
-        <a href="/admin/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
+        <a href="/dapur/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
     </div>
     <form method="POST" class="bg-white rounded-lg shadow p-6 space-y-4">
         <input type="hidden" name="id" value="%s">
@@ -1712,7 +1712,7 @@ function submitContribution(e) {
             <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="has_detail" %s class="rounded border-gray-300"> Has Detail</label>
         </div>
         <div class="flex justify-end gap-2 pt-2">
-            <a href="/admin/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
+            <a href="/dapur/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">Save</button>
         </div>
     </form>
@@ -1722,7 +1722,7 @@ function submitContribution(e) {
 	}))
 
 	// GET/POST /admin/profiles/detail — Edit Detail JSON
-	http.HandleFunc("/admin/profiles/detail", adminMW(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/dapur/profiles/detail", adminMW(func(w http.ResponseWriter, r *http.Request) {
 		profileID := r.URL.Query().Get("id")
 		if profileID == "" {
 			profileID = r.FormValue("id")
@@ -1805,7 +1805,7 @@ function submitContribution(e) {
 				}
 			}("Edit Detail", profileID, adminUser)
 
-			http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+			http.Redirect(w, r, "/dapur/profiles", http.StatusSeeOther)
 			return
 		}
 
@@ -1891,7 +1891,7 @@ function submitContribution(e) {
 <div class="max-w-3xl mx-auto px-4 py-8">
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Edit Detail: %s</h1>
-        <a href="/admin/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
+        <a href="/dapur/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
     </div>
     <form method="POST" class="bg-white rounded-lg shadow p-6 space-y-4">
         <input type="hidden" name="name" value="%s">
@@ -1906,7 +1906,7 @@ function submitContribution(e) {
         <div><label class="block text-xs font-medium text-gray-600 mb-1">Jabatan</label><input type="text" name="jabatan" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
         <div><label class="block text-xs font-medium text-gray-600 mb-1">Sources (JSON array)</label><textarea name="sources" rows="4" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
         <div class="flex justify-end gap-2 pt-2">
-            <a href="/admin/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
+            <a href="/dapur/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">Save Detail</button>
         </div>
     </form>
@@ -1916,7 +1916,7 @@ function submitContribution(e) {
 	}))
 
 	// POST /admin/profiles/delete — Delete profile from master
-	http.HandleFunc("/admin/profiles/delete", adminMW(func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/dapur/profiles/delete", adminMW(func(w http.ResponseWriter, r *http.Request) {
 		profileID := r.URL.Query().Get("id")
 		if profileID == "" {
 			http.Error(w, "Missing id parameter", 400)
@@ -1964,7 +1964,7 @@ function submitContribution(e) {
 			}
 		}("Delete Profile", profileID, adminUser)
 
-		http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+		http.Redirect(w, r, "/dapur/profiles", http.StatusSeeOther)
 	}))
 
 	log.Println("Server running at http://localhost:8080")
