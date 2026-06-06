@@ -11,6 +11,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"os/exec"
 	"sort"
 	"strconv"
 	"strings"
@@ -951,6 +952,16 @@ func handleContribute(w http.ResponseWriter, r *http.Request) {
 	log.Printf("[contribute] Comment posted on #%d for %q by %q (field: %s)", issueNumber, req.ProfileName, contributor, req.Field)
 
 	issueURL := fmt.Sprintf("https://github.com/%s/issues/%d", ghRepo, issueNumber)
+	
+	// Send Telegram notification via Hermes Agent asynchronously
+	go func(prof, fld, from, url string) {
+		msg := fmt.Sprintf("🔔 *Kontribusi Baru Masuk!*\n\n*Profil:* %s\n*Bagian:* %s\n*Dari:* %s\n\n📌 *Review/Approve di:* %s\n_(Berikan reaction 👍 jika valid)_", prof, fld, from, url)
+		cmd := exec.Command("/home/ubuntu/.hermes/hermes-agent/venv/bin/python", "-m", "hermes_cli.main", "send", "--to", "telegram", msg)
+		if err := cmd.Run(); err != nil {
+			log.Printf("[contribute] Failed to send Telegram notification: %v", err)
+		}
+	}(req.ProfileName, fieldLabel, contributor, issueURL)
+
 	w.WriteHeader(200)
 	json.NewEncoder(w).Encode(map[string]string{
 		"message":   "Kontribusi berhasil dikirim! Terima kasih.",
