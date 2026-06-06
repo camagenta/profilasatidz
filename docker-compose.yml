@@ -7,6 +7,8 @@ services:
       - "8080:8080"
     environment:
       - GITHUB_TOKEN
+      - ADMIN_USER
+      - ADMIN_PASS
     volumes:
       - ./asatidz.json:/root/asatidz.json
       - ./asatidz_enriched.json:/root/asatidz_enriched.json

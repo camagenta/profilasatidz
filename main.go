@@ -969,6 +969,66 @@ func handleContribute(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+func adminAuth(r *http.Request) bool {
+	user, pass, ok := r.BasicAuth()
+	if !ok {
+		return false
+	}
+	expectedUser := os.Getenv("ADMIN_USER")
+	if expectedUser == "" {
+		expectedUser = "admin"
+	}
+	expectedPass := os.Getenv("ADMIN_PASS")
+	if expectedPass == "" {
+		expectedPass = "admin123"
+	}
+	return user == expectedUser && pass == expectedPass
+}
+
+func atomicWriteJSON(path string, data []byte) error {
+	// Try atomic rename first (works on non-mounted filesystems)
+	tmpPath := path + ".tmp"
+	if err := os.WriteFile(tmpPath, data, 0644); err != nil {
+		return os.WriteFile(path, data, 0644)
+	}
+	if err := os.Rename(tmpPath, path); err != nil {
+		// Fallback: direct write (e.g. Docker bind mount)
+		os.Remove(tmpPath)
+		return os.WriteFile(path, data, 0644)
+	}
+	return nil
+}
+
+func completenessBadge(comp int) string {
+	if comp >= 70 {
+		return "bg-green-500 text-white"
+	}
+	if comp >= 40 {
+		return "bg-blue-400 text-white"
+	}
+	if comp > 0 {
+		return "bg-yellow-300 text-yellow-900"
+	}
+	return "bg-gray-100 text-gray-400"
+}
+
+func calcCompleteness(hasBio, hasFoto, hasDetail bool, count int) int {
+	c := 0
+	if hasBio {
+		c += 35
+	}
+	if hasFoto {
+		c += 25
+	}
+	if hasDetail {
+		c += 25
+	}
+	if count > 0 {
+		c += 15
+	}
+	return c
+}
+
 func main() {
 	loadData()
 
@@ -1254,6 +1314,658 @@ function submitContribution(e) {
 </body>
 </html>`)
 	})
+
+	// --- Admin Panel Routes ---
+	adminMW := func(next http.HandlerFunc) http.HandlerFunc {
+		return func(w http.ResponseWriter, r *http.Request) {
+			if !adminAuth(r) {
+				w.Header().Set("WWW-Authenticate", `Basic realm="Admin Panel"`)
+				http.Error(w, "Unauthorized", http.StatusUnauthorized)
+				return
+			}
+			next(w, r)
+		}
+	}
+
+	getAdminUser := func(r *http.Request) string {
+		u, _, _ := r.BasicAuth()
+		return u
+	}
+
+	// GET /admin/ — Dashboard
+	http.HandleFunc("/admin/", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/admin/" {
+			http.NotFound(w, r)
+			return
+		}
+
+		raw, err := os.ReadFile("asatidz_master.json")
+		if err != nil {
+			http.Error(w, "Failed to read master data", 500)
+			return
+		}
+		var entries []map[string]interface{}
+		json.Unmarshal(raw, &entries)
+
+		totalP := len(entries)
+		withBio := 0
+		withFoto := 0
+		withDetail := 0
+		for _, e := range entries {
+			if hb, ok := e["has_bio"].(bool); ok && hb {
+				withBio++
+			}
+			if hf, ok := e["has_foto"].(bool); ok && hf {
+				withFoto++
+			}
+			if hd, ok := e["has_detail"]; ok {
+				switch v := hd.(type) {
+				case bool:
+					if v {
+						withDetail++
+					}
+				case []interface{}:
+					if len(v) > 0 {
+						withDetail++
+					}
+				}
+			}
+		}
+
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(w, `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel — Profil Asatidz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen pb-8">
+<div class="max-w-5xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Admin Panel</h1>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-lg shadow p-4"><div class="text-2xl font-bold text-gray-800">%d</div><div class="text-sm text-gray-500">Total Profiles</div></div>
+        <div class="bg-white rounded-lg shadow p-4"><div class="text-2xl font-bold text-blue-600">%d</div><div class="text-sm text-gray-500">With Detail</div></div>
+        <div class="bg-white rounded-lg shadow p-4"><div class="text-2xl font-bold text-green-600">%d</div><div class="text-sm text-gray-500">With Bio</div></div>
+        <div class="bg-white rounded-lg shadow p-4"><div class="text-2xl font-bold text-yellow-600">%d</div><div class="text-sm text-gray-500">With Foto</div></div>
+    </div>
+    <div class="flex gap-3">
+        <a href="/admin/profiles" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium">Manage Profiles</a>
+    </div>
+    <footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><a href="/" class="text-blue-400 hover:underline">&larr; Back to Main Site</a></footer>
+</div>
+</body>
+</html>`, totalP, withDetail, withBio, withFoto)
+	}))
+
+	// GET /admin/profiles — Profile List
+	http.HandleFunc("/admin/profiles", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		page, _ := strconv.Atoi(r.URL.Query().Get("page"))
+		if page < 1 {
+			page = 1
+		}
+		pageSize := 15
+
+		raw, err := os.ReadFile("asatidz_master.json")
+		if err != nil {
+			http.Error(w, "Failed to read master data", 500)
+			return
+		}
+		var entries []map[string]interface{}
+		json.Unmarshal(raw, &entries)
+
+		total := len(entries)
+		totalPages := int(math.Ceil(float64(total) / float64(pageSize)))
+		if totalPages < 1 {
+			totalPages = 1
+		}
+		if page > totalPages {
+			page = totalPages
+		}
+		start := (page - 1) * pageSize
+		end := start + pageSize
+		if end > total {
+			end = total
+		}
+		pageSlice := entries[start:end]
+
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(w, `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Profiles — Profil Asatidz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen pb-8">
+<div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Profiles</h1>
+        <a href="/admin/" class="text-sm text-blue-500 hover:underline">&larr; Dashboard</a>
+    </div>
+    <p class="text-sm text-gray-500 mb-3">Menampilkan %d dari %d profile</p>
+    <div class="bg-white rounded-lg shadow overflow-hidden mb-4">
+    <table class="w-full text-left text-sm">
+    <thead class="bg-gray-50 border-b-2 border-gray-200">
+    <tr>
+        <th class="px-4 py-3 font-semibold text-gray-600">Name</th>
+        <th class="px-4 py-3 font-semibold text-gray-600">ID</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Completeness</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Bio</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Foto</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Detail</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Count</th>
+        <th class="px-4 py-3 font-semibold text-gray-600 text-center">Actions</th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">`, len(pageSlice), total)
+
+		for _, e := range pageSlice {
+			id, _ := e["id"].(string)
+			name, _ := e["name"].(string)
+			countF, _ := e["count"].(float64)
+			count := int(countF)
+
+			hasBio, _ := e["has_bio"].(bool)
+			hasFoto, _ := e["has_foto"].(bool)
+			hasDetail := false
+			if hd, ok := e["has_detail"]; ok {
+				switch v := hd.(type) {
+				case bool:
+					hasDetail = v
+				case []interface{}:
+					hasDetail = len(v) > 0
+				}
+			}
+
+			comp := calcCompleteness(hasBio, hasFoto, hasDetail, count)
+			badgeCls := completenessBadge(comp)
+			bioIcon := `<span class="text-red-400">&times;</span>`
+			if hasBio {
+				bioIcon = `<span class="text-green-500">&#10003;</span>`
+			}
+			fotoIcon := `<span class="text-red-400">&times;</span>`
+			if hasFoto {
+				fotoIcon = `<span class="text-green-500">&#10003;</span>`
+			}
+			detailIcon := `<span class="text-red-400">&times;</span>`
+			if hasDetail {
+				detailIcon = `<span class="text-green-500">&#10003;</span>`
+			}
+
+			editURL := "/admin/profiles/edit?id=" + url.QueryEscape(id)
+			detailURL := "/admin/profiles/detail?id=" + url.QueryEscape(id)
+			deleteURL := "/admin/profiles/delete?id=" + url.QueryEscape(id)
+
+			fmt.Fprintf(w, `<tr class="hover:bg-blue-50 transition-colors">
+    <td class="px-4 py-3 font-medium text-gray-800">%s</td>
+    <td class="px-4 py-3 text-gray-500 text-xs">%s</td>
+    <td class="px-4 py-3 text-center"><span class="text-xs px-2 py-1 rounded font-medium %s">%d</span></td>
+    <td class="px-4 py-3 text-center text-lg">%s</td>
+    <td class="px-4 py-3 text-center text-lg">%s</td>
+    <td class="px-4 py-3 text-center text-lg">%s</td>
+    <td class="px-4 py-3 text-center"><span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded-full">%d</span></td>
+    <td class="px-4 py-3 text-center whitespace-nowrap">
+        <a href="%s" class="inline-block px-2 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600 mr-1">Master</a>
+        <a href="%s" class="inline-block px-2 py-1 bg-green-500 text-white text-xs rounded hover:bg-green-600 mr-1">Detail</a>
+        <a href="%s" class="inline-block px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600" onclick="return confirm('Delete %s?')">Hapus</a>
+    </td>
+</tr>`, name, id, badgeCls, comp, bioIcon, fotoIcon, detailIcon, count, editURL, detailURL, deleteURL, html.EscapeString(name))
+		}
+		fmt.Fprintf(w, `</tbody></table></div>`)
+
+		// Pagination
+		if totalPages > 1 {
+			fmt.Fprintf(w, `<div class="flex items-center justify-center gap-1 whitespace-nowrap">`)
+			if page > 1 {
+				fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">&larr; Prev</a>`, page-1)
+			} else {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">&larr; Prev</span>`)
+			}
+			pages := generatePageRange(page, totalPages)
+			for _, p := range pages {
+				if p.IsEllipsis {
+					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm text-gray-400 select-none">…</span>`)
+				} else if p.Number == page {
+					fmt.Fprintf(w, `<span class="px-3 py-2 text-sm bg-blue-600 text-white rounded font-medium">%d</span>`, p.Number)
+				} else {
+					fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">%d</a>`, p.Number, p.Number)
+				}
+			}
+			if page < totalPages {
+				fmt.Fprintf(w, `<a href="/admin/profiles?page=%d" class="px-3 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50">Next &rarr;</a>`, page+1)
+			} else {
+				fmt.Fprintf(w, `<span class="px-3 py-2 text-sm border border-gray-200 rounded text-gray-300 cursor-not-allowed">Next &rarr;</span>`)
+			}
+			fmt.Fprintf(w, `</div>`)
+		}
+
+		fmt.Fprintf(w, `<footer class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-400 text-xs"><a href="/admin/" class="text-blue-400 hover:underline">&larr; Dashboard</a></footer></div></body></html>`)
+	}))
+
+	// GET/POST /admin/profiles/edit — Edit Master Entry
+	http.HandleFunc("/admin/profiles/edit", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		profileID := r.URL.Query().Get("id")
+		if profileID == "" {
+			profileID = r.FormValue("id")
+		}
+		if profileID == "" {
+			http.Error(w, "Missing id parameter", 400)
+			return
+		}
+
+		if r.Method == "POST" {
+			raw, err := os.ReadFile("asatidz_master.json")
+			if err != nil {
+				http.Error(w, "Failed to read master data", 500)
+				return
+			}
+			var entries []map[string]interface{}
+			json.Unmarshal(raw, &entries)
+
+			found := -1
+			for i, e := range entries {
+				if idVal, ok := e["id"].(string); ok && idVal == profileID {
+					found = i
+					break
+				}
+			}
+			if found < 0 {
+				http.Error(w, "Profile not found", 404)
+				return
+			}
+			entry := entries[found]
+
+			entry["name"] = r.FormValue("name")
+			entry["slug"] = r.FormValue("slug")
+			entry["source_url"] = r.FormValue("source_url")
+			count, _ := strconv.Atoi(r.FormValue("count"))
+			entry["count"] = count
+
+			catStr := r.FormValue("categories")
+			var cats []interface{}
+			for _, c := range strings.Split(catStr, ",") {
+				c = strings.TrimSpace(c)
+				if c != "" {
+					cats = append(cats, c)
+				}
+			}
+			entry["categories"] = cats
+
+			hasBio := r.FormValue("has_bio") == "on"
+			hasFoto := r.FormValue("has_foto") == "on"
+			hasDetail := r.FormValue("has_detail") == "on"
+
+			entry["has_bio"] = hasBio
+			entry["has_foto"] = hasFoto
+			entry["has_detail"] = hasDetail
+			entry["completeness"] = calcCompleteness(hasBio, hasFoto, hasDetail, count)
+
+			updated, err := json.MarshalIndent(entries, "", "  ")
+			if err != nil {
+				http.Error(w, "Failed to marshal data", 500)
+				return
+			}
+			if err := atomicWriteJSON("asatidz_master.json", updated); err != nil {
+				log.Printf("[admin] Failed to write master JSON: %v", err)
+				http.Error(w, "Failed to write data: "+err.Error(), 500)
+				return
+			}
+			loadData()
+
+			adminUser := getAdminUser(r)
+			go func(action, profID, admin string) {
+				msg := fmt.Sprintf("🔐 *Admin Action:* %s\n\n*Profile:* %s\n*By:* %s\n_Admin Panel CRUD_", action, profID, admin)
+				cmd := exec.Command("/home/ubuntu/.hermes/hermes-agent/venv/bin/python", "-m", "hermes_cli.main", "send", "--to", "telegram", msg)
+				if err := cmd.Run(); err != nil {
+					log.Printf("[admin] Failed to send Telegram notification: %v", err)
+				}
+			}("Edit Master", profileID, adminUser)
+
+			http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+			return
+		}
+
+		// GET: show edit form
+		raw, err := os.ReadFile("asatidz_master.json")
+		if err != nil {
+			http.Error(w, "Failed to read master data", 500)
+			return
+		}
+		var entries []map[string]interface{}
+		json.Unmarshal(raw, &entries)
+
+		var entry map[string]interface{}
+		for _, e := range entries {
+			if idVal, ok := e["id"].(string); ok && idVal == profileID {
+				entry = e
+				break
+			}
+		}
+		if entry == nil {
+			http.Error(w, "Profile not found", 404)
+			return
+		}
+
+		name, _ := entry["name"].(string)
+		slug, _ := entry["slug"].(string)
+		sourceURL, _ := entry["source_url"].(string)
+		countF, _ := entry["count"].(float64)
+		count := int(countF)
+
+		var catStrs []string
+		if cats, ok := entry["categories"].([]interface{}); ok {
+			for _, c := range cats {
+				if s, ok := c.(string); ok {
+					catStrs = append(catStrs, s)
+				}
+			}
+		}
+		categoriesStr := strings.Join(catStrs, ", ")
+
+		hasBio, _ := entry["has_bio"].(bool)
+		hasFoto, _ := entry["has_foto"].(bool)
+		hasDetail := false
+		if hd, ok := entry["has_detail"]; ok {
+			switch v := hd.(type) {
+			case bool:
+				hasDetail = v
+			case []interface{}:
+				hasDetail = len(v) > 0
+			}
+		}
+
+		checked := func(b bool) string {
+			if b {
+				return "checked"
+			}
+			return ""
+		}
+
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(w, `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Edit Master — Profil Asatidz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen pb-8">
+<div class="max-w-3xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Edit Master Entry</h1>
+        <a href="/admin/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
+    </div>
+    <form method="POST" class="bg-white rounded-lg shadow p-6 space-y-4">
+        <input type="hidden" name="id" value="%s">
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Name</label><input type="text" name="name" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Slug</label><input type="text" name="slug" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm bg-gray-50" readonly></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Source URL</label><input type="url" name="source_url" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Count</label><input type="number" name="count" value="%d" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Categories (comma-separated)</label><input type="text" name="categories" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div class="flex gap-6">
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="has_bio" %s class="rounded border-gray-300"> Has Bio</label>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="has_foto" %s class="rounded border-gray-300"> Has Foto</label>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="has_detail" %s class="rounded border-gray-300"> Has Detail</label>
+        </div>
+        <div class="flex justify-end gap-2 pt-2">
+            <a href="/admin/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">Save</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>`, profileID, name, slug, sourceURL, count, categoriesStr, checked(hasBio), checked(hasFoto), checked(hasDetail))
+	}))
+
+	// GET/POST /admin/profiles/detail — Edit Detail JSON
+	http.HandleFunc("/admin/profiles/detail", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		profileID := r.URL.Query().Get("id")
+		if profileID == "" {
+			profileID = r.FormValue("id")
+		}
+		if profileID == "" {
+			http.Error(w, "Missing id parameter", 400)
+			return
+		}
+
+		if r.Method == "POST" {
+			detailPath := detailDir + "/" + profileID + ".json"
+			if strings.HasPrefix(profileID, "kajian-") {
+				detailPath = detailDir + "/" + profileID + ".json"
+			} else {
+				detailPath = detailDir + "/kajian-" + profileID + ".json"
+			}
+
+			detail := map[string]interface{}{
+				"id":         profileID,
+				"name":       r.FormValue("name"),
+				"bio":        r.FormValue("bio"),
+				"bio_source": r.FormValue("bio_source"),
+				"bio_quote":  r.FormValue("bio_quote"),
+				"foto":       r.FormValue("foto"),
+				"jabatan":    r.FormValue("jabatan"),
+			}
+
+			if eduStr := r.FormValue("education"); eduStr != "" {
+				var edu []interface{}
+				if err := json.Unmarshal([]byte(eduStr), &edu); err == nil {
+					detail["education"] = edu
+				}
+			}
+			if expStr := r.FormValue("expertise"); expStr != "" {
+				var exp []interface{}
+				if err := json.Unmarshal([]byte(expStr), &exp); err == nil {
+					detail["expertise"] = exp
+				}
+			}
+			if karStr := r.FormValue("karya"); karStr != "" {
+				var kar []interface{}
+				if err := json.Unmarshal([]byte(karStr), &kar); err == nil {
+					detail["kary"] = kar
+				}
+			}
+			if smStr := r.FormValue("social_media"); smStr != "" {
+				var sm map[string]interface{}
+				if err := json.Unmarshal([]byte(smStr), &sm); err == nil {
+					detail["social_media"] = sm
+				}
+			}
+			if srcStr := r.FormValue("sources"); srcStr != "" {
+				var src []interface{}
+				if err := json.Unmarshal([]byte(srcStr), &src); err == nil {
+					detail["sources"] = src
+				}
+			}
+
+			updated, err := json.MarshalIndent(detail, "", "  ")
+			if err != nil {
+				http.Error(w, "Failed to marshal detail data", 500)
+				return
+			}
+			if err := atomicWriteJSON(detailPath, updated); err != nil {
+				http.Error(w, "Failed to write detail file", 500)
+				return
+			}
+
+			// Clear cache
+			dataMutex.Lock()
+			delete(detailData, profileID)
+			dataMutex.Unlock()
+
+			adminUser := getAdminUser(r)
+			go func(action, profID, admin string) {
+				msg := fmt.Sprintf("🔐 *Admin Action:* %s\n\n*Profile:* %s\n*By:* %s\n_Admin Panel CRUD_", action, profID, admin)
+				cmd := exec.Command("/home/ubuntu/.hermes/hermes-agent/venv/bin/python", "-m", "hermes_cli.main", "send", "--to", "telegram", msg)
+				if err := cmd.Run(); err != nil {
+					log.Printf("[admin] Failed to send Telegram notification: %v", err)
+				}
+			}("Edit Detail", profileID, adminUser)
+
+			http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+			return
+		}
+
+		// GET: show detail form
+		var detail map[string]interface{}
+
+		// Try loading existing detail file
+		detailPath := detailDir + "/" + profileID + ".json"
+		data, err := os.ReadFile(detailPath)
+		if err != nil {
+			// Try alternate path
+			if strings.HasPrefix(profileID, "kajian-") {
+				altPath := detailDir + "/" + strings.TrimPrefix(profileID, "kajian-") + ".json"
+				data, err = os.ReadFile(altPath)
+			} else {
+				altPath := detailDir + "/kajian-" + profileID + ".json"
+				data, err = os.ReadFile(altPath)
+			}
+		}
+		if err == nil {
+			json.Unmarshal(data, &detail)
+		}
+		if detail == nil {
+			detail = make(map[string]interface{})
+		}
+
+		// Also get name from master
+		masterRaw, _ := os.ReadFile("asatidz_master.json")
+		if masterRaw != nil {
+			var entries []map[string]interface{}
+			json.Unmarshal(masterRaw, &entries)
+			for _, e := range entries {
+				if idVal, ok := e["id"].(string); ok && idVal == profileID {
+					if n, ok := e["name"].(string); ok {
+						detail["name"] = n
+					}
+					break
+				}
+			}
+		}
+
+		getStr := func(m map[string]interface{}, key string) string {
+			if v, ok := m[key]; ok {
+				if s, ok := v.(string); ok {
+					return s
+				}
+			}
+			return ""
+		}
+		toJSON := func(v interface{}) string {
+			if v == nil {
+				return ""
+			}
+			b, err := json.MarshalIndent(v, "", "  ")
+			if err != nil {
+				return ""
+			}
+			return string(b)
+		}
+
+		name := getStr(detail, "name")
+		bio := getStr(detail, "bio")
+		bioSource := getStr(detail, "bio_source")
+		bioQuote := getStr(detail, "bio_quote")
+		foto := getStr(detail, "foto")
+		jabatan := getStr(detail, "jabatan")
+		eduJSON := toJSON(detail["education"])
+		expJSON := toJSON(detail["expertise"])
+		karJSON := toJSON(detail["kary"])
+		smJSON := toJSON(detail["social_media"])
+		srcJSON := toJSON(detail["sources"])
+
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		fmt.Fprintf(w, `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Edit Detail — Profil Asatidz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen pb-8">
+<div class="max-w-3xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">Edit Detail: %s</h1>
+        <a href="/admin/profiles" class="text-sm text-blue-500 hover:underline">&larr; Back</a>
+    </div>
+    <form method="POST" class="bg-white rounded-lg shadow p-6 space-y-4">
+        <input type="hidden" name="name" value="%s">
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Bio</label><textarea name="bio" rows="6" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Bio Source (URL)</label><input type="url" name="bio_source" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Bio Quote</label><textarea name="bio_quote" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Education (JSON array)</label><textarea name="education" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Expertise (JSON array)</label><textarea name="expertise" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Karya (JSON array)</label><textarea name="karya" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Social Media (JSON object)</label><textarea name="social_media" rows="3" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Foto (URL)</label><input type="url" name="foto" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Jabatan</label><input type="text" name="jabatan" value="%s" class="w-full p-2 border border-gray-300 rounded text-sm"></div>
+        <div><label class="block text-xs font-medium text-gray-600 mb-1">Sources (JSON array)</label><textarea name="sources" rows="4" class="w-full p-2 border border-gray-300 rounded text-sm font-mono">%s</textarea></div>
+        <div class="flex justify-end gap-2 pt-2">
+            <a href="/admin/profiles" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50">Cancel</a>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700">Save Detail</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>`, name, name, bio, bioSource, bioQuote, eduJSON, expJSON, karJSON, smJSON, foto, jabatan, srcJSON)
+	}))
+
+	// POST /admin/profiles/delete — Delete profile from master
+	http.HandleFunc("/admin/profiles/delete", adminMW(func(w http.ResponseWriter, r *http.Request) {
+		profileID := r.URL.Query().Get("id")
+		if profileID == "" {
+			http.Error(w, "Missing id parameter", 400)
+			return
+		}
+
+		raw, err := os.ReadFile("asatidz_master.json")
+		if err != nil {
+			http.Error(w, "Failed to read master data", 500)
+			return
+		}
+		var entries []map[string]interface{}
+		json.Unmarshal(raw, &entries)
+
+		found := -1
+		for i, e := range entries {
+			if idVal, ok := e["id"].(string); ok && idVal == profileID {
+				found = i
+				break
+			}
+		}
+		if found < 0 {
+			http.Error(w, "Profile not found", 404)
+			return
+		}
+
+		entries = append(entries[:found], entries[found+1:]...)
+		updated, err := json.MarshalIndent(entries, "", "  ")
+		if err != nil {
+			http.Error(w, "Failed to marshal data", 500)
+			return
+		}
+		if err := atomicWriteJSON("asatidz_master.json", updated); err != nil {
+			http.Error(w, "Failed to write data", 500)
+			return
+		}
+		loadData()
+
+		adminUser := getAdminUser(r)
+		go func(action, profID, admin string) {
+			msg := fmt.Sprintf("🔐 *Admin Action:* %s\n\n*Profile:* %s\n*By:* %s\n_Admin Panel CRUD_", action, profID, admin)
+			cmd := exec.Command("/home/ubuntu/.hermes/hermes-agent/venv/bin/python", "-m", "hermes_cli.main", "send", "--to", "telegram", msg)
+			if err := cmd.Run(); err != nil {
+				log.Printf("[admin] Failed to send Telegram notification: %v", err)
+			}
+		}("Delete Profile", profileID, adminUser)
+
+		http.Redirect(w, r, "/admin/profiles", http.StatusSeeOther)
+	}))
 
 	log.Println("Server running at http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
