@@ -38,16 +38,29 @@ def find_contribution_in_comments(comments):
     """Find and parse community contributions in comments."""
     # Process from oldest to newest, find the first unprocessed one.
     # To determine if it's unprocessed, we check if there's a bot acknowledgment.
-    bot_acks = [c.get("body", "") for c in comments if "✅ Koreksi diterapkan" in c.get("body", "")]
+    bot_acks = [c.get("body", "") for c in comments if "✅ Koreksi diterapkan" in c.get("body", "") or "❌ Kontribusi ditolak" in c.get("body", "")]
     
     for comment in comments:
         body = comment.get("body", "")
         
         # Check for new contribution format
         if "## Kontribusi Komunitas" in body and "### Isi Kontribusi" in body:
+            comment_id = comment.get("id")
+            
             # Simple check if this exact comment ID was already acknowledged
-            if any(str(comment.get("id")) in ack for ack in bot_acks):
+            if any(str(comment_id) in ack for ack in bot_acks):
                 continue
+                
+            # Check for reactions (Approval mechanism)
+            reactions = comment.get("reactions", {})
+            thumbs_up = reactions.get("+1", 0)
+            thumbs_down = reactions.get("-1", 0)
+            
+            status = "pending"
+            if thumbs_up > 0:
+                status = "approved"
+            elif thumbs_down > 0:
+                status = "rejected"
                 
             bagian_match = re.search(r'\*\*Bagian:\*\*\s*(.+)', body)
             bagian = bagian_match.group(1).strip() if bagian_match else ""
@@ -60,11 +73,12 @@ def find_contribution_in_comments(comments):
             
             return {
                 "type": "direct_text",
+                "status": status,
                 "bagian": bagian,
                 "content": content,
                 "url": url,
                 "user": comment.get("user", {}).get("login", "unknown"),
-                "comment_id": comment.get("id")
+                "comment_id": comment_id
             }
             
         # Fallback: old generic URL extraction (only if no bot ack yet)
@@ -75,6 +89,7 @@ def find_contribution_in_comments(comments):
                 if "github.com" not in url:
                     return {
                         "type": "url_only",
+                        "status": "pending",  # Generic URLs still marked pending for manual review
                         "url": url,
                         "user": comment.get("user", {}).get("login", "unknown"),
                         "comment_id": comment.get("id")
@@ -325,14 +340,26 @@ def main():
         profile_id = id_match.group(1)
         
         if contrib["type"] == "direct_text":
-            success = apply_direct_contribution(profile_id, contrib)
-            if success:
-                corrections_applied += 1
+            if contrib["status"] == "approved":
+                success = apply_direct_contribution(profile_id, contrib)
+                if success:
+                    corrections_applied += 1
+                    gh_api(
+                        f"repos/{owner}/{repo}/issues/{issue_num}/comments",
+                        method="POST",
+                        data={"body": f"✅ **Status:** Disetujui & Diterapkan (Approved)\n\nKoreksi diterapkan dari kontribusi komunitas (Comment ID: {contrib['comment_id']})\n\n*Applied by bot at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
+                    )
+            elif contrib["status"] == "rejected":
+                corrections_pending += 1  # Counted as reviewed but rejected
                 gh_api(
                     f"repos/{owner}/{repo}/issues/{issue_num}/comments",
                     method="POST",
-                    data={"body": f"✅ Koreksi diterapkan dari kontribusi komunitas (Comment ID: {contrib['comment_id']})\n\n*Applied by bot at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
+                    data={"body": f"❌ **Status:** Ditolak oleh Admin (Rejected)\n\nKontribusi ditolak (Comment ID: {contrib['comment_id']}).\n\n*Rejected by admin at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
                 )
+                log(f"  Contribution in Issue #{issue_num} was rejected by admin.")
+            else:
+                log(f"  Contribution in Issue #{issue_num} is pending admin reaction (👍 or 👎). Skipping.")
+                
         else:
             # Fallback for old URL-only
             url = contrib["url"]
