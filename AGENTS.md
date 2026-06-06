@@ -105,3 +105,5 @@ Timestamp menggunakan format `YYYY-MM-DDTHH-MM-SSZ` (contoh: `2026-06-05T14-45-1
 2. **Selalu handle nested HTML** saat parse bio KajianLive. Parser BeautifulSoup naif akan skip isi `<h3>` di dalam `<p>`.
 3. **Encoding bukan selalu UTF-8**. Selalu pakai `errors='replace'` saat decode HTML response.
 4. **Match score untuk nama Arab butuh threshold lebih tinggi** (>= 1.0 bukan 0.8) untuk menghindari false positive.
+5. **Docker bind mount tidak support `os.Rename`** — file yang di-mount ke container tidak bisa di-rename. Selalu fallback ke `os.WriteFile` langsung.
+6. **Admin panel path hardcoded** — route path (e.g. `/dapur/`) masih hardcoded di `main.go`. Untuk path dinamis perlu refactor ke konfigurasi/env var.
