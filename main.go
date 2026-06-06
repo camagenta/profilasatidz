@@ -991,7 +991,12 @@ func main() {
         <p class="mb-2"><strong>⚠️ Disclaimer:</strong> Ini adalah <em>prototype</em> profil asatidz yang dikumpulkan menggunakan metode <strong>OSINT</strong> (<em>Open-Source Intelligence</em> — pengumpulan informasi dari sumber terbuka seperti Wikipedia, situs publik, dan media sosial). Data mungkin tidak lengkap atau kurang akurat.</p>
         <p>Saran dan kritik: <a href="mailto:itdakwah@gmail.com" class="text-yellow-600 underline hover:text-yellow-800">itdakwah@gmail.com</a></p>
     </div>
-    <input class="w-full p-3 mb-6 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" type="text" name="q" id="search-input" placeholder="Cari nama asatidz..." value="" hx-get="/api/search" hx-trigger="keyup changed delay:300ms, change" hx-target="#results-container" hx-include="[name='size']" hx-indicator="#spinner">
+    <div class="relative mb-6">
+        <input class="w-full p-3 pr-10 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" type="text" name="q" id="search-input" placeholder="Cari nama asatidz..." value="" hx-get="/api/search" hx-trigger="keyup changed delay:300ms, change" hx-target="#results-container" hx-include="[name='size']" hx-indicator="#spinner" oninput="document.getElementById('clear-search-btn').style.display = this.value ? 'block' : 'none'">
+        <button type="button" id="clear-search-btn" style="display: none;" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors bg-white rounded-full" onclick="document.getElementById('search-input').value=''; this.style.display='none'; htmx.trigger('#search-input', 'change');" title="Bersihkan pencarian">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+        </button>
+    </div>
     <div id="spinner" class="htmx-indicator text-gray-400 text-sm mb-2">Mencari...</div>
     <div id="results-container">`)
 

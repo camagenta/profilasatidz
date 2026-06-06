@@ -34,18 +34,146 @@ def get_issue_comments(owner, repo, issue_num):
     """Get all comments on an issue."""
     return gh_api(f"repos/{owner}/{repo}/issues/{issue_num}/comments") or []
 
-def find_url_in_comments(comments):
-    """Find URLs mentioned in comments that could be enrichment sources."""
-    url_pattern = re.compile(r'https?://[^\s\)]+')
+def find_contribution_in_comments(comments):
+    """Find and parse community contributions in comments."""
+    # Process from oldest to newest, find the first unprocessed one.
+    # To determine if it's unprocessed, we check if there's a bot acknowledgment.
+    bot_acks = [c.get("body", "") for c in comments if "✅ Koreksi diterapkan" in c.get("body", "")]
+    
     for comment in comments:
         body = comment.get("body", "")
-        urls = url_pattern.findall(body)
-        for url in urls:
-            # Skip GitHub URLs, Wikipedia already handled
-            if "github.com" in url:
+        
+        # Check for new contribution format
+        if "## Kontribusi Komunitas" in body and "### Isi Kontribusi" in body:
+            # Simple check if this exact comment ID was already acknowledged
+            if any(str(comment.get("id")) in ack for ack in bot_acks):
                 continue
-            return url, comment.get("user", {}).get("login", "unknown")
-    return None, None
+                
+            bagian_match = re.search(r'\*\*Bagian:\*\*\s*(.+)', body)
+            bagian = bagian_match.group(1).strip() if bagian_match else ""
+            
+            content_match = re.search(r'### Isi Kontribusi\s*(.*?)(?:### Sumber Referensi|---)', body, re.DOTALL)
+            content = content_match.group(1).strip() if content_match else ""
+            
+            url_match = re.search(r'### Sumber Referensi\s*(https?://[^\s]+)', body)
+            url = url_match.group(1).strip() if url_match else ""
+            
+            return {
+                "type": "direct_text",
+                "bagian": bagian,
+                "content": content,
+                "url": url,
+                "user": comment.get("user", {}).get("login", "unknown"),
+                "comment_id": comment.get("id")
+            }
+            
+        # Fallback: old generic URL extraction (only if no bot ack yet)
+        if len(bot_acks) == 0:
+            url_pattern = re.compile(r'https?://[^\s\)]+')
+            urls = url_pattern.findall(body)
+            for url in urls:
+                if "github.com" not in url:
+                    return {
+                        "type": "url_only",
+                        "url": url,
+                        "user": comment.get("user", {}).get("login", "unknown"),
+                        "comment_id": comment.get("id")
+                    }
+    return None
+
+def apply_direct_contribution(profile_id, contrib):
+    """Apply direct text contribution to the profile JSON."""
+    log(f"  Applying direct contribution for {profile_id}: {contrib['bagian']}")
+    
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        import nyicil_enrich as ne
+    except ImportError:
+        sys.path.append('/home/ubuntu/profilasatidz')
+        import nyicil_enrich as ne
+        
+    detail_path = f"{ne.DETAIL_DIR}/{profile_id}.json"
+    
+    # Read existing detail or create new
+    out, rc = ne.docker_exec(f"cat '{detail_path}'")
+    if rc == 0 and out.strip():
+        result = json.loads(out)
+    else:
+        # Need master to get name
+        master_json, _ = ne.docker_exec(f"cat {ne.MASTER_FILE}")
+        master = json.loads(master_json)
+        profile_name = "Unknown"
+        for m in master:
+            if m.get("id") == profile_id:
+                profile_name = m.get("name")
+                break
+        result = {
+            "id": profile_id,
+            "name": profile_name,
+            "bio": "", "education": [], "expertise": [], "kary": [],
+            "social_media": {}, "sources": []
+        }
+    
+    # Apply based on "Bagian"
+    bagian = contrib["bagian"].lower()
+    content = contrib["content"]
+    
+    source_entry = None
+    if contrib["url"]:
+        source_entry = {
+            "id": f"contrib_{contrib['comment_id']}",
+            "url": contrib["url"],
+            "title": "Kontribusi Komunitas",
+            "sitename": "Referensi Kontributor",
+            "accessed": datetime.now(JAKARTA_TZ).strftime("%Y-%m-%d")
+        }
+        # Add source if not exists
+        if not any(s.get("url") == contrib["url"] for s in result.get("sources", [])):
+            result.setdefault("sources", []).append(source_entry)
+            
+    # Field mapping
+    if "bio" in bagian:
+        result["bio"] = content + (f"\n\n(Tambahan info: {result['bio']})" if result.get("bio") else "")
+        if contrib["url"]: result["bio_source"] = contrib["url"]
+    elif "pendidikan" in bagian:
+        lines = [line.strip('- *') for line in content.split('\n') if line.strip()]
+        result.setdefault("education", []).extend(lines)
+        if contrib["url"]: result["education_source"] = contrib["url"]
+    elif "karya" in bagian:
+        lines = [line.strip('- *') for line in content.split('\n') if line.strip()]
+        result.setdefault("kary", []).extend(lines)
+        if contrib["url"]: result["kary_source"] = contrib["url"]
+    elif "keahlian" in bagian or "topik" in bagian:
+        words = [w.strip() for w in content.replace(',', '\n').split('\n') if w.strip()]
+        result.setdefault("expertise", []).extend(words)
+        if contrib["url"]: result["expertise_source"] = contrib["url"]
+    else:
+        # Append to bio for "Lainnya" or unrecognized
+        result["bio"] = (result.get("bio", "") + f"\n\nCatatan tambahan: {content}").strip()
+
+    result["enriched_at"] = datetime.now(JAKARTA_TZ).isoformat()
+    result["method"] = "community_contribution"
+    
+    # Save back to container
+    detail_json = json.dumps(result, ensure_ascii=False, indent=2)
+    import base64
+    b64 = base64.b64encode(detail_json.encode()).decode()
+    cmd = f"echo '{b64}' | base64 -d > '{detail_path}'"
+    out, rc = ne.docker_exec(cmd)
+    
+    if rc == 0:
+        log(f"  ✓ Detail saved: {detail_path}")
+        
+        # Trigger Hot-Reload
+        import urllib.request
+        try:
+            urllib.request.urlopen("http://localhost:8080/api/reload", timeout=5)
+            log("  ✓ Server hot-reloaded successfully")
+        except Exception as e:
+            log(f"  ⚠ Failed to trigger hot-reload: {e}")
+            
+        return True
+    return False
 
 def enrich_from_url(profile_id, url):
     """Enrich a profile from a user-provided URL."""
@@ -163,9 +291,9 @@ def main():
     owner, repo = "camagenta", "profilasatidz"
     
     # Find open issues with profil-asatidz label
-    log("Fetching open profil-asatidz issues...")
-    issues = gh_api(f"repos/{owner}/{repo}/issues?labels=profil-asatidz&state=open&per_page=50") or []
-    log(f"Found {len(issues)} open issues")
+    log("Fetching recently updated profil-asatidz issues...")
+    issues = gh_api(f"repos/{owner}/{repo}/issues?labels=profil-asatidz&state=open&sort=updated&direction=desc&per_page=10") or []
+    log(f"Found {len(issues)} issues to review")
     
     corrections_applied = 0
     corrections_pending = 0
@@ -174,40 +302,48 @@ def main():
         issue_num = issue["number"]
         title = issue["title"]
         
-        # Extract profile name from title: [Profil Asatidz] Name
         match = re.match(r'\[Profil Asatidz\]\s*(.+)', title)
         if not match:
             continue
         profile_name = match.group(1).strip()
         
-        # Get comments
         comments = get_issue_comments(owner, repo, issue_num)
         if not comments:
             continue
         
-        # Find URL in comments
-        url, commenter = find_url_in_comments(comments)
-        if not url:
+        contrib = find_contribution_in_comments(comments)
+        if not contrib:
             continue
+            
+        log(f"  Found contribution in Issue #{issue_num} ({profile_name}) by {contrib['user']}")
         
-        log(f"  Found URL in Issue #{issue_num} ({profile_name}): {url} (by {commenter})")
-        
-        # Try to enrich from URL
-        # Extract profile_id from issue body
         body = issue.get("body", "")
         id_match = re.search(r'\*\*ID\*\*:\s*`([^`]+)`', body)
-        if id_match:
-            profile_id = id_match.group(1)
+        if not id_match:
+            continue
+            
+        profile_id = id_match.group(1)
+        
+        if contrib["type"] == "direct_text":
+            success = apply_direct_contribution(profile_id, contrib)
+            if success:
+                corrections_applied += 1
+                gh_api(
+                    f"repos/{owner}/{repo}/issues/{issue_num}/comments",
+                    method="POST",
+                    data={"body": f"✅ Koreksi diterapkan dari kontribusi komunitas (Comment ID: {contrib['comment_id']})\n\n*Applied by bot at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
+                )
+        else:
+            # Fallback for old URL-only
+            url = contrib["url"]
             success = enrich_from_url(profile_id, url)
             if success:
                 corrections_applied += 1
-                # Add comment confirming
                 gh_api(
                     f"repos/{owner}/{repo}/issues/{issue_num}/comments",
                     method="POST",
                     data={"body": f"✅ Koreksi diterapkan dari {url}\n\n*Applied by bot at {datetime.now(JAKARTA_TZ).strftime('%Y-%m-%d %H:%M')} WIB*"}
                 )
-                # Close the issue
                 gh_api(
                     f"repos/{owner}/{repo}/issues/{issue_num}",
                     method="PATCH",
@@ -215,7 +351,6 @@ def main():
                 )
             else:
                 corrections_pending += 1
-                # Add comment asking for manual review
                 gh_api(
                     f"repos/{owner}/{repo}/issues/{issue_num}/comments",
                     method="POST",
