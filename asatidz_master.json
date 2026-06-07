@@ -655,18 +655,6 @@
     "completeness": 15
   },
   {
-    "name": "Abu Usamah",
-    "slug": "abu-usamah",
-    "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Usamah",
-    "count": 3,
-    "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-abu-usamah",
-    "completeness": 15
-  },
-  {
     "name": "Abu Ya'la Kurnaedi",
     "slug": "abu-yala-kurnaedi",
     "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Ya%27la%20Kurnaedi",
@@ -1529,18 +1517,6 @@
     "has_foto": false,
     "has_detail": [],
     "id": "kajian-fuad-hamzah-baraba",
-    "completeness": 15
-  },
-  {
-    "name": "Habib Salim Muhdor",
-    "slug": "habib-salim-muhdor",
-    "source_url": "https://kajian.net/kajian-audio/Ceramah/Habib%20Salim%20Muhdor",
-    "count": 2,
-    "categories": [],
-    "has_bio": false,
-    "has_foto": false,
-    "has_detail": [],
-    "id": "kajian-habib-salim-muhdor",
     "completeness": 15
   },
   {
