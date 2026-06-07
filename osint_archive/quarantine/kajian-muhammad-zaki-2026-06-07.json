@@ -1,0 +1,45 @@
+{
+  "_quarantine_metadata": {
+    "date": "2026-06-07T20:15:00+07:00",
+    "reason": "Bio corruption: Wikipedia search returned wrong article. Search query Muhammad Zaki returned Wikipedia article about Nabi Muhammad ﷺ (https://id.wikipedia.org/wiki/Muhammad), not the ustadz profile.",
+    "lesson_learned": "#14 (Wikipedia enrichment bisa return wrong page) + #15 (Audit is point-in-time, not continuous)",
+    "original_slug": "kajian-muhammad-zaki",
+    "original_master_entry": {
+      "id": "kajian-muhammad-zaki",
+      "name": "Muhammad Zaki",
+      "slug": "muhammad-zaki",
+      "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Zaki",
+      "count": 4,
+      "has_bio": false,
+      "has_foto": false,
+      "has_detail": [],
+      "completeness": 15
+    },
+    "action_taken": "Quarantined this corrupt enrichment result. detail/kajian-muhammad-zaki.json DELETED. Master.json remains accurate (has_bio=false, has_detail=[]). To re-enrich, the enrich script must verify Wikipedia page title matches the search query before saving (per Lesson #14 prevention).",
+    "reference": "docs/handoff-2026-06-07T19-55-00Z.md"
+  },
+  "original_corrupt_content": {
+    "name": "Muhammad Zaki",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Zaki",
+    "bio": "Muhammad (bahasa Arab: مُحَمَّدcode: ar is deprecated ; ca 570 – 8 Juni 632 M) adalah seorang pemimpin agama, sosial, dan politik beretnis Arab sekaligus pendiri agama Islam menurut perspektif sejarah modern. Menurut keyakinan umat Islam, ia adalah Nabi dan Rasul yang diberikan wahyu ilahi untuk memberitakan dan meneguhkan prinsip monoteistis dalam ajaran Adam, Ibrahim (Abraham), Musa, Isa (Yesus), dan nabi lainnya. Ia diyakini sebagai Penutup Para Nabi dalam Islam. Muhammad menyatukan Jazirah A",
+    "education": [],
+    "expertise": [],
+    "kary": [],
+    "social_media": {},
+    "sources": [
+      {
+        "id": "wiki_id",
+        "url": "https://id.wikipedia.org/wiki/Muhammad",
+        "title": "Muhammad",
+        "sitename": "Wikipedia Bahasa Indonesia",
+        "accessed": "2026-06-07"
+      }
+    ],
+    "foto": "",
+    "jabatan": "",
+    "completeness": 0,
+    "enriched_at": "2026-06-07T01:11:08.367614+07:00",
+    "method": "wikipedia",
+    "id": "kajian-muhammad-zaki"
+  }
+}
