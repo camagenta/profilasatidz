@@ -14,6 +14,10 @@ import time
 import urllib.request
 import urllib.parse
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from wikifetch import verify_wikipedia_match
 
 EXA_KEY = os.environ.get('EXA_KEY', 'cb395eba-ccbe-43f1-b828-f2376b69e3e8')
 
@@ -240,11 +244,17 @@ def main():
         # 1. Wikipedia ID
         wiki = wiki_search(name)
         time.sleep(0.3)
-        
+        if wiki and not verify_wikipedia_match(name, wiki['title'], wiki['extract'][:500]):
+            print(f"  Lesson #14 guard: rejected Wiki ID '{wiki['title']}' for '{name}' (title mismatch)")
+            wiki = None
+
         # 2. Wikipedia EN
         if not wiki:
             wiki = wiki_search_en(name)
             time.sleep(0.3)
+            if wiki and not verify_wikipedia_match(name, wiki['title'], wiki['extract'][:500]):
+                print(f"  Lesson #14 guard: rejected Wiki EN '{wiki['title']}' for '{name}' (title mismatch)")
+                wiki = None
         
         # 3. Exa
         exa_results = exa_search(name, num=5)

@@ -13,6 +13,9 @@ import re
 from datetime import datetime, timezone, timedelta
 import argparse
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from wikifetch import verify_wikipedia_match
+
 # Config
 CONTAINER = "profilasatidz"
 MASTER_FILE = "/root/asatidz_master.json"
@@ -228,25 +231,11 @@ def extract_keahlian(text):
 
 def check_title_match(target_name, wiki_title):
     """
-    Ensure the Wikipedia article title shares at least one significant word with the target name,
-    preventing citation matches (like name mentioned in bibliography of an unrelated article) from hijacking.
+    Backward-compat wrapper. New code should call verify_wikipedia_match
+    directly from wikifetch (Lesson #14: stronger guard against wrong-page
+    corruption from generic Wikipedia search results).
     """
-    import re
-    # Normalize and clean name
-    clean_target = re.sub(r'[^\w\s]', ' ', target_name).lower()
-    
-    # Remove common honorifics and titles
-    honorifics = {"ustadz", "ustad", "ustadzah", "haji", "h", "hj", "syaikh", "sheikh", "kiai", "kyai", "dr", "prof", "lc", "ma"}
-    target_words = [w for w in clean_target.split() if w not in honorifics and len(w) > 2]
-    
-    clean_title = re.sub(r'[^\w\s]', ' ', wiki_title).lower()
-    title_words = clean_title.split()
-    
-    # Check if at least one significant word matches
-    for word in target_words:
-        if word in title_words or any(word in tw for tw in title_words):
-            return True
-    return False
+    return verify_wikipedia_match(target_name, wiki_title)
 
 def enrich_profile(name, source_url):
     """Enrich a single profile. Returns dict or None."""
@@ -267,8 +256,8 @@ def enrich_profile(name, source_url):
             candidate_title = result_item.get("title", "")
             
             # First, check if title is a semantic match to the name
-            if not check_title_match(name, candidate_title):
-                log(f"    Skipping Wiki ID candidate (Title mismatch): {candidate_title}")
+            if not verify_wikipedia_match(name, candidate_title):
+                log(f"    Lesson #14 guard: skipping Wiki ID candidate (title mismatch): {candidate_title}")
                 continue
                 
             candidate_text = wiki_extract(candidate_title, "id")
@@ -300,8 +289,8 @@ def enrich_profile(name, source_url):
                 candidate_title = result_item.get("title", "")
                 
                 # Check title match for EN wiki too
-                if not check_title_match(name, candidate_title):
-                    log(f"    Skipping Wiki EN candidate (Title mismatch): {candidate_title}")
+                if not verify_wikipedia_match(name, candidate_title):
+                    log(f"    Lesson #14 guard: skipping Wiki EN candidate (title mismatch): {candidate_title}")
                     continue
                     
                 candidate_text = wiki_extract(candidate_title, "en")

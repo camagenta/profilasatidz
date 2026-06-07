@@ -6,6 +6,9 @@ Apply corrections by enriching from the referenced URL.
 import subprocess, json, sys, os, re
 from datetime import datetime, timezone, timedelta
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from wikifetch import verify_wikipedia_match
+
 JAKARTA_TZ = timezone(timedelta(hours=7))
 CONTAINER = "profilasatidz"
 
@@ -291,7 +294,11 @@ def enrich_from_url(profile_id, url):
                         profile_name = entry.get("name")
                         target_entry = entry
                         break
-                
+
+                if not verify_wikipedia_match(profile_name, title, wiki_text[:500]):
+                    log(f"  ✗ Lesson #14 guard: Wikipedia page '{title}' does not match profile '{profile_name}' — refusing to save")
+                    return False
+
                 # Build result
                 result = {
                     "name": profile_name,
