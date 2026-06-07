@@ -8,7 +8,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdul-barr"
+    "id": "kajian-abdul-barr",
+    "completeness": 15
   },
   {
     "name": "Abdul Hakim Amir Abdat",
@@ -19,7 +20,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abdul-hakim-amir-abdat"
+    "id": "kajian-abdul-hakim-amir-abdat",
+    "completeness": 100
   },
   {
     "name": "Abdul Haq",
@@ -42,7 +44,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdullah-al-bughury"
+    "id": "kajian-abdullah-al-bughury",
+    "completeness": 15
   },
   {
     "name": "Abdullah Amin",
@@ -101,7 +104,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdul-muthi-al-maidani"
+    "id": "kajian-abdul-muthi-al-maidani",
+    "completeness": 15
   },
   {
     "name": "Abdurrahim",
@@ -136,7 +140,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdurrahman-ayyub"
+    "id": "kajian-abdurrahman-ayyub",
+    "completeness": 15
   },
   {
     "name": "Abdurrahman bin Muhammad Musa Alu Nashr",
@@ -147,7 +152,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdurrahman-bin-muhammad-musa-alu-nashr"
+    "id": "kajian-abdurrahman-bin-muhammad-musa-alu-nashr",
+    "completeness": 15
   },
   {
     "name": "Abdurrahman Thayyib",
@@ -158,7 +164,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abdurrahman-thayyib"
+    "id": "kajian-abdurrahman-thayyib",
+    "completeness": 75
   },
   {
     "name": "Abdurrauf",
@@ -169,7 +176,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abdurrauf"
+    "id": "kajian-abdurrauf",
+    "completeness": 15
   },
   {
     "name": "Abdussalam",
@@ -216,7 +224,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-abu-abdil-muhsin-firanda-andirja"
+    "id": "kajian-abu-abdil-muhsin-firanda-andirja",
+    "completeness": 100
   },
   {
     "name": "Abu Abdurrahman Abdul Aziz as-Salafy",
@@ -239,7 +248,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-ahmad-imam-ali"
+    "id": "kajian-abu-ahmad-imam-ali",
+    "completeness": 15
   },
   {
     "name": "Abu Aliyah",
@@ -274,7 +284,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-fairus"
+    "id": "kajian-abu-fairus",
+    "completeness": 75
   },
   {
     "name": "Abu Haidar",
@@ -309,7 +320,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-hazim-muhsin"
+    "id": "kajian-abu-hazim-muhsin",
+    "completeness": 15
   },
   {
     "name": "Abu Ihsan Al-Atsary",
@@ -332,7 +344,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-isa"
+    "id": "kajian-abu-isa",
+    "completeness": 75
   },
   {
     "name": "Abu Isma'il Muslim Al Atsari",
@@ -343,7 +356,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-ismail-muslim-al-atsari"
+    "id": "kajian-abu-ismail-muslim-al-atsari",
+    "completeness": 15
   },
   {
     "name": "Abu Izzi",
@@ -354,7 +368,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-izzi"
+    "id": "kajian-abu-izzi",
+    "completeness": 75
   },
   {
     "name": "Abu Karimah 'Askariy",
@@ -365,7 +380,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-karimah-askariy"
+    "id": "kajian-abu-karimah-askariy",
+    "completeness": 15
   },
   {
     "name": "Abu Khaleed Resa Gunarsa",
@@ -376,7 +392,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-khaleed-resa-gunarsa"
+    "id": "kajian-abu-khaleed-resa-gunarsa",
+    "completeness": 15
   },
   {
     "name": "Abu Kholil Mujahid",
@@ -387,7 +404,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-kholil-mujahid"
+    "id": "kajian-abu-kholil-mujahid",
+    "completeness": 15
   },
   {
     "name": "Abul Abbas Tobroni",
@@ -398,7 +416,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abul-abbas-tobroni"
+    "id": "kajian-abul-abbas-tobroni",
+    "completeness": 15
   },
   {
     "name": "Abul Afnan Ayman Kamel Darojat",
@@ -409,7 +428,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abul-afnan-ayman-kamel-darojat"
+    "id": "kajian-abul-afnan-ayman-kamel-darojat",
+    "completeness": 15
   },
   {
     "name": "Abul Hammad Muhsan",
@@ -420,7 +440,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abul-hammad-muhsan"
+    "id": "kajian-abul-hammad-muhsan",
+    "completeness": 15
   },
   {
     "name": "Abu Mushlih Ari Wahyudi",
@@ -431,7 +452,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-mushlih-ari-wahyudi"
+    "id": "kajian-abu-mushlih-ari-wahyudi",
+    "completeness": 15
   },
   {
     "name": "Abu Qatadah",
@@ -442,7 +464,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-qatadah"
+    "id": "kajian-abu-qatadah",
+    "completeness": 75
   },
   {
     "name": "Abu Rifqi Asrofi",
@@ -453,7 +476,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-rifqi-asrofi"
+    "id": "kajian-abu-rifqi-asrofi",
+    "completeness": 15
   },
   {
     "name": "Abu Saad",
@@ -464,7 +488,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-saad"
+    "id": "kajian-abu-saad",
+    "completeness": 15
   },
   {
     "name": "Abu Saad Iskandar",
@@ -475,7 +500,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-saad-iskandar"
+    "id": "kajian-abu-saad-iskandar",
+    "completeness": 15
   },
   {
     "name": "Abu Salma",
@@ -522,7 +548,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-salman-al-kwasayni"
+    "id": "kajian-abu-salman-al-kwasayni",
+    "completeness": 15
   },
   {
     "name": "Abu Salman Musthofa Al-Buthoni",
@@ -545,7 +572,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-salma-rifaindry"
+    "id": "kajian-abu-salma-rifaindry",
+    "completeness": 75
   },
   {
     "name": "Abu Sulaiman Aris Sugiantoro",
@@ -556,7 +584,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-sulaiman-aris-sugiantoro"
+    "id": "kajian-abu-sulaiman-aris-sugiantoro",
+    "completeness": 0
   },
   {
     "name": "Abu Thohir",
@@ -579,7 +608,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-ubaidah-yusuf-as-sidawi"
+    "id": "kajian-abu-ubaidah-yusuf-as-sidawi",
+    "completeness": 75
   },
   {
     "name": "Abu Umair",
@@ -602,7 +632,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-umar-basyier"
+    "id": "kajian-abu-umar-basyier",
+    "completeness": 15
   },
   {
     "name": "Abu Usamah",
@@ -613,7 +644,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-usamah"
+    "id": "kajian-abu-usamah",
+    "completeness": 15
   },
   {
     "name": "Abu Ya'la Kurnaedi",
@@ -624,7 +656,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-yala-kurnaedi"
+    "id": "kajian-abu-yala-kurnaedi",
+    "completeness": 15
   },
   {
     "name": "Abu Yaman Yudiansyah",
@@ -635,7 +668,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-yaman-yudiansyah"
+    "id": "kajian-abu-yaman-yudiansyah",
+    "completeness": 15
   },
   {
     "name": "Abu Yasir",
@@ -646,7 +680,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-abu-yasir"
+    "id": "kajian-abu-yasir",
+    "completeness": 15
   },
   {
     "name": "Abu Zubeir al-Hawaary",
@@ -657,7 +692,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-abu-zubeir-al-hawaary"
+    "id": "kajian-abu-zubeir-al-hawaary",
+    "completeness": 75
   },
   {
     "name": "Adil Harahap",
@@ -692,7 +728,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-agung-panji-widiyanto"
+    "id": "kajian-agung-panji-widiyanto",
+    "completeness": 15
   },
   {
     "name": "Agus Hasan Bashori",
@@ -715,7 +752,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-agus-suaidi"
+    "id": "kajian-agus-suaidi",
+    "completeness": 15
   },
   {
     "name": "Agus Susehno",
@@ -726,7 +764,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-agus-susehno"
+    "id": "kajian-agus-susehno",
+    "completeness": 15
   },
   {
     "name": "Ahmad Firdaus",
@@ -749,7 +788,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ahmad-mz"
+    "id": "kajian-ahmad-mz",
+    "completeness": 15
   },
   {
     "name": "Ahmad Sabiq",
@@ -772,7 +812,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ahmad-thonarih"
+    "id": "kajian-ahmad-thonarih",
+    "completeness": 0
   },
   {
     "name": "Ahmad Zaenuddin",
@@ -783,7 +824,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ahmad-zaenuddin"
+    "id": "kajian-ahmad-zaenuddin",
+    "completeness": 15
   },
   {
     "name": "Ahmad Zainuddin",
@@ -794,7 +836,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-ahmad-zainuddin"
+    "id": "kajian-ahmad-zainuddin",
+    "completeness": 75
   },
   {
     "name": "Ahmas Faiz Asifuddin",
@@ -817,7 +860,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ajat-sudrajat"
+    "id": "kajian-ajat-sudrajat",
+    "completeness": 15
   },
   {
     "name": "Ali Ahmad",
@@ -852,7 +896,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ali-basuki"
+    "id": "kajian-ali-basuki",
+    "completeness": 15
   },
   {
     "name": "Ali Musri",
@@ -863,7 +908,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-ali-musri"
+    "id": "kajian-ali-musri",
+    "completeness": 75
   },
   {
     "name": "Ali Nur",
@@ -874,7 +920,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-ali-nur"
+    "id": "kajian-ali-nur",
+    "completeness": 75
   },
   {
     "name": "Ali Salman",
@@ -885,7 +932,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ali-salman"
+    "id": "kajian-ali-salman",
+    "completeness": 15
   },
   {
     "name": "Ali Saman",
@@ -896,7 +944,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ali-saman"
+    "id": "kajian-ali-saman",
+    "completeness": 15
   },
   {
     "name": "Ali Subana",
@@ -907,7 +956,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ali-subana"
+    "id": "kajian-ali-subana",
+    "completeness": 15
   },
   {
     "name": "Amir As Soronjy",
@@ -918,7 +968,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-amir-as-soronjy"
+    "id": "kajian-amir-as-soronjy",
+    "completeness": 15
   },
   {
     "name": "Ammi Nur Baits",
@@ -941,7 +992,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-amr-bin-syuroif-al-banteni"
+    "id": "kajian-amr-bin-syuroif-al-banteni",
+    "completeness": 15
   },
   {
     "name": "Amrullah Akadhinta",
@@ -988,7 +1040,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-anwar-zein"
+    "id": "kajian-anwar-zein",
+    "completeness": 15
   },
   {
     "name": "Arief Budiman",
@@ -1011,7 +1064,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-arie-wibowo"
+    "id": "kajian-arie-wibowo",
+    "completeness": 15
   },
   {
     "name": "Arif Fathul Ulum",
@@ -1022,7 +1076,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-arif-fathul-ulum"
+    "id": "kajian-arif-fathul-ulum",
+    "completeness": 15
   },
   {
     "name": "Arifin Badri",
@@ -1033,7 +1088,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-arifin-badri"
+    "id": "kajian-arifin-badri",
+    "completeness": 100
   },
   {
     "name": "Arifin Ridin",
@@ -1092,7 +1148,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-arman-bin-amri"
+    "id": "kajian-arman-bin-amri",
+    "completeness": 15
   },
   {
     "name": "Armen Halim Naro",
@@ -1103,7 +1160,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-armen-halim-naro"
+    "id": "kajian-armen-halim-naro",
+    "completeness": 75
   },
   {
     "name": "Askar Wardhana",
@@ -1138,7 +1196,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-asmuji-muhayyat"
+    "id": "kajian-asmuji-muhayyat",
+    "completeness": 15
   },
   {
     "name": "Aspri Rahmat",
@@ -1161,7 +1220,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-aunur-rafiq-ghufran"
+    "id": "kajian-aunur-rafiq-ghufran",
+    "completeness": 75
   },
   {
     "name": "Ayub Abu Ayub",
@@ -1184,7 +1244,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-badrusalam"
+    "id": "kajian-badrusalam",
+    "completeness": 75
   },
   {
     "name": "Bahtiar Abu Zakiyan",
@@ -1195,7 +1256,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-bahtiar-abu-zakiyan"
+    "id": "kajian-bahtiar-abu-zakiyan",
+    "completeness": 15
   },
   {
     "name": "Bakhtiar",
@@ -1206,7 +1268,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-bakhtiar"
+    "id": "kajian-bakhtiar",
+    "completeness": 15
   },
   {
     "name": "Beni Sarbeni",
@@ -1229,7 +1292,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-cholid-abri"
+    "id": "kajian-cholid-abri",
+    "completeness": 15
   },
   {
     "name": "Dauroh Kasyfu Syubuhat",
@@ -1240,7 +1304,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-dauroh-kasyfu-syubuhat"
+    "id": "kajian-dauroh-kasyfu-syubuhat",
+    "completeness": 15
   },
   {
     "name": "Departemen Dakwah Saudi Arabia",
@@ -1251,7 +1316,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-departemen-dakwah-saudi-arabia"
+    "id": "kajian-departemen-dakwah-saudi-arabia",
+    "completeness": 15
   },
   {
     "name": "Dzul Akmal",
@@ -1274,7 +1340,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-dzulkarnaen"
+    "id": "kajian-dzulkarnaen",
+    "completeness": 75
   },
   {
     "name": "Erwandi Tarmizi",
@@ -1297,7 +1364,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-fachruddin"
+    "id": "kajian-fachruddin",
+    "completeness": 15
   },
   {
     "name": "Fachry Permana",
@@ -1332,7 +1400,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-fahruddin"
+    "id": "kajian-fahruddin",
+    "completeness": 75
   },
   {
     "name": "Fakhruddin Nu'man",
@@ -1343,7 +1412,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-fakhruddin-numan"
+    "id": "kajian-fakhruddin-numan",
+    "completeness": 15
   },
   {
     "name": "Farid Al-Bathoti",
@@ -1354,7 +1424,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-farid-al-bathoti"
+    "id": "kajian-farid-al-bathoti",
+    "completeness": 15
   },
   {
     "name": "Fariq Gasim Anuz",
@@ -1377,7 +1448,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-fathi-yazid-jawas"
+    "id": "kajian-fathi-yazid-jawas",
+    "completeness": 15
   },
   {
     "name": "Fauzan Abdullah",
@@ -1388,7 +1460,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-fauzan-abdullah"
+    "id": "kajian-fauzan-abdullah",
+    "completeness": 15
   },
   {
     "name": "Firdaus Sanusi",
@@ -1411,7 +1484,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-fuad-hamzah-baraba"
+    "id": "kajian-fuad-hamzah-baraba",
+    "completeness": 15
   },
   {
     "name": "Habib Salim Muhdor",
@@ -1422,7 +1496,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-habib-salim-muhdor"
+    "id": "kajian-habib-salim-muhdor",
+    "completeness": 15
   },
   {
     "name": "Hadid Saiful Islam",
@@ -1445,7 +1520,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-haikal-basyarahil"
+    "id": "kajian-haikal-basyarahil",
+    "completeness": 15
   },
   {
     "name": "Hammad Abu Mu'awiyah",
@@ -1456,7 +1532,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-hammad-abu-muawiyah"
+    "id": "kajian-hammad-abu-muawiyah",
+    "completeness": 15
   },
   {
     "name": "Hari Badar",
@@ -1467,7 +1544,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-hari-badar"
+    "id": "kajian-hari-badar",
+    "completeness": 15
   },
   {
     "name": "Harits Budiatna",
@@ -1478,7 +1556,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-harits-budiatna"
+    "id": "kajian-harits-budiatna",
+    "completeness": 15
   },
   {
     "name": "Hasanuddin",
@@ -1489,7 +1568,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-hasanuddin"
+    "id": "kajian-hasanuddin",
+    "completeness": 15
   },
   {
     "name": "Hazim",
@@ -1500,7 +1580,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-hazim"
+    "id": "kajian-hazim",
+    "completeness": 15
   },
   {
     "name": "Heri Purnama",
@@ -1571,7 +1652,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-jauhar"
+    "id": "kajian-jauhar",
+    "completeness": 15
   },
   {
     "name": "Jauhari",
@@ -1594,7 +1676,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-jazuli"
+    "id": "kajian-jazuli",
+    "completeness": 15
   },
   {
     "name": "Johan Saputra Halim",
@@ -1617,7 +1700,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-kak-wawan"
+    "id": "kajian-kak-wawan",
+    "completeness": 15
   },
   {
     "name": "Khairullah Anwar Luthfi",
@@ -1628,7 +1712,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-khairullah-anwar-luthfi"
+    "id": "kajian-khairullah-anwar-luthfi",
+    "completeness": 75
   },
   {
     "name": "Khalid Basalamah",
@@ -1651,7 +1736,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-khidir-bin-muhammad-sunusi"
+    "id": "kajian-khidir-bin-muhammad-sunusi",
+    "completeness": 15
   },
   {
     "name": "Khoilid Abdus Shomad",
@@ -1662,7 +1748,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-khoilid-abdus-shomad"
+    "id": "kajian-khoilid-abdus-shomad",
+    "completeness": 15
   },
   {
     "name": "Kholid Syamhudi",
@@ -1685,7 +1772,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-kisah-muslim"
+    "id": "kajian-kisah-muslim",
+    "completeness": 75
   },
   {
     "name": "Konsultasisyariah",
@@ -1708,7 +1796,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-konsultasi-syariah"
+    "id": "kajian-konsultasi-syariah",
+    "completeness": 0
   },
   {
     "name": "Lalu Ahmad Yani",
@@ -1731,7 +1820,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-luqman-baabduh"
+    "id": "kajian-luqman-baabduh",
+    "completeness": 15
   },
   {
     "name": "Ma'ruf Nursalam",
@@ -1742,7 +1832,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-maruf-nursalam"
+    "id": "kajian-maruf-nursalam",
+    "completeness": 0
   },
   {
     "name": "Mahfudz Umri",
@@ -1777,7 +1868,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-mahsun-al-mundiri"
+    "id": "kajian-mahsun-al-mundiri",
+    "completeness": 15
   },
   {
     "name": "Markaz Albani",
@@ -1788,7 +1880,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-markaz-albani"
+    "id": "kajian-markaz-albani",
+    "completeness": 15
   },
   {
     "name": "Maududi Abdullah",
@@ -1811,7 +1904,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-mizan-qudsyiah"
+    "id": "kajian-mizan-qudsyiah",
+    "completeness": 75
   },
   {
     "name": "Moh Suaib Al-Faiz",
@@ -1822,7 +1916,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-moh-suaib-al-faiz"
+    "id": "kajian-moh-suaib-al-faiz",
+    "completeness": 15
   },
   {
     "name": "Moh Yusuf Harun",
@@ -1833,7 +1928,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-moh-yusuf-harun"
+    "id": "kajian-moh-yusuf-harun",
+    "completeness": 15
   },
   {
     "name": "Mubarak Bamualim",
@@ -1904,7 +2000,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-afifuddin-as-sidawi"
+    "id": "kajian-muhammad-afifuddin-as-sidawi",
+    "completeness": 15
   },
   {
     "name": "Muhammad Ali Hizam",
@@ -1951,7 +2048,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-haikal-basyarahil"
+    "id": "kajian-muhammad-haikal-basyarahil",
+    "completeness": 15
   },
   {
     "name": "Muhammad Hamid Alwy",
@@ -1962,7 +2060,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-hamid-alwy"
+    "id": "kajian-muhammad-hamid-alwy",
+    "completeness": 15
   },
   {
     "name": "Muhammad Iqbal",
@@ -1985,7 +2084,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-iqbal-ghozali"
+    "id": "kajian-muhammad-iqbal-ghozali",
+    "completeness": 15
   },
   {
     "name": "Muhammad Na'im",
@@ -2056,7 +2156,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-suaib-al-faiz"
+    "id": "kajian-muhammad-suaib-al-faiz",
+    "completeness": 15
   },
   {
     "name": "Muhammad Sulhan Jauhari",
@@ -2079,7 +2180,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-taufiq-badri"
+    "id": "kajian-muhammad-taufiq-badri",
+    "completeness": 15
   },
   {
     "name": "Muhammad Thoharo",
@@ -2090,7 +2192,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-thoharo"
+    "id": "kajian-muhammad-thoharo",
+    "completeness": 15
   },
   {
     "name": "Muhammad Wasitho",
@@ -2149,7 +2252,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-muhammad-zaki"
+    "id": "kajian-muhammad-zaki",
+    "completeness": 15
   },
   {
     "name": "Muharrar bin Mikail",
@@ -2172,7 +2276,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-mujahid-abu-kholil"
+    "id": "kajian-mujahid-abu-kholil",
+    "completeness": 15
   },
   {
     "name": "Mujahid Aslam",
@@ -2219,7 +2324,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-mushab"
+    "id": "kajian-mushab",
+    "completeness": 15
   },
   {
     "name": "Musyaffa' Ad-Dariny",
@@ -2230,7 +2336,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-musyaffa-ad-dariny"
+    "id": "kajian-musyaffa-ad-dariny",
+    "completeness": 15
   },
   {
     "name": "Nafi Zainuddin",
@@ -2241,7 +2348,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-nafi-zainuddin"
+    "id": "kajian-nafi-zainuddin",
+    "completeness": 15
   },
   {
     "name": "Nasiruddin",
@@ -2252,7 +2360,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-nasiruddin"
+    "id": "kajian-nasiruddin",
+    "completeness": 15
   },
   {
     "name": "Nurfitri Hadi",
@@ -2275,7 +2384,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-nuruddin-muhammad-fattah"
+    "id": "kajian-nuruddin-muhammad-fattah",
+    "completeness": 15
   },
   {
     "name": "Qurtifa Wijaya",
@@ -2286,7 +2396,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-qurtifa-wijaya"
+    "id": "kajian-qurtifa-wijaya",
+    "completeness": 15
   },
   {
     "name": "Rasul bin Dahri",
@@ -2309,7 +2420,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-rayyan-maretan"
+    "id": "kajian-rayyan-maretan",
+    "completeness": 15
   },
   {
     "name": "Rijal Arifin",
@@ -2320,7 +2432,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-rijal-arifin"
+    "id": "kajian-rijal-arifin",
+    "completeness": 15
   },
   {
     "name": "Riza Firmansyah",
@@ -2355,7 +2468,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-robby-arianto"
+    "id": "kajian-robby-arianto",
+    "completeness": 15
   },
   {
     "name": "Romlan",
@@ -2366,7 +2480,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-romlan"
+    "id": "kajian-romlan",
+    "completeness": 15
   },
   {
     "name": "Sa'id Syamsul Huda",
@@ -2377,7 +2492,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-said-syamsul-huda"
+    "id": "kajian-said-syamsul-huda",
+    "completeness": 15
   },
   {
     "name": "Sabil",
@@ -2388,7 +2504,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-sabil"
+    "id": "kajian-sabil",
+    "completeness": 0
   },
   {
     "name": "Said Abu Ukasyah",
@@ -2411,7 +2528,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-said-yai"
+    "id": "kajian-said-yai",
+    "completeness": 15
   },
   {
     "name": "Sanusin Muhammad Yusuf",
@@ -2422,7 +2540,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-sanusin-muhammad-yusuf"
+    "id": "kajian-sanusin-muhammad-yusuf",
+    "completeness": 15
   },
   {
     "name": "Soal-Jawab Asatidzah",
@@ -2433,7 +2552,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-soal-jawab-asatidzah"
+    "id": "kajian-soal-jawab-asatidzah",
+    "completeness": 15
   },
   {
     "name": "Sofyan Chalid Ruray",
@@ -2480,7 +2600,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-subhi-abdurrahman"
+    "id": "kajian-subhi-abdurrahman",
+    "completeness": 15
   },
   {
     "name": "Sufyan Bafin Zen",
@@ -2503,7 +2624,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-sufyan-baswedan"
+    "id": "kajian-sufyan-baswedan",
+    "completeness": 15
   },
   {
     "name": "Sulam Mustareja",
@@ -2538,7 +2660,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-suroso-abdussalam"
+    "id": "kajian-suroso-abdussalam",
+    "completeness": 15
   },
   {
     "name": "Syadam Husein Al-Katiri",
@@ -2549,7 +2672,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syadam-husein-al-katiri"
+    "id": "kajian-syadam-husein-al-katiri",
+    "completeness": 15
   },
   {
     "name": "Syafiq Basalamah",
@@ -2560,7 +2684,8 @@
     "has_bio": true,
     "has_foto": true,
     "has_detail": true,
-    "id": "kajian-syafiq-basalamah"
+    "id": "kajian-syafiq-basalamah",
+    "completeness": 100
   },
   {
     "name": "Syahrul Fatwa",
@@ -2583,7 +2708,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-ali-hasan-al-halaby"
+    "id": "kajian-syaikh-ali-hasan-al-halaby",
+    "completeness": 15
   },
   {
     "name": "Syaikh Abdul Hakim Sholeh Al'id",
@@ -2594,7 +2720,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-abdul-hakim-sholeh-alid"
+    "id": "kajian-syaikh-abdul-hakim-sholeh-alid",
+    "completeness": 15
   },
   {
     "name": "Syaikh Abdul Malik Ramadhani Al-Jazairy",
@@ -2605,7 +2732,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-abdul-malik-ramadhani-al-jazairy"
+    "id": "kajian-syaikh-abdul-malik-ramadhani-al-jazairy",
+    "completeness": 15
   },
   {
     "name": "Syaikh Abu Bakar Baidhony",
@@ -2616,7 +2744,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-abu-bakar-baidhony"
+    "id": "kajian-syaikh-abu-bakar-baidhony",
+    "completeness": 15
   },
   {
     "name": "Syaikh Abu Usamah Az-Zahabi",
@@ -2627,7 +2756,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-abu-usamah-az-zahabi"
+    "id": "kajian-syaikh-abu-usamah-az-zahabi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Ali bin Salim Bukayyir",
@@ -2638,7 +2768,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-ali-bin-salim-bukayyir"
+    "id": "kajian-syaikh-ali-bin-salim-bukayyir",
+    "completeness": 15
   },
   {
     "name": "Syaikh Ali bin Salim Bukayyir Al-Yamani",
@@ -2649,7 +2780,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-ali-bin-salim-bukayyir-al-yamani"
+    "id": "kajian-syaikh-ali-bin-salim-bukayyir-al-yamani",
+    "completeness": 15
   },
   {
     "name": "Syaikh Bin Baz",
@@ -2672,7 +2804,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dari-suriah"
+    "id": "kajian-syaikh-dari-suriah",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr. Ahmad bin Hamd Al-Jailani",
@@ -2683,7 +2816,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-ahmad-bin-hamd-al-jailani"
+    "id": "kajian-syaikh-dr-ahmad-bin-hamd-al-jailani",
+    "completeness": 15
   },
   {
     "name": "Syaikh DR. Mus'id Bin Musa'ad Al-Husain",
@@ -2694,7 +2828,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-musid-bin-musaad-al-husain"
+    "id": "kajian-syaikh-dr-musid-bin-musaad-al-husain",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Abdul Adzhim Badawi",
@@ -2705,7 +2840,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-abdul-adzhim-badawi"
+    "id": "kajian-syaikh-dr-abdul-adzhim-badawi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Abdus Salam bin Salim A Suhaimi",
@@ -2716,7 +2852,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-abdus-salam-bin-salim-a-suhaimi"
+    "id": "kajian-syaikh-dr-abdus-salam-bin-salim-a-suhaimi",
+    "completeness": 15
   },
   {
     "name": "Syaikh DR Abu Abdullah Al Juhani",
@@ -2739,7 +2876,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-muhammad-bin-musa-alu-nasr"
+    "id": "kajian-syaikh-dr-muhammad-bin-musa-alu-nasr",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Muhammad Umar Bazmul",
@@ -2750,7 +2888,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-muhammad-umar-bazmul"
+    "id": "kajian-syaikh-dr-muhammad-umar-bazmul",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Sholeh As Suhaimi",
@@ -2761,7 +2900,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-sholeh-as-suhaimi"
+    "id": "kajian-syaikh-dr-sholeh-as-suhaimi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Sulaiman Ar-Ruhaili",
@@ -2772,7 +2912,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-sulaiman-ar-ruhaili"
+    "id": "kajian-syaikh-dr-sulaiman-ar-ruhaili",
+    "completeness": 15
   },
   {
     "name": "Syaikh Dr Thala'ah ibn Musthaf",
@@ -2783,7 +2924,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-dr-thalaah-ibn-musthaf"
+    "id": "kajian-syaikh-dr-thalaah-ibn-musthaf",
+    "completeness": 0
   },
   {
     "name": "Syaikh Fahd Bin Abdurrahman Asy-Syuwayyib",
@@ -2794,7 +2936,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-fahd-bin-abdurrahman-asy-syuwayyib"
+    "id": "kajian-syaikh-fahd-bin-abdurrahman-asy-syuwayyib",
+    "completeness": 15
   },
   {
     "name": "Syaikh Muhammad bin Mubarak Asy-Syarafi",
@@ -2805,7 +2948,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-muhammad-bin-mubarak-asy-syarafi"
+    "id": "kajian-syaikh-muhammad-bin-mubarak-asy-syarafi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Muhammad bin Sa'id Ad Dausari An Najdi",
@@ -2816,7 +2960,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-muhammad-bin-said-ad-dausari-an-najdi"
+    "id": "kajian-syaikh-muhammad-bin-said-ad-dausari-an-najdi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Muhammad Bin Shaleh Al Utsaimin",
@@ -2839,7 +2984,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-prof-dr-anis-ahmad-thahir-jamal-al-indunisi"
+    "id": "kajian-syaikh-prof-dr-anis-ahmad-thahir-jamal-al-indunisi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Prof DR Abdur Rozzaq Al Badr",
@@ -2850,7 +2996,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-syaikh-prof-dr-abdur-rozzaq-al-badr"
+    "id": "kajian-syaikh-prof-dr-abdur-rozzaq-al-badr",
+    "completeness": 75
   },
   {
     "name": "Syaikh Prof Dr Ahmad Abdussalam",
@@ -2861,7 +3008,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-prof-dr-ahmad-abdussalam"
+    "id": "kajian-syaikh-prof-dr-ahmad-abdussalam",
+    "completeness": 15
   },
   {
     "name": "Syaikh Prof Dr Muhammad Bin Abdurahman Al Khumais",
@@ -2872,7 +3020,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-prof-dr-muhammad-bin-abdurahman-al-khumais"
+    "id": "kajian-syaikh-prof-dr-muhammad-bin-abdurahman-al-khumais",
+    "completeness": 0
   },
   {
     "name": "Syaikh Ridwan Jazairi",
@@ -2883,7 +3032,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-ridwan-jazairi"
+    "id": "kajian-syaikh-ridwan-jazairi",
+    "completeness": 15
   },
   {
     "name": "Syaikh Sa'ad Bin Nashir Asy Syatsri",
@@ -2906,7 +3056,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-tholal-al-quraisy"
+    "id": "kajian-syaikh-tholal-al-quraisy",
+    "completeness": 15
   },
   {
     "name": "Syaikh Ubaid Sulaiman As-Sindy",
@@ -2917,7 +3068,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-ubaid-sulaiman-as-sindy"
+    "id": "kajian-syaikh-ubaid-sulaiman-as-sindy",
+    "completeness": 15
   },
   {
     "name": "Syaikh Umar bin Abdul Aziz",
@@ -2928,7 +3080,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-umar-bin-abdul-aziz"
+    "id": "kajian-syaikh-umar-bin-abdul-aziz",
+    "completeness": 15
   },
   {
     "name": "Syaikh Utsman Al Khamiis",
@@ -2939,7 +3092,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syaikh-utsman-al-khamiis"
+    "id": "kajian-syaikh-utsman-al-khamiis",
+    "completeness": 15
   },
   {
     "name": "Syeikh Abu Usamah Az-Zahabi",
@@ -2950,7 +3104,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syeikh-abu-usamah-az-zahabi"
+    "id": "kajian-syeikh-abu-usamah-az-zahabi",
+    "completeness": 15
   },
   {
     "name": "Syeikh DR. Syadi Muhammad Nu'man",
@@ -2961,7 +3116,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syeikh-dr-syadi-muhammad-numan"
+    "id": "kajian-syeikh-dr-syadi-muhammad-numan",
+    "completeness": 15
   },
   {
     "name": "Syeikh Ibrahim Ar Ruhaily",
@@ -2972,7 +3128,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syeikh-ibrahim-ar-ruhaily"
+    "id": "kajian-syeikh-ibrahim-ar-ruhaily",
+    "completeness": 15
   },
   {
     "name": "Syeikh Khalid bin Dhahwi Azh-Zhafiri",
@@ -2983,7 +3140,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syeikh-khalid-bin-dhahwi-azh-zhafiri"
+    "id": "kajian-syeikh-khalid-bin-dhahwi-azh-zhafiri",
+    "completeness": 15
   },
   {
     "name": "Syeikh Masyhur Hasan Salman",
@@ -3006,7 +3164,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syeikh-utsman-bin-muhammad-al-khomiis"
+    "id": "kajian-syeikh-utsman-bin-muhammad-al-khomiis",
+    "completeness": 15
   },
   {
     "name": "Syikh Abdul Karim Al-Jazairi",
@@ -3017,7 +3176,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-syikh-abdul-karim-al-jazairi"
+    "id": "kajian-syikh-abdul-karim-al-jazairi",
+    "completeness": 15
   },
   {
     "name": "Tata Abdul Ghoni",
@@ -3028,7 +3188,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-tata-abdul-ghoni"
+    "id": "kajian-tata-abdul-ghoni",
+    "completeness": 15
   },
   {
     "name": "Ulin Nuha Al-Hafidz",
@@ -3039,7 +3200,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-ulin-nuha-al-hafidz"
+    "id": "kajian-ulin-nuha-al-hafidz",
+    "completeness": 15
   },
   {
     "name": "Umar Alfanani",
@@ -3062,7 +3224,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-usamah-mahri"
+    "id": "kajian-usamah-mahri",
+    "completeness": 15
   },
   {
     "name": "Yasir Abu Yasir",
@@ -3121,7 +3284,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-zainal-abidin-syamsudin"
+    "id": "kajian-zainal-abidin-syamsudin",
+    "completeness": 75
   },
   {
     "name": "Zainuddin",
@@ -3132,7 +3296,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-zainuddin"
+    "id": "kajian-zainuddin",
+    "completeness": 15
   },
   {
     "name": "Zakaria Ahmad",
@@ -3143,7 +3308,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-zakaria-ahmad"
+    "id": "kajian-zakaria-ahmad",
+    "completeness": 75
   },
   {
     "name": "Zezen Zainal Mursalin",
@@ -3154,7 +3320,8 @@
     "has_bio": false,
     "has_foto": false,
     "has_detail": [],
-    "id": "kajian-zezen-zainal-mursalin"
+    "id": "kajian-zezen-zainal-mursalin",
+    "completeness": 15
   },
   {
     "name": "الشيخ محمد موسى آل نصرSyaikh Muhammad Musa Alu Nasr",
@@ -3165,7 +3332,8 @@
     "has_bio": true,
     "has_foto": false,
     "has_detail": true,
-    "id": "kajian-syaikh-muhammad-musa-alu-nasr"
+    "id": "kajian-syaikh-muhammad-musa-alu-nasr",
+    "completeness": 75
   },
   {
     "name": "Ahmad Syakir",
