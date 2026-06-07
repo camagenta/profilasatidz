@@ -47,5 +47,8 @@
   ],
   "foto": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Abdul_Hakim_bin_Amir_Abdat.jpg",
   "jabatan": "Penulis dan Penceramah, Alumni LIPIA",
-  "id": "kajian-abdul-hakim-amir-abdat"
+  "id": "kajian-abdul-hakim-amir-abdat",
+  "foto_source": "https://id.wikipedia.org/wiki/Abdul_Hakim_bin_Amir_Abdat",
+  "enriched_at": "2026-06-07T18:01:16.858375+07:00",
+  "method": "community_contribution"
 }
