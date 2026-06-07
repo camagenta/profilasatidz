@@ -3,8 +3,8 @@
   "slug": "abu-izzi",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Izzi",
   "count": 45,
-  "bio": "id Ustadz Mahmuddin Abu Izzi : Dari Madrasah Ramadan Menuju Keluarga Surga dan Kepedulian Global untuk Palestina - alimannews\n\nScroll untuk baca artikel\n\n×\n\nPenceramah (Khutbah) Sholat Idul Fitri Ustadz Mahmuddin Abu Izzi, M. Sos *”Seorang cendekiawan Muslim muda, intelektual, dan penceramah as Harta Simpanan Orang Islam Bagian 3 – Ustadz Abu Izzi Masmuin Zubaidi – Ceramah Agama | Yufid TV | Downl...",
-  "bio_source": "https://kajianlive.my.id/bio_ustadz.php?id=208",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Biografi Ustadz Abu Izzi Masmuin\n\nBiografi Ustadz Abu Izzi Masmuin Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Izzi Masmuin .\n\nCopyright @ 2025 kajianlive.my.id",
   "education": [
     "Biografi Ustadz Abu Izzi Masmuin",
@@ -44,9 +44,20 @@
       "url": "https://yufid.tv/66643-harta-simpanan-orang-islam-bagian-3-ustadz-abu-izzi-masmuin-zubaidi-ceramah-agama.html",
       "title": "Harta Simpanan Orang Islam Bagian 3 – Ustadz Abu Izzi Masmuin Zubaidi – Ceramah Agama | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
       "snippet": "Harta Simpanan Orang Islam Bagian 3 – Ustadz Abu Izzi Masmuin Zubaidi – Ceramah Agama | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\n- Subs"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"id Ustadz Mahmuddin Abu Izzi : Dari Madrasah Ramadan Menuju Keluarga Surga dan K...\""
     }
   ],
   "foto": "",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-abu-izzi"
+  "id": "kajian-abu-izzi",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.238705+07:00",
+  "method": "qa_cleared_garbage_2026-06-07"
 }

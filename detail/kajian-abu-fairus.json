@@ -3,8 +3,8 @@
   "slug": "abu-fairus",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Fairus",
   "count": 33,
-  "bio": "Tentang Kami - Meniti Jejak Para Sahabat\n\nWebsite Islam Ilmiyyah ini adalah milik Ustadz Abu Fairuz Ahmad Ridwan, Lc, MA. Rahmat Nur Hidayat, Lc →\n\nHalaman ini dikhususkan untuk memuat kumpulan daftar ceramah/kajian audio maupun video dari Ustadz Abu Fairuz Ahmad Ridwan, Lc.",
-  "bio_source": "https://www.abufairuz.com/tentang-kami/",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Tentang Kami - Meniti Jejak Para Sahabat\n\nWebsite Islam Ilmiyyah ini adalah milik Ustadz Abu Fairuz Ahmad Ridwan, Lc, MA. Web ini diasuh langsung oleh beliau serta dibantu oleh beberapa ikhwan Batam.\n",
   "education": [
     "Tentang Kami - Meniti Jejak Para Sahabat"
@@ -42,9 +42,20 @@
       "url": "https://muslim.or.id/author/abufairuz",
       "title": "Abu Fairuz Ahmad Ridwan, Lc., MA., Author at Muslim.or.id",
       "snippet": "Abu Fairuz Ahmad Ridwan, Lc., MA., Author at Muslim.or.id\n\n### Bencana HP dan Gadget\n\noleh Abu Fairuz Ahmad Ridwan, Lc., MA.\n\n4 April 2021\n\n0\n\nModal a"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"Tentang Kami - Meniti Jejak Para Sahabat\n\nWebsite Islam Ilmiyyah ini adalah mili...\""
     }
   ],
   "foto": "",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-abu-fairus"
+  "id": "kajian-abu-fairus",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.238050+07:00",
+  "method": "qa_cleared_garbage_2026-06-07"
 }

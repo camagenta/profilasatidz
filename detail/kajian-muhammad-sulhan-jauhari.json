@@ -1,7 +1,7 @@
 {
   "name": "Muhammad Sulhan Jauhari",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Sulhan%20Jauhari",
-  "bio": "Berikut ini adalah Daftar Ketua Dewan Perwakilan Rakyat Daerah Kabupaten/Kota di Sulawesi Utara yang sedang menjabat (periode 2024-2029).",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Daftar Ketua DPRD Kabupaten/Kota di Sulawesi Utara",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Berikut ini adalah Daftar Ketua Dewan Perwakilan Rakyat Daerah Kabupaten/Kota di...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:04:42.940359+07:00",
-  "method": "wikipedia",
-  "id": "kajian-muhammad-sulhan-jauhari"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.279015+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-muhammad-sulhan-jauhari",
+  "bio_source": ""
 }

@@ -1,6 +1,6 @@
 {
   "name": "Sufyan Bafin Zen",
-  "bio": "Sufyan Bafin Zen\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Nasihat Ini Kebebasan Fana yang Orang Tidak Bertakwa Cari… – Ustadz Sufyan Bafin. Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 7, 2026\n\nHome Nasihat Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan. A\n\nSearch\n\n...",
+  "bio": "",
   "education": [
     "Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan Bafin Zen  Yufid TV  Download Video Gratis - Ceramah Agama Islam"
   ],
@@ -36,13 +36,23 @@
       "title": "Biografi Sufyan Bafin Zen",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"Sufyan Bafin Zen\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Nasihat Ini Kebebasan ...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=805_ustadz_sufyan_bafin_zen.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "enriched_at": "2026-06-05T20:41:08.996925+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.283596+07:00",
+  "method": "qa_cleared_garbage_2026-06-07",
   "id": "kajian-sufyan-bafin-zen",
   "count": 31,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Sufyan%20Bafin%20Zen"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Sufyan%20Bafin%20Zen",
+  "bio_source": "",
+  "completeness": 65
 }

@@ -1,7 +1,7 @@
 {
   "name": "Umar Alfanani",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Umar%20Alfanani",
-  "bio": "Pelajar Islam Indonesia adalah organisasi massa Pelajar Islam tertua di Indonesia yang bergerak di bidang kepelajaran dan pengkaderan yang bertujuan terciptanya kesempurnaan pendidikan dan kebudayaan yang sesuai dengan syariat Islam bagi segenap bangsa Indonesia dan umat manusia. Berdiri pada Ahad, 4 Mei 1947 M/ 12 Jumadil Tsani 1366 H di Yogyakarta dengan tokoh pertamanya Joesdi Ghazali dan saat ini Ketua Umum PB (Pengurus Besar) PII, Kevin Prayoga.",
+  "bio": "",
   "education": [
     "Yogyakarta dengan tokoh pertamanya Joesdi Ghazali dan saat ini Ketua Umum PB (Pengurus Besar) PII, Kevin Prayoga"
   ],
@@ -15,12 +15,21 @@
       "title": "Pelajar Islam Indonesia",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Pelajar Islam Indonesia adalah organisasi massa Pelajar Islam tertua di Indonesi...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T07:15:15.724815+07:00",
-  "method": "wikipedia",
-  "id": "kajian-umar-alfanani"
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.285401+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-umar-alfanani",
+  "bio_source": ""
 }

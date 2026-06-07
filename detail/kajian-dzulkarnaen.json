@@ -3,8 +3,8 @@
   "slug": "dzulkarnaen",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Dzulkarnaen",
   "count": 43,
-  "bio": "net/ Ustadz Dzulqarnain Muhammad Sunusi - Uloom. Selain di MUI, Ustaz Tengku juga aktif sebagai Ketua Majelis Fatwa untuk PP Mathla'ul Anwar, sebuah organisasi berfokus pada pendidikan Islam. Ia menjabat sebagai Wakil Sekretaris Jenderal Dewan Pimpinan Majelis Ulama Indonesia (MUI) periode 2015-2020.",
-  "bio_source": "https://dzulqarnain.net/",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Dzulqarnain.net – Website Resmi Dzulqarnain Muhammad Sunusi\n\nCopyright © Dzulqarnain.Net 1445H\n\nDzulqarnain.net – Website Resmi Dzulqarnain Muhammad Sunusi\n* [Beranda](https://dzulqarnain.net/)\n* [Keg",
   "education": [
     "Dzulqarnain.net – Website Resmi Dzulqarnain Muhammad Sunusi",
@@ -40,9 +40,20 @@
       "url": "https://id.wikipedia.org/wiki/Tengku_Zulkarnain",
       "title": "Tengku Zulkarnain - Wikipedia bahasa Indonesia, ensiklopedia bebas",
       "snippet": "Tengku Zulkarnain (Medan, Sumatera Utara 14 8 1963 Pekanbaru, Riau 10 5 2021) adalah seorang ustaz berdarah Melayu Deli dan Riau. Ia menjabat sebagai "
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"net/ Ustadz Dzulqarnain Muhammad Sunusi - Uloom...\""
     }
   ],
   "foto": "",
   "jabatan": "Penceramah",
-  "id": "kajian-dzulkarnaen"
+  "id": "kajian-dzulkarnaen",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.268122+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07"
 }

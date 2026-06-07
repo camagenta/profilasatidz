@@ -1,6 +1,6 @@
 {
   "name": "Arifin Ridin",
-  "bio": "Muhammadiyah terbentuk di Kota Salatiga dalam rangka merespon kondisi sosial-politik umat Islam akibat kebijakan pemerintah Hindia Belanda yang menciptakan kelas sosial di dalam masyarakat Jawa. Saat itu, orang-orang kulit putih (khususnya Belanda) memiliki kedudukan paling tinggi, kedudukan kedua ditempati oleh orang-orang Tionghoa dan Arab, sedangkan masyarakat pribumi berada di kedudukan paling rendah. Muhammadiyah terbentuk di Salatiga sebelum kemerdekaan Republik Indonesia.  Sekolah yang me",
+  "bio": "",
   "education": [
     "SD Muhammadiyah Plus Salatiga",
     "Sekolah ini sekarang telah berubah namanya menjadi SD Muhammadiyah Plus Salatiga"
@@ -22,13 +22,23 @@
       "title": "Biografi Arifin Ridin",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Muhammadiyah terbentuk di Kota Salatiga dalam rangka merespon kondisi sosial-pol...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=568_ustadz_arifin_ridin__lc.jpg",
   "jabatan": "",
-  "enriched_at": "2026-06-05T20:36:34.917282+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.256301+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
   "id": "kajian-arifin-ridin",
   "count": 10,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Arifin%20Ridin"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Arifin%20Ridin",
+  "bio_source": "",
+  "completeness": 65
 }

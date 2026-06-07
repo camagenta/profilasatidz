@@ -1,7 +1,7 @@
 {
   "name": "Abdul Haq",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdul%20Haq",
-  "bio": "Mukhlas atau Ali Gufron (2 Februari 1960 – 9 November 2008) adalah salah satu dari otak pelaku peristiwa Bom Malam Natal 2000 dan Bom Bali 2002.\nMukhlas mengeyam pendidikan pesantren di Pondok Pesantren Al Mu'min, Ngruki, Sukoharjo, yang dipimpin mantan amir Jemaah Islamiyah, Abu Bakar Ba'asyir.\nDibandingkan Imam Samudra dan saudaranya, Amrozi, mungkin Mukhlas yang memiliki pengalaman lebih di dalam jaringan teroris. Konon dia pernah bertemu langsung dengan pimpinan Al-Qaeda, Usamah bin Ladin pa",
+  "bio": "",
   "education": [
     "Pesantren Lukmanul Hakim yang ajarannya sama dengan Pondok Pesantren Al Mu'min",
     "pesantren ini",
@@ -17,12 +17,21 @@
       "title": "Mukhlas",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Mukhlas atau Ali Gufron (2 Februari 1960 – 9 November 2008) adalah salah satu da...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T23:12:48.762145+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abdul-haq"
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.234257+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-abdul-haq",
+  "bio_source": ""
 }

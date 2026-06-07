@@ -1,7 +1,7 @@
 {
   "name": "Syaikh Bin Baz",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Syaikh%20Bin%20Baz",
-  "bio": "Abdul Aziz bin Abdillaah bin Baz (bahasa Arab: عبد العزيز بن عبد الله بن بازcode: ar is deprecated ;x22 November 1912 – 13 Mei 1999) adalah seorang ulama Arab Saudi tahun 1909 M/1330 H. Pada awalnya dia bisa melihat dengan normal, tetapi penglihatannya perlahan memburuk hingga puncaknya pada usia sekitar 20 tahun dia pun mengalami kebutaan total.\nSyaikh Bin Baaz pernah menjabat sebagai mufti (penasehat agung) kerajaan Arab Saudi, rektor Universitas Islam Madinah, Hai'ah Kibaril Ulama (semacam MU",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Abdul Aziz bin Abdullah bin Baz",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-06"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Abdul Aziz bin Abdillaah bin Baz (bahasa Arab: عبد العزيز بن عبد الله بن بازcode...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-06T00:07:58.804740+07:00",
-  "method": "wikipedia",
-  "id": "kajian-syaikh-bin-baz"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.284363+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-syaikh-bin-baz",
+  "bio_source": ""
 }

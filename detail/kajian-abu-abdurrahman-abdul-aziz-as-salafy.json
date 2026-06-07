@@ -1,7 +1,7 @@
 {
   "name": "Abu Abdurrahman Abdul Aziz as-Salafy",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Abdurrahman%20Abdul%20Aziz%20as-Salafy",
-  "bio": "Ahmad bin Hanbal (bahasa Arab: أحمد بن حنبلcode: ar is deprecated , lahir 20 Rabiul awal 164 H (27 November 780) - wafat 12 Rabiul Awal 241 H (4 Agustus 855)) adalah seorang ahli hadits dan teologi Islam. Ia lahir di Mary, Turkmenistan, utara Afganistan. Serta ia dikenal dengan nama Imam Hambali.",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Ahmad bin Hanbal",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Ahmad bin Hanbal (bahasa Arab: أحمد بن حنبلcode: ar is deprecated , lahir 20 Rab...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T07:15:47.804822+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abu-abdurrahman-abdul-aziz-as-salafy"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.237261+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-abu-abdurrahman-abdul-aziz-as-salafy",
+  "bio_source": ""
 }

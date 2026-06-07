@@ -1,7 +1,7 @@
 {
   "name": "Syeikh Masyhur Hasan Salman",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Syeikh%20Masyhur%20Hasan%20Salman",
-  "bio": "Muhammad Zaini bin Abdul Ghani dikenal luas sebagai Guru Sekumpul atau Guru Ijai (11 Februari 1942 – 10 Agustus 2005) adalah seorang Ulama Indonesia asal Banjar, Kalimantan Selatan.",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Guru Sekumpul",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Muhammad Zaini bin Abdul Ghani dikenal luas sebagai Guru Sekumpul atau Guru Ijai...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:51:19.679016+07:00",
-  "method": "wikipedia",
-  "id": "kajian-syeikh-masyhur-hasan-salman"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.285133+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-syeikh-masyhur-hasan-salman",
+  "bio_source": ""
 }

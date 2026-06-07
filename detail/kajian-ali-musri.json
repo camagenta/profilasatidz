@@ -3,8 +3,8 @@
   "slug": "ali-musri",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Ali%20Musri",
   "count": 71,
-  "bio": "Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di Indonesia yang berafiliasi pada gerakan Salafiyah. Kantor dan studionya berada di kompleks Masjid Jami' Al-Barkah di Cileungsi, Kabupaten Bogor, Jawa Barat. Stasiun ini menyajikan acara-acara pengajian mengenai ibadah sehari-hari serta pembahasan mengenai Al-Qur'an dan hadis, serta diselingi dengan pembacaan ayat-ayat Al-Qur'an. Hingga akhir 2024, Rodja TV bersiaran secara terestrial di wilayah Jabodetabek dan Bandung",
-  "bio_source": "https://id.wikipedia.org/wiki/Rodja_TV",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Profil Ustadz – Dzikra\n\nHeadlines\n\n## PENERIMAAN MAHASISWA BARU TAHUN AKADEMIK 2022 – 2023\n\n## PENERIMAAN MAHASISWA BARU TAHUN AKADEMIK 2021 – 2022\n\n## DONASI ASRAMA DAN KELAS MA’DHAD ALY YAFBI\n\n## Me",
   "education": [
     "Nama : Dr. Ali Musri Semjan Putra, MA.",
@@ -43,9 +43,20 @@
       "url": "https://scholar.google.com/citations?hl=id&user=cJFqmfIAAAAJ",
       "title": "‪Dr. Ali Musri Semjan Putra, M.A.‬ - ‪Google Scholar‬",
       "snippet": "‪Dr. Alimusri Semjan Putra, M.A.‬ - ‪Google Scholar‬\nMemuat…\nSistem tidak dapat melakukan operasi ini. Coba lagi nanti.\n[](javascript:void(0))## Kutip"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di I...\""
     }
   ],
   "foto": "",
   "jabatan": "Penceramah",
-  "id": "kajian-ali-musri"
+  "id": "kajian-ali-musri",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.254415+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07"
 }

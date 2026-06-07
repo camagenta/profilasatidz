@@ -1,6 +1,6 @@
 {
   "name": "Muhammad Yahya",
-  "bio": "Gambar bawah",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -12,13 +12,23 @@
       "title": "Biografi Muhammad Yahya",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"Gambar bawah...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=74_ustadz_muhammad_yahya__lc.jpg",
   "jabatan": "",
-  "enriched_at": "2026-06-05T20:40:11.946322+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.280751+07:00",
+  "method": "qa_cleared_garbage_2026-06-07",
   "id": "kajian-muhammad-yahya",
   "count": 1,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Yahya"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Yahya",
+  "bio_source": "",
+  "completeness": 40
 }

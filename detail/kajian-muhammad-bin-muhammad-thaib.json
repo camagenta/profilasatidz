@@ -1,7 +1,7 @@
 {
   "name": "Muhammad Bin Muhammad Thaib",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Bin%20Muhammad%20Thaib",
-  "bio": "Ikrimah bin Abi Jahal (Arab: عكرمة بن أبي جهل) adalah salah seorang Sahabat Nabi dari Bani Makhzum. Ia adalah anak dari Abu Jahal sehingga termasuk kalangan bangsawan dari suku Quraisy. Ibunya bernama Ummu Mujalid. Ia dipanggil juga Abu Utsman.\nIkrimah belum menjadi muslim pada masa Pertempuran Badar, Pertempuran Uhud hingga Pertempuran Khandaq. Ia menjadi muslim setelah Pembebasan Mekkah. Ikrimah ikut dalam peperangan melawan kaum murtad pada masa kekhalifahan Abu Bakar Ash-Shiddiq. Ia wafat da",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Ikrimah bin Abu Jahal",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-06"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Ikrimah bin Abi Jahal (Arab: عكرمة بن أبي جهل) adalah salah seorang Sahabat Nabi...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-06T00:09:22.751625+07:00",
-  "method": "wikipedia",
-  "id": "kajian-muhammad-bin-muhammad-thaib"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.276555+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-muhammad-bin-muhammad-thaib",
+  "bio_source": ""
 }

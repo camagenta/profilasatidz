@@ -1,7 +1,7 @@
 {
   "name": "Abdurrahman Attamimi",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdurrahman%20Attamimi",
-  "bio": "Marga Gorontalo merujuk pada aturan pemberian marga (nama keluarga) sebagai identitas dan ikatan kekerabatan sebuah kelompok masyarakat dalam tatanan kehidupan Suku Gorontalo, yang selanjutnya diturunkan dari orang tua kepada anaknya, dari generasi ke generasi. \nMarga Gorontalo atau nama keluarga Gorontalo biasanya dilekatkan di belakang nama lengkap sehingga memudahkan masyarakat umum mengenali latar belakang keluarga asal.\nSecara umum, marga-marga yang digunakan oleh masyarakat Gorontalo diamb",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Daftar fam Gorontalo",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Marga Gorontalo merujuk pada aturan pemberian marga (nama keluarga) sebagai iden...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:17:35.970500+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abdurrahman-attamimi"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.236023+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-abdurrahman-attamimi",
+  "bio_source": ""
 }

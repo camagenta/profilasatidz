@@ -1,7 +1,7 @@
 {
   "name": "Abu Thohir",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Thohir",
-  "bio": "Al-Habib Abdullah bin Muhsin al-Attas atau yang juga dikenal sebagai Habib Keramat Empang (lahir di al-Kasri Hadramaut 17 April 1849 M/23 Jumadilawal 1265 H) adalah seorang ulama yang aktif mengembangkan ajaran agama Islam di daerah Empang, Bogor, Jawa Barat.",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Abdullah bin Muhsin al-Attas",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Al-Habib Abdullah bin Muhsin al-Attas atau yang juga dikenal sebagai Habib Keram...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T15:07:17.402752+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abu-thohir"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.251910+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-abu-thohir",
+  "bio_source": ""
 }

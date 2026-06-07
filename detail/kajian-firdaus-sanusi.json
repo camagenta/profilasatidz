@@ -1,7 +1,7 @@
 {
   "name": "Firdaus Sanusi",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Firdaus%20Sanusi",
-  "bio": "Berikut ini adalah daftar aktor film dari Indonesia diurutkan sesuai nama depan.\nSejumlah nama di daftar ini juga sering berperan di serial atau film televisi, dan juga tercantum dalam halaman Daftar aktor televisi Indonesia.\nKunci untuk memasukkan pranala:\n\nmemiliki kewarganegaraan Indonesia (meskipun lahir di luar Indonesia)\nbukan aktor berkewarganegaraan asing, meskipun berkarier di Indonesia\nmasukkan tanggal lahir lengkap untuk aktor berusia 80 tahun ke atas\nCatatan: Beberapa aktor lawas di ",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Daftar pemeran film laki-laki Indonesia",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-04"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Berikut ini adalah daftar aktor film dari Indonesia diurutkan sesuai nama depan...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-04T23:01:33.417200+07:00",
-  "method": "wikipedia",
-  "id": "kajian-firdaus-sanusi"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.270233+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-firdaus-sanusi",
+  "bio_source": ""
 }

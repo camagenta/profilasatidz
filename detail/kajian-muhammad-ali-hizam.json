@@ -1,7 +1,7 @@
 {
   "name": "Muhammad Ali Hizam",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Muhammad%20Ali%20Hizam",
-  "bio": "Ali bin Abi Thalib (bahasa Arab: عَلِيّ بْن أَبِي طَالِبcode: ar is deprecated , translit. ʿAlī ibn Abī Ṭālib; ca 600–661) adalah sepupu sekaligus menantu dari nabi Islam Muhammad dan penerusnya, sebagai Khalifah keempat yang memerintah negara Islam pertama Kekhalifahan Rasyidin dari tahun 656 hingga kematiannya pada tahun 661 M. Lahir dari pasangan Abu Thalib bin Abdul Muthalib dan Fatimah binti Asad, Ali muda dibesarkan oleh sepupunya, Muhammad, dan menjadi salah satu orang pertama yang meneri",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Ali bin Abi Thalib",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Ali bin Abi Thalib (bahasa Arab: عَلِيّ بْن أَبِي طَالِبcode: ar is deprecated ,...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:18:18.822843+07:00",
-  "method": "wikipedia",
-  "id": "kajian-muhammad-ali-hizam"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.276280+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-muhammad-ali-hizam",
+  "bio_source": ""
 }

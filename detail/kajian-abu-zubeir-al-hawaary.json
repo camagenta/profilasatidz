@@ -3,8 +3,8 @@
   "slug": "abu-zubeir-al-hawaary",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Zubeir%20al-Hawaary",
   "count": 124,
-  "bio": "Ceramah agama ini adalah yang disampaikan oleh Ustadz Abuz Zubair Hawary, Lc. Biografi Ustadz Abu Zubair al Hawaary, Lc, MA\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, MA Ustadz Abu Zubair Al Hawaary, Lc, MA adalah pengasuh Ma'had Ibnu Katsir Riau. id/9i\n\nCeramah agama Islam oleh: Ustadz Abuz Zubair Hawary, Lc.",
-  "bio_source": "https://kajianlive.my.id/bio_ustadz.php?id=318",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, M",
   "education": [
     "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya:",
@@ -44,9 +44,20 @@
       "url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Zubeir%20al-Hawaary/Jadilah%20Seperti%20Mereka",
       "title": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net",
       "snippet": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net\n\n### Kumpulan Ceramah Agama Islam MP3 Terlengkap, Pengajian MP3, Au"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Ceramah agama ini adalah yang disampaikan oleh Ustadz Abuz Zubair Hawary, Lc...\""
     }
   ],
   "foto": "",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-abu-zubeir-al-hawaary"
+  "id": "kajian-abu-zubeir-al-hawaary",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.252220+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07"
 }

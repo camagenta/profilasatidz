@@ -1,6 +1,6 @@
 {
   "name": "Iqbal Gunawan",
-  "bio": "Beliau lahir di Maros, 6 Juni 1984.\n\nRiwayat pendidikan:\n\nPekerjaan dan Jabatan\n\nPengalaman organisasi\n\nAnggota Jam�iyyah thalabah al Irsyad Tengaran 2002\n\nKetua bagian dakwah kemanduban mahasiswa Indonesia di UIM 2018\n\nAnggota majelis syuro PPMI Madinah 2010 � 2021\n\nAnggota majelis syuro PPMI Arab Saudi 2016 � 2021\n\nWakil ketua forum pascasarjana mahasiswa Indoensia � Arab Saudi 2018 � 2021\n\nGambar bawah",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -12,13 +12,23 @@
       "title": "Biografi Iqbal Gunawan",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Beliau lahir di Maros, 6 Juni 1984...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=162_ustadz_dr__iqbal_gunawan__ma.jpg",
   "jabatan": "",
-  "enriched_at": "2026-06-05T20:38:17.144230+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.272923+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07",
   "id": "kajian-iqbal-gunawan",
   "count": 1,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Iqbal%20Gunawan"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Iqbal%20Gunawan",
+  "bio_source": "",
+  "completeness": 40
 }

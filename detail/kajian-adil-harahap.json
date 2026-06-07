@@ -1,7 +1,7 @@
 {
   "name": "Adil Harahap",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Adil%20Harahap",
-  "bio": "H. M. Yahya Harahap, S.H., M.H. (18 Desember 1934 – 22 Januari 2024) adalah seorang hakim dan penulis Indonesia yang pernah bertugas sebagai Hakim Agung Mahkamah Agung Republik Indonesia sejak 1982 hingga 2000.\nYahya Harahap dilahirkan di Parau Sorat, Sipirok, Tapanuli Selatan, Sumatera Utara pada 18 Desember 1934. Beliau menyelesaikan S1-nya di Fakultas Hukum Universitas Sumatera Utara (USU) pada tahun 1960 dan meraih gelar Master Hukum pada 1963.",
+  "bio": "",
   "education": [
     "S1-nya di Fakultas Hukum Universitas Sumatera Utara (USU) pada tahun 1960 dan meraih gelar Master Hukum pada 1963",
     "Universitas Sumatera Utara (USU) pada tahun 1960 dan meraih gelar Master Hukum pada 1963"
@@ -16,12 +16,21 @@
       "title": "Yahya Harahap",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"H...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T08:14:53.028999+07:00",
-  "method": "wikipedia",
-  "id": "kajian-adil-harahap"
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.252570+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-adil-harahap",
+  "bio_source": ""
 }

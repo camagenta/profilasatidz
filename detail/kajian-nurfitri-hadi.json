@@ -1,6 +1,6 @@
 {
   "name": "Nurfitri Hadi",
-  "bio": "Beliau adalah penulis di kisahmuslim.com\n\nGambar bawah",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -12,13 +12,23 @@
       "title": "Biografi Nurfitri Hadi",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"Beliau adalah penulis di kisahmuslim.com\n\nGambar bawah...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1092_ustadz_nurfitri_hadi__ma.jpg",
   "jabatan": "",
-  "enriched_at": "2026-06-05T20:40:31.018087+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.282311+07:00",
+  "method": "qa_cleared_garbage_2026-06-07",
   "id": "kajian-nurfitri-hadi",
   "count": 1,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Nurfitri%20Hadi"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Nurfitri%20Hadi",
+  "bio_source": "",
+  "completeness": 40
 }

@@ -1,7 +1,7 @@
 {
   "name": "Dzul Akmal",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Dzul%20Akmal",
-  "bio": "Jogja-NETPAC Asian Film Festival 2024 (JAFF19) merupakan perhelatan ke-19 festival film Jogja-NETPAC Asian Film Festival yang berbasis di kota Yogyakarta, Daerah Istimewa Yogyakarta. JAFF19 ini digelar pada 30 November–07 Desember 2024. Pemutaran film secara luring dilaksanakan di bioskop Empire XXI dan secara daring melalui KlikFilm. Pemutaran film Samsara dengan konsep cine-concert dilakukan di Gelanggang Inovasi dan Kreativitas Yogyakarta. Beberapa kegiatan pendamping festival dilakukan di LP",
+  "bio": "",
   "education": [
     "Yogyakarta, Daerah Istimewa Yogyakarta",
     "Yogyakarta",
@@ -17,12 +17,21 @@
       "title": "Jogja-NETPAC Asian Film Festival 2024",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Jogja-NETPAC Asian Film Festival 2024 (JAFF19) merupakan perhelatan ke-19 festiv...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T07:12:13.732054+07:00",
-  "method": "wikipedia",
-  "id": "kajian-dzul-akmal"
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.267774+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-dzul-akmal",
+  "bio_source": ""
 }

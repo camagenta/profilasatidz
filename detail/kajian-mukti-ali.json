@@ -1,7 +1,7 @@
 {
   "name": "Mukti Ali",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Mukti%20Ali",
-  "bio": "Prof. Dr. K.H. Abdul Mukti Ali (23 Agustus 1923 – 5 Mei 2004) adalah mantan Menteri Agama Republik Indonesia pada Kabinet Pembangunan II. Ia juga terkenal sebagai Ulama ahli perbandingan agama yang meletakkan kerangka kerukunan antarumat beragama di Indonesia sesuai dengan prinsip Bhineka Tunggal Ika atau istilah yang sering dipakainya \"Setuju dalam Perbedaan.\" Ia juga terkenal sebagai cendekiawan muslim yang menonjol sebagai pembaharu pemikiran Islam melalui Kajian Keislaman (Islamic Studies).",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Mukti Ali",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-04"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Prof...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-04T23:02:21.365247+07:00",
-  "method": "wikipedia",
-  "id": "kajian-mukti-ali"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.281782+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-mukti-ali",
+  "bio_source": ""
 }

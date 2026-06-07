@@ -3,8 +3,8 @@
   "slug": "zainal-abidin-syamsudin",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Zainal%20Abidin%20Syamsudin",
   "count": 180,
-  "bio": "BIOGRAFI USTADZ ZAINAL ABIDIN - Madrasah Ibtidaiyah Al Ukhuwah\n\nSiroh / Sejarah\n\nJan 8, 2024\n\nUSTADZ ZAINAL ABIDIN, LC – Beliau lahir di Lamongan, Jawa Timur 12 Juli 1967. Pengembaraan beliau untuk mencari kebenaran dimulai  Kajian Ustadz Zainal Abidin Syamsudin - Kajian Al-Qur'an dan Sunnah\n\n02:42\n\nBeranda| MP3\n\n- Buku Putih Dakwah Salafiah 03.",
-  "bio_source": "https://mi.alukhuwah.com/2024/01/08/biografi-ustadz-zainal-abidin/",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "BIOGRAFI USTADZ ZAINAL ABIDIN - Madrasah Ibtidaiyah Al Ukhuwah\n\nSiroh / Sejarah\n\n# BIOGRAFI USTADZ ZAINAL ABIDIN\n\n#### ByRedaksi\n\nJan 8, 2024\n\nUSTADZ ZAINAL ABIDIN, LC – Beliau lahir di Lamongan, Jawa",
   "education": [
     "BIOGRAFI USTADZ ZAINAL ABIDIN - Madrasah Ibtidaiyah Al Ukhuwah"
@@ -47,9 +47,20 @@
       "url": "https://kajian.alquran-sunnah.com/channel/ustadz-zainal-abidin/",
       "title": "Ustadz Zainal Abidin - Kajian Al-Qur'an dan Sunnah",
       "snippet": "Ustadz Zainal Abidin - Kajian Al-Qur'an dan Sunnah\n\n02:42\n\n### Keutamaan Hari Arafah – Ustadz Ahmad Zainuddin, Lc. – 5 Menit yang Menginspirasi\n\n01:31"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"BIOGRAFI USTADZ ZAINAL ABIDIN - Madrasah Ibtidaiyah Al Ukhuwah\n\nSiroh / Sejarah\n...\""
     }
   ],
   "foto": "",
   "jabatan": "Da'i dan Penceramah",
-  "id": "kajian-zainal-abidin-syamsudin"
+  "id": "kajian-zainal-abidin-syamsudin",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.285912+07:00",
+  "method": "qa_cleared_garbage_2026-06-07"
 }

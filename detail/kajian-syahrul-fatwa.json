@@ -1,6 +1,6 @@
 {
   "name": "Syahrul Fatwa",
-  "bio": "Aji Raden alias Fachrul Rasyid Baraqbah atau Sayid Fachrul Baraqbah (1925–1984) adalah seorang politikus Indonesia yang juga seorang bangsawan Kutai. Ia menjabat sebagai sekretaris Comite Daerah Besar (CDB) PKI Kalimantan Timur hingga tertangkap pada Oktober 1965 pasca kegagalan Gerakan 30 September. Sebagai seorang bangsawan, ia dianggap sebagai anomali karena mendukung Revolusi Nasional Indonesia, meninggalkan gelar kebangsawanannya, dan bergabung dengan PKI. Selain itu, ia juga aktif di BPRI ",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -19,13 +19,23 @@
       "title": "Biografi Syahrul Fatwa",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Aji Raden alias Fachrul Rasyid Baraqbah atau Sayid Fachrul Baraqbah (1925–1984) ...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=219_ustadz_syahrul_fatwa__lc__ma.jpg",
   "jabatan": "",
-  "enriched_at": "2026-06-05T20:41:27.870925+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.284100+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
   "id": "kajian-syahrul-fatwa",
   "count": 4,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Syahrul%20Fatwa"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Syahrul%20Fatwa",
+  "bio_source": "",
+  "completeness": 40
 }

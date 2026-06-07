@@ -1,7 +1,7 @@
 {
   "name": "Abu Isma'il Muslim Al Atsari",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Isma%27il%20Muslim%20Al%20Atsari",
-  "bio": "Abū Ḥanīfah an-Nuʿmān bin Tsābit bin Zūṭā bin Marzubān at-Taymī al-Kūfī (bahasa Arab: أَبُو حَنِيفَة ٱلنُّعْمَان بْن ثَابِت بْن زُوطَا بْن مَرْزُبَان ٱلتَّيْمِيّ ٱلْكُوفِيّcode: ar is deprecated ); juga dikenal sebagai Abu Hanifah (bahasa Arab: أَبُو حَنِيفَةcode: ar is deprecated , translit. Abū Ḥanīfah; September 699 M – 767 M) adalah seorang cendekiawan Muslim, ahli hukum, teolog, zahid, dan eponim dari mazhab Hanafi dalam yurisprudensi Sunni, yang masih paling banyak dipraktikkan hingga saat",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Abu Hanifah",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-03"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Abū Ḥanīfah an-Nuʿmān bin Tsābit bin Zūṭā bin Marzubān at-Taymī al-Kūfī (bahasa ...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-03T16:16:08.357488+07:00",
-  "method": "wikipedia",
-  "id": "kajian-abu-ismail-muslim-al-atsari"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.238372+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-abu-ismail-muslim-al-atsari",
+  "bio_source": ""
 }

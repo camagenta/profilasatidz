@@ -1,6 +1,6 @@
 {
   "name": "Abdullah Taslim",
-  "bio": "Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di Indonesia yang berafiliasi pada gerakan Salafiyah. Kantor dan studionya berada di kompleks Masjid Jami' Al-Barkah di Cileungsi, Kabupaten Bogor, Jawa Barat. Stasiun ini menyajikan acara-acara pengajian mengenai ibadah sehari-hari serta pembahasan mengenai Al-Qur'an dan hadis, serta diselingi dengan pembacaan ayat-ayat Al-Qur'an. Hingga akhir 2024, Rodja TV bersiaran secara terestrial di wilayah Jabodetabek dan Bandung",
+  "bio": "",
   "education": [
     "Biografi Ustadz Abdullah Taslim, MA Jadwal Kajian Hari Ini dan Selanjutnya:",
     "Beliau merupakan alumni S-2, Jurusan Hadis, Universitas Islam Madinah. Beliau dikenal sebagai ustadz manajemen qalbu dan keindahan iman. Banyak kajian dan karya ilmiah beliau yang bertajuk “obat hati”",
@@ -41,13 +41,23 @@
       "title": "Biografi Abdullah Taslim",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di I...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=114_ustadz_abdullah_taslim__ma.jpg",
   "jabatan": "Da'i dan Penceramah, Alumni Universitas Islam Madinah",
-  "enriched_at": "2026-06-05T20:33:52.096976+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.235341+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07",
   "id": "kajian-abdullah-taslim",
   "count": 223,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Taslim",
+  "bio_source": "",
+  "completeness": 65
 }

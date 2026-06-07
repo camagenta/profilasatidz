@@ -1,0 +1,944 @@
+{
+  "summary": {
+    "total": 283,
+    "checked": 144,
+    "no_data": 141,
+    "ok": 53,
+    "suspicious": 13,
+    "critical": 76
+  },
+  "critical": [
+    {
+      "profile": "Abdul Hakim Amir Abdat",
+      "slug": "abdul-hakim-amir-abdat",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Abu Unaisah Abdul Hakim bin Amir Abdat (lahir 05 April 1959) adalah seorang penulis dan penceramah serta lulusan LIPIA. Ia dianggap sebagai salah satu tokoh Salafi yang berpengaruh di Indonesia.",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abdul_Hakim_bin_Amir_Abdat"
+      ]
+    },
+    {
+      "profile": "Abdul Haq",
+      "slug": "abdul-haq",
+      "wrong_name": "Abu Usamah",
+      "match": 0.8,
+      "method": "token:usamah",
+      "bio_first_200": "Mukhlas atau Ali Gufron (2 Februari 1960 – 9 November 2008) adalah salah satu dari otak pelaku peristiwa Bom Malam Natal 2000 dan Bom Bali 2002.\nMukhlas mengeyam pendidikan pesantren di Pondok Pesantr",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Mukhlas"
+      ]
+    },
+    {
+      "profile": "Abdullah Roy",
+      "slug": "abdullah-roy",
+      "wrong_name": "Abdullah Al Bughury",
+      "match": 0.8,
+      "method": "token:abdullah",
+      "bio_first_200": "Roy Grafika Penataran atau sering dipanggil Abdullah Roy (lahir 1 Mei 1980) adalah dai dan akademisi asal Bantul, Yogyakarta. Ia pernah menjadi pengajar tetap kajian berbahasa Indonesia di Pintu 19 Ma",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abdullah_Roy"
+      ]
+    },
+    {
+      "profile": "Abdullah Taslim",
+      "slug": "abdullah-taslim",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di Indonesia yang berafiliasi pada gerakan Salafiyah. Kantor dan studionya berada di kompleks Masjid Jami' Al-Barkah di Cile",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abdullah Zaen",
+      "slug": "abdullah-zaen",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Pekerjaan : Pengasuh Pondok Pesantren “Tunas Ilmu” Purbalingga dan dosen Sekolah Tinggi Dirasat Islamiyyah “Imam Syafi’i” Jember\n\nRiwayat Pendidikan:\n\n- Formal:\n\n1993 : Pondok Modern ar-Risalah Slahun",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abdurrahim",
+      "slug": "abdurrahim",
+      "wrong_name": "Abu Abdillah Abdurrahim",
+      "match": 0.8,
+      "method": "token:abdurrahim",
+      "bio_first_200": "Abdurrahim Arsyad (lahir 6 April 1988) adalah pelawak tunggal, pemeran, dan penulis naskah berkebangsaan Indonesia. Ia dikenal sebagai pemenang kedua Stand Up Comedy Indonesia Kompas TV musim keempat ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abdur_Arsyad"
+      ]
+    },
+    {
+      "profile": "Abdurrahman Thayyib",
+      "slug": "abdurrahman-thayyib",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:saudi",
+      "bio_first_200": "Universitas Jazan (bahasa Arab: [جامعة جازان Jami'ah Jazan] Galat: {{Lang}}: text has italic markup (bantuan)) adalah salah satu perguruan tinggi negeri dibawah Kementerian Pendidikan Arab Saudi yang ",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abdussalam",
+      "slug": "abdussalam",
+      "wrong_name": "Abdullah Al Bughury",
+      "match": 0.8,
+      "method": "token:abdullah",
+      "bio_first_200": "Abdullah bin Qadhi Abdussalam dikenal juga Tuan Guru, Sultan Abdullah (Lahir 1712 di Tidore, Maluku; Meninggal 1807 di Bo-Kaap, Cape Town, Afrika Selatan) adalah sultan Tidore yang diasingkan oleh Bel",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Tuan_Guru_Abdullah_bin_Qadhi_Abdussalam"
+      ]
+    },
+    {
+      "profile": "Abu Abdillah Abdurrahim",
+      "slug": "abu-abdillah-abdurrahim",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Sayyid Muhammad Yasin diperkirakan lahir pada tahun 1836 M, dilahirkan dari keluarga yang taat dalam Islam. Orangtuanya bernama Qutbul Wujud Sayyid Abdurrahim bin Sayyid Abdul Qadir bin Sayyid Athaf b",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Sayid_Muhammad_Yasin"
+      ]
+    },
+    {
+      "profile": "Abu Abdil Muhsin Firanda Andirja",
+      "slug": "abu-abdil-muhsin-firanda-andirja",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Firanda Andirja (lahir 28 Oktober 1979) adalah seorang ulama yang aktif mengisi berbagai kajian Islam di Indonesia. Ia juga merupakan salah satu narasumber Radio Rodja dan pernah menjadi penceramah In",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Firanda_Andirja"
+      ]
+    },
+    {
+      "profile": "Abu Abdurrahman Abdul Aziz as-Salafy",
+      "slug": "abu-abdurrahman-abdul-aziz-as-salafy",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Ahmad bin Hanbal (bahasa Arab: أحمد بن حنبلcode: ar is deprecated , lahir 20 Rabiul awal 164 H (27 November 780) - wafat 12 Rabiul Awal 241 H (4 Agustus 855)) adalah seorang ahli hadits dan teologi Is",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ahmad_bin_Hanbal"
+      ]
+    },
+    {
+      "profile": "Abu Fairus",
+      "slug": "abu-fairus",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Tentang Kami - Meniti Jejak Para Sahabat\n\nWebsite Islam Ilmiyyah ini adalah milik Ustadz Abu Fairuz Ahmad Ridwan, Lc, MA. Rahmat Nur Hidayat, Lc →\n\nHalaman ini dikhususkan untuk memuat kumpulan daftar",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Hammam",
+      "slug": "abu-hammam",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Beliau adalah Pengisi Materi Kajian Anak dan Pengajar Lembaga Pendidikan Islam Sari Bumi Sidoarjo.\n\nGambar bawah",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Ihsan Al-Atsary",
+      "slug": "abu-ihsan-al-atsary",
+      "wrong_name": "Muhammad Nur Ihsan",
+      "match": 0.8,
+      "method": "token:ihsan",
+      "bio_first_200": "Abu Ihsan Al-Atsary\n\nAudio kajian bersama ustad Abu Ihsan Al-Atsary dari medan Sumatra Utara pada kajian intensif dua hari di masjid An-Nuur Karangpandan Karanganyar solo bersama Asatidzah Ahlussunnah",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Izzi",
+      "slug": "abu-izzi",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "id Ustadz Mahmuddin Abu Izzi : Dari Madrasah Ramadan Menuju Keluarga Surga dan Kepedulian Global untuk Palestina - alimannews\n\nScroll untuk baca artikel\n\n×\n\nPenceramah (Khutbah) Sholat Idul Fitri Usta",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Salma",
+      "slug": "abu-salma",
+      "wrong_name": "Abu Salma Muhammad",
+      "match": 0.8,
+      "method": "token:salma",
+      "bio_first_200": "Jro Happy Salma Wanasari (lahir 4 Januari 1980) adalah seorang pemeran, penyanyi, produser, sutradara, dan penulis berkebangsaan Indonesia. Ia termasuk dalam salah satu tokoh berpengaruh di Asia, vers",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Happy_Salma"
+      ]
+    },
+    {
+      "profile": "Abu Salma Rifaindry",
+      "slug": "abu-salma-rifaindry",
+      "wrong_name": "Abu Salma",
+      "match": 1.0,
+      "method": "substring",
+      "bio_first_200": "Biografi Ustadz Abu Salma Muhammad\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Salma Muhammad.",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Thohir",
+      "slug": "abu-thohir",
+      "wrong_name": "Abdullah Al Bughury",
+      "match": 0.8,
+      "method": "token:abdullah",
+      "bio_first_200": "Al-Habib Abdullah bin Muhsin al-Attas atau yang juga dikenal sebagai Habib Keramat Empang (lahir di al-Kasri Hadramaut 17 April 1849 M/23 Jumadilawal 1265 H) adalah seorang ulama yang aktif mengembang",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abdullah_bin_Muhsin_al-Attas"
+      ]
+    },
+    {
+      "profile": "Abu Ubaidah Yusuf As-Sidawi",
+      "slug": "abu-ubaidah-yusuf-as-sidawi",
+      "wrong_name": "Moh Yusuf Harun",
+      "match": 0.8,
+      "method": "token:yusuf",
+      "bio_first_200": "com/2014/07/profil-ustadz-ustadz-abu-ubaidah-yusuf. com/)\nUstadz Abu Ubaidah Yusuf As Sidawi\nPosted by\nAbu Hasna\nat\n23:04\n[\n2 comments\n](http://biografiustadz. You’ve been temporarily blocked from u U",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Abu Umair",
+      "slug": "abu-umair",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Mush'ab bin Umair bin Hasyim bin Abdu Manaf al-Qurasyi (bahasa Arab: مصعب بن عمير بن هاشم بن عبد مناف القرشيcode: ar is deprecated ), juga dikenal sebagai Mush'ab al-Khair (\"Mush'ab yang baik\") adalah",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Mush'ab_bin_Umair"
+      ]
+    },
+    {
+      "profile": "Abu Zubeir al-Hawaary",
+      "slug": "abu-zubeir-al-hawaary",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Ceramah agama ini adalah yang disampaikan oleh Ustadz Abuz Zubair Hawary, Lc. Biografi Ustadz Abu Zubair al Hawaary, Lc, MA\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, MA Ustadz ",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Adil Harahap",
+      "slug": "adil-harahap",
+      "wrong_name": "Abdul Hakim Amir Abdat",
+      "match": 0.8,
+      "method": "token:hakim",
+      "bio_first_200": "H. M. Yahya Harahap, S.H., M.H. (18 Desember 1934 – 22 Januari 2024) adalah seorang hakim dan penulis Indonesia yang pernah bertugas sebagai Hakim Agung Mahkamah Agung Republik Indonesia sejak 1982 hi",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Yahya_Harahap"
+      ]
+    },
+    {
+      "profile": "Afifi Abdul Wadud",
+      "slug": "afifi-abdul-wadud",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Ustadz Afifi Abdul Wadud, B.A hafizhahullah\n\nAsal : Sukoharjo, Jawa Tengah\n\nTempat Tinggal : Komplek Kampoeng Santri Ma’had Jamilurrahman, Bantul\n\nDa’i salaf di Yogyakarta\n\nPemateri kajian-kajian sala",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ahmad Firdaus",
+      "slug": "ahmad-firdaus",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "| Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Aqidah Islam Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc. | Yufid TV | Download Video Gratis",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ahmad Zainuddin",
+      "slug": "ahmad-zainuddin",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "6 Januari 2013\n\n1\n\nSabarlah saudariku… wahai Istri Par Manhaj Salaf (Ustadz Ahmad Zainuddin, Lc. Ustadz Ahmad Zainuddin, Lc - Kajian Al-Qur'an dan Sunnah\n\n02:42",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ali Ahmad",
+      "slug": "ali-ahmad",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Ahmad Ali (lahir 16 Mei 1969) adalah seorang pengusaha dan politikus Indonesia. Dia pernah menjabat sebagai Anggota DPR-RI sejak 2014 hingga 2024. Ia mewakili daerah pemilihan Sulawesi Tengah.\nAwalnya",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ahmad_Ali"
+      ]
+    },
+    {
+      "profile": "Ali Musri",
+      "slug": "ali-musri",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Rodja TV (digayakan dengan huruf kecil semua) adalah saluran televisi Islam di Indonesia yang berafiliasi pada gerakan Salafiyah. Kantor dan studionya berada di kompleks Masjid Jami' Al-Barkah di Cile",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ali Nur",
+      "slug": "ali-nur",
+      "wrong_name": "Syaikh Abu Bakar Baidhony",
+      "match": 0.8,
+      "method": "token:bakar",
+      "bio_first_200": "Ejen Ali (bahasa Indonesia: Agen Ali; bahasa Inggris: Agent Ali, Jawi: ايجن علي) adalah sebuah serial Animasi Malaysia yang diproduksi oleh Wau Animation, yang menceritakan tentang seorang bocah yang ",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ammi Nur Baits",
+      "slug": "ammi-nur-baits",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Ammi Nur Baits adalah seorang ustaz, penulis, dan mubalig Indonesia, Lahir tahun 1983, ia dikenal luas karena ceramah-ceramah keagamaan yang tersebar di berbagai platform digital. Ammi aktif menulis a",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ammi_Nur_Baits"
+      ]
+    },
+    {
+      "profile": "Arifin Badri",
+      "slug": "arifin-badri",
+      "wrong_name": "Arifin Ridin",
+      "match": 0.8,
+      "method": "token:arifin",
+      "bio_first_200": "Muhammad Arifin bin Badri (Semarang, 5 Agustus 1975) adalah seorang pendakwah, yang menjabat sebagai anggota Dewan Fatwa Perhimpunan Al-Irsyad sejak 2017, serta menjadi ketua STDI Imam Syafi'i Jember ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Muhammad_Arifin_bin_Badri"
+      ]
+    },
+    {
+      "profile": "Arifin Ridin",
+      "slug": "arifin-ridin",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Muhammadiyah terbentuk di Kota Salatiga dalam rangka merespon kondisi sosial-politik umat Islam akibat kebijakan pemerintah Hindia Belanda yang menciptakan kelas sosial di dalam masyarakat Jawa. Saat ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Sejarah_Muhammadiyah_di_Kota_Salatiga"
+      ]
+    },
+    {
+      "profile": "Armen Halim Naro",
+      "slug": "armen-halim-naro",
+      "wrong_name": "Johan Saputra Halim",
+      "match": 0.8,
+      "method": "token:halim",
+      "bio_first_200": "id/)\n* [Al-Qur’an](ht MP3 CERAMAH USTADZ ARMEN HALIM NARO | DOWNLOAD AUDIO KAJIAN\n\nskip to main | skip to sidebar\n\nDownload MP3 Kajian Ceramah Ustadz Armen Halim Naro رحمه الله : (Klik pada file untuk",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Aspri Rahmat",
+      "slug": "aspri-rahmat",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Beliau adalah Ustadz Dr. Aspri Rahmat Azai, MA., seorang Da'i berasal dari kota Pekanbaru yang merupakan doktor jurusan akidah lulusan Univ. Islam Madinah dimana kesehariannya beliau menjadi pemateri ",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Badrusalam",
+      "slug": "badrusalam",
+      "wrong_name": "Muhammad Yahya",
+      "match": 0.8,
+      "method": "token:yahya",
+      "bio_first_200": "Badrusalam\n\nAbu Yahya Badrussalam (lahir 27 April 1976) adalah seorang ulama dan penceramah Indonesia yang dikenal karena kontribusinya dalam menyebarkan ajaran Islam, terutama yang berfokus pada pema",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Badrusalam"
+      ]
+    },
+    {
+      "profile": "Dzulkarnaen",
+      "slug": "dzulkarnaen",
+      "wrong_name": "Khidir bin Muhammad Sunusi",
+      "match": 0.8,
+      "method": "token:sunusi",
+      "bio_first_200": "net/ Ustadz Dzulqarnain Muhammad Sunusi - Uloom. Selain di MUI, Ustaz Tengku juga aktif sebagai Ketua Majelis Fatwa untuk PP Mathla'ul Anwar, sebuah organisasi berfokus pada pendidikan Islam. Ia menja",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Tengku_Zulkarnain"
+      ]
+    },
+    {
+      "profile": "Erwandi Tarmizi",
+      "slug": "erwandi-tarmizi",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Ustadz ERWANDI TARMIZI. Lahir di Pekanbaru 30 September 1974, menyelesaikan pendidikan\n\nD1 Pengajaran Bahasa Arab LIPIA, 1994-1995 S1 Syariah LIPIA, 1995-1999.\n\nS2 jurusan Ushul Fiqh, Fakultas Syari’a",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Erwandi_Tarmizi"
+      ]
+    },
+    {
+      "profile": "Fahruddin",
+      "slug": "fahruddin",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "- Contact Us\n- Yusuf Abdhul Azis\n- Mei 30, 2024\n\nDalam dunia literasi Indonesia, nama Fahruddin Faiz t Fahruddin Faiz\n\nFahruddin Faiz (lahir 16 Agustus 1975) adalah filsuf Muslim dan penulis kajian fi",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Ibrahim Said",
+      "slug": "ibrahim-said",
+      "wrong_name": "Agung Panji Widiyanto",
+      "match": 0.8,
+      "method": "token:agung",
+      "bio_first_200": "Hajjah Rangkayo  Rasuna Said atau yang dikenal sebagai H. R. Rasuna Said (14 September 1910 – 2 November 1965) adalah seorang pejuang kemerdekaan Indonesia dan hak-hak perempuan, khususnya hak mereka ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Rasuna_Said"
+      ]
+    },
+    {
+      "profile": "Iqbal Gunawan",
+      "slug": "iqbal-gunawan",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Beliau lahir di Maros, 6 Juni 1984.\n\nRiwayat pendidikan:\n\nPekerjaan dan Jabatan\n\nPengalaman organisasi\n\nAnggota Jam�iyyah thalabah al Irsyad Tengaran 2002\n\nKetua bagian dakwah kemanduban mahasiswa Ind",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Jamaludin",
+      "slug": "jamaludin",
+      "wrong_name": "Syaikh Abdul Malik Ramadhani Al-Jazairy",
+      "match": 0.8,
+      "method": "token:malik",
+      "bio_first_200": "Jamaludin Malik (lahir 01 Mei 1989) adalah seorang politikus Indonesia yang menjabat sebagai anggota Dewan Perwakilan Rakyat Republik Indonesia masa jabatan 2024–2029. Ia mewakili daerah pemilihan Jaw",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Jamaludin_Malik"
+      ]
+    },
+    {
+      "profile": "Johan Saputra Halim",
+      "slug": "johan-saputra-halim",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "– Ustadz Johan Saputra Halim, M. – Ustadz Johan Saputra. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 7, 2026\n\nHome Aqidah Islam Memperbaharui Iman yang Usang – Usta",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Khairullah Anwar Luthfi",
+      "slug": "khairullah-anwar-luthfi",
+      "wrong_name": "Anwar Zein",
+      "match": 0.8,
+      "method": "token:anwar",
+      "bio_first_200": "0 (0)\n- 宗教与心灵\n- 一日一更\n\nUstadz Khairullah Anwar Luthfi Official | Banjarmasin, Kalimantan Selatan\n\n最新单集\n\n关注\n\n- Rechercher\n- Plus populaire\n- Plus joués\n- Premiers\n- Derniers\n\nKhairullah Anwar Luthfi\n\n- ",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Khalid Basalamah",
+      "slug": "khalid-basalamah",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Nama lengkap: Khalid Zeed Abdullah Basalamah\n\nLahir: 01-Mei-1975, Makassar, Indonesia\n\nPendidikan: S1 Universitas Islam Madinah (Arab Saudi), S2 Universitas Muslim Indonesia (Indonesia), S3 Universita",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Khalid_Basalamah",
+        "https://en.wikipedia.org/wiki/Khalid_Basalamah"
+      ]
+    },
+    {
+      "profile": "Kholid Syamhudi",
+      "slug": "kholid-syamhudi",
+      "wrong_name": "Ali Saman",
+      "match": 0.8,
+      "method": "token:saman",
+      "bio_first_200": "- Profil Ustadz Kholid Syamhudi\n- Search\n\nNama lengkap beliau adalah Kholid bin Syamhudi bin Saman bin Sahal Al-Bantani. – Website resmi berisi koleksi tulisan Ustadz Kholid Syamhudi, Lc. Ustadz Kholi",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Kisah Muslim",
+      "slug": "kisah-muslim",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "Fadlan Garamatan merupakan tokoh Papua yang lahir dari keluarga Muslim, dimana sejak kecil ia sudah belajar agama Islam. Fadlan Garamatan merupakan tokoh Papua yang lahir dari keluarga Muslim, dimana ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Fadlan_Garamatan"
+      ]
+    },
+    {
+      "profile": "Konsultasisyariah",
+      "slug": "konsultasisyariah",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Jinn (Arab: جِنّ‎), juga diromanisasi sebagai djinn atau dianglikanisasi sebagai genies, adalah makhluk supernatural dalam agama Arab pra-Islam dan Islam. Seperti manusia, jin bertanggung jawab atas p",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Jin"
+      ]
+    },
+    {
+      "profile": "Lalu Ahmad Yani",
+      "slug": "lalu-ahmad-yani",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "– Ceramah Agama\n\n- Aqidah Islam\n\n Berlemah Lembutlah Terhadap Ahlussunnah – Ustadz Lalu Ahmad Yani, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nFriday, April 10, 2026\n\nHome N",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Maududi Abdullah",
+      "slug": "maududi-abdullah",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Beliau Ustadz Maududi Abdullah, Lc Hafizhahullahu ta’ala adalah Alumni Universitas Islam Madinah, Pembina Ashiil TV, dan Pembina Markaz Sunnah Nusantara Al hijrah. Beliau Ustadz Maududi Abdullah, Lc H",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Mubarak Bamualim",
+      "slug": "mubarak-bamualim",
+      "wrong_name": "Armen Halim Naro",
+      "match": 0.8,
+      "method": "token:halim",
+      "bio_first_200": "Ustadz Mubarak Bamualim, Lc, MHI (الأستاذ مبارك بمعلم) adalah salah seorang. Beliau termasuk salah seorang pengajar di Pesantren Islam Al-Irsyad Tengaran pada masa awal pesantren berdiri dahulu, bersa",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Mudrika Ilyas",
+      "slug": "mudrika-ilyas",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Beliau Alumnus Universitas Islam Madinah. Juga merupakan dosen kampus Islam Darul Qur'an wassunnah Bekasi dan pimpinan ponpes Al Mahad Bekasi.\n\nGambar bawah",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Muflih Safitra",
+      "slug": "muflih-safitra",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Ustadz Muflih Safitra penuntut ilmu. Beliau pernah bermulazamah kepada Ustadz Ja'far Umar Thalib dan kepada Syaikh Shalih Al Fauzan juga kepada Asy Syaikh DR. Sa’ad bin Nashir Asy Syatsri.\n\nSetelah lu",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Muhammad Ali Hizam",
+      "slug": "muhammad-ali-hizam",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Ali bin Abi Thalib (bahasa Arab: عَلِيّ بْن أَبِي طَالِبcode: ar is deprecated , translit. ʿAlī ibn Abī Ṭālib; ca 600–661) adalah sepupu sekaligus menantu dari nabi Islam Muhammad dan penerusnya, seba",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ali_bin_Abi_Thalib"
+      ]
+    },
+    {
+      "profile": "Muhammad Bin Muhammad Thaib",
+      "slug": "muhammad-bin-muhammad-thaib",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "Ikrimah bin Abi Jahal (Arab: عكرمة بن أبي جهل) adalah salah seorang Sahabat Nabi dari Bani Makhzum. Ia adalah anak dari Abu Jahal sehingga termasuk kalangan bangsawan dari suku Quraisy. Ibunya bernama",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ikrimah_bin_Abu_Jahal"
+      ]
+    },
+    {
+      "profile": "Muhammad Nur Ihsan",
+      "slug": "muhammad-nur-ihsan",
+      "wrong_name": "Abu Ihsan Al-Atsary",
+      "match": 0.8,
+      "method": "token:ihsan",
+      "bio_first_200": "com| Aqiidatu As-Salaf Ashaabul Hadiits\n\nBersama Pemateri :Ustadz Muhammad Nur Ihsan\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Dr. Muhammad Nur Ihsan, MA\n\nBiografi Ustadz Dr.",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Muhammad Qosim Muhajir",
+      "slug": "muhammad-qosim-muhajir",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Mudir Pesantren Islam Al Irsyad Tengaran Pusat tahun 2015-2019\n\nGambar bawah",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Muhammad Romelan",
+      "slug": "muhammad-romelan",
+      "wrong_name": "Abdurrahman Attamimi",
+      "match": 0.8,
+      "method": "token:abdurrahman",
+      "bio_first_200": "Beliau adalah pengasuh dan pengisi kajian rutin di Masjid Abdurrahman bin Auf (Yogyakarta) dengan tema kitab seperti Syarh Kitab At-Tauhid, Tafsir Juz ’Amma, hingga Rukun Iman dan Fiqh Asmaul Husna.",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Muhammad Wujud",
+      "slug": "muhammad-wujud",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Muhammad (bahasa Arab: مُحَمَّدcode: ar is deprecated ; ca 570 – 8 Juni 632 M) adalah seorang pemimpin agama, sosial, dan politik beretnis Arab sekaligus pendiri agama Islam menurut perspektif sejarah",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Muhammad"
+      ]
+    },
+    {
+      "profile": "Mukti Ali",
+      "slug": "mukti-ali",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Prof. Dr. K.H. Abdul Mukti Ali (23 Agustus 1923 – 5 Mei 2004) adalah mantan Menteri Agama Republik Indonesia pada Kabinet Pembangunan II. Ia juga terkenal sebagai Ulama ahli perbandingan agama yang me",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Mukti_Ali"
+      ]
+    },
+    {
+      "profile": "Riza Firmansyah",
+      "slug": "riza-firmansyah",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Ahmad Riza Patria (lahir 17 Desember 1969), lebih dikenal dengan nama Ariza adalah seorang politikus Indonesia yang menjabat sebagai Wakil Gubernur DKI Jakarta sejak 15 April 2020 hingga 16 Oktober 20",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ahmad_Riza_Patria"
+      ]
+    },
+    {
+      "profile": "Sofyan Chalid Ruray",
+      "slug": "sofyan-chalid-ruray",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "Ustadz Sofyan Chalid bin Idham Ruray adalah seorang ustadz asal Indonesia yang lahir pada 28 September 1980 di Manado.\n\nPENDIDIKAN\n\n– Talaqqi di Kota Buraidah Propinsi Al-Qoshim Arab Saudi\n\n– Menghadi",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Subhan Bawazier",
+      "slug": "subhan-bawazier",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Muhammad Subhan bin Umar Bawazier (lahir 15 September 1972) adalah seorang pendakwah terkemuka di Indonesia yang dikenal dengan pendekatan dakwahnya yang lugas dan tegas. Ia memiliki garis keturunan A",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Subhan_Bawazier"
+      ]
+    },
+    {
+      "profile": "Sufyan Bafin Zen",
+      "slug": "sufyan-bafin-zen",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Sufyan Bafin Zen\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Nasihat Ini Kebebasan Fana yang Orang Tidak Bertakwa Cari… – Ustadz Sufyan Bafin. Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Sulam Mustareja",
+      "slug": "sulam-mustareja",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "Ustadz Sulam Mustareja adalah seorang penceramah dan ustadz yang aktif dalam menyampaikan kajian agama Islam. Ia dikenal melalui berbagai kegiatan kajian rutin yang diadakan, di mana ia membahas tema-",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Syafiq Basalamah",
+      "slug": "syafiq-basalamah",
+      "wrong_name": "Agus Hasan Bashori",
+      "match": 0.8,
+      "method": "token:hasan",
+      "bio_first_200": "Syafiq Riza Hasan Basalamah (lahir 15 Desember 1977) adalah seorang ustadz Salafi, dosen, dan penulis yang berasal dari Jember. Ia menjabat sebagai anggota Dewan Fatwa Perhimpunan Al-Irsyad. Ia dikena",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Syaikh Bin Baz",
+      "slug": "syaikh-bin-baz",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Abdul Aziz bin Abdillaah bin Baz (bahasa Arab: عبد العزيز بن عبد الله بن بازcode: ar is deprecated ;x22 November 1912 – 13 Mei 1999) adalah seorang ulama Arab Saudi tahun 1909 M/1330 H. Pada awalnya d",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abdul_Aziz_bin_Abdullah_bin_Baz"
+      ]
+    },
+    {
+      "profile": "Syaikh DR Abu Abdullah Al Juhani",
+      "slug": "syaikh-dr-abu-abdullah-al-juhani",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Ahmad bin Hanbal (bahasa Arab: أحمد بن حنبلcode: ar is deprecated , lahir 20 Rabiul awal 164 H (27 November 780) - wafat 12 Rabiul Awal 241 H (4 Agustus 855)) adalah seorang ahli hadits dan teologi Is",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ahmad_bin_Hanbal"
+      ]
+    },
+    {
+      "profile": "Syaikh Muhammad Bin Shaleh Al Utsaimin",
+      "slug": "syaikh-muhammad-bin-shaleh-al-utsaimin",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "Ahmad bin Hanbal (bahasa Arab: أحمد بن حنبلcode: ar is deprecated , lahir 20 Rabiul awal 164 H (27 November 780) - wafat 12 Rabiul Awal 241 H (4 Agustus 855)) adalah seorang ahli hadits dan teologi Is",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Ahmad_bin_Hanbal"
+      ]
+    },
+    {
+      "profile": "Syaikh Prof DR Abdur Rozzaq Al Badr",
+      "slug": "syaikh-prof-dr-abdur-rozzaq-al-badr",
+      "wrong_name": "Abu Abdil Muhsin Firanda Andirja",
+      "match": 0.8,
+      "method": "token:muhsin",
+      "bio_first_200": "‘Abdur Razzaq bin ‘Abdil Muhsin A Syaikh Abdurrozaq Al-Badr - Kajian Al-Qur'an dan Sunnah\n\n02:42\n\nBy\n\nKajian tabligh akbar oleh: Syaikh Prof.",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Syaikh Sa'ad Bin Nashir Asy Syatsri",
+      "slug": "syaikh-saad-bin-nashir-asy-syatsri",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:saudi",
+      "bio_first_200": "Saad bin Nashir bin Abdulaziz Abu Habib Al-Syatsri (bahasa Arab: سعد بن ناصر بن عبد العزيز أبو حبيب الشَّثْريcode: ar is deprecated , atau dikenal dengan nama Saad al-Syatsri) adalah ulama Islam dari ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Sa'ad_Asy_Syatsri"
+      ]
+    },
+    {
+      "profile": "Syeikh Masyhur Hasan Salman",
+      "slug": "syeikh-masyhur-hasan-salman",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Muhammad Zaini bin Abdul Ghani dikenal luas sebagai Guru Sekumpul atau Guru Ijai (11 Februari 1942 – 10 Agustus 2005) adalah seorang Ulama Indonesia asal Banjar, Kalimantan Selatan.",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Guru_Sekumpul"
+      ]
+    },
+    {
+      "profile": "Umar Alfanani",
+      "slug": "umar-alfanani",
+      "wrong_name": "Hadid Saiful Islam",
+      "match": 0.8,
+      "method": "token:islam",
+      "bio_first_200": "Pelajar Islam Indonesia adalah organisasi massa Pelajar Islam tertua di Indonesia yang bergerak di bidang kepelajaran dan pengkaderan yang bertujuan terciptanya kesempurnaan pendidikan dan kebudayaan ",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Pelajar_Islam_Indonesia"
+      ]
+    },
+    {
+      "profile": "Yasir Abu Yasir",
+      "slug": "yasir-abu-yasir",
+      "wrong_name": "Abu Isma'il Muslim Al Atsari",
+      "match": 0.8,
+      "method": "token:muslim",
+      "bio_first_200": "Yasir Qadhi (lahir 30 Januari 1975) atau dulu dikenal dengan nama kunya Abu Ammaar Yasir Qadhi adalah cendekiawan Muslim Pakistan-Amerika. Dia adalah dekan Seminari Islam Amerika dan peneliti tetap di",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Yasir_Qadhi"
+      ]
+    },
+    {
+      "profile": "Yazid Jawas",
+      "slug": "yazid-jawas",
+      "wrong_name": "Abdul Barr",
+      "match": 0.8,
+      "method": "token:abdul",
+      "bio_first_200": "Yazid bin Abdul Qadir Jawas (1963 – 11 Juli 2024) adalah seorang penulis, penceramah, ustaz, dan mubalig Sunni asal Indonesia. Di Indonesia, ceramah-ceramah Yazid sering dikaitkan dengan gerakan Salaf",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Yazid_bin_Abdul_Qadir_Jawas"
+      ]
+    },
+    {
+      "profile": "Zainal Abidin Syamsudin",
+      "slug": "zainal-abidin-syamsudin",
+      "wrong_name": "Departemen Dakwah Saudi Arabia",
+      "match": 0.8,
+      "method": "token:dakwah",
+      "bio_first_200": "BIOGRAFI USTADZ ZAINAL ABIDIN - Madrasah Ibtidaiyah Al Ukhuwah\n\nSiroh / Sejarah\n\nJan 8, 2024\n\nUSTADZ ZAINAL ABIDIN, LC – Beliau lahir di Lamongan, Jawa Timur 12 Juli 1967. Pengembaraan beliau untuk me",
+      "wiki_urls": []
+    },
+    {
+      "profile": "Zakaria Ahmad",
+      "slug": "zakaria-ahmad",
+      "wrong_name": "Abu Ahmad Imam Ali",
+      "match": 0.8,
+      "method": "token:ahmad",
+      "bio_first_200": "You’ve been temporarily blocked fro Kultum Ramadhan 1446 H Oleh Ustadz Ahmad Zakaria. Orang Ustadz Ahmad Zainuddin, Lc - Kajian Al-Qur'an dan Sunnah\n\n02:42\n\n- Kepulauan Seribu\n- Jakarta Timur\n- Jakart",
+      "wiki_urls": []
+    },
+    {
+      "profile": "الشيخ محمد موسى آل نصرSyaikh Muhammad Musa Alu Nasr",
+      "slug": "syaikh-muhammad-musa-alu-nasr",
+      "wrong_name": "Abdurrahman bin Muhammad Musa Alu Nashr",
+      "match": 0.8,
+      "method": "token:nashr",
+      "bio_first_200": "Syaikh Muhammad bin Musa Alu Nashr (الشيخ محمد بن موسي آل نصز) adalah seorang ulam. Al Bayyinah\n\n| Surat: | An-Naas, Al-Qur’an Al-Karim, nomor surat: 098 |\n| Qori’: | Syaikh Muhammad bin Musa Alu Nash",
+      "wiki_urls": []
+    }
+  ],
+  "suspicious": [
+    {
+      "profile": "Abdurrahman Attamimi",
+      "slug": "abdurrahman-attamimi",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Daftar_fam_Gorontalo"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.17,
+      "bio_first_100": "Marga Gorontalo merujuk pada aturan pemberian marga (nama keluarga) sebagai identitas dan ikatan kek"
+    },
+    {
+      "profile": "Abu Aliyah",
+      "slug": "abu-aliyah",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/MA_Negeri_2_Kebumen"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.12,
+      "bio_first_100": "Madrasah Aliyah Negeri 2 Kebumen atau dikenal juga dengan nama MANDA adalah salah satu MA berstatus "
+    },
+    {
+      "profile": "Abu Awwanah",
+      "slug": "abu-awwanah",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abu_Hatim_ar-Razi"
+      ],
+      "wiki_dates": [
+        "2026-06-05"
+      ],
+      "own_score": 0.16,
+      "bio_first_100": "Muhammad bin Idris bin al-Mundzir bin Daud bin Mihran al-Hanzhali al-Ghathfani (bahasa Arab: محمد بن"
+    },
+    {
+      "profile": "Abu Isma'il Muslim Al Atsari",
+      "slug": "abu-ismail-muslim-al-atsari",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Abu_Hanifah"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.24,
+      "bio_first_100": "Abū Ḥanīfah an-Nuʿmān bin Tsābit bin Zūṭā bin Marzubān at-Taymī al-Kūfī (bahasa Arab: أَبُو حَنِيفَة"
+    },
+    {
+      "profile": "Ali Ahmad (Pekan Baru)",
+      "slug": "ali-ahmad-pekan-baru",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Kota_Pekanbaru"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.22,
+      "bio_first_100": "Kota Pekanbaru (Jawi: ڤكنبارو) adalah ibu kota dan kota terbesar di Provinsi Riau, Indonesia"
+    },
+    {
+      "profile": "Arie Wibowo",
+      "slug": "arie-wibowo",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Arie_Wibowo"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.29,
+      "bio_first_100": "Arie Wibowo (5 April 1952 – 14 April 2011) adalah penyanyi Indonesia"
+    },
+    {
+      "profile": "Dzul Akmal",
+      "slug": "dzul-akmal",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Jogja-NETPAC_Asian_Film_Festival_2024"
+      ],
+      "wiki_dates": [
+        "2026-06-05"
+      ],
+      "own_score": 0.11,
+      "bio_first_100": "Jogja-NETPAC Asian Film Festival 2024 (JAFF19) merupakan perhelatan ke-19 festival film Jogja-NETPAC"
+    },
+    {
+      "profile": "Fachry Permana",
+      "slug": "fachry-permana",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Fachri_Albar"
+      ],
+      "wiki_dates": [
+        "2026-06-05"
+      ],
+      "own_score": 0.28,
+      "bio_first_100": "Fachri Albar (lahir 15 November 1981) adalah pemeran dan musikus Indonesia"
+    },
+    {
+      "profile": "Firdaus Sanusi",
+      "slug": "firdaus-sanusi",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Daftar_pemeran_film_laki-laki_Indonesia"
+      ],
+      "wiki_dates": [
+        "2026-06-04"
+      ],
+      "own_score": 0.19,
+      "bio_first_100": "Berikut ini adalah daftar aktor film dari Indonesia diurutkan sesuai nama depan"
+    },
+    {
+      "profile": "Muhammad Na'im",
+      "slug": "muhammad-naim",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Muhammad_Arsyad_al-Banjari"
+      ],
+      "wiki_dates": [
+        "2026-06-05"
+      ],
+      "own_score": 0.19,
+      "bio_first_100": "Syaikh Muhammad Arsyad al-Banjari (Jawi: الشيخ محمد أرشد البنجاري; 17 Maret 1710 – 13 Oktober 1812),"
+    },
+    {
+      "profile": "Muhammad Sulhan Jauhari",
+      "slug": "muhammad-sulhan-jauhari",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Daftar_Ketua_DPRD_Kabupaten/Kota_di_Sulawesi_Utara"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.09,
+      "bio_first_100": "Berikut ini adalah Daftar Ketua Dewan Perwakilan Rakyat Daerah Kabupaten/Kota di Sulawesi Utara yang"
+    },
+    {
+      "profile": "Rasul bin Dahri",
+      "slug": "rasul-bin-dahri",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Daftar_kata_serapan_dari_bahasa_Arab_dalam_bahasa_Indonesia"
+      ],
+      "wiki_dates": [
+        "2026-06-05"
+      ],
+      "own_score": 0.18,
+      "bio_first_100": "Di bawah ini disajikan daftar kata-kata Arab dalam bahasa Indonesia"
+    },
+    {
+      "profile": "Syahrul Fatwa",
+      "slug": "syahrul-fatwa",
+      "reason": "Wikipedia source pre-2026-06-06, own-name not in first sentence",
+      "wiki_urls": [
+        "https://id.wikipedia.org/wiki/Fachrul_Baraqbah"
+      ],
+      "wiki_dates": [
+        "2026-06-03"
+      ],
+      "own_score": 0.18,
+      "bio_first_100": "Aji Raden alias Fachrul Rasyid Baraqbah atau Sayid Fachrul Baraqbah (1925–1984) adalah seorang polit"
+    }
+  ]
+}

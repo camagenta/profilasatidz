@@ -1,6 +1,6 @@
 {
   "name": "Ahmad Firdaus",
-  "bio": "| Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Aqidah Islam Fakta di Balik Dunia Sihir – Ustadz Ahmad Firdaus, Lc. | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May 28, 2026\n\nHome Aqidah Islam Niatnya Mencintai dan Menghormati, Tapi Bisa Jatuh Jadi Kufur – Ustadz Ahmad. Ustadz Ahmad Firdaus\n\nRasulullah ﷺ bersabda, “Ba...",
+  "bio": "",
   "education": [],
   "expertise": [
     "aqidah",
@@ -36,13 +36,23 @@
       "title": "Biografi Ahmad Firdaus",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_garbage",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: garbage. First sentence was: \"| Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nWednesday, Apr...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=1213_ustadz_ahmad_firdaus__lc.jpg",
   "jabatan": "Da'i dan Penceramah",
-  "enriched_at": "2026-06-05T20:35:22.075218+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.253179+07:00",
+  "method": "qa_cleared_garbage_2026-06-07",
   "id": "kajian-ahmad-firdaus",
   "count": 21,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Firdaus"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Ahmad%20Firdaus",
+  "bio_source": "",
+  "completeness": 40
 }

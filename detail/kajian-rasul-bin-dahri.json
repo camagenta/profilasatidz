@@ -1,7 +1,7 @@
 {
   "name": "Rasul bin Dahri",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Rasul%20bin%20Dahri",
-  "bio": "Di bawah ini disajikan daftar kata-kata Arab dalam bahasa Indonesia. Karena mayoritas warga Indonesia adalah muslim, maka artikel ini ditulis untuk memberi wawasan berbahasa. Berikut dengan bentuk dan ejaan aslinya.\nKosakata bahasa Indonesia dan bahasa Melayu yang berasal dari bahasa Arab cukup banyak, diperkirakan sekitar 2.000 - 3.000. Namun frekuensinya lumayan besar. Secara relatif jumlah ini antara 40 % - 60 %. Sebagian kata-kata Arab ini masih utuh dalam arti yang sesuai antara lafal dan m",
+  "bio": "",
   "education": [],
   "expertise": [],
   "kary": [],
@@ -13,12 +13,21 @@
       "title": "Daftar kata serapan dari bahasa Arab dalam bahasa Indonesia",
       "sitename": "Wikipedia Bahasa Indonesia",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wikipedia_wrong",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wikipedia_wrong. First sentence was: \"Di bawah ini disajikan daftar kata-kata Arab dalam bahasa Indonesia...\""
     }
   ],
   "foto": "",
   "jabatan": "",
-  "completeness": 0,
-  "enriched_at": "2026-06-05T08:13:47.093331+07:00",
-  "method": "wikipedia",
-  "id": "kajian-rasul-bin-dahri"
+  "completeness": 15,
+  "enriched_at": "2026-06-07T19:02:38.282589+07:00",
+  "method": "qa_cleared_wikipedia_wrong_2026-06-07",
+  "id": "kajian-rasul-bin-dahri",
+  "bio_source": ""
 }

@@ -1,0 +1,511 @@
+{
+  "fixed_at": "2026-06-07T19:02:38.289591+07:00",
+  "fixed_count": 84,
+  "errors": [],
+  "fixes": [
+    {
+      "name": "Abdul Haq",
+      "slug": "abdul-haq",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abdullah Amin",
+      "slug": "abdullah-amin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abdullah Taslim",
+      "slug": "abdullah-taslim",
+      "reason": "wrong_person",
+      "new_completeness": 65
+    },
+    {
+      "name": "Abdullah Zaen",
+      "slug": "abdullah-zaen",
+      "reason": "wrong_person",
+      "new_completeness": 65
+    },
+    {
+      "name": "Abdurrahman Attamimi",
+      "slug": "abdurrahman-attamimi",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abdurrahman Thayyib",
+      "slug": "abdurrahman-thayyib",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abdussalam Busyro",
+      "slug": "abdussalam-busyro",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Abdillah Abdurrahim",
+      "slug": "abu-abdillah-abdurrahim",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abu Abdurrahman Abdul Aziz as-Salafy",
+      "slug": "abu-abdurrahman-abdul-aziz-as-salafy",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abu Awwanah",
+      "slug": "abu-awwanah",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abu Fairus",
+      "slug": "abu-fairus",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Isma'il Muslim Al Atsari",
+      "slug": "abu-ismail-muslim-al-atsari",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abu Izzi",
+      "slug": "abu-izzi",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Qatadah",
+      "slug": "abu-qatadah",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Salma Muhammad",
+      "slug": "abu-salma-muhammad",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Salma muhammad",
+      "slug": "abu-salma-muhammad-2",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Salman Musthofa Al-Buthoni",
+      "slug": "abu-salman-musthofa-al-buthoni",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Salma Rifaindry",
+      "slug": "abu-salma-rifaindry",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Abu Thohir",
+      "slug": "abu-thohir",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Abu Zubeir al-Hawaary",
+      "slug": "abu-zubeir-al-hawaary",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Adil Harahap",
+      "slug": "adil-harahap",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Agus Hasan Bashori",
+      "slug": "agus-hasan-bashori",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ahmad Firdaus",
+      "slug": "ahmad-firdaus",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ahmad Zainuddin",
+      "slug": "ahmad-zainuddin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ahmas Faiz Asifuddin",
+      "slug": "ahmas-faiz-asifuddin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ali Musri",
+      "slug": "ali-musri",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ali Nur",
+      "slug": "ali-nur",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Amrullah Akadhinta",
+      "slug": "amrullah-akadhinta",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Anas Burhanuddin",
+      "slug": "anas-burhanuddin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Andy Octavian Latief",
+      "slug": "andy-octavian-latief",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Arief Budiman",
+      "slug": "arief-budiman",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Arifin Ridin",
+      "slug": "arifin-ridin",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 65
+    },
+    {
+      "name": "Arif Syarifuddin",
+      "slug": "arif-syarifuddin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Askar Wardhana",
+      "slug": "askar-wardhana",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Aslam Muhsin",
+      "slug": "aslam-muhsin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Aspri Rahmat",
+      "slug": "aspri-rahmat",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ayub Abu Ayub",
+      "slug": "ayub-abu-ayub",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Beni Sarbeni",
+      "slug": "beni-sarbeni",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Dzul Akmal",
+      "slug": "dzul-akmal",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Dzulkarnaen",
+      "slug": "dzulkarnaen",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Fachry Permana",
+      "slug": "fachry-permana",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Fariq Gasim Anuz",
+      "slug": "fariq-gasim-anuz",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Firdaus Sanusi",
+      "slug": "firdaus-sanusi",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Hadid Saiful Islam",
+      "slug": "hadid-saiful-islam",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Heri Purnama",
+      "slug": "heri-purnama",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Iqbal Gunawan",
+      "slug": "iqbal-gunawan",
+      "reason": "wrong_person",
+      "new_completeness": 40
+    },
+    {
+      "name": "Iskandar Dinata",
+      "slug": "iskandar-dinata",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Jauhari",
+      "slug": "jauhari",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Konsultasisyariah",
+      "slug": "konsultasisyariah",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Mahfudz Umri",
+      "slug": "mahfudz-umri",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Mufy Hanif Thalib",
+      "slug": "mufy-hanif-thalib",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Abduh Tuasikal",
+      "slug": "muhammad-abduh-tuasikal",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 65
+    },
+    {
+      "name": "Muhammad Ali Hizam",
+      "slug": "muhammad-ali-hizam",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Muhammad Bin Muhammad Thaib",
+      "slug": "muhammad-bin-muhammad-thaib",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Muhammad Elvi Syam",
+      "slug": "muhammad-elvi-syam",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Iqbal",
+      "slug": "muhammad-iqbal",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Nur Ihsan",
+      "slug": "muhammad-nur-ihsan",
+      "reason": "garbage",
+      "new_completeness": 65
+    },
+    {
+      "name": "Muhammad Qosim Muhajir",
+      "slug": "muhammad-qosim-muhajir",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Sulhan Jauhari",
+      "slug": "muhammad-sulhan-jauhari",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Muhammad Wasitho",
+      "slug": "muhammad-wasitho",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Yahya",
+      "slug": "muhammad-yahya",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muhammad Yassir",
+      "slug": "muhammad-yassir",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Muharrar bin Mikail",
+      "slug": "muharrar-bin-mikail",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Mujahid Aslam",
+      "slug": "mujahid-aslam",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Mukti Ali",
+      "slug": "mukti-ali",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Mumuh Mukhtaruddin",
+      "slug": "mumuh-mukhtaruddin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Nurfitri Hadi",
+      "slug": "nurfitri-hadi",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Rasul bin Dahri",
+      "slug": "rasul-bin-dahri",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Rizal Yuliar Putrananda",
+      "slug": "rizal-yuliar-putrananda",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Said Abu Ukasyah",
+      "slug": "said-abu-ukasyah",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Subhan Khadafi",
+      "slug": "subhan-khadafi",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Sufyan Bafin Zen",
+      "slug": "sufyan-bafin-zen",
+      "reason": "garbage",
+      "new_completeness": 65
+    },
+    {
+      "name": "Sulhan Jauhari",
+      "slug": "sulhan-jauhari",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Syahrul Fatwa",
+      "slug": "syahrul-fatwa",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Syaikh Bin Baz",
+      "slug": "syaikh-bin-baz",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Syaikh DR Abu Abdullah Al Juhani",
+      "slug": "syaikh-dr-abu-abdullah-al-juhani",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Syaikh Muhammad Bin Shaleh Al Utsaimin",
+      "slug": "syaikh-muhammad-bin-shaleh-al-utsaimin",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Syeikh Masyhur Hasan Salman",
+      "slug": "syeikh-masyhur-hasan-salman",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 15
+    },
+    {
+      "name": "Umar Alfanani",
+      "slug": "umar-alfanani",
+      "reason": "wikipedia_wrong",
+      "new_completeness": 40
+    },
+    {
+      "name": "Yusuf Utsman Baisa",
+      "slug": "yusuf-utsman-baisa",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Zainal Abidin Syamsudin",
+      "slug": "zainal-abidin-syamsudin",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Ahmad Syakir",
+      "slug": "ahmad-syakir",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Faisal Abdurrahim",
+      "slug": "faisal-abdurrahim",
+      "reason": "garbage",
+      "new_completeness": 40
+    },
+    {
+      "name": "Nizar Hidayatur Rahman",
+      "slug": "nizar-hidayatur-rahman",
+      "reason": "garbage",
+      "new_completeness": 40
+    }
+  ]
+}

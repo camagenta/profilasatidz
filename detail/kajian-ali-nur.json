@@ -3,8 +3,8 @@
   "slug": "ali-nur",
   "source_url": "https://kajian.net/kajian-audio/Ceramah/Ali%20Nur",
   "count": 19,
-  "bio": "Ejen Ali (bahasa Indonesia: Agen Ali; bahasa Inggris: Agent Ali, Jawi: ايجن علي) adalah sebuah serial Animasi Malaysia yang diproduksi oleh Wau Animation, yang menceritakan tentang seorang bocah yang tak sengaja menjadi agen MATA setelah mengaktifkan Infinity Retinal Intelligence System (IRIS), sebuah perangkat prototipe yang dibuat oleh MATA. Setelah insiden tersebut, Ali, Alicia, Bakar (paman Ali), dan Comot (kucing Ali) bekerja sama dalam misi MATA.\nSerial tersebut dipublikasikan dalam format",
-  "bio_source": "https://id.wikipedia.org/wiki/Ejen_Ali",
+  "bio": "",
+  "bio_source": "",
   "bio_quote": "Profil Ustadz Dr. Ali Nurdin, MA.\n\nJika ada notifikasi namun tidak ada perubahan silahkan melakukan refresh halaman\n\nHome Ustadz Kami Dr. Ali Nurdin, MA.\n\n# Dr. Ali Nurdin, MA.\n\n---\n\n63 orang telah me",
   "education": [
     "Home Ustadz Kami Dr. Ali Nurdin, MA.",
@@ -43,9 +43,20 @@
       "url": "https://sinta.kemdiktisaintek.go.id/authors/profile/6654039/?view=books",
       "title": "SINTA - Science and Technology Index",
       "snippet": "SINTA - Science and Technology Index -- --\n\nDownload CV --\n\n### ALI NURDIN\n\nUniversitas Islam Negeri Sunan Ampel S1 - Ilmu Komunikasi SINTA ID : 66540"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Ejen Ali (bahasa Indonesia: Agen Ali; bahasa Inggris: Agent Ali, Jawi: ايجن علي)...\""
     }
   ],
   "foto": "",
   "jabatan": "Penceramah",
-  "id": "kajian-ali-nur"
+  "id": "kajian-ali-nur",
+  "completeness": 40,
+  "enriched_at": "2026-06-07T19:02:38.254740+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07"
 }

@@ -1,6 +1,6 @@
 {
   "name": "Abdullah Zaen",
-  "bio": "Pekerjaan : Pengasuh Pondok Pesantren “Tunas Ilmu” Purbalingga dan dosen Sekolah Tinggi Dirasat Islamiyyah “Imam Syafi’i” Jember\n\nRiwayat Pendidikan:\n\n- Formal:\n\n1993 : Pondok Modern ar-Risalah Slahung Ponorogo Jawa Timur\n\n1994-1998 : Pondok Modern Darussalam Gontor Ponorogo Jawa Timur\n\n1999 : Fakultas Syari’ah Institut Studi Islam Darussalam Gontor\n\n2000 : Ma’had Lughah Islamic University of Medina (IUM) KSA\n\n2001-2004 : S1 Fakultas Hadits dan Dirasat Islamiyah IUM (Cumlaude)\n\n2005-2009 : S2 Jurusan Aqidah IUM (Cumlaude)\n\n- Non Formal :\n\n2000-2009 :Syaikh Abdul Muhsin bin Hamd al-‘Abbâd: kitab Sunan Abi Dâwûd, sebagian dari Sunan at-Tirmidzi, al-Arba’în an-Nawawiyyah dan sebagian dari Sunan Ibn Mâjah .Syaikh Prof. Dr. Ibrahim bin ‘Âmir ar-Ruhaili: kitab: al-Ushûl ats-Tsalâtsah, Kasyf asy-Syubuhât, al-Qawâ’id al-Arba’, Kitab at-Tauhîd, Kitab al-Îmân li Abi ‘Ubaid al-Qâsim bin Sallâm, sebagian dari Kitab al-Qadar li Ibn Wahb, sebagian dari Kitab as-Sunnah li al-Khallâl, Kitab al-I’tiqâd...",
+  "bio": "",
   "education": [
     "Ustadz Abdullah Zaen, MA - Kajian Al-Qur'an dan Sunnah",
     "Abdullah Zaen, Lc., M.A., yang dikenal juga sebagai Ustadz Abdullah Zaen, lahir dari pasangan Zaeni Muhajjat, BA, M.S. Beliau merupakan seorang sarjana dengan gelar S-2 dalam bidang Aqidah dari Univer",
@@ -48,13 +48,23 @@
       "title": "Biografi Abdullah Zaen",
       "sitename": "KajianLive",
       "accessed": "2026-06-05"
+    },
+    {
+      "id": "qa_audit_wrong_person",
+      "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+      "title": "WRONG BIO CLEARED by audit",
+      "sitename": "QA Audit 2026-06-07",
+      "accessed": "2026-06-07",
+      "note": "Reason: wrong_person. First sentence was: \"Pekerjaan : Pengasuh Pondok Pesantren “Tunas Ilmu” Purbalingga dan dosen Sekolah...\""
     }
   ],
   "foto": "https://kajianlive.my.id/get_foto_ust.php?file=4_ustadz_abdullah_zaen__lc___m_a.jpg",
   "jabatan": "Pengasuh Ponpes Tunas Ilmu Purbalingga",
-  "enriched_at": "2026-06-05T20:32:26.200559+07:00",
-  "method": "kajianlive",
+  "enriched_at": "2026-06-07T19:02:38.235683+07:00",
+  "method": "qa_cleared_wrong_person_2026-06-07",
   "id": "kajian-abdullah-zaen",
   "count": 285,
-  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Zaen"
+  "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Zaen",
+  "bio_source": "",
+  "completeness": 65
 }
