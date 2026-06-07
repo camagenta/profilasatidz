@@ -127,8 +127,12 @@ var fieldLabels = map[string]string{
 }
 
 func findGitHubIssue(profileName string) (int, error) {
-	searchQuery := fmt.Sprintf(`repo:%s "[Profil Asatidz] %s" in:title label:profil-asatidz`, ghRepo, profileName)
-	apiURL := fmt.Sprintf("https://api.github.com/search/issues?q=%s&per_page=1", url.QueryEscape(searchQuery))
+	// Filter state:open to avoid posting contributions to closed issues
+	// (which can happen if duplicates were cleaned up and the keeper is the only open one,
+	// or if all related issues are closed for some reason).
+	// Sort by created_at desc to prefer newest issue (which usually has the best body).
+	searchQuery := fmt.Sprintf(`repo:%s "[Profil Asatidz] %s" in:title label:profil-asatidz state:open`, ghRepo, profileName)
+	apiURL := fmt.Sprintf("https://api.github.com/search/issues?q=%s&per_page=1&sort=created&order=desc", url.QueryEscape(searchQuery))
 
 	req, err := http.NewRequest("GET", apiURL, nil)
 	if err != nil {

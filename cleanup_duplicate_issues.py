@@ -53,10 +53,22 @@ def main():
         return
 
     closed = 0
+    broken_reported = []
     for name, copies in duplicates.items():
+        # Sort by created_at ASC (oldest first)
         copies.sort(key=lambda x: x["created_at"])
-        keep = copies[0]
-        for dup in copies[1:]:
+        # Pick keeper: prefer OPEN state, then oldest
+        open_copies = [c for c in copies if c["state"] == "open"]
+        if open_copies:
+            keep = open_copies[0]  # oldest OPEN
+        else:
+            keep = copies[0]  # all closed, just pick oldest
+            broken_reported.append((name, [c["number"] for c in copies]))
+            print(f"  ⚠ WARNING: all {len(copies)} issues for '{name[:50]}' are closed, will keep oldest closed")
+
+        for dup in copies:
+            if dup["number"] == keep["number"]:
+                continue
             if dup["state"] == "closed":
                 print(f"  - #{dup['number']} already closed, skipping")
                 continue
@@ -73,6 +85,11 @@ def main():
                 print(f"    FAILED: {r.stderr[:100]}")
 
     print(f"\nClosed {closed} duplicate issues")
+    if broken_reported:
+        print(f"\n!!! {len(broken_reported)} names have NO open issue (all closed):")
+        for name, nums in broken_reported:
+            print(f"  - {name}: {nums}")
+        print("  These need manual review: pick the issue with correct data, re-create or fix.")
 
 
 if __name__ == "__main__":
