@@ -164,6 +164,153 @@ func findGitHubIssue(profileName string) (int, error) {
 	return result.Items[0].Number, nil
 }
 
+// createGitHubIssue creates a new GitHub Issue for a profile with the given body.
+// Used as fallback when contribution is submitted for a profile that has no issue yet.
+func createGitHubIssue(profileName, profileID string, detail *Asatidz) (int, string, error) {
+	title := fmt.Sprintf("[Profil Asatidz] %s", profileName)
+
+	var bodyLines []string
+	bodyLines = append(bodyLines, fmt.Sprintf("# %s", profileName), "")
+
+	if detail != nil && detail.Foto != "" {
+		bodyLines = append(bodyLines, fmt.Sprintf("![Foto %s](%s)", profileName, detail.Foto), "")
+	}
+
+	bodyLines = append(bodyLines, "## 📝 Profil Live")
+	if detail != nil && detail.Bio != "" {
+		bodyLines = append(bodyLines, detail.Bio)
+	} else {
+		bodyLines = append(bodyLines, "*Belum ada deskripsi biografi. Kontribusi dari Anda akan sangat membantu!*")
+	}
+	bodyLines = append(bodyLines, "")
+
+	if detail != nil && len(detail.Education) > 0 {
+		bodyLines = append(bodyLines, "### 🎓 Pendidikan")
+		for _, edu := range detail.Education {
+			bodyLines = append(bodyLines, fmt.Sprintf("- %s", edu))
+		}
+		bodyLines = append(bodyLines, "")
+	}
+
+	if detail != nil && len(detail.Karya) > 0 {
+		bodyLines = append(bodyLines, "### 📚 Karya Tulis / Ilmiah")
+		for _, kar := range detail.Karya {
+			bodyLines = append(bodyLines, fmt.Sprintf("- %s", kar))
+		}
+		bodyLines = append(bodyLines, "")
+	}
+
+	if detail != nil && len(detail.SocialMedia) > 0 {
+		hasAny := false
+		for _, v := range detail.SocialMedia {
+			if v != "" {
+				hasAny = true
+				break
+			}
+		}
+		if hasAny {
+			bodyLines = append(bodyLines, "### 🔗 Media Sosial & Informasi Kontak")
+			for k, v := range detail.SocialMedia {
+				if v != "" {
+					bodyLines = append(bodyLines, fmt.Sprintf("- **%s**: %s", k, v))
+				}
+			}
+			bodyLines = append(bodyLines, "")
+		}
+	}
+
+	bodyLines = append(bodyLines, "---", "## 📊 Status Profiling")
+	bodyLines = append(bodyLines, fmt.Sprintf("- **ID**: `%s`", profileID))
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Slug**: `%s`", profileID))
+
+	hasBio := detail != nil && detail.Bio != ""
+	hasFoto := detail != nil && detail.Foto != ""
+	count := 0
+	if detail != nil {
+		count = detail.Count
+	}
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Jumlah Kajian (kajian.net)**: %d", count))
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Bio**: %s", boolStatus(hasBio)))
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Foto**: %s", boolStatus(hasFoto)))
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Detail**: %s", boolStatus(detail != nil)))
+
+	completeness := computeCompletenessFromDetail(detail)
+	bodyLines = append(bodyLines, fmt.Sprintf("- **Completeness**: %d%%", completeness))
+
+	bodyLines = append(bodyLines, "", "## 🤝 Cara Berkontribusi")
+	bodyLines = append(bodyLines, "Klik **'Kontribusi'** di halaman profil untuk menambahkan:")
+	bodyLines = append(bodyLines, "- Koreksi biografi, pendidikan, karya, media sosial, foto, dll")
+	bodyLines = append(bodyLines, "")
+	bodyLines = append(bodyLines, fmt.Sprintf("*Issue ini dibuat otomatis oleh sistem kontribusi karena profil belum memiliki issue (%s WIB)*",
+		time.Now().UTC().Add(7*time.Hour).Format("2006-01-02 15:04")))
+
+	body := strings.Join(bodyLines, "\n")
+
+	payload, _ := json.Marshal(map[string]interface{}{
+		"title":  title,
+		"body":   body,
+		"labels": []string{"profil-asatidz"},
+	})
+
+	apiURL := fmt.Sprintf("https://api.github.com/repos/%s/issues", ghRepo)
+	req, err := http.NewRequest("POST", apiURL, bytes.NewBuffer(payload))
+	if err != nil {
+		return 0, "", err
+	}
+	req.Header.Set("Authorization", "Bearer "+ghToken)
+	req.Header.Set("Accept", "application/vnd.github+json")
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{Timeout: 30 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return 0, "", fmt.Errorf("gagal menghubungi GitHub: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 201 {
+		respBody, _ := io.ReadAll(resp.Body)
+		return 0, "", fmt.Errorf("GitHub API error %d: %s", resp.StatusCode, string(respBody))
+	}
+
+	var created struct {
+		Number  int    `json:"number"`
+		HTMLURL string `json:"html_url"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&created); err != nil {
+		return 0, "", fmt.Errorf("gagal parse response: %w", err)
+	}
+
+	return created.Number, created.HTMLURL, nil
+}
+
+func boolStatus(b bool) string {
+	if b {
+		return "✅"
+	}
+	return "❌"
+}
+
+func computeCompletenessFromDetail(detail *Asatidz) int {
+	if detail == nil {
+		return 0
+	}
+	c := 0
+	if detail.Bio != "" {
+		c += 35
+	}
+	if detail.Foto != "" {
+		c += 25
+	}
+	if detail.Count > 0 {
+		c += 15
+	}
+	if len(detail.Education) > 0 || len(detail.Karya) > 0 {
+		c += 25
+	}
+	return c
+}
+
 func postGitHubComment(issueNumber int, body string) error {
 	payload, _ := json.Marshal(map[string]string{"body": body})
 	apiURL := fmt.Sprintf("https://api.github.com/repos/%s/issues/%d/comments", ghRepo, issueNumber)
@@ -905,13 +1052,37 @@ func handleContribute(w http.ResponseWriter, r *http.Request) {
 	rateLimiter[rateKey] = time.Now()
 	rateLimiterMu.Unlock()
 
-	// Find the GitHub Issue for this profile
+	// Find the GitHub Issue for this profile. If not found, create one as fallback
+	// so contributions are never lost.
 	issueNumber, err := findGitHubIssue(req.ProfileName)
 	if err != nil {
-		log.Printf("[contribute] Issue not found for %q: %v", req.ProfileName, err)
-		w.WriteHeader(404)
-		json.NewEncoder(w).Encode(map[string]string{"error": "Issue untuk profil ini belum tersedia di GitHub"})
-		return
+		log.Printf("[contribute] Issue not found for %q, creating fallback: %v", req.ProfileName, err)
+
+		// Fallback: try to load detail to enrich the auto-created issue
+		var detail *Asatidz
+		if req.ProfileID != "" {
+			if d, derr := loadDetail(req.ProfileID); derr == nil {
+				detail = &d
+			}
+		}
+
+		newNumber, issueURL, cerr := createGitHubIssue(req.ProfileName, req.ProfileID, detail)
+		if cerr != nil {
+			log.Printf("[contribute] Fallback create issue failed: %v", cerr)
+			w.WriteHeader(500)
+			json.NewEncoder(w).Encode(map[string]string{"error": "Gagal membuat issue untuk profil ini. Coba lagi nanti."})
+			return
+		}
+		issueNumber = newNumber
+		log.Printf("[contribute] Fallback issue #%d created for %q", issueNumber, req.ProfileName)
+
+		go func(prof, pid string) {
+			msg := fmt.Sprintf("🛡️ *Issue Dibuat Otomatis (Fallback)*\n\nKontribusi masuk untuk profil yang belum punya issue.\n\n👤 *Profil:* %s\n🆔 *ID:* `%s`\n\n🔗 %s", prof, pid, issueURL)
+			cmd := exec.Command("/home/ubuntu/.hermes/hermes-agent/venv/bin/python", "-m", "hermes_cli.main", "send", "--to", "telegram", msg)
+			if err := cmd.Run(); err != nil {
+				log.Printf("[contribute] Hermes notify (fallback) failed: %v", err)
+			}
+		}(req.ProfileName, req.ProfileID)
 	}
 
 	// Build the comment body
