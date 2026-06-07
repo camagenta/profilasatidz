@@ -180,13 +180,15 @@ def fetch_existing_issues():
     log(f"Found {len(name_to_issue)} existing issues matching '[Profil Asatidz]' pattern (any state, any label)")
 
     # Normalize: collapse "Abu Salma Muhammad" vs "Abu Salma muhammad" to one entry
-    # (case-insensitive comparison is already done, but trim/collapse whitespace)
+    # (case-insensitive comparison is already done, but trim/collapse whitespace + NFKC unicode)
+    import unicodedata
     normalized = {}
     for key, val in name_to_issue.items():
-        norm_key = " ".join(key.split())
+        # NFKC normalizes unicode like Arabic combining chars
+        norm_key = unicodedata.normalize("NFKC", " ".join(key.split())).lower().strip()
         if norm_key not in normalized:
             normalized[norm_key] = val
-    log(f"After whitespace normalization: {len(normalized)} unique issues")
+    log(f"After whitespace+unicode normalization: {len(normalized)} unique issues")
     return normalized
 
 
