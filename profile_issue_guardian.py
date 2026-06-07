@@ -44,7 +44,7 @@ DETAIL_DIR = "/root/detail"
 ARCHIVE_DIR = "osint_archive"
 GH_REPO = "camagenta/profilasatidz"
 GH_LABEL = "profil-asatidz"
-HERMES_CMD = "/home/ubuntu/.hermes/hermes-agent/venv/bin/python"
+HERMES_CMD = os.environ.get("HERMES_PYTHON", "/home/ubuntu/.hermes/hermes-agent/venv/bin/python")
 HERMES_ARGS = ["-m", "hermes_cli.main", "send", "--to", "telegram"]
 JAKARTA_TZ = timezone(timedelta(hours=7))
 
@@ -345,7 +345,7 @@ def create_issue(profile_name, body, dry_run=False):
 
 def send_telegram_notification(profile_name, profile_id, issue_url, count, dry_run=False):
     """
-    Send Telegram notification via Hermes.
+    Send Telegram notification via Hermes. Tries multiple invocation paths.
     """
     msg = (
         f"🛡️ *Profile Issue Guardian*\n\n"
@@ -359,18 +359,29 @@ def send_telegram_notification(profile_name, profile_id, issue_url, count, dry_r
         log(f"  [DRY-RUN] Would send Telegram:\n{msg}")
         return True
 
-    if not os.path.exists(HERMES_CMD):
-        log(f"  ⚠ Hermes not found at {HERMES_CMD}, skipping notification", "WARN")
-        return False
+    # Try multiple hermes invocation paths in order
+    candidates = []
+    if os.path.exists(HERMES_CMD):
+        candidates.append([HERMES_CMD, *HERMES_ARGS, msg])
+    # Try global hermes (installed as module)
+    candidates.append(["python3", "-m", "hermes_cli.main", "send", "--to", "telegram", msg])
+    # Try hermes on PATH
+    candidates.append(["hermes", "send", "--to", "telegram", msg])
 
-    cmd = [HERMES_CMD, *HERMES_ARGS, msg]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-    if result.returncode == 0:
-        log(f"  ✓ Telegram notification sent")
-        return True
-    else:
-        log(f"  ⚠ Telegram notification failed: {result.stderr[:200]}", "WARN")
-        return False
+    for cmd in candidates:
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            if result.returncode == 0:
+                log(f"  ✓ Telegram notification sent via {cmd[0]}")
+                return True
+            else:
+                log(f"  - {cmd[0]} failed: {result.stderr[:100]}", "DEBUG")
+        except (FileNotFoundError, OSError) as e:
+            log(f"  - {cmd[0]} not available: {e}", "DEBUG")
+            continue
+
+    log(f"  ⚠ Telegram notification failed (all paths exhausted), continuing without notification", "WARN")
+    return False
 
 
 def save_log(missing_profiles, created_issues, dry_run=False):
@@ -403,6 +414,7 @@ def main():
     parser = argparse.ArgumentParser(description="Profile Issue Guardian")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done without creating issues")
     parser.add_argument("--notify", action="store_true", help="Send Telegram notification for each created issue")
+    parser.add_argument("--limit", type=int, default=0, help="Limit number of issues to create (0 = no limit). Useful for testing.")
     args = parser.parse_args()
 
     log("=" * 60)
@@ -451,6 +463,10 @@ def main():
     # 6. Create issues one by one
     created = []
     failed = []
+    if args.limit > 0:
+        log(f"Limiting to first {args.limit} issues (test batch mode)")
+        missing = missing[:args.limit]
+
     for i, entry in enumerate(missing):
         name = entry.get("name", "").strip()
         profile_id = entry.get("id", "")
