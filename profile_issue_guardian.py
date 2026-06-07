@@ -399,7 +399,7 @@ def save_log(missing_profiles, created_issues, dry_run=False):
         "",
     ]
     for p in missing_profiles:
-        lines.append(f"- MISSING: {p['name']} ({p['id']}) - kajian_count={p['count']}, completeness={p['completeness']}%")
+        lines.append(f"- MISSING: {p.get('name', '?')} ({p.get('id', '?')}) - kajian_count={p.get('count', 0)}, completeness={p.get('completeness', 0)}%")
     for c in created_issues:
         lines.append(f"- CREATED: {c['name']} -> {c['issue_url']}")
     lines.append("")
