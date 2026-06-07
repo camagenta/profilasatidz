@@ -150,6 +150,25 @@ def apply_direct_contribution(profile_id, contrib):
     if "bio" in bagian:
         result["bio"] = content + (f"\n\n(Tambahan info: {result['bio']})" if result.get("bio") else "")
         if contrib["url"]: result["bio_source"] = contrib["url"]
+    elif "foto" in bagian or "photo" in bagian or "gambar" in bagian:
+        # URL of image is the contribution content
+        new_foto = content.strip()
+        existing_foto = result.get("foto", "").strip()
+        # Quality heuristic: full-size Wikipedia images (no /thumb/ in path) win over thumbs
+        new_is_thumb = "/thumb/" in new_foto
+        existing_is_thumb = "/thumb/" in existing_foto
+        if not existing_foto:
+            result["foto"] = new_foto
+            log(f"  + foto set (was empty)")
+        elif new_is_thumb and not existing_is_thumb:
+            log(f"  - Skipped foto update: existing is full-size, new is thumb (would downgrade)")
+        elif existing_is_thumb and not new_is_thumb:
+            result["foto"] = new_foto
+            log(f"  + foto upgraded from thumb to full-size")
+        else:
+            result["foto"] = new_foto
+            log(f"  + foto replaced (same quality tier)")
+        if contrib["url"]: result["foto_source"] = contrib["url"]
     elif "pendidikan" in bagian:
         lines = [line.strip('- *') for line in content.split('\n') if line.strip()]
         result.setdefault("education", []).extend(lines)
@@ -162,6 +181,20 @@ def apply_direct_contribution(profile_id, contrib):
         words = [w.strip() for w in content.replace(',', '\n').split('\n') if w.strip()]
         result.setdefault("expertise", []).extend(words)
         if contrib["url"]: result["expertise_source"] = contrib["url"]
+    elif "media sosial" in bagian or "social" in bagian or "sosmed" in bagian:
+        # Format: "platform: url" per line, or single url
+        lines = [line.strip() for line in content.split('\n') if line.strip()]
+        if not result.get("social_media"):
+            result["social_media"] = {}
+        for line in lines:
+            if ':' in line:
+                platform, url = line.split(':', 1)
+                result["social_media"][platform.strip().lower()] = url.strip()
+            elif lines.index(line) == 0 and len(lines) == 1 and line.startswith('http'):
+                result["social_media"]["lainnya"] = line
+        if contrib["url"]: result.setdefault("sources", [])
+    elif "jabatan" in bagian or "posisi" in bagian:
+        result["jabatan"] = content.strip()
     else:
         # Append to bio for "Lainnya" or unrecognized
         result["bio"] = (result.get("bio", "") + f"\n\nCatatan tambahan: {content}").strip()
@@ -178,7 +211,31 @@ def apply_direct_contribution(profile_id, contrib):
     
     if rc == 0:
         log(f"  ✓ Detail saved: {detail_path}")
-        
+
+        # Update master.json to reflect new fields
+        try:
+            master_raw, mrc = ne.docker_exec(f"cat {ne.MASTER_FILE}")
+            if mrc == 0 and master_raw.strip():
+                master = json.loads(master_raw)
+                for m in master:
+                    if m.get("id") == profile_id:
+                        m["has_bio"] = bool(result.get("bio"))
+                        m["has_foto"] = bool(result.get("foto"))
+                        m["has_detail"] = True
+                        m["completeness"] = (
+                            (35 if result.get("bio") else 0) +
+                            (25 if result.get("foto") else 0) +
+                            25 +
+                            (15 if m.get("count", 0) > 0 else 0)
+                        )
+                        break
+                master_json = json.dumps(master, ensure_ascii=False, indent=2)
+                b64m = base64.b64encode(master_json.encode()).decode()
+                ne.docker_exec(f"echo '{b64m}' | base64 -d > '{ne.MASTER_FILE}'")
+                log(f"  ✓ Master updated (has_bio={result.get('bio','')[:0]!=''}, has_foto={bool(result.get('foto'))})")
+        except Exception as e:
+            log(f"  ⚠ Failed to update master: {e}")
+
         # Trigger Hot-Reload
         import urllib.request
         try:
@@ -186,7 +243,7 @@ def apply_direct_contribution(profile_id, contrib):
             log("  ✓ Server hot-reloaded successfully")
         except Exception as e:
             log(f"  ⚠ Failed to trigger hot-reload: {e}")
-            
+
         return True
     return False
 
