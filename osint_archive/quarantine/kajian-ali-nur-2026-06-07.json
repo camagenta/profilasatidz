@@ -1,0 +1,70 @@
+{
+  "_quarantine_metadata": {
+    "quarantined_at": "2026-06-07T15:07:56.284688+00:00",
+    "reason": "[bio] empty_bio",
+    "original_slug": "kajian-ali-nur",
+    "original_path": "detail/kajian-ali-nur.json"
+  },
+  "original_content": {
+    "name": "Ali Nur",
+    "slug": "ali-nur",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Ali%20Nur",
+    "count": 19,
+    "bio": "",
+    "bio_source": "",
+    "bio_quote": "Profil Ustadz Dr. Ali Nurdin, MA.\n\nJika ada notifikasi namun tidak ada perubahan silahkan melakukan refresh halaman\n\nHome Ustadz Kami Dr. Ali Nurdin, MA.\n\n# Dr. Ali Nurdin, MA.\n\n---\n\n63 orang telah me",
+    "education": [
+      "Home Ustadz Kami Dr. Ali Nurdin, MA.",
+      "Dr. Ali Nurdin, MA, lahir di Boyolali, 26 Juni 1970. Saat ini penulis merupakan Pimpinan Cariustadz.id Dr. Ali Nurdin, MA, Pencetus Nama Darus-Sunnah - Majalah Nabawi",
+      "Darus-Sunnah telah menjadi pesantren berkelas Internasional. Mungkin pembaca bertanya-tanya, siapakah pencetus nama Darus-Sunnah?",
+      "Dalam penelusuran Nabawi, ternyata pencetus nama itu bukan orang sembarangan. Beliau sekarang menjabat sebagai Pembantu Rektor Bidang Kemahasiswaan Institut PTIQ Jakarta dan anggota Lajnah Tashih Al-Q",
+      "Universitas Islam Negeri Sunan Ampel S1 - Ilmu Komunikasi SINTA ID : 6654039"
+    ],
+    "education_source": "https://majalahnabawi.com/dr-ali-nurdin-ma-pencetus-nama-darus-sunnah/",
+    "education_quote": "Home Ustadz Kami Dr. Ali Nurdin, MA. Dr. Ali Nurdin, MA, lahir di Boyolali, 26 Juni 1970. Saat ini penulis merupakan Pimpinan Cariustadz.id Dr. Ali Nurdin, MA, Pencetus Nama Darus-Sunnah - Majalah Nab",
+    "expertise": [
+      "dakwah",
+      "quran"
+    ],
+    "expertise_source": "https://sinta.kemdiktisaintek.go.id/authors/profile/6654039/?view=books",
+    "expertise_quote": "dakwah, quran",
+    "kary": [],
+    "kary_source": "",
+    "kary_quote": "",
+    "social_media": {},
+    "sources": [
+      {
+        "id": "1",
+        "url": "https://cariustadz.id/ustadz/detail/dr-ali-nurdin-ma",
+        "title": "Profil Ustadz Dr. Ali Nurdin, MA.",
+        "snippet": "Profil Ustadz Dr. Ali Nurdin, MA.\n\nJika ada notifikasi namun tidak ada perubahan silahkan melakukan refresh halaman\n\nHome Ustadz Kami Dr. Ali Nurdin, "
+      },
+      {
+        "id": "2",
+        "url": "https://majalahnabawi.com/dr-ali-nurdin-ma-pencetus-nama-darus-sunnah/",
+        "title": "Dr. Ali Nurdin, MA, Pencetus Nama Darus-Sunnah - Majalah Nabawi",
+        "snippet": "Dr. Ali Nurdin, MA, Pencetus Nama Darus-Sunnah - Majalah Nabawi\n\nDarus-Sunnah telah menjadi pesantren berkelas Internasional. Mungkin pembaca bertanya"
+      },
+      {
+        "id": "3",
+        "url": "https://sinta.kemdiktisaintek.go.id/authors/profile/6654039/?view=books",
+        "title": "SINTA - Science and Technology Index",
+        "snippet": "SINTA - Science and Technology Index -- --\n\nDownload CV --\n\n### ALI NURDIN\n\nUniversitas Islam Negeri Sunan Ampel S1 - Ilmu Komunikasi SINTA ID : 66540"
+      },
+      {
+        "id": "qa_audit_wrong_person",
+        "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+        "title": "WRONG BIO CLEARED by audit",
+        "sitename": "QA Audit 2026-06-07",
+        "accessed": "2026-06-07",
+        "note": "Reason: wrong_person. First sentence was: \"Ejen Ali (bahasa Indonesia: Agen Ali; bahasa Inggris: Agent Ali, Jawi: ايجن علي)...\""
+      }
+    ],
+    "foto": "",
+    "jabatan": "Penceramah",
+    "id": "kajian-ali-nur",
+    "completeness": 40,
+    "enriched_at": "2026-06-07T19:02:38.254740+07:00",
+    "method": "qa_cleared_wrong_person_2026-06-07"
+  }
+}

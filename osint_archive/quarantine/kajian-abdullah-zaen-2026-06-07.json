@@ -1,0 +1,78 @@
+{
+  "_quarantine_metadata": {
+    "quarantined_at": "2026-06-07T15:07:56.278702+00:00",
+    "reason": "[bio] empty_bio",
+    "original_slug": "kajian-abdullah-zaen",
+    "original_path": "detail/kajian-abdullah-zaen.json"
+  },
+  "original_content": {
+    "name": "Abdullah Zaen",
+    "bio": "",
+    "education": [
+      "Ustadz Abdullah Zaen, MA - Kajian Al-Qur'an dan Sunnah",
+      "Abdullah Zaen, Lc., M.A., yang dikenal juga sebagai Ustadz Abdullah Zaen, lahir dari pasangan Zaeni Muhajjat, BA, M.S. Beliau merupakan seorang sarjana dengan gelar S-2 dalam bidang Aqidah dari Univer",
+      "Saat ini, beliau aktif mengajar di Pondok Pesantren Tunas Ilmu, Purbalingga, se Ustadz Abdullah Zaen, Lc., M.A. bin Zaeni Muhajjat, BA, M.S.",
+      "Pekerjaan : Pengasuh Pondok Pesantren “Tunas Ilmu” Purbalingga dan dosen Sekolah Tinggi Dirasat Islamiyyah “Imam Syafi’i” Jember"
+    ],
+    "expertise": [
+      "aqidah",
+      "tahfidz",
+      "sholat",
+      "haji",
+      "akhlaq"
+    ],
+    "kary": [
+      "Pengasuh Ponpes Tunas Ilmu Purbalingga",
+      "Dosen STDI Imam Syafi'i Jember"
+    ],
+    "social_media": {
+      "instagram": "https://www.instagram.com/abdullahzaenofficial/?hl=en",
+      "youtube": "https://www.youtube.com/shorts/JjvgtT60GIA",
+      "facebook": "https://www.facebook.com/UstadzAbdullahZaen"
+    },
+    "sources": [
+      {
+        "id": "1",
+        "url": "https://kajian.alquran-sunnah.com/penceramah/abdullah-zaen-lc-m-a/",
+        "title": "Ustadz Abdullah Zaen, MA - Kajian Al-Qur'an dan Sunnah",
+        "snippet": "Ustadz Abdullah Zaen, MA - Kajian Al-Qur'an dan Sunnah\n\n02:42\n\n### Keutamaan Hari Arafah – Ustadz Ahmad Zainuddin, Lc. – 5 Menit yang Menginspirasi\n\n0"
+      },
+      {
+        "id": "2",
+        "url": "https://mutiarasunnah.or.id/biografi-abdullah-zaen/",
+        "title": "Biografi Ustadz Abdullah Zaen, Lc., M.A. Hafidzahullah - Yayasan Mutiara Sunnah Pangandaran",
+        "snippet": "Biografi Ustadz Abdullah Zaen, Lc., M.A. Hafidzahullah - Yayasan Mutiara Sunnah Pangandaran\n\nAbdullah Zaen, Lc., M.A., yang dikenal juga sebagai Ustad"
+      },
+      {
+        "id": "3",
+        "url": "https://uloom.id/speaker/abdullah-zaen/",
+        "title": "Abdullah Zaen, Lc., M.A",
+        "snippet": "Ustadz Abdullah Zaen, Lc., M.A. bin Zaeni Muhajjat, BA, M.S.\n[![](https://uloom.id/wp-content/uploads/2022/11/icon-back.png)](https://uloom.id/public-"
+      },
+      {
+        "id": "kajianlive",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=4",
+        "title": "Biografi Abdullah Zaen",
+        "sitename": "KajianLive",
+        "accessed": "2026-06-05"
+      },
+      {
+        "id": "qa_audit_wrong_person",
+        "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+        "title": "WRONG BIO CLEARED by audit",
+        "sitename": "QA Audit 2026-06-07",
+        "accessed": "2026-06-07",
+        "note": "Reason: wrong_person. First sentence was: \"Pekerjaan : Pengasuh Pondok Pesantren “Tunas Ilmu” Purbalingga dan dosen Sekolah...\""
+      }
+    ],
+    "foto": "https://kajianlive.my.id/get_foto_ust.php?file=4_ustadz_abdullah_zaen__lc___m_a.jpg",
+    "jabatan": "Pengasuh Ponpes Tunas Ilmu Purbalingga",
+    "enriched_at": "2026-06-07T19:02:38.235683+07:00",
+    "method": "qa_cleared_wrong_person_2026-06-07",
+    "id": "kajian-abdullah-zaen",
+    "count": 285,
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Abdullah%20Zaen",
+    "bio_source": "",
+    "completeness": 65
+  }
+}

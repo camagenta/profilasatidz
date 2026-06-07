@@ -1,0 +1,66 @@
+{
+  "_quarantine_metadata": {
+    "quarantined_at": "2026-06-07T15:07:56.294104+00:00",
+    "reason": "[bio] empty_bio",
+    "original_slug": "kajian-sufyan-bafin-zen",
+    "original_path": "detail/kajian-sufyan-bafin-zen.json"
+  },
+  "original_content": {
+    "name": "Sufyan Bafin Zen",
+    "bio": "",
+    "education": [
+      "Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan Bafin Zen  Yufid TV  Download Video Gratis - Ceramah Agama Islam"
+    ],
+    "expertise": [
+      "aqidah",
+      "dakwah",
+      "sholat"
+    ],
+    "kary": [],
+    "social_media": {},
+    "sources": [
+      {
+        "id": "1",
+        "url": "https://yufid.tv/80078-dakwah-nabi-belum-selesai-lalu-di-mana-peran-kita-ustadz-sufyan-bafin-zen.html",
+        "title": "Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
+        "snippet": "Dakwah Nabi Belum Selesai, Lalu di Mana Peran Kita? – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursd"
+      },
+      {
+        "id": "2",
+        "url": "https://yufid.tv/81322-1-hal-yang-bikin-setiap-ibadah-terasa-nikmat-ustadz-sufyan-bafin-zen.html",
+        "title": "1 Hal yang Bikin Setiap Ibadah Terasa Nikmat – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
+        "snippet": "1 Hal yang Bikin Setiap Ibadah Terasa Nikmat – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May"
+      },
+      {
+        "id": "3",
+        "url": "https://yufid.tv/80384-jangan-ikuti-perasaan-ikuti-perintah-allah-ustadz-sufyan-bafin-zen.html",
+        "title": "Jangan Ikuti Perasaan, Ikuti Perintah Allah – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam",
+        "snippet": "Jangan Ikuti Perasaan, Ikuti Perintah Allah – Ustadz Sufyan Bafin Zen | Yufid TV | Download Video Gratis - Ceramah Agama Islam\n\nSearch\n\nThursday, May "
+      },
+      {
+        "id": "kajianlive",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=805",
+        "title": "Biografi Sufyan Bafin Zen",
+        "sitename": "KajianLive",
+        "accessed": "2026-06-05"
+      },
+      {
+        "id": "qa_audit_garbage",
+        "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+        "title": "WRONG BIO CLEARED by audit",
+        "sitename": "QA Audit 2026-06-07",
+        "accessed": "2026-06-07",
+        "note": "Reason: garbage. First sentence was: \"Sufyan Bafin Zen\n\nSearch\n\nWednesday, April 29, 2026\n\nHome Nasihat Ini Kebebasan ...\""
+      }
+    ],
+    "foto": "https://kajianlive.my.id/get_foto_ust.php?file=805_ustadz_sufyan_bafin_zen.jpg",
+    "jabatan": "Da'i dan Penceramah",
+    "enriched_at": "2026-06-07T19:02:38.283596+07:00",
+    "method": "qa_cleared_garbage_2026-06-07",
+    "id": "kajian-sufyan-bafin-zen",
+    "count": 31,
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Sufyan%20Bafin%20Zen",
+    "bio_source": "",
+    "completeness": 65
+  }
+}

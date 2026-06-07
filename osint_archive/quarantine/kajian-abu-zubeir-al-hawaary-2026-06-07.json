@@ -1,0 +1,71 @@
+{
+  "_quarantine_metadata": {
+    "quarantined_at": "2026-06-07T15:07:56.283297+00:00",
+    "reason": "[bio] empty_bio",
+    "original_slug": "kajian-abu-zubeir-al-hawaary",
+    "original_path": "detail/kajian-abu-zubeir-al-hawaary.json"
+  },
+  "original_content": {
+    "name": "Abu Zubeir al-Hawaary",
+    "slug": "abu-zubeir-al-hawaary",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Zubeir%20al-Hawaary",
+    "count": 124,
+    "bio": "",
+    "bio_source": "",
+    "bio_quote": "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Rutin:\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, M",
+    "education": [
+      "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya:",
+      "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA Ustadz Abu Zubair Al Hawaary, Lc, MA adalah pengasuh Ma'had Ibnu Katsir Riau. Beliau adalah alumni UIM tahun 2001 fakultas Syariah Islamiyah, temen seangk",
+      "Ceramah agama Islam oleh: Ustadz Abuz Zubair Hawary, Lc.",
+      "Ceramah agama ini adalah yang disampaikan oleh Ustadz Abuz Zubair Hawary, Lc. di Masjid Pemuda PP-PON, depan Taman Bunga Wiladatika, Cibubur, J Kajian Audio  Ceramah Islam MP3  Download Ceramah Agama"
+    ],
+    "education_source": "https://www.radiorodja.com/22803-menuntut-ilmu-hingga-akhir-hayat-ustadz-abuz-zubair-hawary-lc/",
+    "education_quote": "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya: Biografi Ustadz Abu Zubair al Hawaary, Lc, MA Ustadz Abu Zubair Al Hawaary, Lc, MA adalah pengasuh Ma'had Ibnu Kat",
+    "expertise": [
+      "aqidah"
+    ],
+    "expertise_source": "https://kajian.net/kajian-audio/Ceramah/Abu%20Zubeir%20al-Hawaary/Jadilah%20Seperti%20Mereka",
+    "expertise_quote": "aqidah",
+    "kary": [],
+    "kary_source": "",
+    "kary_quote": "",
+    "social_media": {
+      "youtube": "https://www.youtube.com/playlist",
+      "instagram": "https://www.instagram.com/p/CkT5Pm3BRWa"
+    },
+    "sources": [
+      {
+        "id": "1",
+        "url": "https://kajianlive.my.id/bio_ustadz.php?id=318",
+        "title": "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA",
+        "snippet": "Biografi Ustadz Abu Zubair al Hawaary, Lc, MA\n\nBiografi Ustadz Abu Zubair al Hawaary, Lc, MA Jadwal Kajian Hari Ini dan Selanjutnya:\n\nJadwal Kajian Ru"
+      },
+      {
+        "id": "2",
+        "url": "https://www.radiorodja.com/22803-menuntut-ilmu-hingga-akhir-hayat-ustadz-abuz-zubair-hawary-lc/",
+        "title": "Menuntut Ilmu hingga Akhir Hayat (Ustadz Abuz Zubair Hawary, Lc.) - Radio Rodja 756 AM",
+        "snippet": "Menuntut Ilmu hingga Akhir Hayat (Ustadz Abuz Zubair Hawary, Lc.) - Radio Rodja 756 AM\n\n### Tematik\n\n# Menuntut Ilmu hingga Akhir Hayat (Ustadz Abuz Z"
+      },
+      {
+        "id": "3",
+        "url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Zubeir%20al-Hawaary/Jadilah%20Seperti%20Mereka",
+        "title": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net",
+        "snippet": "Kajian Audio | Ceramah Islam MP3 | Download Ceramah Agama | Pengajian | Kajian.net\n\n### Kumpulan Ceramah Agama Islam MP3 Terlengkap, Pengajian MP3, Au"
+      },
+      {
+        "id": "qa_audit_wrong_person",
+        "url": "local://osint_archive/2026-06-07-confirmed-corrupt.json",
+        "title": "WRONG BIO CLEARED by audit",
+        "sitename": "QA Audit 2026-06-07",
+        "accessed": "2026-06-07",
+        "note": "Reason: wrong_person. First sentence was: \"Ceramah agama ini adalah yang disampaikan oleh Ustadz Abuz Zubair Hawary, Lc...\""
+      }
+    ],
+    "foto": "",
+    "jabatan": "Da'i dan Penceramah",
+    "id": "kajian-abu-zubeir-al-hawaary",
+    "completeness": 40,
+    "enriched_at": "2026-06-07T19:02:38.252220+07:00",
+    "method": "qa_cleared_wrong_person_2026-06-07"
+  }
+}

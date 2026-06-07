@@ -1,0 +1,34 @@
+{
+  "_quarantine_metadata": {
+    "quarantined_at": "2026-06-07T15:07:56.279684+00:00",
+    "reason": "[bio] pattern_b_wikipedia_name_mismatch: first sentence lacks 'Abu Aliyah'",
+    "original_slug": "kajian-abu-aliyah",
+    "original_path": "detail/kajian-abu-aliyah.json"
+  },
+  "original_content": {
+    "name": "Abu Aliyah",
+    "source_url": "https://kajian.net/kajian-audio/Ceramah/Abu%20Aliyah",
+    "bio": "Madrasah Aliyah Negeri 2 Kebumen atau dikenal juga dengan nama MANDA adalah salah satu MA berstatus negeri di Kebumen, Jawa Tengah, Indonesia. Sama dengan MA pada umumnya di Indonesia masa pendidikan sekolah di MAN 2 Kebumen ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII.",
+    "education": [
+      "sekolah di MAN 2 Kebumen ditempuh dalam waktu tiga tahun pelajaran, mulai dari Kelas X sampai Kelas XII"
+    ],
+    "expertise": [],
+    "kary": [],
+    "social_media": {},
+    "sources": [
+      {
+        "id": "wiki_id",
+        "url": "https://id.wikipedia.org/wiki/MA_Negeri_2_Kebumen",
+        "title": "MA Negeri 2 Kebumen",
+        "sitename": "Wikipedia Bahasa Indonesia",
+        "accessed": "2026-06-03"
+      }
+    ],
+    "foto": "",
+    "jabatan": "",
+    "completeness": 0,
+    "enriched_at": "2026-06-03T16:53:20.316327+07:00",
+    "method": "wikipedia",
+    "id": "kajian-abu-aliyah"
+  }
+}
