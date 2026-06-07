@@ -23,3 +23,6 @@ nyicil*.log
 
 # Python cache
 __pycache__/
+
+# OpenCode runtime cache (per-agent local state, do not commit)
+.omo/
