@@ -60,15 +60,15 @@ def verify_wikipedia_match(query_name, wiki_title, wiki_first_para=None):
     wiki_title. This catches the Lesson #14 corruption: "Muhammad Zaki" query
     with "Muhammad" (Nabi) page title — "zaki" missing → REJECT.
 
-    Secondary rule (optional): if a first-paragraph excerpt is provided, the
-    same all-words rule is checked against the union of title + first_para
-    words. This salvages correct matches when Wikipedia uses a generic title
-    or a redirect (e.g. "Muhammad" → first_para mentions "Zaki").
+    Lesson #17 (2026-06-08): wiki_first_para fallback REMOVED. Previously,
+    "Abu Usamah" matched "Abu Bakar ash-Shiddiq" because first_para contained
+    "Usamah" somewhere in the article text — wrong page accepted. Title-only
+    match is the only reliable guard.
 
     Args:
         query_name: The name from master.json (or contribution source).
         wiki_title: The Wikipedia page title returned by the API.
-        wiki_first_para: Optional first 100-500 chars of the page extract.
+        wiki_first_para: DEPRECATED — ignored. Kept for backward compat only.
 
     Returns:
         True if the page appears to be about the query, False otherwise.
@@ -82,13 +82,4 @@ def verify_wikipedia_match(query_name, wiki_title, wiki_first_para=None):
 
     title_words = _word_set(wiki_title)
 
-    if all(w in title_words for w in q_words):
-        return True
-
-    if wiki_first_para:
-        para_words = _word_set(wiki_first_para)
-        combined = title_words | para_words
-        if all(w in combined for w in q_words):
-            return True
-
-    return False
+    return all(w in title_words for w in q_words)
